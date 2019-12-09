@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{web/fragments/layout}">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $('#userRefId').select2();
+        });
+    </script>
+
+    <title>ব্যবহারকারী তৈরি করুন</title>
+</head>
+<body>
+
+<div layout:fragment="content" class="content">
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h2>
+            ব্যবহারকারী তৈরি করুন
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!--/*@thymesVar id="user" type="com.bz.em.model.security.User"*/-->
+            <form action="#" th:action="@{/user/save}" th:object="${user}" method="post">
+                <input type="hidden" th:attr="name='userId'" th:value="${user.id}">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name" class="col-form-label">নাম</label>
+                        <input type="text" th:field="*{fullName}" class="form-control" id="name" placeholder="Name">
+                        <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"
+                              class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="userType" class="col-form-label">ব্যবহারকারীর ধরন</label>
+                        <select class="form-control" id="userType" name="userType">
+                            <option value="">ধরন নির্বাচন করুন ধরন </option>
+                            <option th:each="type : ${userTypes}"
+                                    th:value="${type.name}"
+                                    th:text="${type.name}"
+                                    th:selected="${type} == ${user.userType}">
+
+                            </option>
+                        </select>
+                        <span th:if="${#fields.hasErrors('userType')}" th:errors="*{userType}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="userRefId" class="col-form-label">এমপ্লয়ী</label>
+                        <select class="form-control" id="userRefId" name="userRefId">
+                            <option value="">এমপ্লয়ীর ধরন </option>
+                            <option th:each="employee : ${employees}"
+                                    th:value="${employee.id}"
+                                    th:text="|${employee.pin} - ${employee.fullName}|"
+                                    th:selected="${employee.id} == ${user.userRefId}">
+                            </option>
+                        </select>
+                        <span th:if="${#fields.hasErrors('userRefId')}" th:errors="*{userRefId}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="userStatus" class="col-form-label">Status</label>
+                        <select class="form-control" id="userStatus" name="userStatus">
+                            <option value="">স্ট্যাটাস নির্বাচন করুন</option>
+                            <option th:each="status : ${userStatus}"
+                                    th:value="${status.name}"
+                                    th:text="${status.name}"
+                                    th:selected="${status} == ${user.userStatus}">
+
+                            </option>
+                        </select>
+                        <span th:if="${#fields.hasErrors('userStatus')}" th:errors="*{userStatus}"
+                              class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="roles" class="col-form-label">ভূমিকা</label>
+                        <select class="form-control" id="roles" name="roles">
+                            <option value="">ভূমিকা নির্বাচন করুন</option>
+                            <option th:each="role : ${roles}"
+                                    th:value="${role.id}"
+                                    th:text="${role.role}"
+                                    th:selected="${role.id} == ${userRoleId}">
+
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">ইমেইল</label>
+                        <input type="text" th:field="*{emailAddress}" class="form-control" id="email"
+                               placeholder="Email">
+                        <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="nid" class="col-form-label">জাতীয় পরিচয় পত্র </label>
+                        <input type="text" th:field="*{nid}" class="form-control" id="nid"
+                               placeholder="NID">
+                        <span th:if="${#fields.hasErrors('nid')}" th:errors="*{nid}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="gender" class="col-form-label">লিঙ্গ</label>
+                        <select class="form-control" id="gender" name="gender">
+                            <option value="0" th:selected="0 == ${user.gender}">পুরুষ</option>
+                            <option value="1" th:selected="1 == ${user.gender}">মহিলা</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="contactNo" class="col-form-label">মোবাইল নাম্বার</label>
+                        <input type="text" th:field="*{contactNo}" class="form-control" id="contactNo"
+                               placeholder="Phone No">
+                        <span th:if="${#fields.hasErrors('contactNo')}" th:errors="*{contactNo}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="username" class="col-form-label">ব্যবহারকারীর নাম</label>
+                        <input type="text" th:field="*{username}" class="form-control" id="username"
+                               placeholder="Username">
+                        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="contactAddress" class="col-form-label">ঠিকানা</label>
+                        <input type="text" th:field="*{contactAddress}" class="form-control" id="contactAddress"
+                               placeholder="Address">
+                        <span th:if="${#fields.hasErrors('contactAddress')}" th:errors="*{contactAddress}"
+                              class="text-danger"></span>
+                    </div>
+
+                    <th:block th:if="${user.id == null}">
+                        <div class="form-group col-md-6">
+                            <label for="password" class="col-form-label">পাসওয়ার্ড</label>
+                            <input type="password" th:field="*{password}" class="form-control" id="password"
+                                   placeholder="Password">
+                            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                  class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmPassword" class="col-form-label">পাসওয়ার্ড নিশ্চিত করুন</label>
+                            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword"
+                                   placeholder="Confirm Password">
+                        </div>
+                    </th:block>
+                    <div class="form-group col-md-12">
+                        <label for="remarks" class="col-form-label">মন্তব্য</label>
+                        <input type="text" th:field="*{remarks}" class="form-control" id="remarks"
+                               placeholder="remarks">
+                        <span th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}"
+                              class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary"
+                               th:attr="value=${user.id != null}? 'Update' : 'Save'">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

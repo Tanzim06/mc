@@ -1,0 +1,121 @@
+<div th:fragment="jsscripts" xmlns:th="http://www.w3.org/1999/xhtml">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/plugins/toaster/toastr.min.js"></script>
+    <script src="/assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+    <script src="/assets/plugins/charts/Chart.min.js"></script>
+    <script src="/assets/plugins/ladda/spin.min.js"></script>
+    <script src="/assets/plugins/ladda/ladda.min.js"></script>
+    <script src="/assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+    <script src="/assets/plugins/select2/js/select2.min.js"></script>
+    <script src="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="/assets/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+    <script src="/assets/plugins/daterangepicker/moment.min.js"></script>
+    <script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="/assets/plugins/jekyll-search.min.js"></script>
+    <script src="/assets/js/sleek.js"></script>
+    <script src="/assets/js/chart.js"></script>
+    <script src="/assets/js/date-range.js"></script>
+    <script src="/assets/js/map.js"></script>
+    <script src="/assets/js/custom.js"></script>
+
+    <script th:inline="javascript">
+        function loadOffice() {
+            const officeType = $("#officeType").val();
+            if (officeType) {
+                $.get("/ajax-request/offices?officeType=" + officeType, function (data) {
+                    $("#currentOfficeId").empty();
+                    $("#currentOfficeId").append("<option value = ''>Select Office</option>");
+                    data.forEach(function (item) {
+                        $("#currentOfficeId").append("<option value = " + item.id + ">[" + item.shortCode + "] " + item.officeName + "</option>");
+                    });
+                });
+            }
+        };
+        function loadUpzilla(upzillaId = null) {
+            const districtId = $("#districtId").val();
+            if (districtId) {
+                $.get("/ajax-request/upzillas?districtId=" + districtId, function (data) {
+                    $("#upzillaId").empty();
+                    $("#upzillaId").append("<option value = ''>Select Upzilla / Thana</option>");
+                    data.forEach(function (item) {
+                        if (item.id === upzillaId) {
+                            $("#upzillaId").append("<option value = " + item.id + " selected>" + item.upzillaName + "</option>");
+                        } else {
+                            $("#upzillaId").append("<option value = " + item.id + ">" + item.upzillaName + "</option>");
+                        }
+                    });
+                });
+            }
+        };
+        function loadBankBranch(bankBranchId = null) {
+            const bankId = $("#bankId").val();
+            if (bankId) {
+                $.get("/ajax-request/bankbranches?bankId=" + bankId, function (data) {
+                    $("#bankBranchId").empty();
+                    $("#bankBranchId").append("<option value = ''>Select Bank Branch</option>");
+                    data.forEach(function (item) {
+                        if (bankBranchId === item.id) {
+                            $("#bankBranchId").append("<option value = " + item.id + " selected>[" + item.shortCode + "] " + item.branchName + "</option>");
+                        }
+                        else {
+                            $("#bankBranchId").append("<option value = " + item.id + ">[" + item.shortCode + "] " + item.branchName + "</option>");
+                        }
+                    });
+                });
+            }
+        };
+        function loadSamityMemberAndGroup(samityMemberId = null) {
+            loadSamityMember(samityMemberId);
+            loadSamityGroup();
+        };
+        function loadSamityMember(samityMemberId = null) {
+            const samityId = $("#samityId").val();
+            if (samityId) {
+                $.get("/ajax-request/samityMembers?samityId=" + samityId, function (data) {
+                    $("#samityMemberId").empty();
+                    $("#samityMemberId").append("<option value = ''>Select Samity Member</option>");
+                    data.forEach(function (item) {
+                        if (samityMemberId === item.id) {
+                            $("#samityMemberId").append("<option value = " + item.id + " selected>[" + item.bhbMemberId + "] " + item.memberName + "</option>");
+                        } else {
+                            $("#samityMemberId").append("<option value = " + item.id + ">[" + item.bhbMemberId + "] " + item.memberName + "</option>");
+                        }
+                    });
+                });
+            }
+        };
+        function loadSamityGroup() {
+            const samityId = $("#samityId").val();
+            if (samityId) {
+                $.get("/ajax-request/samityGroups?samityId=" + samityId, function (data) {
+                    $("#groupId").empty();
+                    $("#groupId").append("<option value = ''>Select Group</option>");
+                    data.forEach(function (item) {
+                        $("#groupId").append("<option value = " + item.id + ">" + item.groupName + "</option>");
+                    });
+                });
+            }
+        };
+
+        /*this part created by sohel rana on 03/11/2019 at 11.00 AM */
+
+        function loadUnion(upzillaId,unionId) {
+            if (upzillaId) {
+                $.get("/ajax-request/unions?upzillaId=" + upzillaId, function (data) {
+                    $("#unionId").empty();
+                    $("#unionId").append("<option value = ''>-- নির্বাচন করুন --</option>");
+                    data.forEach(function (item) {
+                        if (item.id === unionId) {
+                            $("#unionId").append("<option value = " + item.id + " selected>" + item.unionName + "</option>");
+                        } else {
+                            $("#unionId").append("<option value = " + item.id + ">" + item.unionName + "</option>");
+                        }
+                    });
+                });
+            }
+        };
+
+        /*the part is end here */
+    </script>
+</div>
