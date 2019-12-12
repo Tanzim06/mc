@@ -6,3 +6,43 @@
 [McApplication] 2019-12-09 18:35:22 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-09 18:36:05 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-09 18:43:29 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:35:09 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:45:08 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:45:44 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:54:46 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 14:17:47 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 14:18:05 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+[McApplication] 2019-12-10 14:58:31 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:02:01 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:20:24 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:24:07 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:31:39 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:47:07 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:25:29 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 18:10:10 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 18:14:44 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 10:06:11 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:56:32 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:57:01 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:57:09 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 14:03:25 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 14:21:44 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 14:23:24 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 15:07:22 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 15:08:06 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 15:51:09 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 15:51:50 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 15:56:44 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 15:57:06 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 16:34:54 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 16:35:14 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 17:10:52 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 17:11:32 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 17:17:47 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 17:18:42 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-12 11:33:09 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:38:23 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:49:45 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:56:51 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:03:21 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:05:59 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
