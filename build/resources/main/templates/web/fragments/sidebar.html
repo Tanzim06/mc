@@ -1,0 +1,245 @@
+<aside th:fragment="sidebar" xmlns:th="http://www.w3.org/1999/xhtml" class="left-sidebar bg-sidebar">
+    <div id="sidebar" class="sidebar sidebar-with-footer">
+        <!-- Aplication Brand -->
+        <div class="app-brand">
+            <a href="/">
+
+                <img th:src="@{/images/bd-gov-logo.png}" alt="ewm"
+                     style="width:60px;height:60px;border:0;">
+
+                <span class="brand-name"><h6>East West Medical College & Hospital</h6></span>
+            </a>
+        </div>
+
+        <div class="sidebar-scrollbar">
+
+            <!-- sidebar menu -->
+            <ul class="nav sidebar-inner" id="sidebar-menu">
+                <li class="has-sub active expand">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#dashboard"
+                       aria-expanded="false" aria-controls="dashboard" >
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">DashBroad </span> <b class="caret"></b>
+                    </a>
+
+                </li>
+
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#samity-management"
+                       aria-expanded="false" aria-controls="pages">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Student Registration Form</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="samity-management" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link">
+                                    <span class="nav-text">Student Registration Form </span>
+                                </a>
+                            </li>
+                        </div>
+
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link">
+                                    <span class="nav-text">Student Registration List</span>
+                                </a>
+                            </li>
+                        </div>
+
+
+                    </ul>
+                </li>
+
+                <!-- the part is end here-->
+
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#loan-management"
+                       aria-expanded="false" aria-controls="pages">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Session</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="batch" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Session Form</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Session List</span>
+                                </a>
+                            </li>
+                        </div>
+
+
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#admission"
+                       aria-expanded="false" aria-controls="pages">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Admission</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="admission" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/admission/create">
+                                    <span class="nav-text">Booking</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/admission/list">
+                                    <span class="nav-text">List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#batch1"
+                       aria-expanded="false" aria-controls="pages">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Batch</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="batch1" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/batch/create">
+                                    <span class="nav-text">Batch Form</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/batch/list">
+                                    <span class="nav-text">Batch List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#item"
+                       aria-expanded="false" aria-controls="user-management">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Item</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="item" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/item/create">
+                                    <span class="nav-text">Item</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/item/list">
+                                    <span class="nav-text">List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#charge"
+                       aria-expanded="false" aria-controls="user-management">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Charge</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="charge" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/charge/create">
+                                    <span class="nav-text">group</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/charge/list">
+                                    <span class="nav-text">List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#user-management"
+                       aria-expanded="false" aria-controls="user-management">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Program</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="user-management" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Program Form</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Program List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#user-management"
+                       aria-expanded="false" aria-controls="user-management">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Program Segment</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse"  data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Program Segment Form</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Program Segment List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</aside>

@@ -25,14 +25,14 @@ public class AdmissionController {
     private static final String REDIRECT = "redirect:";
 
     @GetMapping(ROUTE_CREATE )
-    public String batchInfo(Model model) {
+    public String admissionb(Model model) {
         populateModel(model, new AdmissionBooking());
         return "/web/pages/admission/create";
     }
 
 
     @GetMapping(ROUTE_LIST)
-    public String batchList(Model model) {
+    public String bookingList(Model model) {
         populateModel(model, new AdmissionBooking());
 
         return "/web/pages/admission/list";

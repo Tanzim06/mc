@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{web/fragments/layout}">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $('#userRefId').select2();
+        });
+    </script>
+
+
+    <title>Batch information</title>
+</head>
+<body>
+
+<div layout:fragment="content" class="content">
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h5>
+           Admission booking
+        </h5>
+    </div>
+
+    <!-- customized code -->
+    <div class="row justify-content-center">
+
+       <!-- <div class="col-sm-8 text-right">
+            <div class="col-sm-4 text-left">
+                <input type="text"  th:value="${message}"  readonly style="color: limegreen; background-color:white; display: block; border:none;">
+            </div>
+
+            <a class="btn btn-primary btn-sm" th:href="@{/admissionController/init}">New</a>
+            <a class="btn btn-success btn-sm"  th:href="@{/admissionController/View}" >View</a>
+
+        </div>-->
+
+
+        <div class="col-lg-12">
+
+            <div class="card">
+
+
+
+               <!-- <div class="card-header">
+                    <strong class="card-title">Admission Booking</strong>
+                </div>-->
+
+
+
+                <div>
+                    <div class="card-body">
+
+
+                        <form class="needs-validation" th:object="${admissionForm}"
+                               method="POST">
+
+
+                            <div class="row  form-horizontal">
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Admission Booking Id</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" th:field="*{admissionBookingId}"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Student Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control"
+                                                   placeholder="Student Name" th:field="*{studentName}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">DOB</label>
+                                        <div class="col-md-6">
+                                            <input type="date" th:field="*{DOB}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Session</label>
+                                        <div class="col-md-6">
+
+
+
+                                            <select id="sessionId" th:field="*{sessionId}"
+                                                    style="height: 37px; width: 220px" class="form-control"
+                                                    aria-required="true" aria-invalid="false" required>
+
+                                                <option value="">select</option>
+
+                                                <option th:each="slist:${sessionList}"
+                                                        th:value="${slist.sessionId}"
+                                                        th:utext="${slist.sessionName}" />
+
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Father's Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control"
+                                                   placeholder="Father's name" id="fatherName"
+                                                   th:field="*{fatherName}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Mother's Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control"
+                                                   placeholder="Mother's name" id="motherName"
+                                                   th:field="*{motherName}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Spouse Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control"
+                                                   placeholder="spouse name" id="spouseName"
+                                                   th:field="*{spouseName}">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">NID</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="NID"
+                                                   id="NID" th:field="*{NID}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Contact No</label>
+                                        <div class="col-md-6">
+
+                                            <input type="text" class="form-control"
+                                                   placeholder="Contact No" id="ContactNo"
+                                                   th:field="*{contactNo}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Booking Date</label>
+                                        <div class="col-md-6">
+                                            <input type="date" th:field="*{bookingDate}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Present Address</label>
+                                        <div class="col-md-8">
+
+												<textarea rows="3" cols="5" placeholder="Present Address"
+                                                          class="form-control" id="presentAddress"
+                                                          th:field="*{presentAdd}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Permanent
+                                            Address</label>
+                                        <div class="col-md-8">
+
+												<textarea rows="3" cols="5" placeholder="Permanent Address"
+                                                          class="form-control" id="permanentAddress"
+                                                          th:field="*{permanentAdd}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Amount To Be
+                                            Paid</label>
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control"
+                                                   placeholder="Amount" id="amountPaid"
+                                                   th:field="*{amountToBePaid}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Date To be Paid</label>
+                                        <div class="col-md-6">
+                                            <input type="date" th:field="*{dateToBePaid}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Advance amount</label>
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control"
+                                                   placeholder="amount" id="advanceAmount"
+                                                   th:field="*{advAmount}">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Currency</label>
+                                        <div class="col-md-6">
+                                            <select id="currencyId" th:field="*{currencyId}"
+                                                    style="height: 37px; width: 220px" class="form-control"
+                                                    aria-required="true" aria-invalid="false" required>
+                                                <option value="">select</option>
+                                                <option value="1">TK</option>
+                                                <option value="2">$</option>
+
+
+                                                <!--  <option th:each=""
+                                                    th:value="${}"
+                                                    th:utext="${}" />-->
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Active</label>
+                                        <div class="col-md-6  custom-control custom-checkbox  ">
+                                            <input type="checkbox" class="custom-control-input"
+                                                   id="ActiveStatus" th:field="*{active}"> <label
+                                                class="custom-control-label" for="ActiveStatus"></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Remarks</label>
+                                        <div class="col-md-6">
+
+												<textarea rows="2" placeholder="remarks"
+                                                          class="form-control" id="remarks" th:field="*{remarks}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-12">
+                                    <div class="float-right">
+
+                                        <input type="submit" value="save"
+                                               class="btn btn-success btn-md">
+                                        <!--  <i class="fa fa-dot-circle-o"></i> SAVE </input>-->
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- .card -->
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+</body>
+</html>

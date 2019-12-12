@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{web/fragments/layout}">
+<head>
+    <title>User List</title>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="content">
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h2>
+            ব্যবহারকারীদের তালিকা
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-table-border-none" id="userList">
+                <div class="card-body pt-0 pb-5">
+                    <table class="table card-table table-responsive table-responsive-large" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>আইডি</th>
+                            <th>নাম</th>
+                            <th class="d-none d-md-table-cell">ইমেইল</th>
+                            <th class="d-none d-md-table-cell">মোবাইল নাম্বার</th>
+                            <th class="d-none d-md-table-cell">ঠিকানা</th>
+                            <th class="d-none d-md-table-cell">ব্যবহারকারীর ধরন</th>
+                            <th class="d-none d-md-table-cell">স্ট্যাটাস</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="user : ${userPage.getContent()}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.fullName}" class="d-none d-md-table-cell"></td>
+                            <td th:text="${user.emailAddress}" class="d-none d-md-table-cell"></td>
+                            <td th:text="${user.contactNo}" class="d-none d-md-table-cell"></td>
+                            <td th:text="${user.contactAddress}" class="d-none d-md-table-cell"></td>
+                            <td th:text="${user.userType}" class="d-none d-md-table-cell"></td>
+                            <td th:text="${user.userStatus}" class="d-none d-md-table-cell"></td>
+                            <td class="text-right">
+                                <div class="dropdown show d-inline-block widget-dropdown">
+                                    <a class="dropdown-toggle icon-burger-mini" href="" role="button"
+                                       id="dropdown-recent-order1" data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false" data-display="static"></a>
+                                    <ul class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="dropdown-recent-order1">
+                                        <li class="dropdown-item">
+                                            <a th:href="@{/user/edit/{id}(id=${user.id})}">সংশোধন করুন</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a th:href="@{/user/show/{id}(id=${user.id})}">দেখুন</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a th:href="@{/user/delete/{id}(id=${user.id})}">বাতিল করুন</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <nav aria-label="User Page Navigation">
+                <ul class="pagination border-rounded">
+                    <li class="page-item">
+                        <a class="page-link"
+                           th:href="${userPage.number + 1 > 0} ? @{/user/list(size=${userPage.size}, page=${userPage.number > 0 ? userPage.number : 1 })}"
+                           aria-label="Previous">
+                            <span aria-hidden="true" class="mdi mdi-chevron-left"></span>
+                            <span class="sr-only">পূর্ববর্তী</span>
+                        </a>
+                    </li>
+                    <li th:each="pageNumber : ${pageNumbers}"
+                        th:class="${pageNumber==userPage.number + 1} ? 'page-item active' : 'page-item'">
+                        <a class="page-link"
+                           th:href="@{/user/list(size=${userPage.size}, page=${pageNumber})}"
+                           th:text=${pageNumber}></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link"
+                           th:href="${userPage.number + 1 < userPage.getTotalPages()} ? @{/user/list(size=${userPage.size}, page=${userPage.number + 2})}"
+                           aria-label="Next">
+                            <span aria-hidden="true" class="mdi mdi-chevron-right"></span>
+                            <span class="sr-only">পরবর্তী</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</body>
+</html>

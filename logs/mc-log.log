@@ -6,3 +6,95 @@
 [McApplication] 2019-12-09 18:35:22 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-09 18:36:05 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-09 18:43:29 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 10:13:47 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 12:24:57 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 12:47:50 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:38:15 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:49:54 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 13:57:19 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 14:12:58 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:34:46 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:51:21 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 15:56:50 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 16:06:55 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 16:53:38 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:01:35 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:02:03 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:09:40 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:10:12 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:17:00 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:21:03 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:24:20 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:27:00 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:27:30 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 17:29:07 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 18:21:23 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 18:29:49 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-10 18:32:58 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 09:50:48 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 11:08:13 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 12:16:07 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 12:18:18 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException
+[McApplication] 2019-12-11 12:33:43 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 12:41:58 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 13:38:58 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:40:13 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 13:43:21 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:43:50 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 13:45:43 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 13:46:54 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 15:07:43 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 15:08:42 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 15:55:46 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 15:57:15 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 16:43:47 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 16:44:47 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 16:52:28 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 17:04:40 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 17:06:03 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 17:15:11 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 17:19:22 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-11 18:19:39 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 18:28:02 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 18:33:48 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 18:37:44 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 18:41:06 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 18:54:28 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:00:08 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:02:24 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:05:49 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:07:23 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:09:20 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:10:51 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:14:04 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:15:26 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:17:49 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:20:42 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:53:45 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 19:57:40 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 20:02:01 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 20:05:29 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 20:15:00 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 20:17:52 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-11 20:21:10 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 10:32:17 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 10:46:30 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 10:58:58 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:12:17 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:21:29 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:25:35 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:28:52 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:30:48 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:37:04 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:39:19 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:41:24 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:44:55 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:47:56 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:47:56 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 11:56:37 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:00:17 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:04:29 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:04:29 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:31:10 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:36:40 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-12 12:42:24 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
