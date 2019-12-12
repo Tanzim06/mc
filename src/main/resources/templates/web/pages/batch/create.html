@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{web/fragments/layout}">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $('#userRefId').select2();
+        });
+    </script>
+
+
+    <title>Batch information</title>
+</head>
+<body>
+
+<div layout:fragment="content" class="content">
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h1>
+            Batch information
+        </h1>
+    </div>
+
+<!-- customized code -->
+        <div class="row justify-content-center">
+
+            <div class="col-sm-8 text-right">
+                <div class="col-sm-4 text-left">
+                    <input type="text"  th:value="${message}"  style="color: limegreen;  display: block; border:none;"  readonly>
+                </div>
+
+
+                <a class="btn btn-primary btn-sm" th:href="@{/batch/create}">New</a>
+                <a class="btn btn-success btn-sm">View</a>
+            </div>
+            <div class="col-lg-12">
+
+                <div class="card">
+
+
+
+              <!--      <div class="card-header">
+                        <strong class="card-title">Batch Information</strong>
+                    </div>  -->
+
+
+
+                    <div>
+                        <div class="card-body">
+
+
+                            <form class="needs-validation" th:object="${batchInfoForm}"  method="POST">
+                                <div class="row  form-horizontal">
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label for="batchId" class="col-md-4 control-label">Batch Id</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control"
+                                                   id="batchId"    th:field="*{batchId}" readonly />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label for="batchName" class="col-md-4 control-label">Batch name</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" th:class="${#fields.hasErrors('batchName')} ? 'form-control is-invalid' : 'form-control'"
+                                                    id="batchName"   placeholder="batch name" th:field="*{batchName}" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-4 control-label">Visual ID</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control"
+                                                       placeholder="visiual id" id="visualId1"
+                                                       th:field="*{visualId}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label for="shortCode" class="col-md-4 control-label">Short code</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control"
+                                                       placeholder="short code" id="shortCode"
+                                                       th:field="*{shortCode}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-4 control-label">Program</label>
+                                            <div class="col-md-6">
+                                                   <select id="programId"  th:field="*{programId}"
+                                                        style="height: 37px; width: 220px" class="form-control"
+                                                        aria-required="true" aria-invalid="false" required>
+                                                    <option value="">select</option>
+                                                    <option th:each="pList:${programList}"
+                                                            th:value="${pList.programId}"
+                                                            th:utext="${pList.programName}" />
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-4 control-label">Session</label>
+                                            <div class="col-md-6">
+                                                    <select id="sessionId" th:field="*{sessionId}"
+                                                        style="height: 37px; width: 220px" class="form-control"
+                                                        aria-required="true" aria-invalid="false" required>
+
+                                                    <option value="">select</option>
+
+                                                    <option th:each="slist:${sessionList}"
+                                                            th:value="${slist.sessionId}"
+                                                            th:utext="${slist.sessionName}" />
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-4 control-label">Remarks</label>
+                                            <div class="col-md-6">
+
+												<textarea rows="2" placeholder="remarks"
+                                                          class="form-control" id="remarks1" th:field="*{remarks}"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                   <!-- <div class="col-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-4 control-label">Active Status</label>
+                                            <div class="col-md-6  custom-control custom-checkbox  ">
+                                                <input type="checkbox" class="custom-control-input"
+                                                       id="ActiveStatus1" th:field="*{active}"> <label
+                                                    class="custom-control-label" for="ActiveStatus1"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    -->
+
+
+                                    <div class="col-12">
+                                        <div class="float-right">
+
+                                            <input type="submit" class="btn btn-success btn-md">
+                                            <!--  <i class="fa fa-dot-circle-o"></i> SAVE </input>-->
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- .card -->
+            </div>
+
+
+        </div>
+
+
+
+
+</div>
+</body>
+</html>

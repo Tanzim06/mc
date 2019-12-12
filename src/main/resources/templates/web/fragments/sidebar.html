@@ -64,7 +64,7 @@
                         <i class="mdi mdi-image-filter-none"></i>
                         <span class="nav-text">Session</span> <b class="caret"></b>
                     </a>
-                    <ul class="collapse" id="loan-management" data-parent="#sidebar-menu">
+                    <ul class="collapse" id="batch" data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li>
                                 <a class="sidenav-item-link" href="">
@@ -86,22 +86,47 @@
 
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                       data-target="#employee-management"
+                       data-target="#admission"
+                       aria-expanded="false" aria-controls="pages">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Admission</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="admission" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/admission/create">
+                                    <span class="nav-text">Booking</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="sub-menu">
+                            <li>
+                                <a class="sidenav-item-link" href="/admission/list">
+                                    <span class="nav-text">List</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                       data-target="#batch1"
                        aria-expanded="false" aria-controls="pages">
                         <i class="mdi mdi-image-filter-none"></i>
                         <span class="nav-text">Batch</span> <b class="caret"></b>
                     </a>
-                    <ul class="collapse" id="employee-management" data-parent="#sidebar-menu">
+                    <ul class="collapse" id="batch1" data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li>
-                                <a class="sidenav-item-link" href="">
+                                <a class="sidenav-item-link" href="/batch/create">
                                     <span class="nav-text">Batch Form</span>
                                 </a>
                             </li>
                         </div>
                         <div class="sub-menu">
                             <li>
-                                <a class="sidenav-item-link" href="">
+                                <a class="sidenav-item-link" href="/batch/list">
                                     <span class="nav-text">Batch List</span>
                                 </a>
                             </li>
