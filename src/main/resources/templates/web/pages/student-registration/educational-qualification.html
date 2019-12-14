@@ -1,0 +1,324 @@
+<div th:fragment="educational-qualification" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+    <form>
+
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Student
+                        Education Past ID</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               name="studentEduPastId"
+                               placeholder="Student Education Past ID"
+                                readonly>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Student
+                        Registration ID</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               name="studentRegistrationId"
+                               placeholder="Student Registration ID"
+                               readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Exam Name</label>
+                    <div class="col-md-8">
+                        <select style="height: 37px"
+                                class="form-control" aria-required="true"
+                                aria-invalid="false" >
+                            <option value="">Select</option>
+                            <option value="HSC">H.S.C</option>
+                            <option value="SSC">S.S.C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Group Name</label>
+                    <div class="col-md-8">
+                        <select  style="height: 37px"
+                                class="form-control" aria-required="true"
+                                aria-invalid="false" >
+                            <option value="">Select</option>
+                            <option value="Science">Science</option>
+                            <option value="Business_study">Business study</option>
+                            <option value="Humanities">Humanities</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-6">
+
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Board Name</label>
+                    <div class="col-md-8">
+                        <select style="height: 37px"
+                                class="form-control" aria-required="true"
+                                aria-invalid="false" >
+                            <option value="">Select</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Comilla">Comilla</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Year Passed<span
+                            style="color: red">*</span></label>
+                    <div class="col-md-8">
+                        <input type="text" id="stuName" class="form-control"
+                               placeholder="Year Passed" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Roll No<span
+                            style="color: red">*</span></label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               placeholder="Roll No" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Registration
+                        No<span style="color: red">*</span>
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               placeholder="Registration No" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">GPA<span
+                            style="color: red">*</span></label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               placeholder="GPA" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Marks Biology<span
+                            style="color: red">*</span></label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control"
+                               placeholder="Marks Biology" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Remark </label>
+                    <div class="col-md-8">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <br>
+
+        <div class="modal-footer">
+            <input type="submit" value="Save" class="btn btn-success"
+                   style="margin-top: 24px;"> <a
+                style="margin-top: 24px;" class="btn btn-primary btn-md"
+
+                id="refreshBtn">Refresh</a>
+        </div>
+
+        <br> <br>
+    </form>
+
+ <!--   <button class="btn btn-xl btn-primary" id="addLoom" type="button" style="margin-top: 15px">তাঁতের সংখ্যা(+)</button>  -->
+
+
+    <div class="row" style="margin-top: 15px">
+        <div class="col-12">
+            <div class="card card-table-border-none" >
+                <div class="card-body pt-5 pb-5">
+                    <table class="table table-responsive table-responsive-large" id="memberList" >
+                        <div class="card bg-info text-white" >
+                            <div class="card-title">সদস্যদের  তালিকা </div>
+                        </div>
+                        <thead class="thead-light">
+                        <tr>
+                            <th scope="col">জাতীয় পরিচয় পত্র </th>
+                            <th scope="col">সদস্যের নাম </th>
+                            <th class="d-none d-md-table-cell" scope="col">জন্ম তারিখ</th>
+                            <th class="d-none d-md-table-cell" scope="col">মোবাইল নম্বর</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="mList : ${memberList}">
+                            <td hidden th:text="${mList.id}" class="populateMemberId"></td>
+                            <td th:text="${mList.nid}"></td>
+                            <td th:text="${mList.memberName}" class="add"></td>
+                            <td th:text="${mList.dateOfBirth}"></td>
+                            <td th:text="${mList.contactNo}"></td>
+                        <!--    <td >
+                                <button class="btn btn-info loomAdd : 'form-control'" data-toggle="modal" data-target=".memberLoomAdd-modal-sm">Add(+)</button>
+                            </td>  -->
+                            <td class="text-right">
+                                <a th:href="@{/samity-old-application/member/delete/{id}(id=${mList.id})}" class="btn btn-danger : 'form-control'">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px">
+        <div class="col-12">
+            <div class="card card-table-border-none" >
+                <div class="card-body 5 pb-5">
+
+                    <table class="table table-responsive table-responsive-large" id="memberMachineTypeListTable">
+                        <div class="card bg-info text-white">
+                            <div class="card-title">তাঁতের ধরণ </div>
+                        </div>
+
+                        <thead class="thead-light">
+                        <tr>
+                            <th class="d-none d-md-table-cell" scope="col">সদস্যের নাম</th>
+                            <th class="d-none d-md-table-cell" scope="col">তাঁতের ধরণ</th>
+                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা</th>
+                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা(সচল)</th>
+                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা(অচল)</th>
+                            <th class="d-none d-md-table-cell" scope="col">উৎপাদিত পণ্যের নাম </th>
+                            <th ></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#memberList").on('click','tr',function(){
+            var $row = $(this).closest("tr");    // Find the row
+            var id = $row.find(".populateMemberId").text();
+            var formData= {
+                "id" :id
+            };
+            $('#memberMachineTypeListTable tbody').empty();
+            $.ajax({
+                type : "GET",
+                url:"/samityOldController/getMemberMachineTypeList",
+                dataType : 'json',
+                data: formData,
+                success: function(result){
+                    $.each(result, function(i,mml){
+                        var machineTableRow = '<tr>' +
+                            '<td hidden class="memberMachineTypeId">' + mml.id + '</td>' +
+                            '<td >' + mml.memberName + '</td>'+
+                            '<td >' + mml.machineTypeName + '</td>'+
+                            '<td >' + mml.noOfMachine + '</td>'+
+                            '<td >' + mml.noOfFunctionalMachine + '</td>'+
+                            '<td >' + mml.noOfNonfunctionalMachine + '</td>'+
+                            '<td >' + mml.productName + '</td>'+
+                            '<td class="deleteMachine"> <button class=" btn btn-danger">Delete</button>' +'</td>'
+                            + '</tr>';
+                        $('#memberMachineTypeListTable tbody').append(machineTableRow);
+                    });   // each
+                },   // end success
+                error : function(e) {
+                    console.log("ERROR: ", e);
+                }
+            });   // end ajax
+        });
+
+    </script>
+    <script>
+        $("#memberMachineTypeListTable").on('click','.deleteMachine',function(){
+            var $row = $(this).closest("tr");    // Find the row
+            var id = $row.find(".memberMachineTypeId").text();
+            var formData= {
+                "id" :id
+            };
+            $.ajax({
+                type : "GET",
+                url:"/samityOldController/deleteMemberMachineType",
+                dataType : 'json',
+                data: formData,
+                success: function(result){
+                    $row.remove();    // Find the row
+                },   // end success
+                error : function(e) {
+                    console.log("ERROR: ", e);
+                }
+            });   // end ajax
+
+        });
+    </script>
+
+</div>

@@ -101,7 +101,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/web/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -117,11 +117,11 @@
       <recent name="com.bz.mc.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\office\mc\src\main\resources\templates\web\pages" />
+      <recent name="F:\office\mc\src\main\java\com\bz\mc\controller" />
+      <recent name="F:\office\mc\src\main\java\com\bz\mc\model" />
       <recent name="F:\office\mc\src\main\resources\templates\web\pages\shedule" />
       <recent name="F:\office\mc\src\main\java\com\bz\mc\controller\shedule" />
-      <recent name="F:\office\mc\src\main\java\com\bz\mc\model\shedule" />
-      <recent name="F:\office\mc\src\main\java\com\bz\mc\facade" />
-      <recent name="F:\office\mc\src\main\java\com\bz\mc\converter" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +164,7 @@
       <workItem from="1576035327273" duration="33794000" />
       <workItem from="1576120349586" duration="14910000" />
       <workItem from="1576143906578" duration="1945000" />
-      <workItem from="1576294458312" duration="4185000" />
+      <workItem from="1576294458312" duration="4788000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -229,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576298078313</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit full project 14,11:07">
+      <created>1576300080783</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576300080783</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +254,8 @@
     <MESSAGE value="complete form upto charge" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;logs/mc-log.log" />
     <MESSAGE value="commit full project 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit full project 14" />
+    <MESSAGE value="commit full project 14,11:07" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit full project 14,11:07" />
   </component>
   <component name="WindowStateProjectService">
     <state x="242" y="50" key="#Assign_Data_Sources" timestamp="1575877708634">
@@ -274,10 +282,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="418" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1576049246598" />
-    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576298071454">
+    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576300075752">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576298071454" />
+    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576300075752" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1575867136741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -342,10 +350,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575876595857" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576298141814">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576300102190">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576298141814" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576300102175" />
     <state x="323" y="11" width="586" height="717" key="find.popup" timestamp="1576124002517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
