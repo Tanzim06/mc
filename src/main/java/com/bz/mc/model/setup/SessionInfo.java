@@ -2,10 +2,7 @@ package com.bz.mc.model.setup;
 
 
 import com.bz.mc.model.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
@@ -23,6 +20,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+//@Builder(builderClassName = "Builder")
 @Entity
 @Table(name = "session_info")
 @ToString
@@ -80,5 +78,27 @@ public class SessionInfo extends BaseEntity {
 
     @Transient
     private boolean active;
+
+    @Builder
+    public SessionInfo(String sessionName, LocalDate startDate, LocalDate endDate, String visualId, String shortCode, Long branchId, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestap, String flex1, String flex2, String flex3, int activeStatus, String remarks, boolean active) {
+        this.sessionName = sessionName;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.visualId = visualId;
+        this.shortCode = shortCode;
+        this.branchId = branchId;
+        this.enteredBy = enteredBy;
+        this.entryTimestamp = entryTimestamp;
+        this.updatedBy = updatedBy;
+        this.updateTimestap = updateTimestap;
+        this.flex1 = flex1;
+        this.flex2 = flex2;
+        this.flex3 = flex3;
+        this.activeStatus = activeStatus;
+        this.remarks = remarks;
+        this.active = active;
+    }
+
+
 
 }

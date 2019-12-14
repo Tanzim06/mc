@@ -33,6 +33,8 @@ public class WebLinkFactory {
         return BatchInfoController.ROUTE_SHOW.replace(PATH_VAR_ID, String.valueOf(batchInfo.getBatchId()));
     }
 
-
+    public String showSessionUrl(SessionInfo sessionInfo) {
+        return SessionController.ROUTE_SHOW.replace(PATH_VAR_ID, String.valueOf(sessionInfo.getId()));
+    }
 
 }

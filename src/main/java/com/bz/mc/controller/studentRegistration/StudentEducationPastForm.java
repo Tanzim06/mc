@@ -1,16 +1,9 @@
-package com.bz.mc.controller.studentRegistrationCont;
+package com.bz.mc.controller.studentRegistration;
 
 import com.bz.mc.model.studentRegistration.StudentEducationPastInfo;
-import com.bz.mc.model.studentRegistration.StudentRegistrationInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.Column;
-import javax.persistence.Transient;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 @Getter

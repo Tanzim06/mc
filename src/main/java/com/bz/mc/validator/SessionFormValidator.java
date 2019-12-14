@@ -1,5 +1,6 @@
 package com.bz.mc.validator;
 
+
 import com.bz.mc.controller.session.SessionForm;
 import com.bz.mc.facade.SessionManagementService;
 import com.bz.mc.service.SessionService;
@@ -13,8 +14,8 @@ import org.springframework.validation.Validator;
 
 /**
  * User: moly
- * Date: 11/12/19
- * Time: 10:57 AM
+ * Date: 2019-12-14
+ * Time: 04:36
  */
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Component
@@ -23,13 +24,16 @@ public class SessionFormValidator implements Validator {
     @NonNull private final SessionService sessionService;
     @NonNull private final SessionManagementService sessionManagementService;
 
-    @Override public boolean supports(Class<?> clazz) {return SessionForm.class.equals(clazz);}
+    @Override public boolean supports(Class<?> clazz) {
+        return SessionForm.class.equals(clazz);
+    }
 
     @Override public void validate(Object target, Errors errors) {
         SessionForm sessionForm = (SessionForm) target;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "sessionName", "sessionName.required","Please input Session Name");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "startDate", "startDate.required","Please input Start Date");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endDate", "endDate.required","Please input EndDate");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endDate", "endDate.required","Please input End Date");
 
-     }
+
+    }
 }
