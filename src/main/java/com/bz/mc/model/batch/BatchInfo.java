@@ -2,7 +2,7 @@ package com.bz.mc.model.batch;
 
 
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,12 +17,14 @@ import java.time.LocalDateTime;
 public class BatchInfo {
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Id
 //    @GenericGenerator(name = "custom_sequence", strategy =
 //            "com.bz.mc.IdGenerator")
 //    @GeneratedValue(generator = "custom_sequence")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="BATCH_ID")
     private Long batchId;
 
@@ -79,6 +81,7 @@ public class BatchInfo {
 
     @Builder
     public BatchInfo(String shortCode, Long programId, Long sessionId, int activeStatus, String remarks, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestamp, String flexField1, String flexField2, String flexField3, boolean active, String sActive) {
+
         this.shortCode = shortCode;
         this.programId = programId;
         this.sessionId = sessionId;

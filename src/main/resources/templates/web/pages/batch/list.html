@@ -18,9 +18,9 @@
 <div layout:fragment="content" class="content">
     <!-- PAGE TITLE -->
     <div class="page-title">
-        <h5>
-            Batch List
-        </h5>
+        <div class="card bg-info text-white">
+            <div class="card-body" ><h3>Batch information</h3></div>
+        </div>
     </div>
 
     <!-- customized code -->
@@ -37,7 +37,7 @@
                         <div class="row">
                         <div class="col-3">
                             <div class="form-group">
-                                <label class="control-label mb-1">program Name</label>
+                                <label class="control-label mb-1">program</label>
                                 <input type="text" class="form-control" aria-required="true"
                                        aria-invalid="false" name="programId"  placeholder="Program Name">
                             </div>
@@ -46,7 +46,7 @@
 
                         <div class="col-3">
                             <div class="form-group">
-                                <label class="control-label mb-1">batch name</label> <input
+                                <label class="control-label mb-1">batch</label> <input
                                     id="batchName" type="text" class="form-control"
                                     aria-required="true" aria-invalid="false"    name="batchName"
                                     placeholder="batch Name">
@@ -54,7 +54,7 @@
 
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-2">
                             <div class="form-group">
                                 <label class="control-label mb-1">Remarks</label> <input
                                     id="remarks" type="text" class="form-control"
@@ -76,20 +76,22 @@
                             </div>
                         </div>
 
+                            <div class=" col-sm-3 text-right">
+
+                                <input type="submit" value="Search" id="searchBtn"
+                                       class="btn btn-primary btn-md" style="margin-top: 24px;">
+                                <a style="margin-top: 24px;" class="btn btn-success"
+                                   th:href="@{/batch/list}">Refresh</a>
+
+
+                            </div>
+
 
                         </div>
 
-                        <div class="row">
-                        <div class=" col-sm-2 text-right">
-
-                            <input type="submit" value="Search" id="searchBtn"
-                                   class="btn btn-primary btn-md" style="margin-top: 24px;">
-                            <a style="margin-top: 24px;" class="btn btn-success"
-                               th:href="@{/batch/list}">Refresh</a>
 
 
-                        </div>
-                        </div>
+
 
                     </form>
                 </div>

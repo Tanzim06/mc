@@ -11,16 +11,16 @@
     </script>
 
 
-    <title>Batch information</title>
+    <title>Admission</title>
 </head>
 <body>
 
 <div layout:fragment="content" class="content">
     <!-- PAGE TITLE -->
     <div class="page-title">
-        <h5>
-           Admission booking
-        </h5>
+        <div class="card bg-info text-white">
+            <div class="card-body" ><h3>Admission Booking</h3></div>
+        </div>
     </div>
 
     <!-- customized code -->
@@ -49,6 +49,7 @@
 
 
 
+
                 <div>
                     <div class="card-body">
 
@@ -61,7 +62,7 @@
 
                                 <div class="col-6">
                                     <div class="form-group row">
-                                        <label class="col-md-4 control-label">Admission Booking Id</label>
+                                        <label class="col-md-4 control-label">Booking Id</label>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" th:field="*{admissionBookingId}"
                                             />
@@ -85,7 +86,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">DOB</label>
                                         <div class="col-md-6">
-                                            <input type="date" th:field="*{DOB}">
+                                            <input type="date" style="height: 37px; width: 220px" th:field="*{DOB}">
 
                                         </div>
                                     </div>
@@ -179,7 +180,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Booking Date</label>
                                         <div class="col-md-6">
-                                            <input type="date" th:field="*{bookingDate}">
+                                            <input type="date"  style="height: 37px; width: 220px" th:field="*{bookingDate}">
 
                                         </div>
                                     </div>
@@ -229,7 +230,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Date To be Paid</label>
                                         <div class="col-md-6">
-                                            <input type="date" th:field="*{dateToBePaid}">
+                                            <input type="date" style="height: 37px; width: 220px" th:field="*{dateToBePaid}">
 
                                         </div>
                                     </div>

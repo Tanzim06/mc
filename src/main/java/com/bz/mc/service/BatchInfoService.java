@@ -2,6 +2,8 @@ package com.bz.mc.service;
 
 import com.bz.mc.model.batch.BatchInfo;
 
+import java.util.Optional;
+
 /**
  * User: SHAHIDUL
  * Date: 11/12/19
@@ -11,7 +13,9 @@ import com.bz.mc.model.batch.BatchInfo;
 public interface BatchInfoService {
 
 
-    BatchInfo saveBatchInfo(BatchInfo batchInfo);
-    BatchInfo getBatchInfo(Long batchId);
+   BatchInfo saveBatchInfo(BatchInfo batchInfo);
+   Optional <BatchInfo> getBatchInfo(Long batchId);
+
+    Optional<BatchInfo> findBatchByBatchId(Long batchId);
 
 }

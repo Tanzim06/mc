@@ -18,9 +18,9 @@
 <div layout:fragment="content" class="content">
     <!-- PAGE TITLE -->
     <div class="page-title">
-        <h5>
-            Batch information
-        </h5>
+        <div class="card bg-info text-white">
+            <div class="card-body" ><h3>batch information</h3></div>
+        </div>
     </div>
 
 <!-- customized code -->
@@ -62,7 +62,7 @@
                                             <label for="batchId" class="col-md-4 control-label">Batch Id</label>
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control"
-                                                   id="batchId"    th:field="*{batchId}" readonly />
+                                                   id="batchId"    th:field="*{batchId}"  readonly/>
                                             </div>
                                         </div>
                                     </div>
