@@ -1,0 +1,71 @@
+<div th:fragment="search-result" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row">
+        <div class="card table-container"
+             style="width: 1070px; overflow-x: scroll">
+            <div class="card-header">
+                <strong class="card-title">Search Result</strong>
+            </div>
+
+            <div class="card-body">
+
+
+                <table id="myTable"
+                       class="table table-striped table-bordered display nowrap"
+                       style="width: 100%">
+                    <thead>
+
+                    <tr>
+                        <!-- <th>batch id</th>-->
+                        <th>batch</th>
+
+                        <th>short code</th>
+                        <th>program </th>
+                        <th>session</th>
+                        <th>Remarks</th>
+                        <th>Active</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="batch:${batchlist}">
+                        <!-- <td><span th:text="${batch.batchId}"></span></td>-->
+                        <td><span th:text="${batch.batchName}"></span></td>
+
+                        <td><span th:text="${batch.shortCode}"></span></td>
+                        <td><span th:text="${batch.programId}"></span></td>
+                        <td><span th:text="${batch.sessionId}"></span></td>
+                        <td><span th:text="${batch.remarks}"></span></td>
+                        <td class="text-center"><input type="checkbox"
+                                                       id="defaultChecked9" class="form-control"
+                                                       name="activeStatus"	th:checked="${batch.activeStatus}==1"  onclick="return failer"></td>
+
+                        <td><a class="btn btn-info btn-md" th:href="@{'/batchcontroller/update/'+${batch.batchId}}" >Edit</a></td>
+
+
+                    </tr>
+
+
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>

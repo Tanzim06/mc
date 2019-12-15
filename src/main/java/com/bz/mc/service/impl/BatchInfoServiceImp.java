@@ -45,10 +45,12 @@ public class BatchInfoServiceImp implements BatchInfoService {
         return batchInfoRepository.findById(batchId);
     }
 
-//    @Override
-//    public List<BatchInfo> findBatch(Long programId, String batchName) {
-//        return batchInfoRepository.findBatch(programId,batchName);
-//    }
+    @Override
+    public List<BatchInfo> getAllBatch( String batchName,String remarks,int activeStatus) {
+        return batchInfoRepository.findBatch(batchName,remarks,activeStatus);
+    }
+
+
 
     @Override
     public ArrayList<BatchInfo> getAllActiveBatch() {

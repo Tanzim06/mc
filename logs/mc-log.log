@@ -107,3 +107,32 @@
 [McApplication] 2019-12-15 13:54:50 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-15 13:55:11 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo; nested exception is org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo
 [McApplication] 2019-12-15 14:00:32 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 15:09:55 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 15:14:50 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.bz.mc.model.batch.BatchInfo.activeStatus] of primitive type setter of com.bz.mc.model.batch.BatchInfo.activeStatus; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.bz.mc.model.batch.BatchInfo.activeStatus] of primitive type setter of com.bz.mc.model.batch.BatchInfo.activeStatus
+[McApplication] 2019-12-15 15:47:05 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 15:47:42 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'activeStatus' is not present
+[McApplication] 2019-12-15 15:56:09 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 15:56:50 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'activeStatus' is not present
+[McApplication] 2019-12-15 16:25:30 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:26:04 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "on"
+[McApplication] 2019-12-15 16:34:35 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:35:05 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "MBBS"
+[McApplication] 2019-12-15 16:44:18 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:47:20 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:50:38 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:51:06 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "on"
+[McApplication] 2019-12-15 16:55:38 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 16:55:52 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'programId' is not present
+[McApplication] 2019-12-15 17:01:39 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:02:03 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "on"
+[McApplication] 2019-12-15 17:09:24 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:10:00 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "on"
+[McApplication] 2019-12-15 17:18:06 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:18:34 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required boolean parameter 'activeStatus' is not present
+[McApplication] 2019-12-15 17:19:05 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required boolean parameter 'activeStatus' is not present
+[McApplication] 2019-12-15 17:24:06 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:32:18 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'activeStatus' is not present
+[McApplication] 2019-12-15 17:38:26 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:42:13 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:49:42 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 17:53:44 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed

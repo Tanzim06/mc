@@ -35,11 +35,11 @@
                 <div class="row">
                     <form class="needs-validation" th:action="@{/batch/list}"  method="post" novalidate>
                         <div class="row">
-                        <div class="col-3">
+                        <div class="col-3" >
                             <div class="form-group">
                                 <label class="control-label mb-1">program</label>
                                 <input type="text" class="form-control" aria-required="true"
-                                       aria-invalid="false" name="programId"  >
+                                       aria-invalid="false" name="programId" readonly  >
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@
                                 <!-- Default checked -->
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input"
-                                           id="defaultChecked2" name="active"  checked="checked"> <label
+                                           id="defaultChecked2" name="activeStatus"  checked="checked"> <label
                                         class="custom-control-label" for="defaultChecked2"></label>
                                 </div>
 

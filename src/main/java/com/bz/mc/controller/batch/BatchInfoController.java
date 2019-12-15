@@ -68,6 +68,7 @@ public class BatchInfoController {
     @GetMapping(ROUTE_UPDATE)
     public String updateBatch(Model model, @PathVariable("id") Long batchId) {
 
+        model.addAttribute("programs", programService.findPrograms());
         BatchInfo batchInfo = batchInfoService.getBatchInfo(batchId).get();
 
         populateShowPageModel(model, batchInfo);
@@ -88,15 +89,28 @@ public class BatchInfoController {
     @GetMapping(ROUTE_SEARCH)
     public String batchList(Model model) {
         //populateModel(model, new BatchInfoForm());
+        model.addAttribute("programs", programService.findPrograms());
 
         return "/web/pages/batch/search";
     }
 
     @PostMapping(value = ROUTE_SEARCH_RESULT)
-    public String getBatchList(Model model, @RequestParam("programId") Long programId, @RequestParam("batchName") String batchName) {
-        //List<BatchInfo> batchList = batchInfoService.findBatch(programId, batchName);
-        ArrayList<BatchInfo> batchlist =  batchInfoService.getAllActiveBatch();
+    public String getBatchList(Model model, @RequestParam("remarks") String remarks, @RequestParam("batchName") String batchName,@RequestParam(name="activeStatus",required = false) String activeStatus) {
+
+        int status;
+        if(activeStatus==null){
+            status=0;
+        }
+        else{
+            status=1;
+        }
+        System.out.println("ddd" + activeStatus);
+
+
+        List<BatchInfo> batchlist = batchInfoService.getAllBatch(remarks,batchName,status);
+        //ArrayList<BatchInfo> batchlist =  batchInfoService.getAllActiveBatch();
         model.addAttribute("batchlist", batchlist);
+        model.addAttribute("programs", programService.findPrograms());
         if (batchlist.size() != 0) {
 //            model.addAttribute("bCList", officeServiceFacade.findBasicCenters(sessionManagementService.getCurrentOrganization().getId()));
 //            model.addAttribute("samityName", samityName);
