@@ -80,7 +80,7 @@ public class BatchInfo {
     private String sActive;
 
     @Builder
-    public BatchInfo(String shortCode, Long programId, Long sessionId, int activeStatus, String remarks, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestamp, String flexField1, String flexField2, String flexField3, boolean active, String sActive) {
+    public BatchInfo( String shortCode, Long programId, Long sessionId, int activeStatus, String remarks, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestamp, String flexField1, String flexField2, String flexField3, boolean active, String sActive) {
 
         this.shortCode = shortCode;
         this.programId = programId;

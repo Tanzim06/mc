@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -41,6 +43,16 @@ public class BatchInfoServiceImp implements BatchInfoService {
     @Override
     public Optional<BatchInfo> findBatchByBatchId(Long batchId) {
         return batchInfoRepository.findById(batchId);
+    }
+
+//    @Override
+//    public List<BatchInfo> findBatch(Long programId, String batchName) {
+//        return batchInfoRepository.findBatch(programId,batchName);
+//    }
+
+    @Override
+    public ArrayList<BatchInfo> getAllActiveBatch() {
+        return (ArrayList<BatchInfo>) batchInfoRepository.findAll();
     }
 
 

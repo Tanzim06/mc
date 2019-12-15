@@ -83,3 +83,27 @@
 [McApplication] 2019-12-14 22:19:54 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
 [McApplication] 2019-12-15 09:47:43 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-15 09:48:51 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+[McApplication] 2019-12-15 10:43:49 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 10:48:27 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 10:51:42 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 12:05:10 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 12:05:58 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+[McApplication] 2019-12-15 12:20:51 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 12:21:10 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+[McApplication] 2019-12-15 12:32:47 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:01:54 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:02:43 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: The database returned no natively generated identity value; nested exception is org.hibernate.HibernateException: The database returned no natively generated identity value
+[McApplication] 2019-12-15 13:07:08 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:08:36 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'batchId' for method parameter of type Long
+[McApplication] 2019-12-15 13:20:59 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:21:38 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'batchId' for method parameter of type Long
+[McApplication] 2019-12-15 13:26:26 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:26:47 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'batchId' for method parameter of type Long
+[McApplication] 2019-12-15 13:37:16 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:38:20 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'batchId' for method parameter of type Long
+[McApplication] 2019-12-15 13:44:05 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:50:53 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:51:27 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo; nested exception is org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo
+[McApplication] 2019-12-15 13:54:50 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-15 13:55:11 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo; nested exception is org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.bz.mc.model.batch.BatchInfo
+[McApplication] 2019-12-15 14:00:32 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed

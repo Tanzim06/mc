@@ -4,21 +4,16 @@ import com.bz.mc.controller.WebLinkFactory;
 import com.bz.mc.model.batch.BatchInfo;
 import com.bz.mc.service.BatchInfoService;
 import com.bz.mc.service.ProgramService;
-import com.bz.mc.util.Constants;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * User: SHAHIDUL
@@ -38,8 +33,10 @@ public class BatchInfoController {
     private static final String BASE_ROUTE = "/batch";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
-    public static final String ROUTE_LIST = BASE_ROUTE + "/list";
+    public static final String ROUTE_SEARCH = BASE_ROUTE + "/search";
+    private static final String ROUTE_SEARCH_RESULT = BASE_ROUTE + "/list";
     public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
+    public static final String ROUTE_UPDATE = BASE_ROUTE + "/create/{id}";
     private static final String REDIRECT = "redirect:";
 
     @GetMapping(ROUTE_CREATE )
@@ -65,13 +62,21 @@ public class BatchInfoController {
 
         System.out.println("test1");
         //return "/web/pages/batch/create";
-        return REDIRECT+ webLinkFactory.showBatchUrl(batchInfo);
+        return REDIRECT+ webLinkFactory.updateBatchUrl(batchInfo);
     }
 
+    @GetMapping(ROUTE_UPDATE)
+    public String updateBatch(Model model, @PathVariable("id") Long batchId) {
 
+        BatchInfo batchInfo = batchInfoService.getBatchInfo(batchId).get();
+
+        populateShowPageModel(model, batchInfo);
+
+        return "/web/pages/batch/create";
+    }
 
     @GetMapping(ROUTE_SHOW)
-    public String showEmployee(Model model, @PathVariable Long batchId) {
+    public String showBatch(Model model, @PathVariable Long batchId) {
 
         BatchInfo batchInfo = batchInfoService.getBatchInfo(batchId).get();
 
@@ -80,11 +85,25 @@ public class BatchInfoController {
         return "/web/pages/batch/show";
     }
 
-    @GetMapping(ROUTE_LIST)
+    @GetMapping(ROUTE_SEARCH)
     public String batchList(Model model) {
-        populateModel(model, new BatchInfoForm());
+        //populateModel(model, new BatchInfoForm());
 
-        return "/web/pages/batch/list";
+        return "/web/pages/batch/search";
+    }
+
+    @PostMapping(value = ROUTE_SEARCH_RESULT)
+    public String getBatchList(Model model, @RequestParam("programId") Long programId, @RequestParam("batchName") String batchName) {
+        //List<BatchInfo> batchList = batchInfoService.findBatch(programId, batchName);
+        ArrayList<BatchInfo> batchlist =  batchInfoService.getAllActiveBatch();
+        model.addAttribute("batchlist", batchlist);
+        if (batchlist.size() != 0) {
+//            model.addAttribute("bCList", officeServiceFacade.findBasicCenters(sessionManagementService.getCurrentOrganization().getId()));
+//            model.addAttribute("samityName", samityName);
+//            model.addAttribute("basicCenterId", basicCenterId);
+            return "/web/pages/batch/search";
+        }
+        return REDIRECT + ROUTE_SEARCH;
     }
 
 
@@ -120,7 +139,7 @@ public class BatchInfoController {
 //                   .build();
        }
         System.out.println("3");
-        batchInfo.setBatchId(100L);
+       batchInfo.setBatchId(batchInfo.getBatchId());
         System.out.println("4");
         batchInfo.setBatchName(batchInfoForm.getBatchName());
         System.out.println("5");

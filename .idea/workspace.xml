@@ -10,37 +10,32 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo$BatchInfoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo$BatchInfoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistrationCont/StudentEducationPastForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistrationCont/StudentRegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistrationCont/StudentRegistrationForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/SessionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/SessionInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/BatchInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/BatchInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/SessionFormValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/SessionFormValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/session/session-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/educational-qualification.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/educational-qualification.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mc-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mc-log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/batch/BatchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/batch/BatchInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/BatchInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/BatchInfoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/BatchInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/BatchInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/BatchInfoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/BatchInfoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +108,8 @@
         <option value="spring-beans.schema" />
         <option value="CSS File" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -140,7 +135,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -205,7 +200,7 @@
       <workItem from="1576120349586" duration="14910000" />
       <workItem from="1576143906578" duration="1945000" />
       <workItem from="1576294458312" duration="34685000" />
-      <workItem from="1576381282874" duration="572000" />
+      <workItem from="1576381282874" duration="15626000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -284,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576300547627</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit full project including save but error 15,09:54">
+      <created>1576382110836</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576382110836</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,25 +306,26 @@
     <MESSAGE value="commit full project 14" />
     <MESSAGE value="commit full project 14,11:07" />
     <MESSAGE value="commit full project including st reg 14,11:15" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit full project including st reg 14,11:15" />
+    <MESSAGE value="commit full project including save but error 15,09:54" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit full project including save but error 15,09:54" />
   </component>
   <component name="WindowStateProjectService">
     <state x="242" y="50" key="#Assign_Data_Sources" timestamp="1575877708634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="242" y="50" key="#Assign_Data_Sources/0.0.1366.728@0.0.1366.728" timestamp="1575877708634" />
-    <state x="395" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575877686706">
+    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576390527769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="395" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1575877686706" />
+    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576390527769" />
     <state x="458" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575799330127">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="458" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1575799330127" />
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1576324221612">
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1576388198457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576324221612" />
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576388198457" />
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575885730571">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -331,10 +334,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="418" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1576049246598" />
-    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576300542878">
+    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576382096368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576300542878" />
+    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576382096368" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1575867136741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -351,38 +354,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="508" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575721916064" />
-    <state width="1323" height="93" key="GridCell.Tab.0.bottom" timestamp="1576340452301">
+    <state width="1323" height="234" key="GridCell.Tab.0.bottom" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576340452301" />
-    <state width="1323" height="93" key="GridCell.Tab.0.center" timestamp="1576340452285">
+    <state width="1323" height="234" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.0.center" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576340452285" />
-    <state width="1323" height="93" key="GridCell.Tab.0.left" timestamp="1576340452285">
+    <state width="1323" height="234" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.0.left" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576340452285" />
-    <state width="1323" height="93" key="GridCell.Tab.0.right" timestamp="1576340452285">
+    <state width="1323" height="234" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.0.right" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576340452285" />
-    <state width="1323" height="93" key="GridCell.Tab.1.bottom" timestamp="1576340452301">
+    <state width="1323" height="234" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.1.bottom" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576340452301" />
-    <state width="1323" height="93" key="GridCell.Tab.1.center" timestamp="1576340452301">
+    <state width="1323" height="234" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.1.center" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576340452301" />
-    <state width="1323" height="93" key="GridCell.Tab.1.left" timestamp="1576340452301">
+    <state width="1323" height="234" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.1.left" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576340452301" />
-    <state width="1323" height="93" key="GridCell.Tab.1.right" timestamp="1576340452301">
+    <state width="1323" height="234" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
+    <state width="1323" height="234" key="GridCell.Tab.1.right" timestamp="1576396763811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="93" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576340452301" />
+    <state width="1323" height="234" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576396763811" />
     <state width="1323" height="93" key="GridCell.Tab.2.bottom" timestamp="1576340452316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -411,22 +414,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="506" y="77" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576133242963" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1575876595857">
+    <state x="184" y="6" key="SettingsEditor" timestamp="1576394112578">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575876595857" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576300574283">
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576394112578" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576382664277">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576300574283" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576382664277" />
     <state x="323" y="11" width="586" height="717" key="find.popup" timestamp="1576124002517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="323" y="11" width="586" height="717" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1576124002517" />
-    <state x="421" y="167" key="git4idea.merge.GitPullDialog" timestamp="1576297349907">
+    <state x="421" y="167" key="git4idea.merge.GitPullDialog" timestamp="1576382885915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="421" y="167" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1576297349907" />
+    <state x="421" y="167" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1576382885915" />
     <state x="498" y="243" key="git4idea.rebase.GitRebaseDialog" timestamp="1576295484727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
