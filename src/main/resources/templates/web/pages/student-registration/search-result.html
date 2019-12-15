@@ -1,0 +1,105 @@
+<div th:fragment="search-result" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
+        <div class="col-12">
+<!--                    <table class="table table-responsive table-responsive-large">-->
+            <div class="card card-table-border-none" >
+                <div class="card-body pt-0 pb-5">
+
+                     <table  class="table table-striped table-bordered display nowrap" style="width:100%">
+                         <div class="card bg-info text-white" >
+                             <div class="card-title"><h5>Search Result</h5></div>
+                         </div>
+                            <thead  class="thead-light">
+
+                            <tr>
+                                <th >Student Registration Id</th>
+                                <th>Student Name</th>
+                                <th>Father Name</th>
+                                <th>Mother Name</th>
+                                <th>Contact Number</th>
+                                <th>Date of Birth</th>
+                                <!-- 	<th>Branch</th> -->
+                                <th>Gender</th>
+                                <th>Blood Group</th>
+                                <th>Present Address</th>
+                                <th>Present Address PostCord</th>
+                                <th>Permanent Address</th>
+                                <th>Permanent Address PostCord</th>
+                                <th>Session</th>
+                                <!--   <th>Picture</th> -->
+<!--                                <th>Remarks</th>-->
+<!--                                <th>Action</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr th:each="mSRL:${studentSearch}">
+                                <td ><span th:text="${mSRL.studentRegistrationId}"></span></td>
+                                <td> <span th:text="${mSRL.studentName}"></span></td>
+                                <td> <span th:text="${mSRL.fatherName}"></span></td>
+                                <td> <span th:text="${mSRL.motherName}"></span></td>
+                                <td> <span th:text="${mSRL.contactNo}"></span></td>
+                                <td> <span th:text="${mSRL.doB}" th:pattern="yyyy-MM-dd"></span></td>
+                                <!-- <td> <span th:text="${mSRL.branchId}"></span></td> -->
+                                <td> <span th:text="${mSRL.gender}"></span></td>
+                                <td> <span th:text="${mSRL.bloodGroup}"></span></td>
+                                <td> <span th:text="${mSRL.presentAdd}"></span></td>
+                                <td> <span th:text="${mSRL.presentAddPostcode}"></span></td>
+                                <td> <span th:text="${mSRL.permanentAdd}"></span></td>
+                                <td> <span th:text="${mSRL.permanentAddPostCode}"></span></td>
+                                <td> <span th:text="${mSRL.sessionId}"></span></td>
+                                <!--       <td >
+                                   <span th:each="s:${sessionList}" th:text="${s.sessionName}"></span>
+                                   </td>-->
+                                <!--  <td><img th:src="@{${mSRL.getPicturePath()}}" width="100" height="100"/></td>-->
+
+
+
+<!--                                <td style="">-->
+<!--                                            <textarea rows="2" cols="60" th:text="${mSRL.remarks}" readonly >-->
+<!--                                              </textarea>-->
+                                    <!--     <td class="text-center">
+
+                                             <input type="checkbox" id="defaultChecked9" class="form-control" th:checked="${airLine.active} ? 'checked'" readonly>
+
+
+                                       </td> -->
+
+                                <td>
+                                    <a  class="btn btn-success btn-sm" th:href="@{'/studentregistrationcontroller/update/'+${mSRL.studentRegistrationId}}">Edit</a>
+
+                                </td>
+
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+<!--                    <nav aria-label="Loan Application Page Navigation">-->
+<!--                        <ul class="pagination border-rounded">-->
+<!--                            <li class="page-item">-->
+<!--                                <a class="page-link"-->
+<!--                                   th:href="${samityDataPage.number + 1 > 0} ? @{/samity-old-application/search-list-page(size=${samityDataPage.size}, page=${samityDataPage.number > 0 ? samityDataPage.number : 1 }, basicCenterId=${basicCenterId}, samityName=${samityName})}"-->
+<!--                                   aria-label="Previous">-->
+<!--                                    <span aria-hidden="true" class="mdi mdi-chevron-left"></span>-->
+<!--                                    <span class="sr-only">পূর্ববর্তী</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li th:each="pageNumber : ${pageNumbers}"-->
+<!--                                th:class="${pageNumber==samityDataPage.number + 1} ? 'page-item active' : 'page-item'">-->
+<!--                                <a class="page-link" th:href="@{/samity-old-application/search-list-page(size=${samityDataPage.size}, page=${pageNumber}, basicCenterId=${basicCenterId}, samityName=${samityName})}"-->
+<!--                                   th:text=${pageNumber}></a>-->
+<!--                            </li>-->
+<!--                            <li class="page-item">-->
+<!--                                <a class="page-link"-->
+<!--                                   th:href="${samityDataPage.number + 1 < samityDataPage.getTotalPages()} ? @{/samity-old-application/search-list-page(size=${samityDataPage.size}, page=${samityDataPage.number + 2}, basicCenterId=${basicCenterId}, samityName=${samityName})}"-->
+<!--                                   aria-label="Next">-->
+<!--                                    <span aria-hidden="true" class="mdi mdi-chevron-right"></span>-->
+<!--                                    <span class="sr-only">পরবর্তী</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </nav>-->
+        </div>
+</div>
+        </div>
+</div>

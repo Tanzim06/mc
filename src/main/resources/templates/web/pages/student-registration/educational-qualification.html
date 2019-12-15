@@ -8,8 +8,7 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Student
-                        Education Past ID</label>
+                    <label class="col-md-4 control-label">Student Education Past ID</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
                                name="studentEduPastId"
@@ -22,8 +21,7 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Student
-                        Registration ID</label>
+                    <label class="col-md-4 control-label">Student Registration ID</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
                                name="studentRegistrationId"
@@ -197,71 +195,61 @@
         <div class="col-12">
             <div class="card card-table-border-none" >
                 <div class="card-body pt-5 pb-5">
-                    <table class="table table-responsive table-responsive-large" id="memberList" >
+                    <table class="table table-responsive table-responsive-large" id="memberList">
                         <div class="card bg-info text-white" >
-                            <div class="card-title">সদস্যদের  তালিকা </div>
+                            <div class="card-title"><h5>Educational Qualification List</h5></div>
                         </div>
-                        <thead class="thead-light">
-                        <tr>
-                            <th scope="col">জাতীয় পরিচয় পত্র </th>
-                            <th scope="col">সদস্যের নাম </th>
-                            <th class="d-none d-md-table-cell" scope="col">জন্ম তারিখ</th>
-                            <th class="d-none d-md-table-cell" scope="col">মোবাইল নম্বর</th>
-                            <th></th>
-                        </tr>
+                        <thead  class="thead-light">
+                            <tr>
+                                <th hidden>Student Education Past ID</th>
+                                <th hidden>Student Registration Id</th>
+                                <th>Exam Name</th>
+                                <th>Group Name</th>
+                                <th>Board Name</th>
+                                <th>Year Passed</th>
+                                <th>Roll No</th>
+                                <th>Registration No</th>
+                                <th>GPA</th>
+                                <th>Marks Biology</th>
+                                <th>Remark</th>
+                                <th>Action</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="mList : ${memberList}">
-                            <td hidden th:text="${mList.id}" class="populateMemberId"></td>
-                            <td th:text="${mList.nid}"></td>
-                            <td th:text="${mList.memberName}" class="add"></td>
-                            <td th:text="${mList.dateOfBirth}"></td>
-                            <td th:text="${mList.contactNo}"></td>
-                        <!--    <td >
-                                <button class="btn btn-info loomAdd : 'form-control'" data-toggle="modal" data-target=".memberLoomAdd-modal-sm">Add(+)</button>
-                            </td>  -->
-                            <td class="text-right">
-                                <a th:href="@{/samity-old-application/member/delete/{id}(id=${mList.id})}" class="btn btn-danger : 'form-control'">Delete</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+
+<!--                            <tr th:each="mSEPList:${mSEPL}">-->
+
+<!--                                <td hidden><span th:text="${mSEPList.studentEduPastId}"></span></td>-->
+<!--                                <td hidden><span-->
+<!--                                        th:text="${mSEPList.studentRegistrationId}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.examName}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.groupName}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.boardName}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.yearPassed}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.rollNo}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.regNo}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.gpa}"></span></td>-->
+<!--                                <td><span th:text="${mSEPList.marksBiology}"></span></td>-->
+
+
+<!--                                <td style=""><textarea rows="2" cols="60"-->
+<!--                                                       th:text="${mSEPList.remarks}" readonly>-->
+<!--                                              </textarea>-->
+<!--                                <td><a class="btn btn-success btn-sm"-->
+<!--                                       >Edit</a>-->
+
+<!--                                </td>-->
+
+                            </tr>
+
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row" style="margin-top: 15px">
-        <div class="col-12">
-            <div class="card card-table-border-none" >
-                <div class="card-body 5 pb-5">
 
-                    <table class="table table-responsive table-responsive-large" id="memberMachineTypeListTable">
-                        <div class="card bg-info text-white">
-                            <div class="card-title">তাঁতের ধরণ </div>
-                        </div>
-
-                        <thead class="thead-light">
-                        <tr>
-                            <th class="d-none d-md-table-cell" scope="col">সদস্যের নাম</th>
-                            <th class="d-none d-md-table-cell" scope="col">তাঁতের ধরণ</th>
-                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা</th>
-                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা(সচল)</th>
-                            <th class="d-none d-md-table-cell" scope="col">তাঁতের সংখ্যা(অচল)</th>
-                            <th class="d-none d-md-table-cell" scope="col">উৎপাদিত পণ্যের নাম </th>
-                            <th ></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         $("#memberList").on('click','tr',function(){
