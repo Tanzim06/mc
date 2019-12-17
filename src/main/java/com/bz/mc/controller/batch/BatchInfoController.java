@@ -107,7 +107,7 @@ public class BatchInfoController {
         System.out.println("ddd" + activeStatus);
 
 
-        List<BatchInfo> batchlist = batchInfoService.getAllBatch(remarks,batchName,status);
+        List<BatchInfo> batchlist = batchInfoService.getAllBatch(batchName,remarks,status);
         //ArrayList<BatchInfo> batchlist =  batchInfoService.getAllActiveBatch();
         model.addAttribute("batchlist", batchlist);
         model.addAttribute("programs", programService.findPrograms());
