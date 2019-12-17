@@ -1,6 +1,7 @@
 package com.bz.mc.model.batch;
 
 
+import com.bz.mc.model.BaseEntity;
 import lombok.*;
 
 
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name="BATCH_INFO")
-public class BatchInfo {
+public class BatchInfo  extends BaseEntity {
 
 
    // @Id
@@ -23,10 +24,10 @@ public class BatchInfo {
 //    @GenericGenerator(name = "custom_sequence", strategy =
 //            "com.bz.mc.IdGenerator")
 //    @GeneratedValue(generator = "custom_sequence")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="BATCH_ID")
-    private Long batchId;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name="ID")
+//    private Long id;
 
     @Column(name="BATCH_NAME")
     private String batchName;

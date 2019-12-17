@@ -19,9 +19,9 @@ public class QBatchInfo extends EntityPathBase<BatchInfo> {
 
     public static final QBatchInfo batchInfo = new QBatchInfo("batchInfo");
 
-    public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
+    public final com.bz.mc.model.QBaseEntity _super = new com.bz.mc.model.QBaseEntity(this);
 
-    public final NumberPath<Long> batchId = createNumber("batchId", Long.class);
+    public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
 
     public final StringPath batchName = createString("batchName");
 
@@ -34,6 +34,9 @@ public class QBatchInfo extends EntityPathBase<BatchInfo> {
     public final StringPath flexField2 = createString("flexField2");
 
     public final StringPath flexField3 = createString("flexField3");
+
+    //inherited
+    public final NumberPath<Long> id = _super.id;
 
     public final NumberPath<Long> programId = createNumber("programId", Long.class);
 

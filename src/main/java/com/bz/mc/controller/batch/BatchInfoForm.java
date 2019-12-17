@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class BatchInfoForm {
-    private Long batchId;
+    private Long id;
     private String batchName;
     private String visualId;
     private String shortCode;
@@ -24,7 +24,7 @@ public class BatchInfoForm {
 
 
     public BatchInfoForm(BatchInfo batchInfo) {
-        this.batchId = batchInfo.getBatchId();
+        this.id = batchInfo.getId();
         this.batchName = batchInfo.getBatchName();
         this.visualId = batchInfo.getVisualId();
         this.shortCode = batchInfo.getShortCode();
@@ -35,6 +35,6 @@ public class BatchInfoForm {
     }
 
     public boolean isPersisted() {
-        return batchId != null;
+        return id != null;
     }
 }

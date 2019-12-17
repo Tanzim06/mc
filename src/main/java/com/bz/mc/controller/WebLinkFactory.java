@@ -30,12 +30,12 @@ public class WebLinkFactory {
 
 
     public String showBatchUrl(BatchInfo batchInfo) {
-        return BatchInfoController.ROUTE_SHOW.replace(PATH_VAR_ID, String.valueOf(batchInfo.getBatchId()));
+        return BatchInfoController.ROUTE_SHOW.replace(PATH_VAR_ID, String.valueOf(batchInfo.getId()));
     }
 
 
     public String updateBatchUrl(BatchInfo batchInfo) {
-        return BatchInfoController.ROUTE_UPDATE.replace(PATH_VAR_ID, String.valueOf(batchInfo.getBatchId()));
+        return BatchInfoController.ROUTE_UPDATE.replace(PATH_VAR_ID, String.valueOf(batchInfo.getId()));
     }
 
     public String showSessionUrl(SessionInfo sessionInfo) {

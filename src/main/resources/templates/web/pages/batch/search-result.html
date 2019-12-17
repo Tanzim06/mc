@@ -38,7 +38,7 @@
                                                        id="defaultChecked9" class="form-control"
                                                        name="activeStatus"	th:checked="${batch.activeStatus}==1"  onclick="return failer"></td>
 
-                        <td><a class="btn btn-info btn-md" th:href="@{'/batchcontroller/update/'+${batch.batchId}}" >Edit</a></td>
+                        <td><a class="btn btn-info btn-md" th:href="@{/batch/edit/{id}(id=${batch.id})}" >Edit</a></td>
 
 
                     </tr>

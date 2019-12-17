@@ -1,6 +1,7 @@
 package com.bz.mc.model.admission;
 
 
+import com.bz.mc.model.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,12 +17,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name="admission_booking")
-public class AdmissionBooking {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ADMISSION_BOOKING_ID")
-    private Long admissionBookingId;
+public class AdmissionBooking extends BaseEntity {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name="ADMISSION_BOOKING_ID")
+//    private Long admissionBookingId;
 
 
     @Column(name="SESSION_ID")

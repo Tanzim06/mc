@@ -1,12 +1,17 @@
 package com.bz.mc.controller.admission;
 
 
+import com.bz.mc.controller.batch.BatchInfoForm;
 import com.bz.mc.model.admission.AdmissionBooking;
+import com.bz.mc.model.batch.BatchInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Controller
@@ -29,6 +34,26 @@ public class AdmissionController {
         populateModel(model, new AdmissionBooking());
         return "/web/pages/admission/create";
     }
+
+//    @PostMapping(ROUTE_SAVE)
+//    public String saveOrUpdateAdmission(Model model, @ModelAttribute AdmissionForm admissionForm, BindingResult result) {
+////        System.out.println("out");
+////        //employeeFormValidator.validate(employeeForm, result);
+////        if (result.hasErrors()) {
+////            // System.out.println("testee");
+////            populateModel(model, batchInfoForm);
+////            return "/web/pages/batch/create";
+////        }
+////        System.out.println("test");
+////        BatchInfo batchInfo =getBatchInfo(batchInfoForm);
+////        System.out.println("testyyy");
+////        System.out.println("id " + batchInfo.getId());
+////        batchInfo = batchInfoService.saveBatchInfo(batchInfo);
+////
+////        System.out.println("test1");
+////        //return "/web/pages/batch/create";
+//        return REDIRECT+ webLinkFactory.updateBatchUrl(batchInfo);
+//    }
 
 
     @GetMapping(ROUTE_LIST)

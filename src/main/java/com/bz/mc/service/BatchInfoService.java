@@ -16,11 +16,13 @@ public interface BatchInfoService {
 
 
    BatchInfo saveBatchInfo(BatchInfo batchInfo);
-   Optional <BatchInfo> getBatchInfo(Long batchId);
+   Optional <BatchInfo> getBatchInfo(Long id);
 
-    Optional<BatchInfo> findBatchByBatchId(Long batchId);
+    Optional<BatchInfo> findBatchById(Long id);
 
    List<BatchInfo> getAllBatch( String batchName,String remarks,int activeStatus);
+
+    BatchInfo getBatch(Long id);
 
      public ArrayList<BatchInfo> getAllActiveBatch();
 

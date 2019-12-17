@@ -34,22 +34,28 @@ public class BatchInfoServiceImp implements BatchInfoService {
     }
 
     @Override
-    public Optional<BatchInfo> getBatchInfo(Long batchId) {
-        return findBatchByBatchId(batchId);
+    public Optional<BatchInfo> getBatchInfo(Long id) {
+        return findBatchById(id);
         //return findBatchByBatchId(batchId).orElseThrow(NotFoundException::new);
 
     }
 
     @Override
-    public Optional<BatchInfo> findBatchByBatchId(Long batchId) {
-        return batchInfoRepository.findById(batchId);
+    public Optional<BatchInfo> findBatchById(Long id) {
+        return batchInfoRepository.findById(id);
     }
+
+
 
     @Override
     public List<BatchInfo> getAllBatch( String batchName,String remarks,int activeStatus) {
         return batchInfoRepository.findBatch(batchName,remarks,activeStatus);
     }
 
+    @Override
+    public BatchInfo getBatch(Long id) {
+        return findBatchById(id).orElseThrow(NotFoundException::new);
+    }
 
 
     @Override

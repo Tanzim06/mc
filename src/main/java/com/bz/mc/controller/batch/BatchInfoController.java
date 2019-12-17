@@ -4,8 +4,10 @@ import com.bz.mc.controller.WebLinkFactory;
 import com.bz.mc.model.batch.BatchInfo;
 import com.bz.mc.service.BatchInfoService;
 import com.bz.mc.service.ProgramService;
+import com.bz.mc.util.Constants;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,11 +39,15 @@ public class BatchInfoController {
     private static final String ROUTE_SEARCH_RESULT = BASE_ROUTE + "/list";
     public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
     public static final String ROUTE_UPDATE = BASE_ROUTE + "/create/{id}";
+    public static final String ROUTE_EDIT = BASE_ROUTE + "/edit/{id}";
     private static final String REDIRECT = "redirect:";
+
+    private Long id;
 
     @GetMapping(ROUTE_CREATE )
     public String batchInfo(Model model) {
         populateModel(model, new BatchInfoForm());
+
         return "/web/pages/batch/create";
     }
 
@@ -50,14 +56,14 @@ public class BatchInfoController {
         System.out.println("out");
         //employeeFormValidator.validate(employeeForm, result);
         if (result.hasErrors()) {
-            System.out.println("testee");
+           // System.out.println("testee");
             populateModel(model, batchInfoForm);
             return "/web/pages/batch/create";
         }
         System.out.println("test");
         BatchInfo batchInfo =getBatchInfo(batchInfoForm);
         System.out.println("testyyy");
-        System.out.println("batch_id " + batchInfo.getBatchId());
+        System.out.println("id " + batchInfo.getId());
         batchInfo = batchInfoService.saveBatchInfo(batchInfo);
 
         System.out.println("test1");
@@ -66,10 +72,10 @@ public class BatchInfoController {
     }
 
     @GetMapping(ROUTE_UPDATE)
-    public String updateBatch(Model model, @PathVariable("id") Long batchId) {
+    public String updateBatch(Model model, @PathVariable("id") Long id) {
 
         model.addAttribute("programs", programService.findPrograms());
-        BatchInfo batchInfo = batchInfoService.getBatchInfo(batchId).get();
+        BatchInfo batchInfo = batchInfoService.getBatchInfo(id).get();
 
         populateShowPageModel(model, batchInfo);
 
@@ -77,9 +83,9 @@ public class BatchInfoController {
     }
 
     @GetMapping(ROUTE_SHOW)
-    public String showBatch(Model model, @PathVariable Long batchId) {
+    public String showBatch(Model model, @PathVariable Long id) {
 
-        BatchInfo batchInfo = batchInfoService.getBatchInfo(batchId).get();
+        BatchInfo batchInfo = batchInfoService.getBatchInfo(id).get();
 
         populateShowPageModel(model, batchInfo);
 
@@ -121,6 +127,24 @@ public class BatchInfoController {
     }
 
 
+    @GetMapping(ROUTE_EDIT)
+    public String editBatch(Model model, @PathVariable Long id,BatchInfoForm batchInfoForm) {
+        this.id = id;
+        BatchInfo batchInfo = batchInfoService.getBatch(id);
+        //System.out.print("okk");
+
+        populateModel(model, new BatchInfoForm(batchInfo));
+        //System.out.print("okk1");
+
+       // model.addAttribute("programs", programService.findPrograms());
+        //BatchInfo batchInfo = batchInfoService.getBatchInfo(id).get();
+
+        //populateShowPageModel(model, batchInfo);
+
+        return "/web/pages/batch/create";
+    }
+
+
 
 
     private void populateModel(Model model, BatchInfoForm batchInfoForm) {
@@ -139,21 +163,23 @@ public class BatchInfoController {
        if (batchInfoForm.isPersisted()) {
            System.out.println("0");
 
-          batchInfo = batchInfoService.getBatchInfo(batchInfoForm.getBatchId()).get();
+          //batchInfo = batchInfoService.getBatchInfo(batchInfoForm.getId()).get();
+           batchInfo = batchInfoService.getBatchInfo(batchInfoForm.getId()).get();
            System.out.println("000");
       }
        else {
            System.out.println("1");
-          batchInfo = BatchInfo.builder().build();
+          batchInfo = BatchInfo.builder().activeStatus(Constants.ACTIVE_STATUS).build();
            System.out.println("2");
                   //.orgId(sessionManagementService.getCurrentOrganization().getId())
-        //          .activeStatus(Constants.ACTIVE_STATUS)
+
+
 //                  .createdBy(sessionManagementService.getAuthenticatedUser().getId())
 //                   .updatedBy(sessionManagementService.getAuthenticatedUser().getId())
 //                   .build();
        }
         System.out.println("3");
-       batchInfo.setBatchId(batchInfo.getBatchId());
+      // batchInfo.setBatchId(batchInfo.getBatchId());
         System.out.println("4");
         batchInfo.setBatchName(batchInfoForm.getBatchName());
         System.out.println("5");
