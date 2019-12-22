@@ -5,6 +5,7 @@ import com.bz.mc.model.admission.AdmissionBooking;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -16,6 +17,8 @@ public class AdmissionForm {
 
     private Long id;
     private Long sessionId;
+
+    @DateTimeFormat(pattern ="yyyy-MM-dd" )
     private LocalDateTime bookingDate;
     private String studentName;
     private String fatherName;
@@ -23,15 +26,20 @@ public class AdmissionForm {
     private String spouseName;
     private String NID;
     private String contactNo;
+    @DateTimeFormat(pattern ="yyyy-MM-dd" )
     private LocalDateTime DOB;
     private String presentAdd;
     private String permanentAdd;
     private Double amountToBePaid;
     private Long currencyId;
+    @DateTimeFormat(pattern ="yyyy-MM-dd" )
     private LocalDateTime dateToBePaid;
     private Double advAmount;
     private int activeStatus;
     private String remarks;
+    private boolean active;
+
+
 
     public AdmissionForm(AdmissionBooking admissionBooking) {
         this.id = id;
@@ -52,6 +60,7 @@ public class AdmissionForm {
         this.advAmount = advAmount;
         this.activeStatus = activeStatus;
         this.remarks = remarks;
+        this.active = active;
     }
 
     public boolean isPersisted() {

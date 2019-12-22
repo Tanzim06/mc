@@ -1,11 +1,9 @@
 package com.bz.mc.model.admission;
 
 
+import com.bz.mc.model.Auditable;
 import com.bz.mc.model.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -17,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name="admission_booking")
-public class AdmissionBooking extends BaseEntity {
+public class AdmissionBooking extends BaseEntity  {
 //
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -107,6 +105,38 @@ public class AdmissionBooking extends BaseEntity {
 
     @Column(name="FLEX_FIELD3")
     private String flexField3;
+
+
+    @Builder
+    public AdmissionBooking(Long sessionId, LocalDateTime bookingDate, String studentName, String fatherName, String motherName, String spouseName, String NID, String contactNo, LocalDateTime DOB, String presentAdd, String permanentAdd, Double amountToBePaid, Long currencyId, LocalDateTime dateToBePaid, Double advAmount, int activeStatus, boolean active, String sActive, String remarks, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestamp, String flexField1, String flexField2, String flexField3) {
+        this.sessionId = sessionId;
+        this.bookingDate = bookingDate;
+        this.studentName = studentName;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.spouseName = spouseName;
+        this.NID = NID;
+        this.contactNo = contactNo;
+        this.DOB = DOB;
+        this.presentAdd = presentAdd;
+        this.permanentAdd = permanentAdd;
+        this.amountToBePaid = amountToBePaid;
+        this.currencyId = currencyId;
+        this.dateToBePaid = dateToBePaid;
+        this.advAmount = advAmount;
+        this.activeStatus = activeStatus;
+        this.active = active;
+        this.sActive = sActive;
+        this.remarks = remarks;
+        this.enteredBy = enteredBy;
+        EntryTimestamp = entryTimestamp;
+        this.updatedBy = updatedBy;
+        this.updateTimestamp = updateTimestamp;
+        this.flexField1 = flexField1;
+        this.flexField2 = flexField2;
+        this.flexField3 = flexField3;
+    }
+
 
 
 }

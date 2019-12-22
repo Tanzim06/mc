@@ -19,9 +19,9 @@ public class QAdmissionBooking extends EntityPathBase<AdmissionBooking> {
 
     public static final QAdmissionBooking admissionBooking = new QAdmissionBooking("admissionBooking");
 
-    public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
+    public final com.bz.mc.model.QBaseEntity _super = new com.bz.mc.model.QBaseEntity(this);
 
-    public final NumberPath<Long> admissionBookingId = createNumber("admissionBookingId", Long.class);
+    public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
 
     public final NumberPath<Double> advAmount = createNumber("advAmount", Double.class);
 
@@ -48,6 +48,9 @@ public class QAdmissionBooking extends EntityPathBase<AdmissionBooking> {
     public final StringPath flexField2 = createString("flexField2");
 
     public final StringPath flexField3 = createString("flexField3");
+
+    //inherited
+    public final NumberPath<Long> id = _super.id;
 
     public final StringPath motherName = createString("motherName");
 

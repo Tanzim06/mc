@@ -54,8 +54,7 @@
                     <div class="card-body">
 
 
-                        <form class="needs-validation" th:object="${admissionForm}"
-                               method="POST">
+                        <form class="needs-validation" th:object="${admissionForm}"  th:action="@{/admission/save}"  method="POST">
 
 
                             <div class="row  form-horizontal">
@@ -64,8 +63,8 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Booking Id</label>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" th:field="*{admissionBookingId}"
-                                            />
+                                            <input type="text" class="form-control" th:field="*{id}"
+                                            readonly/>
                                         </div>
                                     </div>
                                 </div>
@@ -105,9 +104,9 @@
 
                                                 <option value="">select</option>
 
-                                                <option th:each="slist:${sessionList}"
-                                                        th:value="${slist.sessionId}"
-                                                        th:utext="${slist.sessionName}" />
+                                                <option value="">select</option>
+                                                <option value="1">2019-20</option>
+                                                <option value="2">2020-21</option>
 
 
 

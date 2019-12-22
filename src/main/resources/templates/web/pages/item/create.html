@@ -53,7 +53,7 @@
 
 
 
-                        <form class="needs-validation" th:object="${itemForm}" method="POST">
+                        <form class="needs-validation" th:object="${itemForm}"    th:action="@{/item/save}" method="POST">
 
 
                             <div class="row">
@@ -63,7 +63,7 @@
                                         <label class="col-md-4 ">item ID</label>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control" name="itemId"
-                                                   th:field="*{itemId}" readonly />
+                                                   th:field="*{id}" readonly/>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                         <!--  <div class="col-md-10">-->
 
                                         <textarea   placeholder="remarks"
-                                                    style="height: 37px; width: 190px"  name="remarks" ></textarea>
+                                                    style="height: 37px; width: 200px"  name="remarks" ></textarea>
                                         <!-- </div>-->
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                     <input type="submit" value="save" style="margin-top: 24px;"
                                            class="btn btn-success btn-md"> <a
                                         style="margin-top: 24px;" class="btn btn-info"
-                                        th:href="@{/itemPriceController/init/refresh}">Refresh</a>
+                                        th:href="@{/item/create}">Refresh</a>
 
 
 
@@ -138,7 +138,7 @@
 
                         <!--  END ITEM FORM   th:style="'visibility:' + @{visibleStatus} + ';'"-->
 
-                        <input id="formMode" th:value="${mode}" hidden>
+                        <input id="formMode" th:value="${mode}"  hidden>
 
 
                         <div class="float-left  col-12" id ="divAddBtn"  style="margin-bottom: 20px;">
@@ -164,13 +164,12 @@
                 </div>
 
 
-
                 <div>
                     <div class="card-body">
 
 
 
-                        <form class="needs-validation" th:object="${itemPriceForm}" method="POST">
+                        <form class="needs-validation" th:object="${itemPriceForm}"   th:action="@{/item/price/save}"  method="POST">
 
                             <div class="row  form-horizontal">
                                 <div class="col-12">
@@ -191,7 +190,7 @@
                                         <label class="col-md-4 control-label">Price Id</label>
                                         <div class="col-md-6">
                                             <input type="number" class="form-control"
-                                                    readonly="readonly" />
+                                                   th:field="*{id}" readonly="readonly" />
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +200,7 @@
                                         <label class="col-md-4 control-label">Item Id</label>
                                         <div class="col-md-6">
                                             <input type="number" class="form-control"
-                                                    readonly="readonly" />
+                                                   th:field="*{itemId}"   readonly="readonly" />
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +214,7 @@
                                         <label class="col-md-4 control-label">Price</label>
                                         <div class="col-md-6">
                                             <input type="number" class="form-control"
-                                                    />
+                                                   th:field="*{itemRate}"     />
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +225,7 @@
                                         <label class="col-md-4 control-label">Currency</label>
                                         <div class="col-md-6">
                                             <select id="currencyId"
-                                                    style="height: 37px; width: 220px" class="form-control"
+                                                    th:field="*{currencyId}"  style="height: 37px; width: 220px" class="form-control"
                                                     aria-required="true" aria-invalid="false" required>
 
                                                 <option value="1">TK</option>
@@ -249,7 +248,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Effective From</label>
                                         <div class="col-md-6">
-                                            <input type="date"  style="height: 37px; width: 220px" />
+                                            <input type="date"  th:field="*{effectiveFrom}"   style="height: 37px; width: 220px" />
 
                                         </div>
                                     </div>
@@ -259,7 +258,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Effective To</label>
                                         <div class="col-md-6">
-                                            <input type="date"  style="height: 37px; width: 220px"/>
+                                            <input type="date" th:field="*{effectiveTo}"  style="height: 37px; width: 220px"/>
 
                                         </div>
                                     </div>
@@ -275,7 +274,7 @@
                                         <!--  <div class="col-md-10">-->
 
                                         <textarea   placeholder="remarks"
-                                                    style="height: 37px; width: 240px"  name="remarks" ></textarea>
+                                                    th:field="*{remarks}"  style="height: 37px; width: 240px"  name="remarks" ></textarea>
                                         <!-- </div>-->
                                     </div>
                                 </div>
@@ -303,7 +302,7 @@
                                     <input type="submit" value="save" style="margin-top: 24px;"
                                            class="btn btn-success btn-md"> <a
                                         style="margin-top: 24px;" class="btn btn-info"
-                                        th:href="@{/itemPriceController/init/refresh}">Refresh</a>
+                                        th:href="@{/item/create}">Refresh</a>
 
 
 
@@ -370,7 +369,7 @@
                                     <tr th:each="priceList:${itemPriceList}">
 
                                         <!--    <td><span th:text="${priceList.modelItemInfo.itemId}"></span></td>-->
-                                        <td><span th:text="${priceList.itemPriceId}"></span></td>
+                                        <!--<td><span th:text="${priceList.id}"></span></td>-->
 
 
                                         <!--<td class="text-center"><input type="checkbox"
@@ -380,22 +379,22 @@
                                                         onclick="return failer"></td>
 
                                                      <td><span th:text="${priceList.modelItemInfo.remarks}"></span></td>-->
-                                        <td><span th:text="${priceList.itemId}"></span></td>
+                                        <td><span th:text="${priceList.Id}"></span></td>
                                         <td><span th:text="${priceList.itemRate}"></span></td>
                                         <td><span th:text="${priceList.currencyId}"></span></td>
 
-                                        <td><span th:text="${priceList.effectiveFrom}"></span></td>
-                                        <td><span th:text="${priceList.effectiveTo}"></span></td>
+                                        <td></td>
+                                        <td></td>
 
                                         <td><span th:text="${priceList.remarks}"></span></td>
                                         <td class="text-center"><input type="checkbox"
-                                                                       id="defaultChecked9" class="form-control"
+                                                                       id="defaultChecked9"
                                                                        name="activeStatus"
                                                                        th:checked="${priceList.activeStatus}==1"
                                                                        onclick="return failer"></td>
 
                                         <td><a class="btn btn-info btn-md"
-                                               th:href="@{'/itemPriceController/update/'+${priceList.itemPriceId}}">Edit</a></td>
+                                               th:href="@{/item/edit/{id}(id=${priceList.id})}">Edit</a></td>
 
 
 

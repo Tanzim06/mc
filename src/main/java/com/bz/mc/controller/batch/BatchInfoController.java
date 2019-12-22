@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -152,7 +153,6 @@ public class BatchInfoController {
         model.addAttribute("programs", programService.findPrograms());
         model.addAttribute("batchInfoForm", batchInfoForm);
 
-
     }
 
 
@@ -193,6 +193,7 @@ public class BatchInfoController {
         System.out.println("9");
         batchInfo.setRemarks(batchInfoForm.getRemarks());
         System.out.println("10");
+
 
 
      return batchInfo;

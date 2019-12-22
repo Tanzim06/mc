@@ -184,3 +184,128 @@
 [McApplication] 2019-12-17 17:14:01 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-17 17:14:03 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-17 17:23:22 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 11:32:27 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 11:38:24 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 11:40:20 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 11:40:21 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 11:51:16 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 12:09:53 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 12:24:09 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 13:38:22 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 13:57:53 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 13:57:53 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 14:24:34 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 14:59:13 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 14:59:14 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 15:18:34 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 15:32:39 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 16:06:21 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 16:06:22 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 17:12:49 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 17:55:21 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 17:55:58 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-18 18:12:59 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 18:19:42 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 18:31:41 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 18:40:50 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 18:45:08 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 18:54:14 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 19:03:24 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 19:16:43 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-18 19:17:49 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException
+[McApplication] 2019-12-19 10:24:38 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 10:36:59 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 10:44:33 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 10:59:37 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 11:07:07 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 11:13:59 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 11:29:49 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 12:23:23 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 13:06:52 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 13:39:09 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 14:19:04 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 15:04:34 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 15:30:52 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 15:56:52 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 16:12:41 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 16:40:15 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 18:16:55 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 18:33:54 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 18:43:44 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 18:56:35 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 18:56:54 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-19 19:00:55 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-19 19:06:50 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 12:23:11 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 12:35:29 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 13:46:59 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 13:56:02 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 14:00:26 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 14:03:03 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 14:29:01 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 14:30:00 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 14:39:44 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 14:40:15 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 15:27:13 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 15:27:30 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 15:27:48 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 15:27:58 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 15:28:11 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+[McApplication] 2019-12-21 15:29:13 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 15:29:14 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 15:31:39 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 15:51:00 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 15:56:24 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:01:42 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:21:34 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:28:40 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:33:15 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:33:16 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:36:02 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:52:48 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 16:52:52 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 17:05:20 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 17:06:16 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 17:13:20 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 17:13:58 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 17:22:50 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 17:51:04 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 17:52:40 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 18:04:41 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 18:05:15 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 18:27:11 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-21 18:33:05 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-21 20:12:29 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 10:17:16 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 10:19:18 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'itemName' is not present
+[McApplication] 2019-12-22 10:42:14 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 10:57:05 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 11:04:54 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 11:28:52 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 11:39:23 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 11:51:04 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 11:51:35 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 11:53:38 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 11:53:44 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 11:53:46 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 11:53:47 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 11:53:48 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'id' is not present
+[McApplication] 2019-12-22 12:05:28 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 12:06:12 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-22 12:12:14 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 12:41:53 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 12:58:16 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:09:22 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:12:04 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:15:52 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:15:54 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:34:15 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 13:56:40 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 14:12:31 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 14:13:22 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "null"
+[McApplication] 2019-12-22 14:56:49 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 18:38:02 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 19:05:45 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 19:30:39 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 19:51:48 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-22 20:12:53 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed

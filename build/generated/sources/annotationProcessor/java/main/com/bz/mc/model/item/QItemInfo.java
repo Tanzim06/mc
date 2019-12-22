@@ -19,6 +19,8 @@ public class QItemInfo extends EntityPathBase<ItemInfo> {
 
     public static final QItemInfo itemInfo = new QItemInfo("itemInfo");
 
+    public final com.bz.mc.model.QBaseEntity _super = new com.bz.mc.model.QBaseEntity(this);
+
     public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
 
     public final NumberPath<Integer> billFlag = createNumber("billFlag", Integer.class);
@@ -33,9 +35,10 @@ public class QItemInfo extends EntityPathBase<ItemInfo> {
 
     public final StringPath flexField3 = createString("flexField3");
 
-    public final NumberPath<Integer> inventoryFlag = createNumber("inventoryFlag", Integer.class);
+    //inherited
+    public final NumberPath<Long> id = _super.id;
 
-    public final NumberPath<Long> itemId = createNumber("itemId", Long.class);
+    public final NumberPath<Integer> inventoryFlag = createNumber("inventoryFlag", Integer.class);
 
     public final StringPath itemName = createString("itemName");
 

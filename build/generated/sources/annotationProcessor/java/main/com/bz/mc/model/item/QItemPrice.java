@@ -19,17 +19,19 @@ public class QItemPrice extends EntityPathBase<ItemPrice> {
 
     public static final QItemPrice itemPrice = new QItemPrice("itemPrice");
 
+    public final com.bz.mc.model.QBaseEntity _super = new com.bz.mc.model.QBaseEntity(this);
+
     public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
+
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
 
     public final NumberPath<Long> currencyId = createNumber("currencyId", Long.class);
 
-    public final DateTimePath<java.time.LocalDateTime> effectiveFrom = createDateTime("effectiveFrom", java.time.LocalDateTime.class);
+    public final DatePath<java.time.LocalDate> effectiveFrom = createDate("effectiveFrom", java.time.LocalDate.class);
 
-    public final DateTimePath<java.time.LocalDateTime> effectiveTo = createDateTime("effectiveTo", java.time.LocalDateTime.class);
-
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> entryTimestamp = createDateTime("entryTimestamp", java.time.LocalDateTime.class);
+    public final DatePath<java.time.LocalDate> effectiveTo = createDate("effectiveTo", java.time.LocalDate.class);
 
     public final StringPath flexField1 = createString("flexField1");
 
@@ -37,19 +39,20 @@ public class QItemPrice extends EntityPathBase<ItemPrice> {
 
     public final StringPath flexField3 = createString("flexField3");
 
+    //inherited
+    public final NumberPath<Long> id = _super.id;
+
     public final NumberPath<Long> itemId = createNumber("itemId", Long.class);
 
-    public final NumberPath<Long> itemPriceId = createNumber("itemPriceId", Long.class);
-
     public final NumberPath<Double> itemRate = createNumber("itemRate", Double.class);
+
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
 
     public final StringPath remarks = createString("remarks");
 
     public final NumberPath<Integer> segmentExist = createNumber("segmentExist", Integer.class);
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestamp = createDateTime("updateTimestamp", java.time.LocalDateTime.class);
 
     public QItemPrice(String variable) {
         super(ItemPrice.class, forVariable(variable));

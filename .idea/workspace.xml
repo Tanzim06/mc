@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453d722-2816-4625-a7f6-59b4dbc9d991" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/AdmissionServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,29 +12,43 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo$BatchInfoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo$BatchInfoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/BatchInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/QBatchInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/batch/QBatchInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/BatchInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/BatchInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/batch/QBatchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/batch/QBatchInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/search-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/search-result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemPriceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemPriceForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemPriceForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/admission/AdmissionBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/admission/AdmissionBooking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/admission/QAdmissionBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/admission/QAdmissionBooking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemPrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemPrice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemPrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemPrice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/admission/QAdmissionBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/admission/QAdmissionBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/list.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mc-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mc-log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemPriceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemPriceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemPriceForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/admission/AdmissionBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/admission/AdmissionBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/batch/BatchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/batch/BatchInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/BatchInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/BatchInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/BatchInfoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/BatchInfoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/search-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/search-result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/messages/messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/messages/messages_en_US.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +120,9 @@
         <option value="Tag Library Descriptor" />
         <option value="spring-beans.schema" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -134,7 +149,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -200,7 +215,11 @@
       <workItem from="1576143906578" duration="1945000" />
       <workItem from="1576294458312" duration="34685000" />
       <workItem from="1576381282874" duration="24926000" />
-      <workItem from="1576556257474" duration="23546000" />
+      <workItem from="1576556257474" duration="24073000" />
+      <workItem from="1576641600639" duration="29408000" />
+      <workItem from="1576725927132" duration="32223000" />
+      <workItem from="1576898682603" duration="34233000" />
+      <workItem from="1576986329049" duration="32623000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -307,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576565006700</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commit full project complete upto admissionController save 17,6:13">
+      <created>1576584893959</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576584893959</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,37 +357,38 @@
     <MESSAGE value="commit full project complete save  15,03:01" />
     <MESSAGE value="commit full project complete save,list  15,05:56" />
     <MESSAGE value="commit full project complete upto search 17,12:43" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit full project complete upto search 17,12:43" />
+    <MESSAGE value="commit full project complete upto admissionController save 17,6:13" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit full project complete upto admissionController save 17,6:13" />
   </component>
   <component name="WindowStateProjectService">
     <state x="242" y="50" key="#Assign_Data_Sources" timestamp="1575877708634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="242" y="50" key="#Assign_Data_Sources/0.0.1366.728@0.0.1366.728" timestamp="1575877708634" />
-    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576390527769">
+    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576746806537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576390527769" />
+    <state x="274" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576746806537" />
     <state x="458" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575799330127">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="458" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1575799330127" />
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1576584352083">
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1577015627598">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576584352083" />
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575885730571">
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577015627598" />
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576902511343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575885730571" />
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576902511343" />
     <state x="418" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576049246598">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="418" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1576049246598" />
-    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576565000634">
+    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1576584885428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576565000634" />
+    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576584885428" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1575867136741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -378,38 +405,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="508" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575721916064" />
-    <state width="1323" height="154" key="GridCell.Tab.0.bottom" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.0.bottom" timestamp="1577023760639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.0.center" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577023760639" />
+    <state width="1323" height="185" key="GridCell.Tab.0.center" timestamp="1577023760639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.0.left" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577023760639" />
+    <state width="1323" height="185" key="GridCell.Tab.0.left" timestamp="1577023760624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.0.right" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577023760624" />
+    <state width="1323" height="185" key="GridCell.Tab.0.right" timestamp="1577023760639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.1.bottom" timestamp="1576581712448">
+    <state width="1323" height="185" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577023760639" />
+    <state width="1323" height="185" key="GridCell.Tab.1.bottom" timestamp="1577023760655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576581712448" />
-    <state width="1323" height="154" key="GridCell.Tab.1.center" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577023760655" />
+    <state width="1323" height="185" key="GridCell.Tab.1.center" timestamp="1577023760655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.1.left" timestamp="1576581712433">
+    <state width="1323" height="185" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577023760655" />
+    <state width="1323" height="185" key="GridCell.Tab.1.left" timestamp="1577023760639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576581712433" />
-    <state width="1323" height="154" key="GridCell.Tab.1.right" timestamp="1576581712448">
+    <state width="1323" height="185" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577023760639" />
+    <state width="1323" height="185" key="GridCell.Tab.1.right" timestamp="1577023760655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576581712448" />
+    <state width="1323" height="185" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577023760655" />
     <state width="1323" height="93" key="GridCell.Tab.2.bottom" timestamp="1576340452316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -438,18 +465,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="506" y="77" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576133242963" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1576394112578">
+    <state x="184" y="6" key="SettingsEditor" timestamp="1576899451759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576394112578" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576565019733">
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576899451759" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1577019007886">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576565019733" />
-    <state x="323" y="11" width="586" height="717" key="find.popup" timestamp="1576124002517">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1577019007886" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1576584903319">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="323" y="11" width="586" height="717" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1576124002517" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576584903319" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1576898691012">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576898691012" />
+    <state x="323" y="11" width="586" height="717" key="find.popup" timestamp="1576922823153">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="323" y="11" width="586" height="717" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1576922823153" />
     <state x="421" y="167" key="git4idea.merge.GitPullDialog" timestamp="1576382885915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
