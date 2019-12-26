@@ -79,8 +79,8 @@
             <div class="row">
                 <div class="card table-container"
                      style="width: 1070px; overflow-x: scroll">
-                    <div class="card-header">
-                        <strong class="card-title">Search Result</strong>
+                    <div class="card bg-info text-white">
+                        <strong class="card-title"><h5>search result</h5></strong>
                     </div>
 
                     <div class="card-body">
@@ -146,10 +146,8 @@
                                                                id="defaultChecked"
                                                                name="activeStatus" checked="checked"></td>
 
-
-
                                 <td><a class="btn btn-info btn-md"
-                                       th:href="@{/item/edit/{id}(id=${priceList.id})}">Edit</a></td>
+                                       th:href="@{/item/price/update/{id}(id=${priceList.id})}" >Edit</a></td>
 
 
                             </tr>

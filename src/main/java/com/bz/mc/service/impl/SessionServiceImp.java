@@ -8,6 +8,8 @@ import com.bz.mc.model.setup.SessionInfo;
 import com.bz.mc.service.SessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.bz.mc.repository.SessionRepository;
 
@@ -26,27 +28,6 @@ public class SessionServiceImp implements SessionService {
 	@Autowired
 	private SessionRepository sessionRepository;
 
-//	 @Override
-//	public List<SessionInfo> getModelSessionList() {
-//		return sessionRepository.findAll();
-//	}
-//
-//	public int save(SessionInfo sessionInfo) {
-//		try {
-//		sessionRepository.save(sessionInfo);
-//		return 1;
-//	}
-//		catch(Exception e) {
-//			e.printStackTrace();
-//			return 0;
-//		}
-//    }
-//
-//    @Override
-//	public List<SessionInfo> getAllSessionByActiveStatus() {
-//              return sessionRepository.findAllSessionByActiveStatus(1);
-//	}
-
 	@Transactional
 	@Override
 	public SessionInfo saveSession(SessionInfo sessionInfo) {
@@ -59,8 +40,23 @@ public class SessionServiceImp implements SessionService {
 	}
 
 	@Override
-	public SessionInfo getSessionInfo(Long id) {
-		return findSessionById(id).orElseThrow(NotFoundException::new);
+	public Optional<SessionInfo> getSessionInfo(Long id) {
+		return findSessionById(id);
+	}
+
+	@Override
+	public SessionInfo getSession(Long id) {
+		return getSessionInfo(id).orElseThrow(NotFoundException::new);
+	}
+
+//	@Override
+//	public Pagee<SessionInfo> findSession(Long sessionId, Pageablee pageable) {
+//		return sessionRepository.findSesseionBysessionIdAndActiveStatus(sessionId, Constants.ACTIVE_STATUS,pageable);
+//	}
+
+	@Override
+	public List<SessionInfo> findSessionList() {
+		return sessionRepository.findAll();
 	}
 
 }

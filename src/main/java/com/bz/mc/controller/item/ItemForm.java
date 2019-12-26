@@ -35,23 +35,23 @@ public class ItemForm {
     //private List<ItemPriceData> itemPriceDataList = new ArrayList<>();
 
 
-    public ItemForm(ItemInfo ItemInfo) {
-        this.id = id;
-        this.itemName = itemName;
-        this.billFlag = billFlag;
-        this.inventoryFlag = inventoryFlag;
-        this.bill = bill;
-        this.inventory = inventory;
-        this.active = active;
-        this.sActive = sActive;
-        this.remarks = remarks;
-        this.activeStatus= activeStatus;
+    public ItemForm(ItemInfo itemInfo) {
+        this.id = itemInfo.getId();
+        this.itemName = itemInfo.getItemName();
+        this.billFlag = itemInfo.getBillFlag();
+        this.inventoryFlag = itemInfo.getInventoryFlag();
+        this.bill = itemInfo.isBill();
+        this.inventory = itemInfo.isInventory();
+        this.active = itemInfo.isActive();
+        this.sActive = itemInfo.getSActive();
+        this.remarks = itemInfo.getRemarks();
+        this.activeStatus= itemInfo.getActiveStatus();
     }
 
-    public ItemForm(ItemInfo  itemInfo, List<ItemPriceData> itemPriceDataList){
+    public ItemForm(ItemInfo  itemInfo, List<ItemPriceData> priceList){
         this.id=itemInfo.getId();
         populateItemInfo(itemInfo);
-        populateItemPrice(itemPriceDataList);
+        populateItemPrice(priceList);
 
     }
 

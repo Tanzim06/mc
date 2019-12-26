@@ -1,6 +1,7 @@
 package com.bz.mc.model.setup;
 
 
+import com.bz.mc.model.Auditable;
 import com.bz.mc.model.BaseEntity;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,14 +21,12 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-//@Builder(builderClassName = "Builder")
+@AllArgsConstructor
+@Builder(builderClassName = "Builder")
 @Entity
-@Table(name = "session_info")
+@Table(name = "SESSION_INFO")
 @ToString
-public class SessionInfo extends BaseEntity {
-
-    @Column(name="SESSION_ID")
-    private Long sessionId;
+public class SessionInfo extends BaseEntity implements Auditable  {
 
     @Column(name="SESSION_NAME")
     private String sessionName;
@@ -49,17 +48,17 @@ public class SessionInfo extends BaseEntity {
     @Column(name="BRANCH_ID")
     private Long branchId;
 
-    @Column(name="ENTERED_BY")
-    private Long enteredBy ;
+    @Column(name = "ENTERED_BY")
+    private Long createdBy;
 
-    @Column(name="ENTRY_TIMESTAMP")
-    private LocalDateTime entryTimestamp;
+    @Column(name = "UPDATED_BY")
+    private Long modifiedBy;
 
-    @Column(name="UPDATED_BY")
-    private Long updatedBy ;
+    @Column(name = "ENTRY_TIMESTAMP")
+    private LocalDateTime createdAt;
 
-    @Column(name="UPDATE_TIMESTAMP" , nullable=true)
-    private LocalDateTime updateTimestap;
+    @Column(name = "UPDATE_TIMESTAMP")
+    private LocalDateTime modifiedAt;
 
     @Column(name="FLEX_FIELD1")
     private String flex1  ;
@@ -79,25 +78,21 @@ public class SessionInfo extends BaseEntity {
     @Transient
     private boolean active;
 
-    @Builder
-    public SessionInfo(String sessionName, LocalDate startDate, LocalDate endDate, String visualId, String shortCode, Long branchId, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestap, String flex1, String flex2, String flex3, int activeStatus, String remarks, boolean active) {
-        this.sessionName = sessionName;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.visualId = visualId;
-        this.shortCode = shortCode;
-        this.branchId = branchId;
-        this.enteredBy = enteredBy;
-        this.entryTimestamp = entryTimestamp;
-        this.updatedBy = updatedBy;
-        this.updateTimestap = updateTimestap;
-        this.flex1 = flex1;
-        this.flex2 = flex2;
-        this.flex3 = flex3;
-        this.activeStatus = activeStatus;
-        this.remarks = remarks;
-        this.active = active;
-    }
+//    @Builder
+//    public SessionInfo(String sessionName, LocalDate startDate, LocalDate endDate, String visualId, String shortCode, Long branchId, Long enteredBy, LocalDateTime entryTimestamp, Long updatedBy, LocalDateTime updateTimestap, String flex1, String flex2, String flex3, int activeStatus, String remarks, boolean active) {
+//        this.sessionName = sessionName;
+//        this.startDate = startDate;
+//        this.endDate = endDate;
+//        this.visualId = visualId;
+//        this.shortCode = shortCode;
+//        this.branchId = branchId;
+//        this.flex1 = flex1;
+//        this.flex2 = flex2;
+//        this.flex3 = flex3;
+//        this.activeStatus = activeStatus;
+//        this.remarks = remarks;
+//        this.active = active;
+//    }
 
 
 

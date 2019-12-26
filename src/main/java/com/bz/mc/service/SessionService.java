@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import com.bz.mc.model.setup.SessionInfo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 /**
  * User: moly
  * Date: 11/12/19
@@ -11,17 +14,10 @@ import com.bz.mc.model.setup.SessionInfo;
  */
 
 public interface SessionService {
-      
-	
-	/* this metehod used for get all active basic center list */
-	
-//	public List<SessionInfo> getModelSessionList();
-//	public int save(SessionInfo sessionInfo);
-//	public List<SessionInfo> getAllSessionByActiveStatus();
-
-
 	SessionInfo saveSession(SessionInfo sessionInfo);
 	Optional<SessionInfo> findSessionById(Long id);
-	SessionInfo getSessionInfo(Long id);
+    Optional <SessionInfo> getSessionInfo(Long id);
+    SessionInfo getSession(Long id);
+	List<SessionInfo> findSessionList();
 
 }

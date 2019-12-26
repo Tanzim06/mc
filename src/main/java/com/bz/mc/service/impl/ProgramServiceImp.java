@@ -21,7 +21,7 @@ public class ProgramServiceImp implements ProgramService {
     @Override
     public List<Program> findPrograms() {
 
-        return programRepository.findProgramByActiveStatusOrderByProgramName(Constants.ACTIVE_STATUS);
+        return programRepository.findAll();
        //return programRepository.findProgramByActiveStatusOrderByProgramName(1);
     }
 }

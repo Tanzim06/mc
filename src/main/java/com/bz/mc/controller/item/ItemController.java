@@ -44,6 +44,7 @@ public class ItemController {
     private static final String ROUTE_SAVE_ITEM = BASE_ROUTE + "/save";
     private static final String ROUTE_SAVE_PRICE = BASE_ROUTE + "/price/save";
     public static final String ROUTE_EDIT = BASE_ROUTE + "/edit/{id}";
+    public static final String ROUTE_UPDATE = BASE_ROUTE + "/price/update/{id}";
     private static final String REDIRECT = "redirect:";
 
     private Long itemId;
@@ -70,8 +71,6 @@ public class ItemController {
         ItemInfo itemInfo = prepareItem(itemForm);
         System.out.println("testyyy");
         System.out.println("id " + itemInfo.getId());
-        //batchInfo = batchInfoService.saveBatchInfo(batchInfo);
-
 
         itemInfo = itemService.saveItemInfo(itemInfo);
 
@@ -119,89 +118,33 @@ public class ItemController {
     public String editItem(Model model, @PathVariable Long id) {
         this.itemId=id;
         ItemInfo itemInfo = itemService.getItem(itemId);
-        List<ItemPriceData> priceList =itemPriceService.getItemPriceList(itemId);
-        ItemForm form= new ItemForm(itemInfo, priceList);
-        populateItemForm(model,form);
-        return "/web/pages/item/create";
-    }
-/*
-    @GetMapping(ROUTE_EDIT)
-    public String updateItem(Model model, @PathVariable("id") Long id) {
+        //List<ItemPriceData> priceList =itemPriceService.getItemPriceList(itemId);
+       // ItemForm itemForm= new ItemForm(itemInfo, priceList);
 
-        this.itemId = id;
+        ItemPriceForm itemPriceform = new ItemPriceForm();
 
-        ItemInfo itemInfo = itemService.getItem(id);
-
-        if (itemInfo.getBillFlag()== 1 && itemInfo.getInventoryFlag() == 1 ) {
-
-            itemInfo.setBill(true);
-            itemInfo.setInventory(true);
-
-        }
-
-        else if (itemInfo.getBillFlag()== 1) {
-
-            itemInfo.setBill(true);
-
-
-        }
-
-        else if (itemInfo.getInventoryFlag() == 1) {
-
-            itemInfo.setInventory(true);
-
-
-        }
-
-
-        else {
-            itemInfo.setBill(false);
-            itemInfo.setInventory(false);
-
-
-        }
-
-        List<ItemPriceData> priceList =itemPriceService.getItemPriceList(itemId);
-
-        ItemForm form= new ItemForm(itemInfo,priceList);
-        populateItemForm(model,form);
-
-       // populateModel(model, new ItemForm(itemInfo));
-
-//        populateShowPageModel(model, itemInfo);
-
-        //ItemPrice  itemPrice = itemPriceService.getItemPrice(id).get();
-
-//        ItemPrice itemPrice = new ItemPrice();
-//       // itemPrice.setItemId(itemInfo.getId());
-//        Long itemId=itemInfo.getId();
-//        ItemPriceForm form=new ItemPriceForm();
-//
-//          form.setItemId(itemId);
-//
-//        populateModelPrice(model,form);
-//
-//
-//        //itemInfo.setRemarks(form.getRemarks());
-//        System.out.println("populate successfull");
-
-        //populateShowPageModel2(model, itemPrice);
-
-       // populateModel2(model,new ItemPriceForm(itemPrice));
-
-        //System.out.print("itemid="+itemPrice.getItemId());
-
-
+        populateOtherFormData(model,itemInfo, itemPriceform);
+        //populateItemForm(model,form);
         return "/web/pages/item/create";
     }
 
-*/
+    @GetMapping(ROUTE_UPDATE)
+    public String updateItemPrice(Model model, @PathVariable Long id,RedirectAttributes redirectAttributes) {
+        ItemPrice itemPrice=itemPriceService.getPrice(id);
+        this.itemId=itemPrice.getItemId();
+        ItemInfo itemInfo = itemService.getItem(itemId);
+        //List<ItemPriceData> priceList =itemPriceService.getItemPriceList(itemId);
+        //ItemForm form= new ItemForm(itemInfo,ROUTE_EDIT priceList);
+        ItemPriceForm itemPriceform = new ItemPriceForm(itemPriceService.getPrice(id));
+        populateOtherFormData(model,itemInfo, itemPriceform);
+        model.addAttribute("mode","edit");
+        return "/web/pages/item/create";
+    }
 
 
     @GetMapping(ROUTE_SEARCH)
     public String itemList(Model model) {
         populateItemForm(model, new ItemForm());
-
         return "/web/pages/item/search";
     }
 
@@ -212,13 +155,51 @@ public class ItemController {
         List<ItemPriceData> itemPriceDataList = itemPriceService.getItemPriceSearchResult(itemName,remarks);
 
         model.addAttribute("itemPriceDataList", itemPriceDataList);
-
-
         if (itemPriceDataList.size() != 0) {
 
             return "/web/pages/item/search";
         }
         return REDIRECT + ROUTE_SEARCH;
+    }
+
+    private void populateOtherFormData(Model model,ItemInfo itemInfo,ItemPriceForm itemPriceForm){
+
+        List<ItemPriceData> priceList =itemPriceService.getItemPriceList(itemId);
+        ItemForm form= new ItemForm(itemInfo,priceList);
+
+        if (itemInfo.getBillFlag()== 1 && itemInfo.getInventoryFlag() ==1 ) {
+            form.setBill(true);
+            form.setInventory(true);
+        }
+        else if (itemInfo.getBillFlag()== 1) {
+            form.setBill(true);
+        }
+        else if (itemInfo.getInventoryFlag() ==1 ) {
+            form.setInventory(true);
+        }
+        else {
+            form.setBill(false);
+            form.setInventory(false);
+        }
+
+
+        if (itemInfo.getActiveStatus()== 1 ) {
+            form.setActive(true);
+
+        }
+        else{
+            form.setActive(false);
+        }
+
+
+        form.setRemarks(itemInfo.getRemarks());
+        form.setItemPriceForm(itemPriceForm);
+
+        //form.setTabId(currentTab);
+        if(itemInfo.getId()!=null || itemId !=null){
+            ItemInfo i=itemService.getItem(itemId);
+        }
+        populateItemForm(model,form);
     }
 
 
@@ -239,8 +220,6 @@ public class ItemController {
             itemInfo = ItemInfo.builder().activeStatus(Constants.ACTIVE_STATUS).build();
             System.out.println("2");
             //.orgId(sessionManagementService.getCurrentOrganization().getId())
-
-
 //                  .createdBy(sessionManagementService.getAuthenticatedUser().getId())
 //                   .updatedBy(sessionManagementService.getAuthenticatedUser().getId())
 //                   .build();
@@ -250,51 +229,45 @@ public class ItemController {
         System.out.println("4");
         itemInfo.setItemName(itemForm.getItemName());
         System.out.println("5");
-//        itemInfo.setBillFlag(itemForm.getBillFlag());
+        itemInfo.setBillFlag(itemForm.getBillFlag());
         System.out.println("6");
-//        itemInfo.setBill(itemForm.isBill());
+        itemInfo.setBill(itemForm.isBill());
         System.out.println("7");
-//        itemInfo.setInventoryFlag(itemForm.getInventoryFlag());
+        itemInfo.setInventoryFlag(itemForm.getInventoryFlag());
         System.out.println("8");
-//        itemInfo.setInventory(itemForm.isInventory());
+        itemInfo.setInventory(itemForm.isInventory());
         System.out.println("9");
-//        itemInfo.setActiveStatus(itemForm.getActiveStatus());
+        itemInfo.setActiveStatus(itemForm.getActiveStatus());
 //        System.out.println("10");
 
-//        itemInfo.setActive(itemForm.isActive());
+        itemInfo.setActive(itemForm.isActive());
 //        System.out.println("10");
         itemInfo.setRemarks(itemForm.getRemarks());
         System.out.println("10");
 
         if (itemForm.isBill() == true && itemForm.isInventory() == true ) {
-
             itemInfo.setBillFlag(1);
             itemInfo.setInventoryFlag(1);
-
         }
-
         else if (itemForm.isBill() == true) {
-
             itemInfo.setBillFlag(1);
-
-
         }
-
         else if (itemForm.isInventory() == true) {
-
             itemInfo.setInventoryFlag(1);
-
-
         }
-
-
         else {
             itemInfo.setBillFlag(0);
             itemInfo.setInventoryFlag(0);
-
         }
 
-        itemInfo.setActiveStatus(1);
+        if (itemForm.isActive()==true ) {
+            itemInfo.setActiveStatus(1);
+        }
+        else{
+            itemInfo.setActiveStatus(0);
+        }
+
+        //itemInfo.setActiveStatus(1);
 
         return itemInfo;
 
@@ -308,11 +281,6 @@ public class ItemController {
         model.addAttribute("itemForm", itemForm);
         model.addAttribute("itemPriceForm", itemForm.getItemPriceForm());
         model.addAttribute("itemPriceList",itemForm.getItemPriceFormList());
-    }
-
-    private void populateShowPageModel(Model model, ItemInfo itemInfo) {
-
-
     }
 
 
@@ -333,9 +301,15 @@ public class ItemController {
         System.out.println("6");
         itemPrice.setCurrencyId(itemPriceForm.getCurrencyId());
         System.out.println("7");
-        itemPrice.setEffectiveFrom(itemPriceForm.getEffectiveFrom());
-        System.out.println("EffectiveFrom="+itemPriceForm.getEffectiveFrom());
-        itemPrice.setEffectiveTo(itemPriceForm.getEffectiveTo());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate effectiveFrom = LocalDate.parse(itemPriceForm.getEffectiveFrom(), formatter);
+        itemPrice.setEffectiveFrom(effectiveFrom);
+
+        DateTimeFormatter formatterTo = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate effectiveTo = LocalDate.parse(itemPriceForm.getEffectiveTo(), formatter);
+        itemPrice.setEffectiveTo(effectiveTo);
+
         System.out.println("9");
         itemPrice.setActiveStatus(itemPriceForm.getActiveStatus());
         System.out.println("10");
@@ -343,7 +317,15 @@ public class ItemController {
         System.out.println("10");
         itemPrice.setRemarks(itemPriceForm.getRemarks());
         System.out.println("10");
-        itemPrice.setActiveStatus(itemPriceForm.getActiveStatus());
+
+        if (itemPriceForm.isActive()==true ) {
+            itemPrice.setActiveStatus(1);
+        }
+        else{
+            itemPrice.setActiveStatus(0);
+        }
+
+        //itemPrice.setActiveStatus(1);
         itemPrice.setModifiedBy(sessionManagementService.getAuthenticatedUser().getId());
         return itemPrice;
     }
@@ -352,210 +334,6 @@ public class ItemController {
         //model.addAttribute("programs", programService.findPrograms());
         model.addAttribute("itemPriceForm", itemPriceForm);
     }
-
-    private void populateShowPageModelPrice(Model model, ItemPrice itemPrice) {
-        model.addAttribute("itemPriceForm", itemPrice);
-
-    }
-
-
-
-
-
-
-//    @GetMapping(ROUTE_EDIT_PRICE)
-//    public String editPrice(Model model, @PathVariable Long id) {
-//        itemId = id;
-//        //BatchInfo batchInfo = batchInfoService.getBatch(id);
-////        ItemPrice itemPrice = itemPriceService.getPrice(id);
-////        //System..print("okk");
-////
-////        populateModel2(model, new ItemPriceForm(itemPrice));
-//
-//
-//        ItemPrice  itemPrice = itemPriceService.getItemPrice(id).get();
-//
-//        populateShowPageModelPrice(model, itemPrice);
-//
-//        ItemInfo itemInfo = itemService.getItem(id).get();
-//
-//        model.addAttribute("itemPriceList",itemPriceService.getItemPriceListByItemId(itemPrice.getItemId()));
-//
-//        if (itemInfo.getBillFlag()== 1 && itemInfo.getInventoryFlag() == 1 ) {
-//
-//            itemInfo.setBill(true);
-//            itemInfo.setInventory(true);
-//        }
-//
-//        else if (itemInfo.getBillFlag()== 1) {
-//
-//            itemInfo.setBill(true);
-//        }
-//
-//        else if (itemInfo.getInventoryFlag() == 1) {
-//
-//            itemInfo.setInventory(true);
-//
-//
-//        }
-//
-//
-//        else {
-//            itemInfo.setBill(false);
-//            itemInfo.setInventory(false);
-//
-//
-//        }
-//
-//
-//        // populateModel(model, new ItemForm(itemInfo));
-//
-//        populateShowPageModel(model, itemInfo);
-//        //System.out.print("okk1");
-//
-//        // model.addAttribute("programs", programService.findPrograms());
-//        //BatchInfo batchInfo = batchInfoService.getBatchInfo(id).get();
-//
-//        //populateShowPageModel(model, batchInfo);
-//
-//        return "/web/pages/item/create";
-//    }
-
-
-//
-//    @GetMapping(ROUTE_EDIT)
-//    public String editItemPrice(Model model, @PathVariable Long id) {
-//       itemId = id;
-//
-//        ItemInfo itemInfo = itemService.getItem(id).get();
-//
-//
-//        if (itemInfo.getBillFlag()== 1 && itemInfo.getInventoryFlag() == 1 ) {
-//
-//            itemInfo.setBill(true);
-//            itemInfo.setInventory(true);
-//            System.out.println("1");
-//        }
-//
-//        else if (itemInfo.getBillFlag()== 1) {
-//
-//            itemInfo.setBill(true);
-//
-//            System.out.println("2");
-//        }
-//
-//        else if (itemInfo.getInventoryFlag() == 1) {
-//
-//            itemInfo.setInventory(true);
-//
-//            System.out.println("3");
-//        }
-//
-//
-//        else {
-//            itemInfo.setBill(false);
-//            itemInfo.setInventory(false);
-//
-//
-//        }
-//
-//        //List<ItemPriceData> itemPriceDataList = itemPriceService.getItemPriceSearchResult(itemName,remarks);
-//        List<ItemPriceData> itemPriceList= itemPriceService.getItemPriceEdit(id);
-//
-//        System.out.println("itemPrice list+"+itemPriceList.size());
-//
-//        ItemForm form = new ItemForm(itemInfo,itemPriceList);
-//         //System.out.println(" size"+form.getItemPriceForm().size());
-//
-//        //System.out.println("price +"+form.getItemPriceForm().getItemRate());
-//        populateItemForm(model, form);
-//
-//        //itemInfo.setRemarks(form.getRemarks());
-//
-//
-//        return "/web/pages/item/create";
-//    }
-
-
-
-
-
-
-//    @GetMapping(ROUTE_UPDATE_PRICE)
-//    public String updatePrice(Model model, @PathVariable("id") Long id) {
-//
-//        // model.addAttribute("programs", programService.findPrograms());
-//        //populateModel(model, new ItemForm());
-//
-////       ItemInfo itemInfo = new ItemInfo();
-////        populateShowPageModel(model, itemInfo);
-//
-//
-//
-////        ArrayList<ItemPrice> itemPriceList = itemPriceService.getAllActivePrice();
-////        model.addAttribute("itemPriceList", itemPriceList);
-//
-//        //System.out.println("rate="+itemPriceList.size());
-//
-//
-//        //populateModel(model, new ItemForm());
-//
-//        ItemPrice itemPrice = itemPriceService.getItemPrice(id).get();
-//
-//        //populateShowPageModelPrice(model, itemPrice);
-//
-//
-//
-//        ItemInfo itemInfo = itemService.getItem(id).get();
-//
-//        model.addAttribute("itemPriceList",itemPriceService.getItemPriceListByItemId(itemPrice.getItemId()));
-//
-//        if (itemInfo.getBillFlag()== 1 && itemInfo.getInventoryFlag() == 1 ) {
-//
-//            itemInfo.setBill(true);
-//            itemInfo.setInventory(true);
-//         System.out.println("1");
-//        }
-//
-//        else if (itemInfo.getBillFlag()== 1) {
-//
-//            itemInfo.setBill(true);
-//
-//            System.out.println("2");
-//        }
-//
-//        else if (itemInfo.getInventoryFlag() == 1) {
-//
-//            itemInfo.setInventory(true);
-//
-//            System.out.println("3");
-//        }
-//
-//
-//        else {
-//            itemInfo.setBill(false);
-//            itemInfo.setInventory(false);
-//
-//
-//        }
-//
-//        ItemForm itemForm=new ItemForm(itemInfo);
-//        populateItemForm(model,itemForm);
-//
-//
-//
-//        // populateModel(model, new ItemForm(itemInfo));
-//
-//        //populateShowPageModel(model, itemInfo);
-//
-//        return "/web/pages/item/create";
-//
-//    }
-
-
-
-
-
 
 
 }

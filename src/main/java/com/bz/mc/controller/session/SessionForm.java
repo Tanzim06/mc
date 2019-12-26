@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * user: ashraf
@@ -20,25 +21,38 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class SessionForm {
 
-    private Long sessionId;
+    private Long id;
     private String sessionName;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDate startDate;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDate endDate;
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private String startDate;
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private String endDate;
     private String remarks;
     private String shortCode;
 
 
+//    public SessionForm(LocalDate startDate, LocalDate endDate) {
+//        this.startDate = startDate;
+//        this.endDate = endDate;
+//    }
+
     public SessionForm(SessionInfo sessionInfo) {
-        this.sessionId = sessionInfo.getSessionId();
+        this.id = sessionInfo.getId();
         this.sessionName = sessionInfo.getSessionName();
         this.remarks = sessionInfo.getRemarks();
         this.shortCode = sessionInfo.getShortCode();
+//        this.startDate = sessionInfo.getStartDate();
+//        this.endDate = sessionInfo.getEndDate();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.startDate = formatter.format(sessionInfo.getStartDate());
+
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.endDate = formatter.format(sessionInfo.getEndDate());
     }
 
 
     public boolean isPersisted() {
-        return sessionId != null;
+        return id != null;
     }
 }

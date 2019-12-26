@@ -25,9 +25,9 @@ public class QItemInfo extends EntityPathBase<ItemInfo> {
 
     public final NumberPath<Integer> billFlag = createNumber("billFlag", Integer.class);
 
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
 
-    public final DateTimePath<java.time.LocalDateTime> entryTimestamp = createDateTime("entryTimestamp", java.time.LocalDateTime.class);
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
 
     public final StringPath flexField1 = createString("flexField1");
 
@@ -42,11 +42,11 @@ public class QItemInfo extends EntityPathBase<ItemInfo> {
 
     public final StringPath itemName = createString("itemName");
 
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
+
     public final StringPath remarks = createString("remarks");
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestamp = createDateTime("updateTimestamp", java.time.LocalDateTime.class);
 
     public QItemInfo(String variable) {
         super(ItemInfo.class, forVariable(variable));

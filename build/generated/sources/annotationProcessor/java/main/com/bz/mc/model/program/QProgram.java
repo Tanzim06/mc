@@ -27,11 +27,11 @@ public class QProgram extends EntityPathBase<Program> {
 
     public final NumberPath<Integer> createAutoSegment = createNumber("createAutoSegment", Integer.class);
 
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
+
     public final NumberPath<Long> deptId = createNumber("deptId", Long.class);
-
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> entryTimeStamp = createDateTime("entryTimeStamp", java.time.LocalDateTime.class);
 
     public final StringPath flexField1 = createString("flexField1");
 
@@ -42,11 +42,13 @@ public class QProgram extends EntityPathBase<Program> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
+
     public final NumberPath<Long> progarmTypeId = createNumber("progarmTypeId", Long.class);
 
     public final StringPath programDesc = createString("programDesc");
-
-    public final NumberPath<Long> programId = createNumber("programId", Long.class);
 
     public final StringPath programName = createString("programName");
 
@@ -55,10 +57,6 @@ public class QProgram extends EntityPathBase<Program> {
     public final NumberPath<Integer> segmentNo = createNumber("segmentNo", Integer.class);
 
     public final StringPath shortCode = createString("shortCode");
-
-    public final NumberPath<Long> updateBy = createNumber("updateBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimeStamp = createDateTime("updateTimeStamp", java.time.LocalDateTime.class);
 
     public final StringPath userProgarmNo = createString("userProgarmNo");
 

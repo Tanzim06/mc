@@ -14,15 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name = "ITEM_INFO")
-public class ItemInfo extends BaseEntity {
-
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name="ITEM_ID")
-//    private Long itemId;
-
-
+public class ItemInfo extends BaseEntity implements Auditable {
 
     @Column(name="ITEM_NAME")
     private String itemName;
@@ -36,8 +28,6 @@ public class ItemInfo extends BaseEntity {
     @Column(name="ACTIVE_STATUS")
     private int activeStatus;
 
-
-
     @Transient
     private boolean bill;
 
@@ -50,26 +40,23 @@ public class ItemInfo extends BaseEntity {
     @Transient
     private String sActive;
 
-
-
-
     @Column(name="REMARKS")
     private String remarks;
 
     @Column(name="ENTERED_BY")
-    private Long enteredBy;
+    private Long createdBy;
 
     @DateTimeFormat(pattern ="yyyy-MM-dd" )
     @Column(name="ENTRY_TIMESTAMP")
-    private LocalDateTime entryTimestamp;
+    private LocalDateTime createdAt;
 
 
     @Column(name="UPDATED_BY")
-    private Long updatedBy;
+    private Long modifiedBy;
 
     @DateTimeFormat(pattern ="yyyy-MM-dd" )
     @Column(name="UPDATE_TIMESTAMP")
-    private LocalDateTime updateTimestamp;
+    private LocalDateTime modifiedAt;
 
     @Column(name="FLEX_FIELD1")
     private String flexField1;
@@ -93,10 +80,10 @@ public class ItemInfo extends BaseEntity {
         this.active = active;
         this.sActive = sActive;
         this.remarks = remarks;
-        this.enteredBy = enteredBy;
-        this.entryTimestamp = entryTimestamp;
-        this.updatedBy = updatedBy;
-        this.updateTimestamp = updateTimestamp;
+        this.createdBy = createdBy;
+        this.createdAt = createdAt;
+        this.modifiedBy = modifiedBy;
+        this.modifiedAt = modifiedAt;
         this.flexField1 = flexField1;
         this.flexField2 = flexField2;
         this.flexField3 = flexField3;

@@ -25,11 +25,11 @@ public class QSessionInfo extends EntityPathBase<SessionInfo> {
 
     public final NumberPath<Long> branchId = createNumber("branchId", Long.class);
 
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
+
     public final DatePath<java.time.LocalDate> endDate = createDate("endDate", java.time.LocalDate.class);
-
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> entryTimestamp = createDateTime("entryTimestamp", java.time.LocalDateTime.class);
 
     public final StringPath flex1 = createString("flex1");
 
@@ -40,19 +40,17 @@ public class QSessionInfo extends EntityPathBase<SessionInfo> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final StringPath remarks = createString("remarks");
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
 
-    public final NumberPath<Long> sessionId = createNumber("sessionId", Long.class);
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
+
+    public final StringPath remarks = createString("remarks");
 
     public final StringPath sessionName = createString("sessionName");
 
     public final StringPath shortCode = createString("shortCode");
 
     public final DatePath<java.time.LocalDate> startDate = createDate("startDate", java.time.LocalDate.class);
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestap = createDateTime("updateTimestap", java.time.LocalDateTime.class);
 
     public final StringPath visualId = createString("visualId");
 

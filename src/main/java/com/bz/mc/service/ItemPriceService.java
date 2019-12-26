@@ -24,8 +24,7 @@ public interface ItemPriceService {
 
     public List<ItemPriceData>  getItemPriceSearchResult(String itemName,String remarks);
 
-    public List<ItemPriceData> getItemPriceEdit(Long id);
-
+    //public List<ItemPriceData> getItemPriceEdit(Long id);
 
     ItemPrice getPrice(Long id);
 

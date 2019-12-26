@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder(builderClassName = "Builder")
 @Entity
 @Table(name = "ITEM_PRICE")
-public class ItemPrice  extends BaseEntity {
+public class ItemPrice  extends BaseEntity  implements Auditable {
 
     @Column(name="ITEM_ID")
     private Long itemId;

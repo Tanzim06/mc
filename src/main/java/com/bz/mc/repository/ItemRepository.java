@@ -15,7 +15,5 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<ItemInfo,Long> {
 
 
-
-
-
+    public List<ItemInfo> findAllItemByActiveStatus(int activeStatus);
 }

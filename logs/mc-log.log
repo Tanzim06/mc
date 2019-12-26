@@ -309,3 +309,79 @@
 [McApplication] 2019-12-22 19:30:39 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-22 19:51:48 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2019-12-22 20:12:53 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 10:38:50 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 10:45:19 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 11:20:41 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 11:54:25 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 12:03:19 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 12:04:20 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 12:09:41 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 12:42:16 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 12:43:30 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 12:55:37 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 12:56:46 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 12:58:49 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 12:59:18 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 13:12:27 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 13:13:23 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 14:10:48 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 14:10:49 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 14:25:42 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 14:30:41 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 14:32:13 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 15:10:23 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 15:10:24 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 15:12:50 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 15:42:55 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 16:01:09 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 16:19:27 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 16:24:52 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 16:57:22 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 16:59:49 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2019-12-23 17:17:04 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 17:18:01 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.time.format.DateTimeParseException: Text '' could not be parsed at index 0
+[McApplication] 2019-12-23 17:18:23 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2019-12-23 17:34:40 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 17:35:44 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-23 17:46:52 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-23 18:45:54 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 18:47:30 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2019-12-23 19:56:41 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 19:56:51 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 19:56:57 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 19:57:22 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 20:20:42 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-23 20:29:59 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 10:00:29 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 10:24:40 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 10:47:49 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 11:02:47 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 11:22:33 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 12:22:55 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 12:45:22 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 13:00:02 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 13:19:22 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 13:53:40 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 14:39:41 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 15:02:43 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 15:34:09 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 15:54:42 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-24 15:56:50 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "{id}"
+[McApplication] 2019-12-24 16:48:51 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 10:51:43 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 11:06:01 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 12:40:31 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 12:40:55 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+[McApplication] 2019-12-26 12:53:26 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 12:55:51 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: The database returned no natively generated identity value; nested exception is org.hibernate.HibernateException: The database returned no natively generated identity value
+[McApplication] 2019-12-26 13:15:04 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 13:16:03 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [PRIMARY]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[McApplication] 2019-12-26 13:42:35 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 13:42:38 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 15:59:22 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 16:02:30 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+[McApplication] 2019-12-26 16:19:47 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 17:18:29 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 17:54:26 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 17:55:25 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2019-12-26 17:55:26 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed

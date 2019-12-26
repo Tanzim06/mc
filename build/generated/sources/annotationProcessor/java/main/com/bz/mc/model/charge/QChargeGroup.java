@@ -19,23 +19,30 @@ public class QChargeGroup extends EntityPathBase<ChargeGroup> {
 
     public static final QChargeGroup chargeGroup = new QChargeGroup("chargeGroup");
 
+    public final com.bz.mc.model.QBaseEntity _super = new com.bz.mc.model.QBaseEntity(this);
+
     public final NumberPath<Integer> activeStatus = createNumber("activeStatus", Integer.class);
 
     public final NumberPath<Integer> chargeCycle = createNumber("chargeCycle", Integer.class);
 
-    public final NumberPath<Long> chargeGroupId = createNumber("chargeGroupId", Long.class);
-
     public final StringPath chargeGroupName = createString("chargeGroupName");
 
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
 
-    public final DateTimePath<java.time.LocalDateTime> entryTimestamp = createDateTime("entryTimestamp", java.time.LocalDateTime.class);
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
 
     public final StringPath flexField1 = createString("flexField1");
 
     public final StringPath flexField2 = createString("flexField2");
 
     public final StringPath flexField3 = createString("flexField3");
+
+    //inherited
+    public final NumberPath<Long> id = _super.id;
+
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
 
     public final NumberPath<Integer> paymentCycle = createNumber("paymentCycle", Integer.class);
 
@@ -48,10 +55,6 @@ public class QChargeGroup extends EntityPathBase<ChargeGroup> {
     public final NumberPath<Long> sessionId = createNumber("sessionId", Long.class);
 
     public final StringPath shortCode = createString("shortCode");
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestamp = createDateTime("updateTimestamp", java.time.LocalDateTime.class);
 
     public QChargeGroup(String variable) {
         super(ChargeGroup.class, forVariable(variable));

@@ -17,6 +17,7 @@ public interface ItemService {
     ItemInfo getItem(Long id);
 
     Optional<ItemInfo> findItemById(Long id);
+    public List<ItemInfo> getAllActiveItem();
 
 //    List<ItemPriceData> findItems(Long itemId);
     //List<ItemInfo> findItems();

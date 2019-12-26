@@ -1,11 +1,9 @@
 package com.bz.mc.model.program;
 
 
+import com.bz.mc.model.Auditable;
 import com.bz.mc.model.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,12 +15,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder(builderClassName = "Builder")
 @Entity
 @Table(name="PROGRAM_INFO")
-public class Program extends BaseEntity {
-
-    @Column(name="PROGRAM_ID")
-    private Long programId;
+public class Program extends BaseEntity implements Auditable {
 
     @Column(name="BRANCH_ID")
     private Long branchId;
@@ -58,16 +54,16 @@ public class Program extends BaseEntity {
     private String remarks;
 
     @Column(name="ENTERED_BY")
-    private Long enteredBy;
+    private Long createdBy;
 
     @Column(name="ENTRY_TIMESTAMP")
-    private LocalDateTime entryTimeStamp;
+    private LocalDateTime createdAt;
 
     @Column(name="UPDATE_BY")
-    private Long updateBy;
+    private Long modifiedBy;
 
     @Column(name="UPDATE_TIMESTAMP")
-    private LocalDateTime updateTimeStamp;
+    private LocalDateTime modifiedAt;
 
     @Column(name="FLEX_FIELD1")
     private String flexField1;
@@ -81,5 +77,25 @@ public class Program extends BaseEntity {
     @Transient
     private boolean active;
 
-
+    public Program(Long branchId, Long deptId, String programName, String programDesc, String userProgarmNo, String shortCode, Long progarmTypeId, int segmentNo, int createAutoSegment, int activeStatus, String remarks, Long createdBy, LocalDateTime createdAt, Long modifiedBy, LocalDateTime modifiedAt, String flexField1, String flexField2, String flexField3, boolean active) {
+        this.branchId = branchId;
+        this.deptId = deptId;
+        this.programName = programName;
+        this.programDesc = programDesc;
+        this.userProgarmNo = userProgarmNo;
+        this.shortCode = shortCode;
+        this.progarmTypeId = progarmTypeId;
+        this.segmentNo = segmentNo;
+        this.createAutoSegment = createAutoSegment;
+        this.activeStatus = activeStatus;
+        this.remarks = remarks;
+        this.createdBy = createdBy;
+        this.createdAt = createdAt;
+        this.modifiedBy = modifiedBy;
+        this.modifiedAt = modifiedAt;
+        this.flexField1 = flexField1;
+        this.flexField2 = flexField2;
+        this.flexField3 = flexField3;
+        this.active = active;
+    }
 }

@@ -1,11 +1,6 @@
 package com.bz.mc.controller.session;
 
-
 import com.bz.mc.controller.WebLinkFactory;
-import com.bz.mc.controller.batch.BatchInfoForm;
-import com.bz.mc.facade.SessionManagementService;
-import com.bz.mc.model.batch.BatchInfo;
-import com.bz.mc.model.setup.QSessionInfo;
 import com.bz.mc.model.setup.SessionInfo;
 import com.bz.mc.service.SessionService;
 import com.bz.mc.util.Constants;
@@ -16,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-import static com.bz.mc.model.batch.QBatchInfo.batchInfo;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 /**
  * User: Moly
@@ -33,26 +28,36 @@ public class SessionController {
 
     @NonNull private final SessionFormValidator sessionFormValidator;
     @NonNull private final SessionService  sessionService;
-    @NonNull private final SessionManagementService sessionManagementService;
     @NonNull private final WebLinkFactory webLinkFactory;
 
     private static final String BASE_ROUTE = "/session";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_LIST = BASE_ROUTE + "/list";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
-    public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
+    public static final String ROUTE_UPDATE = BASE_ROUTE + "/update/{id}";
     private static final String REDIRECT = "redirect:";
 
     @GetMapping(ROUTE_CREATE)
     public String createSession(Model model) {
         populateModel(model, new SessionForm());
+
+        return "/web/pages/session/create";
+    }
+
+    @GetMapping(ROUTE_UPDATE)
+    public String updateSession(Model model, @PathVariable Long id, SessionForm sessionForm) {
+        SessionInfo sessionInfo = sessionService.getSession(id);
+        populateModel(model, new SessionForm(sessionInfo));
+
         return "/web/pages/session/create";
     }
 
     @GetMapping(ROUTE_LIST)
-    public String createSessionList(Model model) {
-        populateModel(model, new SessionForm());
-        return "/web/pages/session/list";
+    public String getSessionList(Model model) {
+          List<SessionInfo> sessionlist = sessionService.findSessionList();
+          model.addAttribute("sessionlist", sessionlist);
+
+          return "/web/pages/session/list";
     }
 
     private void populateModel(Model model, SessionForm sessionForm) {
@@ -66,38 +71,36 @@ public class SessionController {
             populateModel(model, sessionForm);
             return "/web/pages/session/create";
         }
-
         SessionInfo sessionInfo = getSessionInfo(sessionForm);
         sessionInfo = sessionService.saveSession(sessionInfo);
 
-        return REDIRECT + webLinkFactory.showSessionUrl(sessionInfo);
-
-    }
-
-
+        return REDIRECT + webLinkFactory.updateSessionUrl(sessionInfo);
+}
 
     private SessionInfo getSessionInfo(SessionForm sessionForm) {
-            SessionInfo sessionInfo ;
+        SessionInfo sessionInfo ;
         if (sessionForm.isPersisted()) {
-            sessionInfo= sessionService.getSessionInfo(sessionForm.getSessionId());
+            sessionInfo= sessionService.getSessionInfo(sessionForm.getId()).get();
         } else {
             sessionInfo = SessionInfo.builder()
-
-//                    .orgId(sessionManagementService.getCurrentOrganization().getId())
-                    .activeStatus(Constants.ACTIVE_STATUS)
-//                    .createdBy(sessionManagementService.getAuthenticatedUser().getId())
-//                    .updatedBy(sessionManagementService.getAuthenticatedUser().getId())
-                    .build();
+                     .activeStatus(Constants.ACTIVE_STATUS)
+                     .build();
         }
-
-        sessionInfo.setSessionId(sessionForm.getSessionId());
         sessionInfo.setSessionName(sessionForm.getSessionName());
-        sessionInfo.setStartDate(sessionForm.getStartDate());
-        sessionInfo.setEndDate(sessionForm.getEndDate());
+//        sessionInfo.setStartDate(sessionForm.getStartDate());
+//        sessionInfo.setEndDate(sessionForm.getEndDate());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate startDate = LocalDate.parse(sessionForm.getStartDate(), formatter);
+        sessionInfo.setStartDate(startDate);
+
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate endDate = LocalDate.parse(sessionForm.getEndDate(), formatters);
+        sessionInfo.setEndDate(endDate);
+
         sessionInfo.setRemarks(sessionForm.getRemarks());
         return sessionInfo;
 
     }
-
 
 }

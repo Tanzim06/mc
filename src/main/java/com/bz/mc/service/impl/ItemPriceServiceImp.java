@@ -44,6 +44,12 @@ public class ItemPriceServiceImp implements ItemPriceService {
     }
 
     @Override
+    public ItemPrice getPrice(Long id) {
+       // return findItemPriceById(id).orElseThrow(NotFoundException::new);
+        return itemPriceRepository.findById(id).get();
+    }
+
+    @Override
     public ArrayList<ItemPrice> getAllActivePrice() {
         return (ArrayList<ItemPrice>) itemPriceRepository.findAll();
     }
@@ -58,13 +64,10 @@ public class ItemPriceServiceImp implements ItemPriceService {
         return  itemPriceRepository.findItemPrice(itemName,remarks) ;
     }
 
-    @Override
-    public List<ItemPriceData> getItemPriceEdit(Long id) {
-        return itemPriceRepository.findItemPriceEdit(id);
-    }
+    //@Override
+   // public List<ItemPriceData> getItemPriceEdit(Long id) {
+       // return itemPriceRepository.findItemPriceEdit(id);
+   // }
 
-    @Override
-    public ItemPrice getPrice(Long id) {
-        return findItemPriceById(id).orElseThrow(NotFoundException::new);
-    }
+
 }
