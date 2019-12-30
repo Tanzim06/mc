@@ -33,8 +33,8 @@
 
 
             <div class="row">
-                <form class="needs-validation" th:object="${chargeForm}"
-                      novalidate>
+                <form class="needs-validation"th:action="@{/charge/list}"
+                      method="post"   novalidate>
 
                     <div class="row">
 
@@ -49,7 +49,7 @@
 
                         <div class="col-3">
                             <div class="form-group">
-                                <label class=" mb-1">Charge Group Name</label> <input
+                                <label class=" mb-1">Charge Group</label> <input
                                     id="chargeGroupName" type="text" class="form-control"
                                     name="chargeGroupName" placeholder="group Name">
                             </div>
@@ -87,7 +87,7 @@
                             <input type="submit" value="Search" id="searchBtn"
                                    class="btn btn-primary btn-md" style="margin-top: 24px;">
                             <a style="margin-top: 24px;" class="btn btn-success"
-                               th:href="@{/chargeGroupSearchController/search/init}">Refresh</a>
+                               th:href="@{/charge/search}">Refresh</a>
 
 
                         </div>
@@ -112,14 +112,13 @@
                             <thead>
 
                             <tr>
-                                <th>Charge group id</th>
-                                <th>item charge id</th>
-                                <th>item id</th>
-                                <th>item name</th>
+<!--                                <th>Charge group id</th>-->
+<!--                                <th>item charge id</th>-->
+<!--                                <th>item id</th>-->
+
                                 <th>Charge group Name</th>
-
+                                <th>item name</th>
                                 <th>Rate</th>
-
                                 <th>Currency</th>
 
                                 <th>Active</th>
@@ -130,26 +129,27 @@
                             </thead>
                             <tbody>
 
-                            <tr th:each="cList:${chargeGroupList}">
+                            <tr th:each="cList:${allchargeGroupList}">
 
-                                <td><span th:text="${cList.chargeGroupId}"></span></td>
-                                <td><span th:text="${cList.chargeItemId}"></span></td>
+<!--                                <td><span th:text="${cList.chargeGroupId}"></span></td>-->
+<!--                                <td><span th:text="${cList.chargeItemId}"></span></td>-->
 
-                                <td><span th:text="${cList.itemId}"></span></td>
+<!--                                <td><span th:text="${cList.itemId}"></span></td>-->
                                 <!-- <td><span  th:text="${cList.itemName}"></span></td>-->
-                                <td><span th:value="${cList.itemId}" th:utext="${cList.itemName}" /></span></td>
                                 <td><span th:text="${cList.chargeGroupName}"></span></td>
+                                <td><span th:value="${cList.itemName}"  /></span></td>
+
                                 <td><span th:text="${cList.itemRate}"></span></td>
 
                                 <td><span th:text="${cList.currencyId}"></span></td>
 
                                 <td class="text-center"><input type="checkbox"
-                                                               id="defaultChecked9" class="form-control"
+                                                               id="defaultChecked9"
                                                                name="activeStatus" th:checked="${cList.activeStatus}==1"
                                                                onclick="return failer"></td>
 
                                 <td><a class="btn btn-info btn-md"
-                                       th:href="@{'/chargeGroupController/update/'+${cList.chargeItemId}}">Edit</a></td>
+                                       th:href="@{/charge/update/{id}(id=${cList.id})}">Edit</a></td>
 
 
                             </tr>

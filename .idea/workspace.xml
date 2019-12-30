@@ -8,74 +8,37 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/ChargeForm.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemPriceForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemPriceForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ItemPriceData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ItemPriceData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/charge/ChargeGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/charge/ChargeGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/charge/QChargeGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/charge/QChargeGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo$ItemInfoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo$ItemInfoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemPrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/ItemPrice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/item/QItemInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/program/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/program/QProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/program/QProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/QSessionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/QSessionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/SessionInfo$SessionInfoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/SessionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/setup/SessionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ItemPriceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ItemPriceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ItemRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ItemPriceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ItemPriceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/SessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/SessionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemPriceServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemPriceServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ProgramServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ProgramServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/SessionServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/SessionServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/program/QProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/program/QProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QSessionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QSessionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/shedule/ChargeSheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/shedule/ChargeSheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ChargeGroupData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ChargeGroupData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ChargeItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ChargeItemRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ChargeItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ChargeItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeItemServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeItemServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/shedule/create.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mc-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mc-log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/chargeGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemPriceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemPriceForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/session/SessionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/session/SessionForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ItemPriceData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ItemPriceData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/charge/ChargeGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/charge/ChargeGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/item/ItemPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/setup/SessionInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ItemPriceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ItemPriceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/SessionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ItemPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ItemPriceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/SessionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ItemPriceServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ItemPriceServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ItemServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ItemServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ProgramServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ProgramServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/SessionServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/shedule/ChargeSheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/shedule/ChargeSheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ChargeGroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ChargeGroupData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ChargeItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ChargeItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ChargeItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ChargeItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ChargeItemServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ChargeItemServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,9 +110,9 @@
         <option value="Tag Library Descriptor" />
         <option value="spring-beans.schema" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -173,7 +136,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/session" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -249,7 +212,9 @@
       <workItem from="1576986329049" duration="32936000" />
       <workItem from="1577073044518" duration="33813000" />
       <workItem from="1577159008333" duration="29428000" />
-      <workItem from="1577331727827" duration="26366000" />
+      <workItem from="1577331727827" duration="26700000" />
+      <workItem from="1577507634456" duration="26323000" />
+      <workItem from="1577592647170" duration="26480000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -370,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577024528170</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="commit full project complete upto chargegroup save 26,6:13pm">
+      <created>1577362276490</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1577362276506</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +368,8 @@
     <MESSAGE value="commit full project complete upto search 17,12:43" />
     <MESSAGE value="commit full project complete upto admissionController save 17,6:13" />
     <MESSAGE value="commit full project complete upto itemprice save 22,8:13pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit full project complete upto itemprice save 22,8:13pm" />
+    <MESSAGE value="commit full project complete upto chargegroup save 26,6:13pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit full project complete upto chargegroup save 26,6:13pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="242" y="50" key="#Assign_Data_Sources" timestamp="1575877708634">
@@ -415,10 +388,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="458" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1575799330127" />
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1577352444015">
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1577698289370">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577352444015" />
+    <state x="508" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577698289370" />
     <state x="367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577339597192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -431,10 +404,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="418" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1576049246598" />
-    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1577024506076">
+    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1577362224586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577024506076" />
+    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577362224586" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1575867136741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -451,38 +424,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="508" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575721916064" />
-    <state width="1323" height="65" key="GridCell.Tab.0.bottom" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.0.bottom" timestamp="1577711998019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.0.center" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577711998019" />
+    <state width="1323" height="157" key="GridCell.Tab.0.center" timestamp="1577711998019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.0.left" timestamp="1577360368472">
+    <state width="1323" height="157" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577711998019" />
+    <state width="1323" height="157" key="GridCell.Tab.0.left" timestamp="1577711998019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577360368472" />
-    <state width="1323" height="65" key="GridCell.Tab.0.right" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577711998019" />
+    <state width="1323" height="157" key="GridCell.Tab.0.right" timestamp="1577711998019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.1.bottom" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577711998019" />
+    <state width="1323" height="157" key="GridCell.Tab.1.bottom" timestamp="1577711998035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.1.center" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577711998035" />
+    <state width="1323" height="157" key="GridCell.Tab.1.center" timestamp="1577711998035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.1.left" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577711998035" />
+    <state width="1323" height="157" key="GridCell.Tab.1.left" timestamp="1577711998019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
-    <state width="1323" height="65" key="GridCell.Tab.1.right" timestamp="1577360368488">
+    <state width="1323" height="157" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577711998019" />
+    <state width="1323" height="157" key="GridCell.Tab.1.right" timestamp="1577711998035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577360368488" />
+    <state width="1323" height="157" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577711998035" />
     <state width="1323" height="93" key="GridCell.Tab.2.bottom" timestamp="1576340452316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -519,18 +492,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1577019007886" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1577024567762">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1577362312645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1577024567762" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1577362312645" />
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1576898691012">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576898691012" />
-    <state x="308" y="11" width="586" height="717" key="find.popup" timestamp="1577172585988">
+    <state x="308" y="11" width="586" height="717" key="find.popup" timestamp="1577509803632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="11" width="586" height="717" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577172585988" />
+    <state x="308" y="11" width="586" height="717" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577509803632" />
     <state x="421" y="167" key="git4idea.merge.GitPullDialog" timestamp="1576382885915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

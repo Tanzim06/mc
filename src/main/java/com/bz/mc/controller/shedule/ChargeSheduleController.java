@@ -1,7 +1,6 @@
 package com.bz.mc.controller.shedule;
 
 
-import com.bz.mc.model.charge.ChargeGroup;
 import com.bz.mc.model.shedule.ChargeShedule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ public class ChargeSheduleController {
 
 
     private static final String BASE_ROUTE = "/shedule";
-    private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
+    private static final String ROUTE_CREATE = BASE_ROUTE + "/search";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
     public static final String ROUTE_LIST = BASE_ROUTE + "/list";
     public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
@@ -24,7 +23,7 @@ public class ChargeSheduleController {
     @GetMapping(ROUTE_CREATE )
     public String shedule(Model model) {
         populateModel(model, new ChargeShedule());
-        return "/web/pages/shedule/create";
+        return "search";
     }
 
 

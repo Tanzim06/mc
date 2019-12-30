@@ -14,7 +14,13 @@ public interface ChargeItemService {
 
     ChargeItem saveChargeItem(ChargeItem chargeItem);
     Optional<ChargeItem> findChargeItemById(Long id);
-    List<ChargeGroupData> getChargeGroupList(Long id);
+    List<ChargeGroupData> getChargeGroupList(Long chargeGroupId);
+//    List<ChargeGroupData> getChargeitemList(Long id);
+
+  public List<ChargeGroupData>  getChargeGroupSearchResult(String chargeGroupName,String remarks,Long chargeGroupId);
 
     ChargeItem getChagreItem(Long id);
+    public List<ChargeGroupData>  getChargeSearchResult(String chargeGroupName,String remarks);
+
+
 }

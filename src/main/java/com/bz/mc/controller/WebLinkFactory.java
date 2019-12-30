@@ -48,6 +48,9 @@ public class WebLinkFactory {
     public String updateChargeUrl(Long chargeGroupId) {
         return ChargeGroupController.ROUTE_EDIT.replace(PATH_VAR_ID, String.valueOf(chargeGroupId));
     }
+//    public String updateChargeItemUrl(Long id) {
+//        return ChargeGroupController.ROUTE_EDIT_ITEM.replace(PATH_VAR_ID, String.valueOf(id));
+//    }
 
 
     public String updateAdmissionUrl(AdmissionBooking admissionBooking) {

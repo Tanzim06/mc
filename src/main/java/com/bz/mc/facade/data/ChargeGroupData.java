@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+
 public class ChargeGroupData {
 
     private Long id;
@@ -24,10 +25,12 @@ public class ChargeGroupData {
     private Double itemRate;
     private Long currencyId;
     private String remarks;
+    private String itemName;
+    private String sessionName;
+    //private String currencyName;
 
 
-
-    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks) {
+    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName) {
         this.id = id;
         this.chargeGroupName = chargeGroupName;
         this.shortCode = shortCode;
@@ -42,6 +45,7 @@ public class ChargeGroupData {
         this.itemRate = itemRate;
         this.currencyId = currencyId;
         this.remarks = remarks;
-
+        this.itemName = itemName;
+        this.sessionName = sessionName;
     }
 }
