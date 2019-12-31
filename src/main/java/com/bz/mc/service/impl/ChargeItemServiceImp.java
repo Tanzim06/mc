@@ -60,5 +60,10 @@ public class ChargeItemServiceImp implements ChargeItemService {
         return chargeItemRepository.findAllChargeList(chargeGroupName,remarks);
     }
 
+    @Override
+    public List<ChargeGroupData> getScheduleSearchResult(Long sessionId, Long programId, Long programSegmentId) {
+        return chargeItemRepository.findAllScheduleGroupData(sessionId,programId,programSegmentId);
+    }
+
 
 }

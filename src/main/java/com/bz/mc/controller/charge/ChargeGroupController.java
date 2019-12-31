@@ -100,59 +100,58 @@ public class ChargeGroupController {
     @PostMapping(ROUTE_SAVE_CHARGE_ITEM)
     public String savePrice(Model model, @ModelAttribute ChargeItemFrom chargeItemFrom, BindingResult result, RedirectAttributes redirectAttributes) {
 
+        if(chargeGroupId!=null) {
             if (result.hasErrors()) {
 
                 System.out.println("error");
 //                ItemInfo itemInfo = itemService.getItem(itemId);
                 ChargeGroup chargeGroup = chargeGroupService.getChargeGroup(chargeGroupId);
-                List<ChargeGroupData> chargeList =chargeItemService.getChargeGroupList(chargeGroupId);
+                List<ChargeGroupData> chargeList = chargeItemService.getChargeGroupList(chargeGroupId);
                 //ChargeGroupForm form= new ItemForm(itemInfo,priceList);
-                ChargeGroupForm  form = new ChargeGroupForm(chargeGroup,chargeList);
+                ChargeGroupForm form = new ChargeGroupForm(chargeGroup, chargeList);
                 //form.setItemPriceForm(itemPriceForm);
                 form.setChargeItemFrom(chargeItemFrom);
-
-                populateChargeGroupForm(model,form );
+                populateChargeGroupForm(model, form);
                 return "/web/pages/charge/create";
-            }
-            else{
+            } else {
 
-                if(chargeItemFrom.isIndividual()== true){
-
-                    System.out.println("individual");
-
-                    if(chargeItemFrom.getChargeGroupId()==null) {
-
-                        //chargeItemFrom  = new ChargeItemFrom();
-                        ChargeItem chargeItem = prepareChargeItem(chargeItemFrom);
-                        //System.out.print("chargeItemId="+ chargeItem.getId());
-                        chargeItem = chargeItemService.saveChargeItem(chargeItem);
-                       // System.out.print("chargeItemId="+ chargeItem.getId());
-
-                        model.addAttribute("chargeItemList", chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
-                        //model.addAttribute("chargeItemList", chargeItemService.getChargeitemList(chargeItem.getId()));
-
-                          // System.out.print("size"+chargeItemService.getChargeitemList(chargeItem.getId()).size());
-                        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
-                        //System.out.print("chargeItemId="+ chargeItem.getId());
-//                        return REDIRECT + webLinkFactory.updateChargeItemUrl(chargeItem.getId());
-                        return REDIRECT + webLinkFactory.updateChargeUrl(chargeGroupId);
-
-                    }
-                }
+//                if(chargeItemFrom.isIndividual()== true){
+//                    System.out.println("individual");
+//                    if(chargeItemFrom.getChargeGroupId()==null) {
+//
+//                        //chargeItemFrom  = new ChargeItemFrom();
+//                        ChargeItem chargeItem = prepareChargeItem(chargeItemFrom);
+//                        //System.out.print("chargeItemId="+ chargeItem.getId());
+//                        chargeItem = chargeItemService.saveChargeItem(chargeItem);
+//                       // System.out.print("chargeItemId="+ chargeItem.getId());
+//
+//                        model.addAttribute("chargeItemList", chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
+//                        //model.addAttribute("chargeItemList", chargeItemService.getChargeitemList(chargeItem.getId()));
+//
+//                          // System.out.print("size"+chargeItemService.getChargeitemList(chargeItem.getId()).size());
+//                        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
+//                        //System.out.print("chargeItemId="+ chargeItem.getId());
+////                        return REDIRECT + webLinkFactory.updateChargeItemUrl(chargeItem.getId());
+//                        return REDIRECT + webLinkFactory.updateChargeUrl(chargeGroupId);
+//
+//                    }
+//                }
 
                 System.out.println("out");
-                ChargeItem chargeItem= prepareChargeItem(chargeItemFrom);
-               // itemPrice = itemPriceService.saveItemPrice(itemPrice);
+                ChargeItem chargeItem = prepareChargeItem(chargeItemFrom);
+                // itemPrice = itemPriceService.saveItemPrice(itemPrice);
                 chargeItem = chargeItemService.saveChargeItem(chargeItem);
 
-                model.addAttribute("chargeItemList",chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
-                System.out.println("carge Item size = "+chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()).size());
+                model.addAttribute("chargeItemList", chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
+                System.out.println("chargeGroupId = " + chargeItem.getChargeGroupId());
                 redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
+                //return REDIRECT + webLinkFactory.updateChargeUrl(chargeItem.getChargeGroupId());
                 return REDIRECT + webLinkFactory.updateChargeUrl(chargeGroupId);
+                // }
             }
-
-//        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
-//        return REDIRECT + ROUTE_CREATE;
+        }
+        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
+        return REDIRECT + ROUTE_CREATE;
     }
 
 
@@ -160,14 +159,9 @@ public class ChargeGroupController {
     @GetMapping(ROUTE_EDIT)
     public String editCharge(Model model, @PathVariable Long id) {
        this.chargeGroupId=id;
-
         ChargeGroup chargeGroup = chargeGroupService.getChargeGroup(chargeGroupId);
-
         ChargeItemFrom chargeItemFrom = new ChargeItemFrom();
-
         populateOtherFormData(model,chargeGroup, chargeItemFrom);
-
-
         return "/web/pages/charge/create";
 
     }
@@ -226,7 +220,7 @@ public class ChargeGroupController {
 
 
     @GetMapping(ROUTE_SEARCH)
-    public String bookingList(Model model) {
+    public String search(Model model) {
         populateChargeGroupForm( model,new ChargeGroupForm());
         return "/web/pages/charge/list";
     }
