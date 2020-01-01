@@ -478,3 +478,6 @@
 [McApplication] 2020-01-01 11:12:38 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-01 12:00:42 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-01 12:09:21 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 13:57:10 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 16:46:31 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:08:55 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed

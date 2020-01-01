@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "SESSION_INFO")
 @ToString
-public class SessionInfo extends BaseEntity implements Auditable  {
+public class SessionInfo extends BaseEntity implements Auditable {
 
     @Column(name="SESSION_NAME")
     private String sessionName;
