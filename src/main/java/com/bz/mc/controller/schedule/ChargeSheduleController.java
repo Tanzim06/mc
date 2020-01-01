@@ -33,22 +33,22 @@ public class ChargeSheduleController {
     private static final String ROUTE_SEARCH_RESULT = BASE_ROUTE + "/list";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
-    public static final String ROUTE_DETAILS = BASE_ROUTE + "/details";
+    //public static final String ROUTE_DETAILS = BASE_ROUTE + "/details";
     public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
     private static final String REDIRECT = "redirect:";
 
     @GetMapping(ROUTE_CREATE )
     public String shedule(Model model) {
         populateBillDateForm (model, new BillDateForm());
-        return "web/pages/schedule/search";
+        return "web/pages/schedule/create";
     }
 
 
-    @GetMapping(ROUTE_DETAILS)
-    public String scheduleList(Model model) {
-        populateBillDateForm (model, new BillDateForm());
-        return "/web/pages/schedule/charge-schedule";
-    }
+//    @GetMapping(ROUTE_DETAILS)
+//    public String scheduleList(Model model) {
+//        populateBillDateForm (model, new BillDateForm());
+//        return "/web/pages/schedule/create";
+//    }
 
     @GetMapping(ROUTE_SEARCH)
     public String search(Model model) {
@@ -58,14 +58,13 @@ public class ChargeSheduleController {
 
 
     @PostMapping(value = ROUTE_SEARCH_RESULT)
-    public String getGroupList(Model model, BillDateForm billDateForm) {
-//        List<ChargeGroupData>  groupData  = chargeItemService.getScheduleSearchResult(sessionId,programId,programSegmentId);
-//        model.addAttribute("groupdataList", groupData);
-//
-//            if (groupData.size() != 0) {
-//
-//                return "web/pages/schedule/search";
-//        }
+    public String getGroupList(Model model, @RequestParam("sessionId") Long sessionId,@RequestParam("programId") Long programId,@RequestParam("programSegmentId") Long programSegmentId,BillDateForm billDateForm,ChargeGroupForm chargeGroupForm) {
+        List<ChargeGroupData>  groupData  = chargeItemService.getScheduleSearchResult(sessionId,programId,programSegmentId);
+        model.addAttribute("groupdataList", groupData);
+
+            if (groupData.size() != 0) {
+                return "web/pages/schedule/search";
+        }
         return REDIRECT + ROUTE_SEARCH;
     }
 

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class BatchInfoController {
     }
 
     @PostMapping(ROUTE_SAVE)
-    public String saveOrUpdateBatch(Model model, @ModelAttribute BatchInfoForm batchInfoForm, BindingResult result) {
+    public String saveOrUpdateBatch(Model model, @ModelAttribute BatchInfoForm batchInfoForm, BindingResult result, RedirectAttributes redirectAttributes) {
         System.out.println("out");
         //employeeFormValidator.validate(employeeForm, result);
         if (result.hasErrors()) {
@@ -69,12 +70,12 @@ public class BatchInfoController {
 
         System.out.println("test1");
         //return "/web/pages/batch/create";
+        redirectAttributes.addFlashAttribute("message", "batch.batchInfo.info.saved");
         return REDIRECT+ webLinkFactory.updateBatchUrl(batchInfo);
     }
 
     @GetMapping(ROUTE_UPDATE)
     public String updateBatch(Model model, @PathVariable("id") Long id) {
-
         model.addAttribute("programs", programService.findPrograms());
         BatchInfo batchInfo = batchInfoService.getBatchInfo(id).get();
 

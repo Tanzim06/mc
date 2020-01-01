@@ -18,21 +18,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Controller
 public class AdmissionController {
-
     @NonNull
     private final ProgramService programService;
-
     @NonNull
     private final AdmissionService admissionService;
-
-
-
    @NonNull private final WebLinkFactory webLinkFactory;
 
     private static final String BASE_ROUTE = "/admission";
@@ -50,7 +46,7 @@ public class AdmissionController {
     }
 
     @PostMapping(ROUTE_SAVE)
-    public String saveOrUpdateAdmission(Model model, @ModelAttribute AdmissionForm admissionForm, BindingResult result) {
+    public String saveOrUpdateAdmission(Model model, @ModelAttribute AdmissionForm admissionForm, BindingResult result, RedirectAttributes redirectAttributes) {
         System.out.println("out");
         //employeeFormValidator.validate(employeeForm, result);
 //        if (result.hasErrors()) {
@@ -59,16 +55,12 @@ public class AdmissionController {
 //            return "/web/pages/admission/create";
 //        }
         System.out.println("test");
-
         AdmissionBooking  admissionBooking = getAdmission(admissionForm);
         System.out.println("testyyy");
         System.out.println("id " + admissionBooking.getId());
-
-
         admissionBooking = admissionService.saveAdmission(admissionBooking);
-
         System.out.println("test1");
-
+        redirectAttributes.addFlashAttribute("message", "admission.admissionBooking.info.saved");
         return REDIRECT+ webLinkFactory.updateAdmissionUrl(admissionBooking);
     }
 

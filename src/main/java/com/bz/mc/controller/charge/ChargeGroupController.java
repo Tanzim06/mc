@@ -67,7 +67,7 @@ public class ChargeGroupController {
     }
 
     @PostMapping(ROUTE_SAVE_CHARGE_GROUP)
-    public String saveChargeGroup(Model model, @ModelAttribute ChargeGroupForm chargeGroupForm, BindingResult result) {
+    public String saveChargeGroup(Model model, @ModelAttribute ChargeGroupForm chargeGroupForm, BindingResult result,RedirectAttributes redirectAttributes) {
         System.out.println("out");
         //employeeFormValidator.validate(employeeForm, result);
         if (result.hasErrors()) {
@@ -88,11 +88,10 @@ public class ChargeGroupController {
 
         ChargeItem chargeItem = new ChargeItem();
         chargeItem.setChargeGroupId(chargeGroup.getId());
-
         System.out.print("itemid="+chargeItem.getItemId());
-
         System.out.println("test1");
         //return "/web/pages/batch/create";
+        redirectAttributes.addFlashAttribute("message", "charge.chargeGroup.info.saved");
         return REDIRECT+ webLinkFactory.updateChargeUrl(chargeGroup.getId());
     }
 
@@ -102,9 +101,7 @@ public class ChargeGroupController {
 
         if(chargeGroupId!=null) {
             if (result.hasErrors()) {
-
                 System.out.println("error");
-//                ItemInfo itemInfo = itemService.getItem(itemId);
                 ChargeGroup chargeGroup = chargeGroupService.getChargeGroup(chargeGroupId);
                 List<ChargeGroupData> chargeList = chargeItemService.getChargeGroupList(chargeGroupId);
                 //ChargeGroupForm form= new ItemForm(itemInfo,priceList);
@@ -150,11 +147,9 @@ public class ChargeGroupController {
                 // }
             }
         }
-        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
+        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.empty");
         return REDIRECT + ROUTE_CREATE;
     }
-
-
 
     @GetMapping(ROUTE_EDIT)
     public String editCharge(Model model, @PathVariable Long id) {
@@ -163,7 +158,6 @@ public class ChargeGroupController {
         ChargeItemFrom chargeItemFrom = new ChargeItemFrom();
         populateOtherFormData(model,chargeGroup, chargeItemFrom);
         return "/web/pages/charge/create";
-
     }
 
 //

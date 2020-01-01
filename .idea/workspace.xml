@@ -2,60 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453d722-2816-4625-a7f6-59b4dbc9d991" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/converter/attribute/GenderConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/converter/form/GenderConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/StudentRegistrationServiceFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/StudentEducationPastData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/StudentRegistrationData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/impl/StudentRegistrationServiceFacadeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/studentRegistration/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/StudentEducationPastRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/StudentRegistrationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/StudentEducationPastService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/StudentRegistrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/StudentEducationPastServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/StudentRegistrationServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/validator/StudentEducationPasdtFormValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/validator/StudentRegistrationFormValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/AppWebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/AppWebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/WebLinkFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentEducationPastForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentEducationPastForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentRegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentRegistrationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/studentRegistration/StudentRegistrationForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/QStudentEducationPastInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/QStudentEducationPastInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/QStudentRegistrationInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/QStudentRegistrationInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/StudentEducationPastInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/StudentEducationPastInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/StudentRegistrationInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/studentRegistration/StudentRegistrationInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/schedule/ChargeSheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/schedule/ChargeSheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/QBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/QBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/admission/QAdmissionBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/admission/QAdmissionBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/batch/QBatchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/batch/QBatchInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/charge/QChargeItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/hr/QOrganization.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/hr/QOrganization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/item/QItemPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/program/QProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/program/QProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/security/QRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/security/QRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/security/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/security/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QProgramSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QProgramSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QSessionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/setup/QSessionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/shedule/QBillDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/shedule/QBillDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/studentRegistration/QStudentEducationPastInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/studentRegistration/QStudentEducationPastInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/studentRegistration/QStudentRegistrationInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/bz/mc/model/studentRegistration/QStudentRegistrationInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/educational-qualification.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/educational-qualification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/search-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/search-result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/student-information.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/student-registration/student-information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/admission/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/batch/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/item/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/schedule/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/schedule/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mc-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mc-log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/AppWebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/AppWebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/WebLinkFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentEducationPastForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentEducationPastForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentRegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentRegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/studentRegistration/StudentRegistrationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/studentRegistration/StudentEducationPastInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/studentRegistration/StudentEducationPastInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/studentRegistration/StudentRegistrationInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/studentRegistration/StudentRegistrationInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/educational-qualification.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/educational-qualification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/search-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/search-result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/student-information.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/student-registration/student-information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/admission/AdmissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/batch/BatchInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/item/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/schedule/ChargeSheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/schedule/ChargeSheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/admission/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/batch/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/item/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/schedule/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/schedule/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/messages/messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/messages/messages_en_US.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,12 +105,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mc" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -155,21 +144,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bz/mc/validator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Lombok plugin" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.bz.mc.facade.impl" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\validator" />
-      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\facade\data" />
-      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\service\impl" />
-      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\service" />
-      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\repository" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bz.mc.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\office\mc\src\main\java\com" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.bz.mc.converter.form" />
@@ -178,8 +166,12 @@
       <recent name="com.bz.mc.model.enrol" />
       <recent name="com.bz.mc.controller" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bz.mc.service" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\validator" />
+      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\facade\data" />
+      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\service\impl" />
+      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\service" />
+      <recent name="D:\office\project\mcnew\src\main\java\com\bz\mc\repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,6 +228,10 @@
       <workItem from="1577592647170" duration="26808000" />
       <workItem from="1577765807555" duration="25563000" />
       <workItem from="1577854607203" duration="4151000" />
+      <workItem from="1577859686642" duration="285000" />
+      <workItem from="1577860001301" duration="6343000" />
+      <workItem from="1577876767840" duration="132000" />
+      <workItem from="1577876929002" duration="5341000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -388,7 +384,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

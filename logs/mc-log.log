@@ -478,3 +478,20 @@
 [McApplication] 2020-01-01 11:12:38 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-01 12:00:42 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-01 12:09:21 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 12:44:36 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 12:54:34 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 13:26:31 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 13:34:55 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 15:01:37 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 15:01:38 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 15:10:26 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 15:10:27 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 15:10:36 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 17:33:28 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:11:57 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:25:53 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:26:12 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+[McApplication] 2020-01-01 18:31:34 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:31:47 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'programSegmentId' is not present
+[McApplication] 2020-01-01 18:42:07 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-01 18:42:38 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'programSegmentId' is not present

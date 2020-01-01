@@ -57,7 +57,7 @@ public class ItemController {
 
 
     @PostMapping(ROUTE_SAVE_ITEM)
-    public String saveItem(Model model, @ModelAttribute ItemForm itemForm, BindingResult result) {
+    public String saveItem(Model model, @ModelAttribute ItemForm itemForm, BindingResult result,RedirectAttributes redirectAttributes) {
         System.out.println("out");
         //employeeFormValidator.validate(employeeForm, result);
         if (result.hasErrors()) {
@@ -83,6 +83,7 @@ public class ItemController {
 
         System.out.println("test1");
         //return "/web/pages/batch/create";
+        redirectAttributes.addFlashAttribute("message", "item.info.saved");
         return REDIRECT+ webLinkFactory.updatePriceUrl(itemInfo.getId());
     }
 
@@ -190,8 +191,6 @@ public class ItemController {
         else{
             form.setActive(false);
         }
-
-
         form.setRemarks(itemInfo.getRemarks());
         form.setItemPriceForm(itemPriceForm);
 
