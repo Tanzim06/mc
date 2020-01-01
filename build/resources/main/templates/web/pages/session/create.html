@@ -13,12 +13,12 @@
 
 <div layout:fragment="content" class="content">
 
-<!--    <div th:if="${message}" class="alert alert-dismissible fade show alert-success" role="alert">
-        <span th:text="#{${message}}"></span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>-->
+        <div th:if="${message}" class="alert alert-dismissible fade show alert-success" role="alert">
+            <span th:text="#{${message}}"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
 
     <!-- PAGE TITLE -->
     <div class="page-title">
@@ -29,25 +29,17 @@
     <!-- END PAGE TITLE -->
     <div class="card">
 
-
-      <!--  <div class="card-header">
-            <strong class="card-title">Session Form</strong>
-        </div>-->
-
-
         <div >
-
             <div class="card-body">
-              <!--  <form action="#" th:action="@{/employee/save}" th:object="${employeeForm}" method="post">  -->
                 <form class="needs-validation" th:object="${sessionForm}" th:action="@{/session/save}" method="POST">
-
                     <div class="row  form-horizontal">
 
                         <div class="col-6">
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">Session ID</label>
+                                <label for="id" class="col-md-4 control-label">Session ID</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Session ID" th:field="*{sessionId}" readonly="readonly">
+                                    <!--                                    <input type="text" class="form-control"  id="sessionId" th:field="*{sessionId}" readonly/>-->
+                                    <input type="text" class="form-control" id="id" th:field="*{id}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -56,8 +48,9 @@
                             <div class="form-group row">
                                 <label for="sessionName" class="col-md-4 control-label">Session Name</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="sessionName" class="form-control" th:class="${#fields.hasErrors('sessionName')} ? 'form-control is-invalid' : 'form-control'"
-                                           placeholder="Session Name" th:field="*{sessionName}" >
+                                    <input type="text" id="sessionName"  class="form-control"  th:class="${#fields.hasErrors('sessionName')} ? 'form-control is-invalid' : 'form-control'"
+                                           placeholder="Session Name" th:field="*{sessionName}"/>
+                                    <div th:if="${#fields.hasErrors('sessionName')}" th:errors="*{sessionName}" class="invalid-feedback"></div>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +60,9 @@
                             <div class="form-group row">
                                 <label for="startDate" class="col-md-4 control-label">Start Date</label>
                                 <div class="col-md-6">
-                                    <input type="date" id="startDate" class="form-control" placeholder="mm/dd/yyyy" th:field="*{startDate}">
+                                    <input type="date" th:class="${#fields.hasErrors('startDate')} ? 'form-control is-invalid' : 'form-control'"
+                                           id="startDate" class="form-control" placeholder="YYYY-MM-DD-" th:field="*{startDate}"/>
+                                    <div th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" class="invalid-feedback"></div>
                                 </div>
                             </div>
                         </div>
@@ -75,59 +70,35 @@
 
                         <div class="col-6">
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">End Date</label>
+                                <label  for="endDate"class="col-md-4 control-label">End Date</label>
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control" placeholder="mm/dd/yyyy" th:field="*{endDate}" >
+                                    <input type="date" id="endDate" th:class="${#fields.hasErrors('endDate')} ? 'form-control is-invalid' : 'form-control'"
+                                           class="form-control"placeholder="YYYY-MM-DD-" th:field="*{endDate}" />
+                                    <div th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" class="invalid-feedback"></div>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="col-6">
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">Remarks</label>
+                                <label for="remarks" class="col-md-4 control-label">Remarks</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="remarks" class="form-control" th:class="${#fields.hasErrors('remarks')} ? 'form-control is-invalid' : 'form-control'"
-                                           placeholder="remarks" th:field="*{remarks}" >
+                                    <input type="text" id="remarks" class="form-control"
+                                           placeholder="remarks" th:field="*{remarks}" />
                                 </div>
                             </div>
                         </div>
-
-                  <!--      <div class="col-6">
-                            <div class="form-group row">
-                                <label class="col-md-4 control-label">Active Status</label>
-
-                                <div class="col-md-6 custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="defaultChecked2" th:field="*{active}">
-                                    <label class="custom-control-label" for="defaultChecked2"></label>
-                                </div>
-
-                            </div>
-                        </div>
-                        -->
-
 
                         <div class="col-12">
                             <div class="float-right">
-
-                                <button type="submit" class="btn btn-success btn-md">
-                                    <i class="fa fa-save"></i> SAVE
-                                </button>
+                                <input type="submit" class="btn btn-success btn-md"/>
                             </div>
                         </div>
                     </div>
-
-
                 </form>
-
-
-
             </div>
         </div>
-
     </div>
 </div> <!-- .card -->
-</div>
 </body>
 </html>

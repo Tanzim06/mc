@@ -2,10 +2,12 @@ package com.bz.mc.controller;
 
 import com.bz.mc.controller.admission.AdmissionController;
 import com.bz.mc.controller.charge.ChargeGroupController;
+import com.bz.mc.controller.enrolStudent.EnrolStudentController;
 import com.bz.mc.controller.item.ItemController;
 import com.bz.mc.controller.session.SessionController;
 import com.bz.mc.controller.studentRegistration.StudentRegistrationController;
 import com.bz.mc.model.admission.AdmissionBooking;
+import com.bz.mc.model.enrol.EnrolStudentInfo;
 import com.bz.mc.model.setup.SessionInfo;
 import org.springframework.stereotype.Component;
 
@@ -64,6 +66,10 @@ public class WebLinkFactory {
 
     public String updateStudentRegistrationUrl(Long studentRegistrationId,int currentTab) {
         return StudentRegistrationController.ROUTE_EDIT.replace(PATH_VAR_ID, String.valueOf(studentRegistrationId)) + "?currentTab=" + currentTab;
+    }
+
+    public String updateEnrolStudentUrl(EnrolStudentInfo enrolStudentInfo) {
+        return EnrolStudentController.ROUTE_UPDATE.replace(PATH_VAR_ID, String.valueOf(enrolStudentInfo.getId()));
     }
 
 

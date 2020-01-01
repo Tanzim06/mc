@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{web/fragments/layout}">
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+<div layout:fragment="content" class="content">
+<!-- PAGE TITLE -->
+    <div class="page-title">
+        <div class="card bg-info text-white">
+            <div class="card-body"><h5>Enrol Student</h5></div>
+        </div>
+    </div>
+<!-- END PAGE TITLE -->
+ <div id="search">
+
+     <form class="needs-validation"  th:action="@{/enrol-student/list}" name="form1"  method="post" novalidate>
+         <div class="row">
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1" for="studentName">Student Name</label>
+                 <input  id="studentName" type="text" class="form-control" aria-required="true" aria-invalid="false"
+                         name ="studentName" th:value="${studentName}" placeholder="Student Name"/>
+<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
+<!--                     <option value="">Select</option>-->
+<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
+<!--                             th:value="${sRList.id}"-->
+<!--                             th:utext="${sRList.studentName}"/>-->
+<!--                 </select>-->
+             </div>
+         </div>
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1" for="sessionId">Session</label>
+                 <select id="sessionId"  name="sessionId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
+                     <option value="">Select</option>
+                     <option th:each="sList:${sessionList}"
+                             th:value="${sList.id}"
+                             th:utext="${sList.sessionName}"/>
+                 </select>
+             </div>
+         </div>
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1">Program</label>
+                 <select id="programId"  name="programId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
+                     <option value="">Select</option>
+                     <option th:each="sList:${programList}"
+                             th:value="${sList.id}"
+                             th:utext="${sList.programName}"/>
+                 </select>
+             </div>
+         </div>
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1">Segment</label>
+                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="" placeholder="Segment" >
+             </div>
+         </div>
+         </div>
+<div class="row">
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1">Batch</label>
+                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="" placeholder="Batch" >
+             </div>
+         </div>
+
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1" for="contactNo">Contact Number</label>
+                 <input  id="contactNo" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="contactNo" th:value="${contactNo}" placeholder="Contact No" >
+<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
+<!--                     <option value="">Select</option>-->
+<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
+<!--                             th:value="${sRList.id}"-->
+<!--                             th:utext="${sRList.contactNo}"/>-->
+<!--                 </select>-->
+             </div>
+         </div>
+
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1">Date of Birth</label>
+                 <input id="doB" type="date" class="form-control" aria-required="true" aria-invalid="false"  name="doB" placeholder="doB" th:value="${doB}" >
+<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
+<!--                     <option value="">Select</option>-->
+<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
+<!--                             th:value="${sRList.id}"-->
+<!--                             th:utext="${sRList.doB}"/>-->
+<!--                 </select>-->
+             </div>
+         </div>
+
+
+
+         <!--           <div class="col-3">
+                       <div class="form-group">
+                           <label class="control-label mb-1">Program Segment</label>
+                           <input  id="cc-pament" type="text" class="form-control" aria-required="true" aria-invalid="false"  placeholder="Program Segment" >
+                       </div>
+                   </div>	 -->
+
+
+
+</div>
+         <div class="row">
+
+             <div class="col-3">
+                 <div class="form-group">
+                     <label class="control-label mb-1">New</label>
+                     <!-- Default checked -->
+                     <div class="custom-control custom-checkbox">
+                         <input type="checkbox" class="checkbox" name="new">
+
+                     </div>
+                     <!--<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
+                 </div>
+             </div>
+
+         <div class="col-3">
+             <div class="form-group">
+                 <label class="control-label mb-1">Enrol</label>
+                 <!-- Default checked -->
+                 <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="checkbox" name="promoted" onclick="showNextSegment();" >
+
+                 </div>
+                 <!--<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
+             </div>
+         </div>
+
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+
+<!--                 <input  type="text" class="form-control"  name="nextSegment" placeholder="Next Segment" >-->
+<!--                 &lt;!&ndash; Default checked &ndash;&gt;-->
+<!--                 &lt;!&ndash; 	  	<div class="custom-control custom-checkbox">-->
+<!--                                  <input type="checkbox" class="custom-control-input" id="defaultChecked2"  checked>-->
+<!--                                 <label class="custom-control-label" for="defaultChecked2"></label>-->
+<!--                             </div> &ndash;&gt;-->
+<!--                 &lt;!&ndash;<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"&ndash;&gt;-->
+<!--             </div>-->
+<!--         </div>-->
+
+         </div>
+         <div class="col-sm-3 text-right">
+
+             <input type="submit" value="Search" class="btn btn-primary btn-md" style="margin-top: 24px;">
+             <a style="margin-top: 24px;" class="btn btn-success" th:href="@{/enrol-student/search}" >Refresh</a>
+<!--             <a class="btn btn-primary btn-md" style="margin-top: 24px;" th:href="@{/homecontroller}">Home</a>-->
+
+         </div>
+     </form>
+
+<!--     <form class="needs-validation" th:action="@{/studentregistration/list}"  method="post"  novalidate>-->
+<!--         <div class="row">-->
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label for="studentName" class="control-label mb-1">Student Name</label>-->
+<!--                 <input  id="studentName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="studentName" th:value="${studentName}" placeholder="studentName" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label for="fatherName" class="control-label mb-1">Father Name</label>-->
+<!--                 <input id="fatherName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="fatherName" th:value="${fatherName}" placeholder="fatherName" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label for="motherName" class="control-label mb-1">Mother Name</label>-->
+<!--                 <input  id="motherName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="motherName" th:value="${motherName}" placeholder="motherName" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label for="contactNo" class="control-label mb-1">Contact Number</label>-->
+<!--                 <input id="contactNo"  type="text" class="form-control" aria-required="true" aria-invalid="false" name="contactNo" th:value="${contactNo}" placeholder="contactNo" >-->
+<!--             </div>-->
+<!--         </div>-->
+<!--         </div>-->
+
+<!--         <div class="row">-->
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Registration ID</label>-->
+<!--                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  name="registrationId" placeholder="Registration ID" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Program</label>-->
+<!--                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  placeholder="Program" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Program Segment</label>-->
+<!--                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  placeholder="Program Segment" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Session</label>-->
+<!--                 <select id="sessionId"  name="sessionId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
+<!--                     <option value="">Select</option>-->
+<!--&lt;!&ndash;                     <option th:each="sList:${sessionList}"&ndash;&gt;-->
+<!--&lt;!&ndash;                             th:value="${sList.sessionId}"&ndash;&gt;-->
+<!--&lt;!&ndash;                             th:utext="${sList.sessionName}"/>&ndash;&gt;-->
+<!--                 </select>-->
+<!--             </div>-->
+<!--         </div>-->
+<!--         </div>-->
+
+<!--         <div class="row">-->
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Registration Date</label>-->
+<!--                 <input  type="date" class="form-control" aria-required="true" aria-invalid="false"  name="eegistrationDate" placeholder="Registration Date" >-->
+<!--             </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-3">-->
+<!--             <div class="form-group">-->
+<!--                 <label class="control-label mb-1">Date of Birth</label>-->
+<!--                 <input   type="date" class="form-control" aria-required="true" aria-invalid="false"  name="doB" placeholder="doB" >-->
+<!--             </div>-->
+<!--         </div>-->
+<!--         </div>-->
+
+<!--         <div class="col-sm-3 text-right">-->
+
+<!--             <input type="submit" value="Search" class="btn btn-primary btn-md" style="margin-top: 24px;">-->
+<!--             <a style="margin-top: 24px;" class="btn btn-success" th:href="@{/studentregistration/search}" >Refresh</a>-->
+<!--&lt;!&ndash;             <a class="btn btn-primary btn-md" style="margin-top: 24px;" th:href="@{/homecontroller}">Home</a>&ndash;&gt;-->
+
+<!--         </div>-->
+<!--     </form>-->
+ </div>
+    <br/>
+    <div th:replace="web/pages/enrol-student/search-result :: search-result"></div>
+
+</div>
+</body>
+</html>

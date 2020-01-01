@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="card card-table-border-none" >
+            <div class="card card-table-border-none" id="sessionlist" >
                 <div class="card-body pt-0 pb-5">
 
 
@@ -35,28 +35,28 @@
                         </thead>
                         <tbody>
 
-<!--                        <tr th:each="sessionList:${modelSessionList}">-->
-<!--                            <td hidden><span th:text="${sessionList.sessionId}"></span></td>-->
-<!--                            <td> <span th:text="${sessionList.sessionName}"></span></td>-->
-<!--                            <td> <span th:text="${sessionList.startDate}"></span></td>-->
-<!--                            <td> <span th:text="${sessionList.endDate}"></span></td>-->
+                        <tr th:each="sessionList:${sessionlist}">
+                            <td hidden><span th:text="${sessionList.id}"></span></td>
+                            <td> <span th:text="${sessionList.sessionName}"></span></td>
+                            <td> <span th:text="${sessionList.startDate}"></span></td>
+                            <td> <span th:text="${sessionList.endDate}"></span></td>
 
-<!--                            <td style="">-->
-<!--                                            <textarea rows="2" cols="9" th:text="${sessionList.remarks}" readonly >-->
-<!--                                              </textarea>-->
-<!--                            <td class="text-center">-->
+                            <td style="">
+                                            <textarea rows="2" cols="9" th:text="${sessionList.remarks}" readonly >
+                                              </textarea>
+                            <td class="text-center">
 
-<!--                                <input type="checkbox" id="defaultChecked9" class="form-control" name="activeStatus" th:checked="${sessionList.activeStatus}==1" onclick="return false;" />-->
+                                <input type="checkbox" id="defaultChecked9"  name="activeStatus" th:checked="${sessionList.activeStatus}==1" onclick="return false;" />
 
 
-<!--                            </td>-->
+                            </td>
 
-<!--                            <td>-->
-<!--                                <a th:href="@{'/sessioncontroller/update/'+${sessionList.sessionId}}" class="btn btn-success btn-sm">Edit</a>-->
+                            <td>
+                                <a th:href=@{/session/update/{id}(id=${sessionList.id})} class="btn btn-success btn-sm">Edit</a>
 
-<!--                            </td>-->
+                            </td>
 
-<!--                        </tr>-->
+                        </tr>
 
 
                         </tbody>

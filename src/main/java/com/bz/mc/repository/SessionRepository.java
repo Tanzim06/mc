@@ -1,6 +1,5 @@
 package com.bz.mc.repository;
 
-import java.util.List;
 import com.bz.mc.model.setup.SessionInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
