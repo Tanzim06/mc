@@ -1,10 +1,8 @@
 package com.bz.mc.model.studentRegistration;
 
+import com.bz.mc.model.Auditable;
 import com.bz.mc.model.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -19,18 +17,23 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder(builderClassName = "Builder")
 @Entity
 @Table(name = "STUDENT_REGISTRATION")
-@ToString
-public class StudentRegistrationInfo extends BaseEntity {
-
-    @Column(name="STUDENT_REGISTRATION_ID")
-    private Long studentRegistrationId;
-
+public class StudentRegistrationInfo extends BaseEntity implements Auditable {
 
     @Column(name="BRANCH_ID")
     private Long branchId;
 
+    @Column(name="PROGRAM_ID")
+    private Long programId;
+
+    @Column(name="PROGRAM_SEGMENT_ID")
+    private Long programSegmentId;
+
+    @Column(name="STATUS_ID")
+    private Long statusId;
 
     @Column(name="VISUAL_ID")
     private String visualId;
@@ -82,7 +85,7 @@ public class StudentRegistrationInfo extends BaseEntity {
     private byte [] picture;
 
     @Column(name="GENDER")
-    private Integer gender;
+    private Gender gender;
 
     @Column(name="CONTACT_NO")
     private String contactNo;
@@ -113,17 +116,17 @@ public class StudentRegistrationInfo extends BaseEntity {
     @Transient
     private boolean active;
 
-    @Column(name="ENTERED_BY")
-    private Long enteredBy ;
+    @Column(name = "ENTERED_BY")
+    private Long createdBy;
 
-    @Column(name="ENTRY_TIMESTAMP")
-    private LocalDateTime entryTimestamp;
+    @Column(name = "UPDATED_BY")
+    private Long modifiedBy;
 
-    @Column(name="UPDATED_BY")
-    private Long updatedBy ;
+    @Column(name = "ENTRY_TIMESTAMP")
+    private LocalDateTime createdAt;
 
-    @Column(name="UPDATE_TIMESTAMP" , nullable=true)
-    private LocalDateTime updateTimestap;
+    @Column(name = "UPDATE_TIMESTAMP")
+    private LocalDateTime modifiedAt;
 
     @Column(name="FLEX_FIELD1")
     private String flex1  ;
@@ -133,4 +136,34 @@ public class StudentRegistrationInfo extends BaseEntity {
 
     @Column(name="FLEX_FIELD3")
     private String flex3  ;
+
+    /*@Builder
+    public StudentRegistrationInfo(Long branchId, String visualId, String studentName, String fatherName, String motherName, String permanentAdd, String permanentAddPostCode, String presentAdd, String presentAddPostcode, float ageInYr, LocalDate doB, LocalDate registrationDate, LocalDate calculatedDOB, String bloodGroup, String picturePath, byte[] picture, Integer gender, String contactNo, Long sessionId, int closeFlag, LocalDateTime closeDate, String closeReason, String hobby, int activeStatus, String remarks, boolean active) {
+        this.branchId = branchId;
+        this.visualId = visualId;
+        this.studentName = studentName;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.permanentAdd = permanentAdd;
+        this.permanentAddPostCode = permanentAddPostCode;
+        this.presentAdd = presentAdd;
+        this.presentAddPostcode = presentAddPostcode;
+        this.ageInYr = ageInYr;
+        this.doB = doB;
+        this.registrationDate = registrationDate;
+        this.calculatedDOB = calculatedDOB;
+        this.bloodGroup = bloodGroup;
+        this.picturePath = picturePath;
+        this.picture = picture;
+        this.contactNo = contactNo;
+        this.sessionId = sessionId;
+        this.closeFlag = closeFlag;
+        this.closeDate = closeDate;
+        this.closeReason = closeReason;
+        this.hobby = hobby;
+        this.activeStatus = activeStatus;
+        this.remarks = remarks;
+        this.active = active;
+
+    }*/
 }

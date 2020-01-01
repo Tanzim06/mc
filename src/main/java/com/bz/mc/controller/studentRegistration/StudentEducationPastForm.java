@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StudentEducationPastForm {
 
-    private Long studentEduPastId;
+    private Long id;
     private Long  studentRegistrationId;
     private String examName;
     private String groupName;
@@ -26,11 +26,11 @@ public class StudentEducationPastForm {
 
 
     public boolean isPersisted() {
-        return studentEduPastId != null;
+        return id != null;
     }
 
     public StudentEducationPastForm(StudentEducationPastInfo studentEducationPastInfo) {
-        this.studentEduPastId = studentEducationPastInfo.getStudentEduPastId();
+        this.id = studentEducationPastInfo.getId();
         this.studentRegistrationId = studentEducationPastInfo.getStudentRegistrationId();
         this.examName = studentEducationPastInfo.getExamName();
         this.groupName = studentEducationPastInfo.getGroupName();

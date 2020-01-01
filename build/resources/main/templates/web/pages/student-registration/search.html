@@ -16,34 +16,34 @@
 <!-- END PAGE TITLE -->
  <div id="search">
 
-     <form class="needs-validation" th:action="@{/studentregistrationcontroller/search}"    novalidate>
+     <form class="needs-validation" th:action="@{/student-registration/list}"  method="post"  novalidate>
          <div class="row">
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Student Name</label>
-                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="studentName" placeholder="studentName" >
+                 <label for="studentName" class="control-label mb-1">Student Name</label>
+                 <input  id="studentName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="studentName" th:value="${studentName}" placeholder="studentName" >
              </div>
          </div>
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Father Name</label>
-                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="fatherName" placeholder="fatherName" >
+                 <label for="fatherName" class="control-label mb-1">Father Name</label>
+                 <input id="fatherName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="fatherName" th:value="${fatherName}" placeholder="fatherName" >
              </div>
          </div>
 
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Mother Name</label>
-                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="motherName" placeholder="motherName" >
+                 <label for="motherName" class="control-label mb-1">Mother Name</label>
+                 <input  id="motherName" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="motherName" th:value="${motherName}" placeholder="motherName" >
              </div>
          </div>
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Contact Number</label>
-                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false" name="contactNo" placeholder="contactNo" >
+                 <label for="contactNo" class="control-label mb-1">Contact Number</label>
+                 <input id="contactNo"  type="text" class="form-control" aria-required="true" aria-invalid="false" name="contactNo" th:value="${contactNo}" placeholder="contactNo" >
              </div>
          </div>
          </div>
@@ -51,59 +51,46 @@
          <div class="row">
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Registration ID</label>
-                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  name="registrationId" placeholder="Registration ID" >
+                 <label for="id"class="control-label mb-1">Registration ID</label>
+                 <input id="id"  type="text" class="form-control" aria-required="true" aria-invalid="false"  name="id" placeholder="Registration ID" th:value="${id}" >
              </div>
          </div>
 
 
-         <div class="col-3">
-             <div class="form-group">
-                 <label class="control-label mb-1">Program</label>
-                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  placeholder="Program" >
-             </div>
-         </div>
+
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Program Segment</label>
-                 <input   type="text" class="form-control" aria-required="true" aria-invalid="false"  placeholder="Program Segment" >
-             </div>
-         </div>
-
-         <div class="col-3">
-             <div class="form-group">
-                 <label class="control-label mb-1">Session</label>
-                 <select id="sessionId"  name="sessionId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
+                 <label  for="sessionId" class="control-label mb-1">Session</label>
+                 <select id="sessionId"  name="sessionId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false" th:value="${sessionId}" >
                      <option value="">Select</option>
                      <option th:each="sList:${sessionList}"
-                             th:value="${sList.sessionId}"
+                             th:value="${sList.id}"
                              th:utext="${sList.sessionName}"/>
                  </select>
              </div>
          </div>
-         </div>
 
-         <div class="row">
-         <div class="col-3">
-             <div class="form-group">
-                 <label class="control-label mb-1">Registration Date</label>
-                 <input  type="date" class="form-control" aria-required="true" aria-invalid="false"  name="eegistrationDate" placeholder="Registration Date" >
+             <div class="col-3">
+                 <div class="form-group">
+                     <label for="registrationDate" class="control-label mb-1">Registration Date</label>
+                     <input id="registrationDate"  type="date" class="form-control" aria-required="true" aria-invalid="false"  name="registrationDate" placeholder="Registration Date" th:value="${registrationDate}" >
+                 </div>
+             </div>
+
+             <div class="col-3">
+                 <div class="form-group">
+                     <label for="doB" class="control-label mb-1">Date of Birth</label>
+                     <input id="doB" type="date" class="form-control" aria-required="true" aria-invalid="false"  name="doB" placeholder="doB" th:value="${doB}" >
+                 </div>
              </div>
          </div>
 
-         <div class="col-3">
-             <div class="form-group">
-                 <label class="control-label mb-1">Date of Birth</label>
-                 <input   type="date" class="form-control" aria-required="true" aria-invalid="false"  name="doB" placeholder="doB" >
-             </div>
-         </div>
-         </div>
 
          <div class="col-sm-3 text-right">
 
              <input type="submit" value="Search" class="btn btn-primary btn-md" style="margin-top: 24px;">
-             <a style="margin-top: 24px;" class="btn btn-success" th:href="@{/studentregistrationcontroller/view}" >Refresh</a>
+             <a style="margin-top: 24px;" class="btn btn-success" th:href="@{/student-registration/search}" >Refresh</a>
 <!--             <a class="btn btn-primary btn-md" style="margin-top: 24px;" th:href="@{/homecontroller}">Home</a>-->
 
          </div>

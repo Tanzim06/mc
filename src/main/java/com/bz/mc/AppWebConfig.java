@@ -26,6 +26,7 @@ public class AppWebConfig implements WebMvcConfigurer {
 //        registry.addConverter(new DocumentSourceConverter());
        // registry.addConverter(new SelectionStateConverter());
        // registry.addConverter(new RecommendationStateConverter());
+        registry.addConverter(new GenderConverter());
     }
 
     @Override

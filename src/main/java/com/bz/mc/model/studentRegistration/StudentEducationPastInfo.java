@@ -1,13 +1,12 @@
 package com.bz.mc.model.studentRegistration;
 
 import com.bz.mc.model.BaseEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.time.LocalDateTime;
 
 /**
@@ -22,9 +21,6 @@ import java.time.LocalDateTime;
 @Table(name = "STUDENT_EDU_PAST")
 @ToString
 public class StudentEducationPastInfo extends BaseEntity {
-
-    @Column(name="STUDENT_EDU_PAST_ID")
-    private Long studentEduPastId;
 
     @Column(name="STUDENT_REGISTRATION_ID")
     private Long  studentRegistrationId;
@@ -82,4 +78,27 @@ public class StudentEducationPastInfo extends BaseEntity {
 
     @Column(name="FLEX_FIELD3")
     private String flex3  ;
+
+    @Builder
+    public StudentEducationPastInfo(Long studentRegistrationId, String examName, String groupName, int yearPassed, String rollNo, String regNo, String boardName, float gpa, float marksBiology, String remarks, int activeStatus, boolean active, Long enteredBy, LocalDateTime entryTimestamp, LocalDateTime updatedBy, LocalDateTime updateTimestap, String flex1, String flex2, String flex3) {
+        this.studentRegistrationId = studentRegistrationId;
+        this.examName = examName;
+        this.groupName = groupName;
+        this.yearPassed = yearPassed;
+        this.rollNo = rollNo;
+        this.regNo = regNo;
+        this.boardName = boardName;
+        this.gpa = gpa;
+        this.marksBiology = marksBiology;
+        this.remarks = remarks;
+        this.activeStatus = activeStatus;
+        this.active = active;
+        this.enteredBy = enteredBy;
+        this.entryTimestamp = entryTimestamp;
+        this.updatedBy = updatedBy;
+        this.updateTimestap = updateTimestap;
+        this.flex1 = flex1;
+        this.flex2 = flex2;
+        this.flex3 = flex3;
+    }
 }

@@ -17,36 +17,38 @@
                                 <th>Mother Name</th>
                                 <th>Contact Number</th>
                                 <th>Date of Birth</th>
+<!--                                <th>Date of Birth</th>-->
                                 <!-- 	<th>Branch</th> -->
-                                <th>Gender</th>
-                                <th>Blood Group</th>
-                                <th>Present Address</th>
-                                <th>Present Address PostCord</th>
-                                <th>Permanent Address</th>
-                                <th>Permanent Address PostCord</th>
+<!--                                <th>Gender</th>-->
+<!--                                <th>Blood Group</th>-->
+<!--                                <th>Present Address</th>-->
+<!--                                <th>Present Address PostCord</th>-->
+<!--                                <th>Permanent Address</th>-->
+<!--                                <th>Permanent Address PostCord</th>-->
                                 <th>Session</th>
                                 <!--   <th>Picture</th> -->
 <!--                                <th>Remarks</th>-->
-<!--                                <th>Action</th>-->
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            <tr th:each="mSRL:${studentSearch}">
-                                <td ><span th:text="${mSRL.studentRegistrationId}"></span></td>
+                            <tr th:each="mSRL:${studentRegistrationDataList}">
+                                <td ><span th:text="${mSRL.id}"></span></td>
                                 <td> <span th:text="${mSRL.studentName}"></span></td>
                                 <td> <span th:text="${mSRL.fatherName}"></span></td>
                                 <td> <span th:text="${mSRL.motherName}"></span></td>
                                 <td> <span th:text="${mSRL.contactNo}"></span></td>
-                                <td> <span th:text="${mSRL.doB}" th:pattern="yyyy-MM-dd"></span></td>
+                                <td> <span th:text="${mSRL.doB}"></span></td>
+<!--                                <td> <span th:text="${mSRL.doB}"></span></td>-->
                                 <!-- <td> <span th:text="${mSRL.branchId}"></span></td> -->
-                                <td> <span th:text="${mSRL.gender}"></span></td>
-                                <td> <span th:text="${mSRL.bloodGroup}"></span></td>
-                                <td> <span th:text="${mSRL.presentAdd}"></span></td>
-                                <td> <span th:text="${mSRL.presentAddPostcode}"></span></td>
-                                <td> <span th:text="${mSRL.permanentAdd}"></span></td>
-                                <td> <span th:text="${mSRL.permanentAddPostCode}"></span></td>
-                                <td> <span th:text="${mSRL.sessionId}"></span></td>
+<!--                                <td> <span th:text="${mSRL.gender}"></span></td>-->
+<!--                                <td> <span th:text="${mSRL.bloodGroup}"></span></td>-->
+<!--                                <td> <span th:text="${mSRL.presentAdd}"></span></td>-->
+<!--                                <td> <span th:text="${mSRL.presentAddPostcode}"></span></td>-->
+<!--                                <td> <span th:text="${mSRL.permanentAdd}"></span></td>-->
+<!--                                <td> <span th:text="${mSRL.permanentAddPostCode}"></span></td>-->
+                                <td> <span th:text="${mSRL.sessionName}"></span></td>
                                 <!--       <td >
                                    <span th:each="s:${sessionList}" th:text="${s.sessionName}"></span>
                                    </td>-->
@@ -65,8 +67,8 @@
                                        </td> -->
 
                                 <td>
-                                    <a  class="btn btn-success btn-sm" th:href="@{'/studentregistrationcontroller/update/'+${mSRL.studentRegistrationId}}">Edit</a>
-
+<!--                                    <a  class="btn btn-success btn-sm" th:href="@{'/student-registration/edit/'+${mSRL.id}}">Edit</a>-->
+                                    <a th:href="@{/student-registration/edit/{id}(id=${mSRL.id})}" class="btn btn-info : 'form-control'">Edit</a>
                                 </td>
 
                             </tr>

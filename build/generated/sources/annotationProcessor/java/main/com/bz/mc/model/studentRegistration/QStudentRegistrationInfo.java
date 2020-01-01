@@ -39,11 +39,11 @@ public class QStudentRegistrationInfo extends EntityPathBase<StudentRegistration
 
     public final StringPath contactNo = createString("contactNo");
 
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
+
     public final DatePath<java.time.LocalDate> doB = createDate("doB", java.time.LocalDate.class);
-
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> entryTimestamp = createDateTime("entryTimestamp", java.time.LocalDateTime.class);
 
     public final StringPath fatherName = createString("fatherName");
 
@@ -53,12 +53,16 @@ public class QStudentRegistrationInfo extends EntityPathBase<StudentRegistration
 
     public final StringPath flex3 = createString("flex3");
 
-    public final NumberPath<Integer> gender = createNumber("gender", Integer.class);
+    public final EnumPath<Gender> gender = createEnum("gender", Gender.class);
 
     public final StringPath hobby = createString("hobby");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
+
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
 
     public final StringPath motherName = createString("motherName");
 
@@ -74,19 +78,19 @@ public class QStudentRegistrationInfo extends EntityPathBase<StudentRegistration
 
     public final StringPath presentAddPostcode = createString("presentAddPostcode");
 
+    public final NumberPath<Long> programId = createNumber("programId", Long.class);
+
+    public final NumberPath<Long> programSegmentId = createNumber("programSegmentId", Long.class);
+
     public final DatePath<java.time.LocalDate> registrationDate = createDate("registrationDate", java.time.LocalDate.class);
 
     public final StringPath remarks = createString("remarks");
 
     public final NumberPath<Long> sessionId = createNumber("sessionId", Long.class);
 
+    public final NumberPath<Long> statusId = createNumber("statusId", Long.class);
+
     public final StringPath studentName = createString("studentName");
-
-    public final NumberPath<Long> studentRegistrationId = createNumber("studentRegistrationId", Long.class);
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestap = createDateTime("updateTimestap", java.time.LocalDateTime.class);
 
     public final StringPath visualId = createString("visualId");
 

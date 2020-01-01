@@ -52,8 +52,6 @@ public class QStudentEducationPastInfo extends EntityPathBase<StudentEducationPa
 
     public final StringPath rollNo = createString("rollNo");
 
-    public final NumberPath<Long> studentEduPastId = createNumber("studentEduPastId", Long.class);
-
     public final NumberPath<Long> studentRegistrationId = createNumber("studentRegistrationId", Long.class);
 
     public final DateTimePath<java.time.LocalDateTime> updatedBy = createDateTime("updatedBy", java.time.LocalDateTime.class);

@@ -1,12 +1,15 @@
 package com.bz.mc.controller.studentRegistration;
 
+import com.bz.mc.facade.data.StudentEducationPastData;
+import com.bz.mc.model.studentRegistration.Gender;
 import com.bz.mc.model.studentRegistration.StudentRegistrationInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -14,8 +17,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class StudentRegistrationForm {
 
-    private Long studentRegistrationId;
+    private Long id;
     private Long branchId;
+    private Long programId;
+    private Long programSegmentId;
+    private Long statusId;
     private String visualId;
     private String studentName;
     private String fatherName;
@@ -25,28 +31,32 @@ public class StudentRegistrationForm {
     private String presentAdd;
     private String presentAddPostcode;
     private float ageInYr ;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDate doB;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDate registrationDate;
+    private String doB;
+    private String registrationDate;
     private String bloodGroup;
     private String picturePath;
     private byte [] picture;
-    private Integer gender;
+    private Gender gender;
     private String contactNo;
     private Long  sessionId;
     private int activeStatus;
     private String remarks;
+    private int tabId;
+    private StudentEducationPastForm studentEducationPastForm=new StudentEducationPastForm();
+    private List<StudentEducationPastData> educationPastForm = new ArrayList<>();
 
 
     public boolean isPersisted() {
-        return studentRegistrationId != null;
+        return id != null;
     }
 
 
-    public StudentRegistrationForm(StudentRegistrationInfo studentRegistrationInfo) {
-        this.studentRegistrationId = studentRegistrationInfo.getStudentRegistrationId();
+    public void populateSudentRegistratioinInfo(StudentRegistrationInfo studentRegistrationInfo){    //// after save date show tab 1
+        this.id=studentRegistrationInfo.getId();
         this.branchId = studentRegistrationInfo.getBranchId();
+        this.programId = studentRegistrationInfo.getProgramId();
+        this.programSegmentId = studentRegistrationInfo.getProgramSegmentId();
+        this.statusId = studentRegistrationInfo.getStatusId();
         this.visualId = studentRegistrationInfo.getVisualId();
         this.studentName = studentRegistrationInfo.getStudentName();
         this.fatherName = studentRegistrationInfo.getFatherName();
@@ -56,8 +66,10 @@ public class StudentRegistrationForm {
         this.presentAdd = studentRegistrationInfo.getPresentAdd();
         this.presentAddPostcode = studentRegistrationInfo.getPresentAddPostcode();
         this.ageInYr = studentRegistrationInfo.getAgeInYr();
-        this.doB = studentRegistrationInfo.getDoB();
-        this.registrationDate = studentRegistrationInfo.getRegistrationDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.doB = formatter.format(studentRegistrationInfo.getDoB());
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.registrationDate = formatters.format(studentRegistrationInfo.getRegistrationDate());
         this.bloodGroup = studentRegistrationInfo.getBloodGroup();
         this.picturePath = studentRegistrationInfo.getPicturePath();
         this.picture = studentRegistrationInfo.getPicture();
@@ -66,5 +78,20 @@ public class StudentRegistrationForm {
         this.sessionId = studentRegistrationInfo.getSessionId();
         this.activeStatus = studentRegistrationInfo.getActiveStatus();
         this.remarks = studentRegistrationInfo.getRemarks();
+
+    }
+
+
+    public StudentRegistrationForm(StudentRegistrationInfo studentRegistrationInfo, List<StudentEducationPastData> educationPastDataList) {
+        this.id=studentRegistrationInfo.getId();
+        populateSudentRegistratioinInfo(studentRegistrationInfo);
+        populateStudentEducationPastInfo(educationPastDataList);
+        this.tabId=1;
+    }
+
+    public void populateStudentEducationPastInfo(List<StudentEducationPastData> educationPastDataList){
+        for(StudentEducationPastData m : educationPastDataList){
+            educationPastForm.add(m);
+        }
     }
 }

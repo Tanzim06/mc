@@ -1,35 +1,54 @@
 <div th:fragment="educational-qualification" xmlns:th="http://www.w3.org/1999/xhtml">
 
 
-    <form>
+    <form th:object="${studentEducationPastForm}"
+          th:action="@{/student-registration/save-student-education}"
+          method="POST">
 
 
         <div class="row">
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Student Education Past ID</label>
+                    <label for="id" class="col-md-4 control-label">Student Education Past ID</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
-                               name="studentEduPastId"
+                              id="id"
                                placeholder="Student Education Past ID"
-                                readonly>
+                               th:field="*{id}" readonly>
                     </div>
                 </div>
             </div>
-
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Student Registration ID</label>
+                    <label class="col-md-4 control-label" for="examName">Exam Name <span style="color: red">*</span></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control"
-                               name="studentRegistrationId"
-                               placeholder="Student Registration ID"
-                               readonly>
+                        <select style="height: 37px"
+                                th:class="${#fields.hasErrors('examName')} ? 'form-control is-invalid' : 'form-control'"
+                                class="form-control" aria-required="true"
+                                aria-invalid="false" id="examName" th:field="*{examName}" >
+                            <option value="">Select</option>
+                            <option value="HSC">H.S.C</option>
+                            <option value="SSC">S.S.C</option>
+                        </select>
+                        <div th:if="${#fields.hasErrors('examName')}" th:errors="*{examName}"
+                             class="invalid-feedback"></div>
                     </div>
                 </div>
             </div>
+<!--            <div class="col-6">-->
+<!--                <div class="form-group row">-->
+<!--                    <label for="studentRegistrationId" class="col-md-4 control-label">Student Registration ID</label>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               id="studentRegistrationId"-->
+<!--                               placeholder="Student Registration ID"-->
+<!--                               th:field="*{studentRegistrationId}"-->
+<!--                               readonly>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
 
 
@@ -37,81 +56,58 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Exam Name</label>
+                    <label class="col-md-4 control-label" for="boardName" >Board Name <span style="color: red">*</span></label>
                     <div class="col-md-8">
                         <select style="height: 37px"
+                                th:class="${#fields.hasErrors('boardName')} ? 'form-control is-invalid' : 'form-control'"
                                 class="form-control" aria-required="true"
-                                aria-invalid="false" >
+                                aria-invalid="false" id="boardName" th:field="*{boardName}">
                             <option value="">Select</option>
-                            <option value="HSC">H.S.C</option>
-                            <option value="SSC">S.S.C</option>
+                            <option value="Barisal">Barisal</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Cumilla">Cumilla</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Jashore">Jashore</option>
+                            <option value="Mymensingh">Mymensingh</option>
+                            <option value="Rajshahi">Rajshahi</option>
+                            <option value="Sylhet">Sylhet</option>
+                            <option value="Dinajpur">Dinajpur</option>
                         </select>
+                        <div th:if="${#fields.hasErrors('boardName')}" th:errors="*{boardName}"
+                             class="invalid-feedback"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6">
+           <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Group Name</label>
+                    <label class="col-md-4 control-label" for="groupName">Group Name <span style="color: red">*</span></label>
                     <div class="col-md-8">
                         <select  style="height: 37px"
+                                 th:class="${#fields.hasErrors('groupName')} ? 'form-control is-invalid' : 'form-control'"
                                 class="form-control" aria-required="true"
-                                aria-invalid="false" >
+                                aria-invalid="false"   id="groupName" th:field="*{groupName}">
                             <option value="">Select</option>
                             <option value="Science">Science</option>
                             <option value="Business_study">Business study</option>
                             <option value="Humanities">Humanities</option>
                         </select>
+                        <div th:if="${#fields.hasErrors('groupName')}" th:errors="*{groupName}"
+                             class="invalid-feedback"></div>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="row">
-
-
-            <div class="col-6">
-
-                <div class="form-group row">
-                    <label class="col-md-4 control-label">Board Name</label>
-                    <div class="col-md-8">
-                        <select style="height: 37px"
-                                class="form-control" aria-required="true"
-                                aria-invalid="false" >
-                            <option value="">Select</option>
-                            <option value="Dhaka">Dhaka</option>
-                            <option value="Chittagong">Chittagong</option>
-                            <option value="Comilla">Comilla</option>
-
-                        </select>
-                    </div>
-                </div>
-            </div>
+       <div class="row">
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Year Passed<span
-                            style="color: red">*</span></label>
-                    <div class="col-md-8">
-                        <input type="text" id="stuName" class="form-control"
-                               placeholder="Year Passed" >
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="row">
-
-            <div class="col-6">
-                <div class="form-group row">
-                    <label class="col-md-4 control-label">Roll No<span
-                            style="color: red">*</span></label>
+                    <label class="col-md-4 control-label" for="rollNo">Roll No</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
-                               placeholder="Roll No" >
+                               placeholder="Roll No" id="rollNo" th:field="*{rollNo}">
                     </div>
                 </div>
             </div>
@@ -119,12 +115,12 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Registration
-                        No<span style="color: red">*</span>
+                    <label class="col-md-4 control-label"for="regNo">Registration No
+<!--                        <span style="color: red" >*</span>-->
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
-                               placeholder="Registration No" >
+                               placeholder="Registration No"  id="regNo" th:field="*{regNo}">
                     </div>
                 </div>
             </div>
@@ -135,11 +131,15 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">GPA<span
-                            style="color: red">*</span></label>
+                    <label class="col-md-4 control-label" for="gpa">GPA
+                        <span style="color: red">*</span>
+                    </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control"
-                               placeholder="GPA" >
+                        <input type="text" id="gpa" class="form-control"
+                               th:class="${#fields.hasErrors('gpa')} ? 'form-control is-invalid' : 'form-control'"
+                               placeholder="GPA"   th:field="*{gpa}"/>
+                        <div th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}"
+                             class="invalid-feedback"></div>
                     </div>
                 </div>
             </div>
@@ -147,11 +147,15 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Marks Biology<span
-                            style="color: red">*</span></label>
+                    <label class="col-md-4 control-label" for="marksBiology">Marks Biology
+                        <span style="color: red">*</span>
+                    </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control"
-                               placeholder="Marks Biology" >
+                               th:class="${#fields.hasErrors('marksBiology')} ? 'form-control is-invalid' : 'form-control'"
+                               placeholder="Marks Biology"  id="marksBiology" th:field="*{marksBiology}"/>
+                        <div th:if="${#fields.hasErrors('marksBiology')}" th:errors="*{marksBiology}"
+                             class="invalid-feedback"></div>
                     </div>
                 </div>
             </div>
@@ -161,15 +165,44 @@
 
         <div class="row">
 
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-md-4 control-label" for="yearPassed">Year Passed
+                        <span style="color: red">*</span>
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text"  class="form-control" id="yearPassed"
+                               th:class="${#fields.hasErrors('yearPassed')} ? 'form-control is-invalid' : 'form-control'"
+                               placeholder="Year Passed"  th:field="*{yearPassed}"/>
+                        <div th:if="${#fields.hasErrors('yearPassed')}" th:errors="*{yearPassed}"
+                             class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label">Remark </label>
+                    <label class="col-md-4 control-label" for="remarks">Remark </label>
                     <div class="col-md-8">
+                        <textarea rows="2" class="form-control" id="remarks"
+                                  th:field="*{remarks}"></textarea>
 
                     </div>
                 </div>
             </div>
+
+<!--            <div class="col-6">-->
+<!--                <div class="form-group row">-->
+<!--                    <label class="col-md-4 control-label" for="remarks">Remarks<span-->
+<!--                            style="color: red"></span></label>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               placeholder="Remarks"  id="remarks" th:field="*{remarks}">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
 
@@ -178,11 +211,9 @@
         <br>
 
         <div class="modal-footer">
-            <input type="submit" value="Save" class="btn btn-success"
-                   style="margin-top: 24px;"> <a
-                style="margin-top: 24px;" class="btn btn-primary btn-md"
-
-                id="refreshBtn">Refresh</a>
+            <input type="submit" value="Save" class="btn btn-success" style="margin-top: 24px;">
+            <a style="margin-top: 24px;" class="btn btn-primary btn-md"
+               th:href="@{/student-registration/student-education/update/{id}(id=${id})}" id="refreshBtn">Refresh</a>
         </div>
 
         <br> <br>
@@ -211,34 +242,34 @@
                                 <th>Registration No</th>
                                 <th>GPA</th>
                                 <th>Marks Biology</th>
-                                <th>Remark</th>
+<!--                                <th>Remark</th>-->
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
 
-<!--                            <tr th:each="mSEPList:${mSEPL}">-->
+                            <tr th:each="mSEPList:${educationPastDataList}">
 
-<!--                                <td hidden><span th:text="${mSEPList.studentEduPastId}"></span></td>-->
-<!--                                <td hidden><span-->
-<!--                                        th:text="${mSEPList.studentRegistrationId}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.examName}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.groupName}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.boardName}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.yearPassed}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.rollNo}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.regNo}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.gpa}"></span></td>-->
-<!--                                <td><span th:text="${mSEPList.marksBiology}"></span></td>-->
-
+                                <td hidden><span th:text="${mSEPList.id}"></span></td>
+                                <td hidden><span
+                                        th:text="${mSEPList.studentRegistrationId}"></span></td>
+                                <td><span th:text="${mSEPList.examName}"></span></td>
+                                <td><span th:text="${mSEPList.groupName}"></span></td>
+                                <td><span th:text="${mSEPList.boardName}"></span></td>
+                                <td><span th:text="${mSEPList.yearPassed}"></span></td>
+                                <td><span th:text="${mSEPList.rollNo}"></span></td>
+                                <td><span th:text="${mSEPList.regNo}"></span></td>
+                                <td><span th:text="${mSEPList.gpa}"></span></td>
+                                <td><span th:text="${mSEPList.marksBiology}"></span></td>
+<!--                                <td><span th:text="${mSEPList.remarks}"></span></td>-->
 
 <!--                                <td style=""><textarea rows="2" cols="60"-->
 <!--                                                       th:text="${mSEPList.remarks}" readonly>-->
 <!--                                              </textarea>-->
-<!--                                <td><a class="btn btn-success btn-sm"-->
-<!--                                       >Edit</a>-->
+                                <td>
+                                    <a  class="btn btn-success btn-sm" th:href="@{/student-registration/student-education/update/{id}(id=${mSEPList.id})}">Edit</a>
 
-<!--                                </td>-->
+                                </td>
 
                             </tr>
 
