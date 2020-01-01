@@ -2,40 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d453d722-2816-4625-a7f6-59b4dbc9d991" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/enrol/EnrolStudentInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e39dc82-b535-40b8-8adb-3ea3a54cf32b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6e39dc82-b535-40b8-8adb-3ea3a54cf32b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e39dc82-b535-40b8-8adb-3ea3a54cf32b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/McApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/McApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/admission/AdmissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/batch/BatchInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/ChargeGroupForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/ChargeGroupForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/charge/chargeGroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/shedule/ChargeSheduleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/shedule/ChargeSheduleForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ChargeGroupData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/ChargeGroupData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ChargeItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/repository/ChargeItemRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ChargeItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/ChargeItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/item/ItemForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/schedule/ChargeSheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/schedule/ChargeSheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/controller/session/SessionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/converter/form/UserStatusConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/converter/form/UserStatusConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/converter/form/UserTypeConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/converter/form/UserTypeConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/AuthenticatedUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/data/AuthenticatedUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/impl/SessionManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/facade/impl/SessionManagementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/common/UserStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/common/UserStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/common/UserType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/common/UserType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/model/security/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/security/AppSecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/security/AppSecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/security/PermissionDeniedExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/security/PermissionDeniedExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/RoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/AdmissionServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/AdmissionServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/BatchInfoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeGroupServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeGroupServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeItemServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ChargeItemServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/fragments/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/charge/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/shedule/charge-schedule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/shedule/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mc-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mc-log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/charge/ChargeGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/shedule/ChargeSheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/schedule/ChargeSheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/shedule/ChargeSheduleForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/controller/schedule/ChargeSheduleForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ChargeGroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/facade/data/ChargeGroupData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/shedule/ChargeShedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/model/shedule/ChargeShedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ChargeItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/repository/ChargeItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ChargeItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/ChargeItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ChargeItemServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bz/mc/service/impl/ChargeItemServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragments/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/charge/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/charge-schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/schedule/charge-schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web/pages/shedule/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web/pages/schedule/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemPriceServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemPriceServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ItemServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/OrganizationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/OrganizationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ProgramServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/ProgramServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/util/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/util/CodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/SessionFormValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/SessionFormValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/UserValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bz/mc/validator/UserValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/schedule/charge-schedule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/web/pages/schedule/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/web/pages/schedule/search.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,6 +175,18 @@
       <recent name="F:\office\mc\src\main\java\com\bz\mc\model\setup" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="McApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mc.main" />
@@ -167,18 +195,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -212,6 +228,7 @@
       <workItem from="1577507634456" duration="26323000" />
       <workItem from="1577592647170" duration="26808000" />
       <workItem from="1577765807555" duration="25563000" />
+      <workItem from="1577854607203" duration="1214000" />
     </task>
     <task id="LOCAL-00001" summary="complete upto login security">
       <created>1575889559218</created>
@@ -351,6 +368,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
