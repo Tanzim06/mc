@@ -45,10 +45,7 @@
 
 
                         <form class="needs-validation" th:object="${admissionForm}"  th:action="@{/admission/save}"  method="POST">
-
-
                             <div class="row  form-horizontal">
-
                                 <div class="col-6">
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Booking Id</label>
@@ -58,7 +55,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-6">
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Student Name</label>
@@ -68,7 +64,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-6">
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">DOB</label>
@@ -78,25 +73,17 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-6">
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Session</label>
                                         <div class="col-md-6">
-
-
-
                                             <select id="sessionId" th:field="*{sessionId}"
                                                     style="height: 37px; width: 220px" class="form-control"
                                                     aria-required="true" aria-invalid="false" required>
-
                                                 <option value="">select</option>
-
-                                                <option value="">select</option>
-                                                <option value="1">2019-20</option>
-                                                <option value="2">2020-21</option>
-
-
+                                                <option th:each="slist:${sessionList}"
+                                                        th:value="${slist.id}"
+                                                        th:utext="${slist.sessionName}" />
 
                                             </select>
                                         </div>
@@ -247,7 +234,6 @@
                                                 <option value="1">TK</option>
                                                 <option value="2">$</option>
 
-
                                                 <!--  <option th:each=""
                                                     th:value="${}"
                                                     th:utext="${}" />-->
@@ -280,33 +266,40 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Confirm</label>
+                                        <div class="col-md-6  custom-control custom-checkbox  ">
+                                            <input type="checkbox" class="custom-control-input"
+                                                   id="confirmFlag" th:field="*{confirm}"> <label
+                                                class="custom-control-label" for="confirmFlag"></label>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Confirm Date </label>
+                                        <div class="col-md-6">
+                                            <input type="date" style="height: 37px; width: 220px" th:field="*{confirmDate}">
 
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="col-12">
                                     <div class="float-right">
 
                                         <input type="submit" value="save"
                                                class="btn btn-success btn-md">
-                                        <!--  <i class="fa fa-dot-circle-o"></i> SAVE </input>-->
-
-
+                                        <a style="margin-bottom: 2px;" class="btn btn-info"
+                                                th:href="@{admission/create}">Refresh</a>
 
 
                                     </div>
                                 </div>
-
-
-
-
                             </div>
-
-
                         </form>
-
-
-
-
                     </div>
                 </div>
 

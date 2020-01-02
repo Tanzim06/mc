@@ -20,6 +20,7 @@ import org.hibernate.annotations.GenericGenerator;
 @ToString
 
 public class ProgramSegment extends BaseEntity implements Auditable {
+
 	@Column(name="VISUAL_ID")
 	private String visualId;
 	

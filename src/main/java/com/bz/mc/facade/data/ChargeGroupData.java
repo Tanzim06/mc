@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -28,10 +31,11 @@ public class ChargeGroupData {
     private String itemName;
     private String sessionName;
     private String programName;
-    private String programSegmentName;
+    private String segmentName;
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
+//    private  LocalDate billDate;
 
     //private String currencyName;
-
 
     public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName) {
         this.id = id;
@@ -52,9 +56,10 @@ public class ChargeGroupData {
         this.sessionName = sessionName;
 
 
+
     }
 
-    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName, String programName, String programSegmentName) {
+    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName, String programName, String segmentName) {
         this.id = id;
         this.chargeGroupName = chargeGroupName;
         this.shortCode = shortCode;
@@ -72,6 +77,7 @@ public class ChargeGroupData {
         this.itemName = itemName;
         this.sessionName = sessionName;
         this.programName = programName;
-        this.programSegmentName = programSegmentName;
+        this.segmentName = segmentName;
+//        this.billDate =billDate;
     }
 }

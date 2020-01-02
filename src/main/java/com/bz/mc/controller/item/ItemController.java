@@ -67,7 +67,6 @@ public class ItemController {
         }
         System.out.println("test");
         //BatchInfo batchInfo =getBatchInfo(itemForm);
-
         ItemInfo itemInfo = prepareItem(itemForm);
         System.out.println("testyyy");
         System.out.println("id " + itemInfo.getId());

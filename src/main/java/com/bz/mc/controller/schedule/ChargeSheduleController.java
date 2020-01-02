@@ -4,6 +4,8 @@ package com.bz.mc.controller.schedule;
 import com.bz.mc.controller.charge.ChargeGroupForm;
 import com.bz.mc.controller.charge.ChargeItemFrom;
 import com.bz.mc.facade.data.ChargeGroupData;
+import com.bz.mc.model.charge.ChargeGroup;
+import com.bz.mc.model.charge.ChargeItem;
 import com.bz.mc.model.shedule.ChargeShedule;
 import com.bz.mc.service.*;
 import lombok.NonNull;
@@ -11,9 +13,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class ChargeSheduleController {
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
     //public static final String ROUTE_DETAILS = BASE_ROUTE + "/details";
-    public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
+    public static final String ROUTE_UPDATE = BASE_ROUTE + "/update/{id}";
     private static final String REDIRECT = "redirect:";
 
     @GetMapping(ROUTE_CREATE )
@@ -42,7 +44,6 @@ public class ChargeSheduleController {
         populateBillDateForm (model, new BillDateForm());
         return "web/pages/schedule/create";
     }
-
 
 //    @GetMapping(ROUTE_DETAILS)
 //    public String scheduleList(Model model) {
@@ -56,17 +57,58 @@ public class ChargeSheduleController {
         return "web/pages/schedule/search";
     }
 
-
     @PostMapping(value = ROUTE_SEARCH_RESULT)
     public String getGroupList(Model model, @RequestParam("sessionId") Long sessionId,@RequestParam("programId") Long programId,@RequestParam("programSegmentId") Long programSegmentId,BillDateForm billDateForm,ChargeGroupForm chargeGroupForm) {
+        populateBillDateForm (model, billDateForm);
         List<ChargeGroupData>  groupData  = chargeItemService.getScheduleSearchResult(sessionId,programId,programSegmentId);
         model.addAttribute("groupdataList", groupData);
-
             if (groupData.size() != 0) {
                 return "web/pages/schedule/search";
         }
         return REDIRECT + ROUTE_SEARCH;
     }
+
+    @GetMapping(ROUTE_UPDATE)
+    public String updateChargeItem(Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
+        //ChargeItem chargeItem = chargeItemService.getChagreItem(id);
+//        this.chargeGroupId = chargeItem.getChargeGroupId();
+//        ChargeGroup chargeGroup = chargeGroupService.getChargeGroup(chargeGroupId);
+//        ChargeItemFrom chargeItemFrom = new ChargeItemFrom(chargeItemService.getChagreItem(id));
+//        populateOtherFormData(model,chargeGroup, chargeItemFrom);
+
+
+        return "/web/pages/schedule/create";
+    }
+
+//    @PostMapping(ROUTE_SAVE)
+//    public String saveChargeGroup(Model model, @ModelAttribute ChargeGroupForm chargeGroupForm, BindingResult result, RedirectAttributes redirectAttributes) {
+//        System.out.println("out");
+//        //employeeFormValidator.validate(employeeForm, result);
+//        if (result.hasErrors()) {
+//            // System.out.println("testee");
+//            populateChargeGroupForm( model,chargeGroupForm);
+//            return "/web/pages/charge/create";
+//        }
+//        System.out.println("test");
+//        //BatchInfo batchInfo =getBatchInfo(itemForm);
+//
+//        ChargeGroup chargeGroup = prepareChargeGroup(chargeGroupForm);
+//        System.out.println("testyyy");
+//        System.out.println("id " + chargeGroup.getId());
+//
+//        chargeGroup = chargeGroupService.saveChargeGroup(chargeGroup);
+//
+//        System.out.print("id="+chargeGroup.getId());
+//
+//        ChargeItem chargeItem = new ChargeItem();
+//        chargeItem.setChargeGroupId(chargeGroup.getId());
+//        System.out.print("itemid="+chargeItem.getItemId());
+//        System.out.println("test1");
+//        //return "/web/pages/batch/create";
+//        redirectAttributes.addFlashAttribute("message", "charge.chargeGroup.info.saved");
+//        return REDIRECT+ webLinkFactory.updateChargeUrl(chargeGroup.getId());
+//    }
+
 
 
 

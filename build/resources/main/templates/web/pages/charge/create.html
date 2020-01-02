@@ -59,14 +59,8 @@
 
                 <div>
                     <div class="card-body">
-
-
-
                         <form class="needs-validation" th:object="${chargeGroupForm}"   th:action="@{/charge/save}" method="POST">
-
-
                             <div class="row">
-
                                 <div class="col-md-2" hidden>
                                     <div class="form-group row">
                                         <label class="col-md-2 "> id</label>
@@ -76,14 +70,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="col-md-7">
                                     <div class="form-group row">
                                         <label class="col-md-4"> charge group name</label>
                                         <div class="col-md-6">
                                             <input type="text" id="chargeGroupName" class="form-control"
-                                                   name="chargeGroupName" th:field="*{chargeGroupName}" />
+                                                   style="height: 37px; width: 230px"  name="chargeGroupName" th:field="*{chargeGroupName}" />
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +193,6 @@
                                     <div class="form-group row">
                                         <label class="col-md-4 control-label">Payment Cycle</label>
                                         <div class="col-md-6">
-
                                             <select id="paymentCycle" th:field="*{paymentCycle}"
                                                     style="height: 37px; width: 230px" class="form-control"
                                                     aria-required="true" aria-invalid="false" required>
@@ -219,12 +210,55 @@
                                     </div>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-md-5">
                                     <div class="form-group row">
-                                        <label class="col-md-5 ">Remarks</label>
+                                        <label class="col-md-5 control-label">Origin</label>
                                         <div class="col-md-5">
 
-												<textarea placeholder="remarks" style="width: 180px"
+                                            <select id="origin"
+                                                    style="height: 37px; width: 180px" class="form-control"
+                                                    aria-required="true" aria-invalid="false" required>
+                                                <option value="0">select</option>
+                                                <option value="1">local</option>
+                                                <option value="2">foregin</option>
+                                                <option value="3">both</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row ">
+                                <div class="col-7">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 control-label">Effective From</label>
+                                        <div class="col-md-6">
+                                            <input type="date"   style="height: 37px; width:  230px" />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="form-group row">
+                                        <label class="col-md-5 control-label">Effective To</label>
+                                        <div class="col-md-5">
+                                            <input type="date"  style="height: 37px; width:  180px"/>
+<!--                                            <input type="date" th:field="*{effectiveTo}"  style="height: 37px; width: 220px"/>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="form-group row">
+                                        <label class="col-md-4">Remarks</label>
+                                        <div class="col-md-6">
+												<textarea placeholder="remarks" style="width: 740px"
                                                           name="remarksMst" th:field="*{remarks}"></textarea>
                                         </div>
                                     </div>
@@ -265,31 +299,31 @@
 
                         <form name="form2" class="needs-validation" th:object="${ChargeItemForm}"  th:action="@{/charge/chargeItem/save}" method="POST">
 
-                            <div class="row ">
+<!--                            <div class="row ">-->
 
-                                <div class="col-md-5">
-                                    <div class="form-group row" id="individual">
-                                        <label class="col-md-4  control-label">individual</label>
-                                        <div class="col-md-6">
-                                            <input type="checkbox" onclick="enableDisable();"
-                                                   class="checkbox" name="individual">
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="col-md-5">-->
+<!--                                    <div class="form-group row" id="individual">-->
+<!--                                        <label class="col-md-4  control-label">individual</label>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <input type="checkbox" onclick="enableDisable();"-->
+<!--                                                   class="checkbox" name="individual">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
-                                <div class="col-7">
-                                    <div class="form-group row">
-                                        <label class="col-md-4 ">Active</label>
-                                        <div class="col-md-6 ">
-                                            <input type="checkbox" class="checkbox" id="ActiveStatus"
-                                                   name="active" >
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="col-7">-->
+<!--                                    <div class="form-group row">-->
+<!--                                        <label class="col-md-4 ">Active</label>-->
+<!--                                        <div class="col-md-6 ">-->
+<!--                                            <input type="checkbox" class="checkbox" id="ActiveStatus"-->
+<!--                                                   name="active" >-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
-                                <input id="formMode" th:value="${mode}" hidden>
+<!--                                <input id="formMode" th:value="${mode}" hidden>-->
 
-                            </div>
+<!--                            </div>-->
 
                             <div class="row">
                                 <div class="col-md-4" hidden>
@@ -384,91 +418,68 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-md-7">
-                                    <div class="form-group row">
-                                        <label class="col-md-4 control-label">Session</label>
-                                        <div class="col-md-6">
-
-                                            <select id="sessionId" name="sessionId"
-                                                    style="height: 37px; width: 230px"
-                                                    th:field="*{sessionId}"
-                                                    class="form-control" aria-required="true"
-                                                    aria-invalid="false" required>
-
-                                                <option value="">select</option>
-
-                                                <option th:each="slist:${sessionList}"
-                                                        th:value="${slist.id}"
-                                                        th:utext="${slist.sessionName}" />
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-md-5">
-                                    <div class="form-group row">
-                                        <label class="col-md-4 control-label">Program</label>
-                                        <div class="col-md-6">
-
-                                            <select id="programId" name="programId"
-                                                   style="height: 37px; width: 210px"  th:field="*{programId}"
-                                                    class="form-control" aria-required="true"
-                                                    aria-invalid="false" required>
-                                                <option value="">select</option>
-
-                                                <option th:each="plist:${programs}"
-                                                        th:value="${plist.id}"
-                                                        th:utext="${plist.programName}" />
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="form-group row">
-                                        <label class="col-md-4 control-label">Program Segment</label>
-                                        <div class="col-md-6">
-
-                                            <select id="programSegmentId" name="programSegmentId"
-                                                    th:field="*{programSegmentId}"
-                                                    style="height: 37px; width: 230px" class="form-control"
-                                                    aria-required="true" aria-invalid="false" required>
-
-                                                <option value="">select</option>
-                                                <!-- <option value="1">term1</option>
-                                                <option value="2">term2</option> -->
-
-                                                <option th:each="pslist:${segmentList}"
-                                                        th:value="${pslist.id}"
-                                                        th:utext="${pslist.segmentName}" />
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-5">
-                                    <div class="form-group row">
-                                        <label class="col-md-4">Remarks</label>
-                                        <div class="col-md-5">
+                                    <div class="col-7">
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Remarks</label>
+                                            <div class="col-md-6">
 
 												<textarea style="width: 210px" placeholder="remarks"
                                                           th:field="*{remarks}"   name="remarks" ></textarea>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
+
 
                             </div>
+
+<!--                            <div class="row">-->
+
+<!--                                <div class="col-md-5">-->
+<!--                                    <div class="form-group row">-->
+<!--                                        <label class="col-md-4 control-label">Program</label>-->
+<!--                                        <div class="col-md-6">-->
+
+<!--                                            <select id="programId" name="programId"-->
+<!--                                                   style="height: 37px; width: 210px"  th:field="*{programId}"-->
+<!--                                                    class="form-control" aria-required="true"-->
+<!--                                                    aria-invalid="false" required>-->
+<!--                                                <option value="">select</option>-->
+
+<!--                                                <option th:each="plist:${programs}"-->
+<!--                                                        th:value="${plist.id}"-->
+<!--                                                        th:utext="${plist.programName}" />-->
+
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-7">-->
+<!--                                    <div class="form-group row">-->
+<!--                                        <label class="col-md-4 control-label">Program Segment</label>-->
+<!--                                        <div class="col-md-6">-->
+
+<!--                                            <select id="programSegmentId" name="programSegmentId"-->
+<!--                                                    th:field="*{programSegmentId}"-->
+<!--                                                    style="height: 37px; width: 230px" class="form-control"-->
+<!--                                                    aria-required="true" aria-invalid="false" required>-->
+
+<!--                                                <option value="">select</option>-->
+<!--                                                &lt;!&ndash; <option value="1">term1</option>-->
+<!--                                                <option value="2">term2</option> &ndash;&gt;-->
+
+<!--                                                <option th:each="pslist:${segmentList}"-->
+<!--                                                        th:value="${pslist.id}"-->
+<!--                                                        th:utext="${pslist.segmentName}" />-->
+
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
+
+
 
                             <div class="row  form-horizontal">
                                 <div class="col-12">
