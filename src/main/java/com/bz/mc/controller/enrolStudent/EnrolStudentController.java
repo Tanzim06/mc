@@ -180,7 +180,9 @@ public class EnrolStudentController {
 //        StudentRegistrationForm form=new StudentRegistrationForm(enrolStudentInfo,studentRegistrationInfo,studentRegistrationInfoAll);
 //        List<StudentRegistrationInfo> studentRegistrationDataList = studentRegistrationService.findStudentRegistrationList();
         List<StudentRegistrationInfo> registrationList = studentRegistrationService.findStudentRegistrationList();
-        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo,registrationList);
+        StudentRegistrationInfo studentRegistrationInfo=studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId());
+        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo, studentRegistrationInfo,registrationList);
+        System.out.println("stu info" + studentRegistrationForm.getStudentName());
         form.setStudentRegistrationForm(studentRegistrationForm);
         form=studentInfomation(form,studentRegistrationForm);
 //        form.setTabId(currentTab);
@@ -197,12 +199,17 @@ public class EnrolStudentController {
 
             EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
             enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
+            System.out.println("enrol id " + enrolStudentForm.getEnrolType());
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
             enrolStudentInfo.setEnrolDate(enrolDate);
+            System.out.println("enrol date " + enrolStudentForm.getEnrolDate());
             enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
+            System.out.println("stu Id " + enrolStudentForm.getStudentRegistrationId());
             enrolStudentInfo.setSessionId(enrolStudentForm.getSessionId());
+            System.out.println("session " + enrolStudentForm.getSessionId());
             enrolStudentInfo.setSectionId(enrolStudentForm.getSectionId());
+            System.out.println("section " + enrolStudentForm.getSectionId());
             enrolStudentInfo.setProgramSegmentId(enrolStudentForm.getProgramSegmentId());
             enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
             enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
@@ -218,8 +225,11 @@ public class EnrolStudentController {
                 StudentRegistrationInfo studentRegistrationInfo =  studentRegistrationService.getStudentRegistration(enrolStudentForm.getStudentRegistrationId());
 //                    Samity samity = samityService.getSamity(member.getSamityId());
                 studentRegistrationInfo.setStudentName(studentRegistrationForm.getStudentName());
+                System.out.println("stu name " + studentRegistrationForm.getStudentName());
                 studentRegistrationInfo.setFatherName(studentRegistrationForm.getFatherName());
+                System.out.println("father name " + studentRegistrationForm.getFatherName());
                 studentRegistrationInfo.setMotherName(studentRegistrationForm.getMotherName());
+                System.out.println("mother name " + studentRegistrationForm.getMotherName());
                 studentRegistrationInfo.setContactNo(studentRegistrationForm.getContactNo());
                 studentRegistrationInfo.setPresentAdd(studentRegistrationForm.getPresentAdd());
                 studentRegistrationInfo.setPresentAddPostcode(studentRegistrationForm.getPresentAddPostcode());
@@ -246,7 +256,6 @@ public class EnrolStudentController {
                 studentRegistrationInfo.setProgramId(studentRegistrationForm.getProgramId());
 
             }
-
 
 //            if(enrolStudentForm.isPersisted()){
 //                EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());

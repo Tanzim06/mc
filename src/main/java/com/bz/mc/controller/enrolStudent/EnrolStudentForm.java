@@ -8,12 +8,11 @@ import com.bz.mc.facade.data.StudentEducationPastData;
 import com.bz.mc.facade.data.StudentRegistrationData;
 import com.bz.mc.model.enrol.EnrolStudentInfo;
 import com.bz.mc.model.studentRegistration.StudentRegistrationInfo;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
+import javax.persistence.Transient;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -23,6 +22,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class EnrolStudentForm {
 
     private Long id;
@@ -35,6 +36,8 @@ public class EnrolStudentForm {
     private Long  batchId;
     private int rollNo;
     private Long  sectionId;
+    private boolean newss;
+    private boolean enrol;
     private StudentRegistrationForm studentRegistrationForm = new StudentRegistrationForm();
     private List<StudentRegistrationInfo> enrolStudentForm = new ArrayList<>();
 
@@ -56,21 +59,39 @@ public class EnrolStudentForm {
         this.batchId = enrolStudentInfo.getBatchId();
         this.rollNo = enrolStudentInfo.getRollNo();
         this.sectionId = enrolStudentInfo.getSectionId();
+//        this.newss = enrolStudentInfo.getNew;
+//        this.enrol = enrolStudentInfo.getE();
     }
 
-    private void populateStudentRegistrationInfo(EnrolStudentInfo enrolStudentInfo) {
-        this.groupId = enrolStudentInfo.getGroupId();
-        this.studentRegistrationId = enrolStudentInfo.getStudentRegistrationId();
-        this.sessionId = enrolStudentInfo.getSessionId();
-        this.batchId = enrolStudentInfo.getBatchId();
-        this.programSegmentId = enrolStudentInfo.getProgramSegmentId();
+    private void populateStudentRegistrationInfo(StudentRegistrationInfo studentRegistrationInfo) {
+//        enrolStudentForm.set(studentRegistrationForm.getStudentName());
+       // enrolStudentForm.setStudentRegistrationForm().;
+      //  studentRegistrationForm.getBloodGroup();
+//        studentRegistrationForm=StudentRegistrationForm.builder()
+//                .studentName(studentRegistrationInfo.getStudentName())
+//                .sessionId(studentRegistrationInfo.getSessionId())
+//                .programSegmentId(studentRegistrationInfo.getProgramSegmentId())
+//                .registrationDate(studentRegistrationInfo.getRegistrationDate())
+//                .gender(studentRegistrationInfo.getGender())
+//                .bloodGroup(studentRegistrationInfo.getBloodGroup())
+//                .doB(studentRegistrationInfo.getDoB())
+//                .sessionId(studentRegistrationInfo.getSessionId())
+//                .contactNo(studentRegistrationInfo.getContactNo())
+//                .fatherName(studentRegistrationInfo.getFatherName())
+//                .motherName(studentRegistrationInfo.getMotherName())
+//                .presentAdd(studentRegistrationInfo.getPresentAdd())
+//                .presentAddPostcode(studentRegistrationInfo.getPresentAddPostcode())
+//                .permanentAddPostCode(studentRegistrationInfo.getPermanentAddPostCode())
+//                .remarks(studentRegistrationInfo.getRemarks()).build;
+
+
     }
 
-    public EnrolStudentForm(EnrolStudentInfo enrolStudentInfo, List<StudentRegistrationInfo> registrationDataList) {
+    public EnrolStudentForm(EnrolStudentInfo enrolStudentInfo,StudentRegistrationInfo studentRegistrationInfo, List<StudentRegistrationInfo> registrationDataList) {
         this.id=enrolStudentInfo.getId();
         this.studentRegistrationId=enrolStudentInfo.getStudentRegistrationId();
         populateEnrolStudentForm(enrolStudentInfo);
-        populateStudentRegistrationInfo(enrolStudentInfo);
+        populateStudentRegistrationInfo(studentRegistrationInfo);
         populateStudentRegistrationInfoList(registrationDataList);
 
     }

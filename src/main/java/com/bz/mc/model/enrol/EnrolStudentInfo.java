@@ -81,10 +81,10 @@ public class EnrolStudentInfo extends BaseEntity implements Auditable {
     private boolean active;
 
     @Transient
-    private boolean eligible;
+    private boolean newss;
 
     @Transient
-    private boolean all;
+    private boolean enrol;
 
     @Column(name = "ENTERED_BY")
     private Long createdBy;

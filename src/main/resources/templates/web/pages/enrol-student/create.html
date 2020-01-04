@@ -62,7 +62,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="sessionId">Session</label>
                         <div class="col-md-8">
-                            <select id="sessionId" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{sessionId}">
+                            <select id="sessionId" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{studentRegistrationForm.sessionId}">
 <!--                                th:field="*{sessionId}"-->
                                 <option value="">Select</option>
                                 <option th:each="sList:${sessionList}"
@@ -113,7 +113,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="studentName">Student Name<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Student Name"  id="studentName" th:field="*{studentName}"  />
+                            <input type="text" class="form-control" placeholder="Student Name"  id="studentName" th:field="*{studentRegistrationForm.studentName}"  />
 <!--                     th:field="*{studentName}"              th:class="${#fields.hasErrors('studentName')} ? 'form-control is-invalid' : 'form-control'"-->
                             <!--                        <span th:class="err" th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" style="color: red">Please Enter your name</span>-->
 <!--                            <div th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" class="invalid-feedback"></div>-->
@@ -134,7 +134,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="registrationDate">Registration Date<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="date" id="registrationDate" class="form-control" placeholder="YYYY-MM-DD-"  />
+                            <input type="date" id="registrationDate" class="form-control" placeholder="YYYY-MM-DD-" th:field="*{studentRegistrationForm.registrationDate}" />
 <!--                         th:field="*{registrationDate}"           th:class="${#fields.hasErrors('registrationDate')} ? 'form-control is-invalid' : 'form-control'"-->
 
 <!--                            <div th:if="${#fields.hasErrors('registrationDate')}" th:errors="*{registrationDate}" class="invalid-feedback"></div>-->
@@ -164,7 +164,7 @@
                             <select style="height: 37px"
                                     class="form-control" aria-required="true"
                                     aria-invalid="false"
-                                    id="gender" name="relation"  >
+                                    id="gender" name="relation" th:field="*{studentRegistrationForm.gender}" >
                                 <option value=""> Select</option>
                                 <option th:each="thisGender : ${genders}"
                                         th:value="${thisGender.name()}"
@@ -183,7 +183,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="bloodGroup">Blood Group</label>
                         <div class="col-md-8">
-                            <select id="bloodGroup" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false">
+                            <select id="bloodGroup" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{studentRegistrationForm.bloodGroup}">
                                 <option value="">Select</option>
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>
@@ -206,7 +206,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="doB">Date of Birth<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="date" id="doB" class="form-control" placeholder="YYYY-MM-DD-"  oninput="calcualteAge()"/>
+                            <input type="date" id="doB" class="form-control" placeholder="YYYY-MM-DD-"  oninput="calcualteAge()" th:field="*{studentRegistrationForm.bloodGroup}" />
 <!--                        th:field="*{bloodGroup}"    th:field="*{doB}"        th:class="${#fields.hasErrors('doB')} ? 'form-control is-invalid' : 'form-control'"-->
 
 <!--                            <div th:if="${#fields.hasErrors('doB')}" th:errors="*{doB}" class="invalid-feedback"></div>-->
@@ -218,7 +218,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="contactNo">Contact Number</label>
                         <div class="col-md-8">
-                            <input type="text"  id="contactNo" class="form-control" placeholder="Contact Number" >
+                            <input type="text"  id="contactNo" class="form-control" placeholder="Contact Number" th:field="*{studentRegistrationForm.contactNo}">
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="motherName" >Mother Name<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="text" id="motherName" class="form-control" placeholder="Mother Name"/>
+                            <input type="text" id="motherName" class="form-control" placeholder="Mother Name" th:field="*{studentRegistrationForm.motherName}" />
 <!--                        th:field="*{motherName}"            th:class="${#fields.hasErrors('motherName')} ? 'form-control is-invalid' : 'form-control'"-->
 
 <!--                            <div th:if="${#fields.hasErrors('motherName')}" th:errors="*{motherName}" class="invalid-feedback"></div>-->
@@ -262,7 +262,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="presentAdd">Present Address</label>
                         <div class="col-md-8">
-                            <textarea rows="2" class="form-control" id="presentAdd" style="width: 100%" ></textarea>
+                            <textarea rows="2" class="form-control" id="presentAdd" style="width: 100%" th:field="*{studentRegistrationForm.presentAdd}"></textarea>
 <!--                            th:field="*{presentAdd}"-->
                         </div>
                     </div>
@@ -272,7 +272,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="presentAddPostcode">Present Address Code</label>
                         <div class="col-md-8">
-                            <input type="text" id="presentAddPostcode" class="form-control" placeholder="Present Address Code" >
+                            <input type="text" id="presentAddPostcode" class="form-control" placeholder="Present Address Code"  th:field="*{studentRegistrationForm.presentAddPostcode}">
 <!--                            th:field="*{presentAddPostcode}"-->
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="permanentAdd">Permanent Address</label>
                         <div class="col-md-8">
-                            <textarea rows="2" class="form-control" id="permanentAdd" style="width: 100%" ></textarea>
+                            <textarea rows="2" class="form-control" id="permanentAdd" style="width: 100%"  th:field="*{studentRegistrationForm.permanentAdd}"></textarea>
 <!--                            th:field="*{permanentAdd}"-->
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="permanentAddPostCode">Permanent Address Code</label>
                         <div class="col-md-8">
-                            <input type="text" id="permanentAddPostCode" class="form-control" placeholder="Permanent Address Code" >
+                            <input type="text" id="permanentAddPostCode" class="form-control" placeholder="Permanent Address Code" th:field="*{studentRegistrationForm.permanentAddPostCode}" >
 <!--                            th:field="*{permanentAddPostCode}"-->
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="remarks">Remark </label>
                         <div class="col-md-8">
-                            <textarea rows="2" class="form-control" id="remarks" ></textarea>
+                            <textarea rows="2" class="form-control" id="remarks" th:field="*{studentRegistrationForm.remarks}"></textarea>
 <!--                            th:field="*{remarks}"-->
                         </div>
                     </div>
