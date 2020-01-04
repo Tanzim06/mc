@@ -495,3 +495,102 @@
 [McApplication] 2020-01-01 18:31:47 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'programSegmentId' is not present
 [McApplication] 2020-01-01 18:42:07 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-01 18:42:38 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'programSegmentId' is not present
+[McApplication] 2020-01-02 10:31:00 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 10:41:14 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 10:41:34 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 10:41:36 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 10:46:12 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 10:49:29 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:07:27 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:07:40 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'studentRegistrationId' for method parameter of type Long
+[McApplication] 2020-01-02 11:45:26 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:45:38 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 11:46:11 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:46:12 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:46:17 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 11:56:14 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:56:19 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 11:56:35 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 11:56:36 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:01:02 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:01:07 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 12:01:09 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:01:13 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 12:01:15 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:01:31 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 12:01:49 [http-nio-8081-exec-2] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[McApplication] 2020-01-02 12:09:13 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:09:35 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'studentRegistrationId' for method parameter of type Long
+[McApplication] 2020-01-02 12:11:26 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:11:27 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:12:33 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'studentRegistrationId' for method parameter of type Long
+[McApplication] 2020-01-02 12:17:22 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:17:33 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'studentRegistrationId' for method parameter of type Long
+[McApplication] 2020-01-02 12:20:27 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:20:41 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2020-01-02 12:31:43 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:31:59 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2020-01-02 12:33:25 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - com.bz.mc.exception.NotFoundException
+[McApplication] 2020-01-02 12:33:38 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 12:48:59 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:01:00 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:01:35 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:01:37 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:01:46 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 13:04:09 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:21:48 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:22:45 [http-nio-8081-exec-10] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 13:22:56 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:23:06 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 13:23:52 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:28:59 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:29:18 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:29:19 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 13:29:30 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 14:23:34 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:24:03 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:24:03 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:24:15 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 14:24:35 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:24:36 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:31:54 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:32:16 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:32:17 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:39:48 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:40:13 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 14:40:18 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:01:52 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:05:09 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:12:04 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:12:56 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:13:29 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:13:30 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:13:53 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:13:58 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:14:08 [http-nio-8081-exec-7] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]; nested exception is org.hibernate.exception.GenericJDBCException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]
+[McApplication] 2020-01-02 15:14:20 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:14:22 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:14:55 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:14:56 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:15:17 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:15:18 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:25:14 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:25:32 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:25:34 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:27:40 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:27:41 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:48:21 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:55:09 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 15:55:57 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.NullPointerException: text
+[McApplication] 2020-01-02 17:38:30 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 17:38:31 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-02 18:07:57 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 09:58:46 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 09:59:59 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 10:00:02 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 10:00:15 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]; nested exception is org.hibernate.exception.GenericJDBCException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]
+[McApplication] 2020-01-04 10:00:36 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 10:00:38 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 10:00:48 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]; nested exception is org.hibernate.exception.GenericJDBCException: Could not read entity state from ResultSet : EntityKey[com.bz.mc.model.enrol.EnrolStudentInfo#20191201199]
+[McApplication] 2020-01-04 10:00:54 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 10:01:23 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed

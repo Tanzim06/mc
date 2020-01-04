@@ -36,7 +36,7 @@ public class EnrolStudentForm {
     private int rollNo;
     private Long  sectionId;
     private StudentRegistrationForm studentRegistrationForm = new StudentRegistrationForm();
-    private List<StudentRegistrationData> enrolStudentForm = new ArrayList<>();
+    private List<StudentRegistrationInfo> enrolStudentForm = new ArrayList<>();
 
 
     public boolean isPersisted() {
@@ -58,16 +58,25 @@ public class EnrolStudentForm {
         this.sectionId = enrolStudentInfo.getSectionId();
     }
 
+    private void populateStudentRegistrationInfo(EnrolStudentInfo enrolStudentInfo) {
+        this.groupId = enrolStudentInfo.getGroupId();
+        this.studentRegistrationId = enrolStudentInfo.getStudentRegistrationId();
+        this.sessionId = enrolStudentInfo.getSessionId();
+        this.batchId = enrolStudentInfo.getBatchId();
+        this.programSegmentId = enrolStudentInfo.getProgramSegmentId();
+    }
 
-    public EnrolStudentForm(EnrolStudentInfo enrolStudentInfo, List<StudentRegistrationData> registrationDataList) {
+    public EnrolStudentForm(EnrolStudentInfo enrolStudentInfo, List<StudentRegistrationInfo> registrationDataList) {
         this.id=enrolStudentInfo.getId();
+        this.studentRegistrationId=enrolStudentInfo.getStudentRegistrationId();
         populateEnrolStudentForm(enrolStudentInfo);
-        populateStudentRegistrationInfo(registrationDataList);
+        populateStudentRegistrationInfo(enrolStudentInfo);
+        populateStudentRegistrationInfoList(registrationDataList);
 
     }
 
-    public void populateStudentRegistrationInfo(List<StudentRegistrationData> registrationDataList){
-        for(StudentRegistrationData m : registrationDataList){
+    public void populateStudentRegistrationInfoList(List<StudentRegistrationInfo> registrationDataList){
+        for(StudentRegistrationInfo m : registrationDataList){
             enrolStudentForm.add(m);
         }
     }

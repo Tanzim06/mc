@@ -68,11 +68,6 @@ public class EnrolStudentController {
         return "/web/pages/enrol-student/search";
     }
 
-//    private void populateModel(Model model, EnrolStudentForm enrolStudentForm)
-//    {
-//        model.addAttribute("enrolStudentForm", enrolStudentForm);
-//    }
-
 
     @PostMapping(value =ROUTE_SEARCH_RESULT)
     public String getEnrolStudentList(Model model,
@@ -106,6 +101,7 @@ public class EnrolStudentController {
     public String createStudentRegistration(Model model) {
         this.studentRegistrationId=null;
         populateEnrolStudentForm(model, new EnrolStudentForm());
+        System.out.println("enrol ++++ " );
         return "/web/pages/enrol-student/create";
     }
 
@@ -116,12 +112,18 @@ public class EnrolStudentController {
 
         model.addAttribute("enrolStudentForm", enrolStudentForm);
         model.addAttribute("studentRegistrationList", enrolStudentForm.getStudentRegistrationForm());
+        System.out.println("enrol stu Id " + enrolStudentForm.getId());
+        System.out.println("stu regi Id " + enrolStudentForm.getStudentRegistrationId());
+        System.out.println("stu name " + enrolStudentForm.getStudentRegistrationForm().getStudentName());
+        model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
+        System.out.println("stu list" + studentRegistrationService.findStudentRegistrationList().size());
 //        model.addAttribute("studentEducationPastForm",studentRegistrationForm.getStudentEducationPastForm());
 //        model.addAttribute("educationPastDataList",studentRegistrationForm.getEducationPastForm());
 //        model.addAttribute("tabId",studentRegistrationForm.getTabId());
+
         model.addAttribute("sessionList", sessionService.findSessionList());
 //        model.addAttribute("programList", programService.findPrograms());
-        System.out.println("List size" + sessionService.findSessionList().size());
+        System.out.println("session List size" + sessionService.findSessionList().size());
         model.addAttribute("genders", Gender.all());
         System.out.println("gender" + Gender.all());
     }
@@ -135,8 +137,8 @@ public class EnrolStudentController {
             System.out.println("enrol Id " + enrolStudentForm.getId());
             return "/web/pages/enrol-student/create";
         }
-      //  EnrolStudentInfo enrolStudentInfo = prepareEnrolStudentInfo(enrolStudentForm);  // stopped by ashraf
-        EnrolStudentInfo enrolStudentInfo = new EnrolStudentInfo();    // coded by ashraf for temp
+        EnrolStudentInfo enrolStudentInfo = prepareEnrolStudentInfo(enrolStudentForm);  // stopped by ashraf
+//        EnrolStudentInfo enrolStudentInfo = new EnrolStudentInfo();    // coded by ashraf for temp
         enrolStudentInfo = enrolStudentService.saveEnrolStudent(enrolStudentInfo);
         System.out.println("enrol info Id " + enrolStudentInfo.getId());
         redirectAttributes.addFlashAttribute("message", "student.registration.info.saved");
@@ -169,75 +171,103 @@ public class EnrolStudentController {
     }
 
     @GetMapping(ROUTE_UPDATE)
-    public String updateEnrolStudent(Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String updateEnrolStudent(Model model, @PathVariable Long id,StudentRegistrationForm studentRegistrationForm , RedirectAttributes redirectAttributes) {
         this.studentRegistrationId = id;
         EnrolStudentInfo enrolStudentInfo = enrolStudentService.getEnrolStudent(id);
-//        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(id);
-        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId());
-        StudentRegistrationInfo studentRegistrationInfoAll = studentRegistrationService.getStudentRegistration(studentRegistrationId);
+//        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
+//        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId());
+//        StudentRegistrationInfo studentRegistrationInfoAll = studentRegistrationService.getStudentRegistration(studentRegistrationId);
 //        StudentRegistrationForm form=new StudentRegistrationForm(enrolStudentInfo,studentRegistrationInfo,studentRegistrationInfoAll);
 //        List<StudentRegistrationInfo> studentRegistrationDataList = studentRegistrationService.findStudentRegistrationList();
-//        populateStudentRegistrationFormandEnrolStudent(model,new EnrolStudentForm(studentRegistrationInfo,enrolStudentInfo));
+        List<StudentRegistrationInfo> registrationList = studentRegistrationService.findStudentRegistrationList();
+        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo,registrationList);
+        form.setStudentRegistrationForm(studentRegistrationForm);
+        form=studentInfomation(form,studentRegistrationForm);
+//        form.setTabId(currentTab);
+        populateEnrolStudentForm(model,form);
+//       populateStudentRegistrationFormandEnrolStudent(model,enrolStudentInfo,studentRegistrationForm);
         return "/web/pages/enrol-student/create";
 
     }
 
-    private EnrolStudentForm studentInfomation(EnrolStudentForm enrolStudentForm){
 
-            if(enrolStudentForm.isPersisted()){
+    private EnrolStudentForm studentInfomation(EnrolStudentForm enrolStudentForm, StudentRegistrationForm studentRegistrationForm){
 
-                EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
-                    enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
-                    enrolStudentInfo.setEnrolDate(enrolDate);
-                    enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
-                    enrolStudentInfo.setSessionId(enrolStudentForm.getSessionId());
-                    enrolStudentInfo.setSectionId(enrolStudentForm.getSectionId());
-                    enrolStudentInfo.setProgramSegmentId(enrolStudentForm.getProgramSegmentId());
-                    enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
-                    enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
-                    enrolStudentInfo.setRollNo(enrolStudentForm.getRollNo());
+        if(enrolStudentForm.isPersisted()){
+
+            EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
+            enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
+            enrolStudentInfo.setEnrolDate(enrolDate);
+            enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
+            enrolStudentInfo.setSessionId(enrolStudentForm.getSessionId());
+            enrolStudentInfo.setSectionId(enrolStudentForm.getSectionId());
+            enrolStudentInfo.setProgramSegmentId(enrolStudentForm.getProgramSegmentId());
+            enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
+            enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
+            enrolStudentInfo.setRollNo(enrolStudentForm.getRollNo());
 //                    enrolStudentInfo.setStudentRegistrationId(enrolStudentId);
-                    StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
-                }
+            //StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
+        }
 
 
         else{
 
-            if(enrolStudentForm.isPersisted()){
-                EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
-                if(enrolStudentForm.getStudentRegistrationId()!=null) {
-                    StudentRegistrationInfo studentRegistrationInfo =  studentRegistrationService.getStudentRegistration(enrolStudentForm.getStudentRegistrationId());
+            if(enrolStudentForm.getStudentRegistrationId()!=null) {
+                StudentRegistrationInfo studentRegistrationInfo =  studentRegistrationService.getStudentRegistration(enrolStudentForm.getStudentRegistrationId());
 //                    Samity samity = samityService.getSamity(member.getSamityId());
-                    enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
-                    enrolStudentInfo.setEnrolDate(enrolDate);
-                    enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
-                    enrolStudentInfo.setSessionId(enrolStudentForm.getSessionId());
-                    enrolStudentInfo.setSectionId(enrolStudentForm.getSectionId());
-                    enrolStudentInfo.setProgramSegmentId(enrolStudentForm.getProgramSegmentId());
-                    enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
-                    enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
-                    enrolStudentInfo.setRollNo(enrolStudentForm.getRollNo());
-                }
+                studentRegistrationInfo.setStudentName(studentRegistrationForm.getStudentName());
+                studentRegistrationInfo.setFatherName(studentRegistrationForm.getFatherName());
+                studentRegistrationInfo.setMotherName(studentRegistrationForm.getMotherName());
+                studentRegistrationInfo.setContactNo(studentRegistrationForm.getContactNo());
+                studentRegistrationInfo.setPresentAdd(studentRegistrationForm.getPresentAdd());
+                studentRegistrationInfo.setPresentAddPostcode(studentRegistrationForm.getPresentAddPostcode());
+                studentRegistrationInfo.setPermanentAdd(studentRegistrationForm.getPermanentAdd());
+                studentRegistrationInfo.setPermanentAddPostCode(studentRegistrationForm.getPermanentAddPostCode());
+                studentRegistrationInfo.setPicture(studentRegistrationForm.getPicture());
+                studentRegistrationInfo.setPicturePath(studentRegistrationForm.getPicturePath());
+                studentRegistrationInfo.setBloodGroup(studentRegistrationForm.getBloodGroup());
+                studentRegistrationInfo.setGender(studentRegistrationForm.getGender());
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate dateOfBirth = LocalDate.parse(studentRegistrationForm.getDoB(), formatter);
+                studentRegistrationInfo.setDoB(dateOfBirth);
+
+                DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate regDate = LocalDate.parse(studentRegistrationForm.getRegistrationDate(), formatters);
+                studentRegistrationInfo.setRegistrationDate(regDate);
+
+                //       studentRegistrationInfo.setDoB(studentRegistrationForm.getDoB());
+//        studentRegistrationInfo.setRegistrationDate(studentRegistrationForm.getRegistrationDate());
+                studentRegistrationInfo.setRemarks(studentRegistrationForm.getRemarks());
+                studentRegistrationInfo.setVisualId(studentRegistrationForm.getVisualId());
+                studentRegistrationInfo.setSessionId(studentRegistrationForm.getSessionId());
+                studentRegistrationInfo.setProgramId(studentRegistrationForm.getProgramId());
+
             }
-        }
+
+
+//            if(enrolStudentForm.isPersisted()){
+//                EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
+
+            }
+
        return enrolStudentForm;
     }
 
 
-    private void populateStudentRegistrationFormandEnrolStudent(Model model,StudentRegistrationForm studentRegistrationForm){
+//    private void populateStudentRegistrationFormandEnrolStudent(Model model,EnrolStudentInfo enrolStudentInfo,StudentRegistrationForm studentRegistrationForm){
+//
+//        List<StudentRegistrationInfo> registrationList = studentRegistrationService.findStudentRegistrationList();
+//        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo,registrationList);
+//        form.setStudentRegistrationForm(studentRegistrationForm);
+//        form=studentInfomation(form,studentRegistrationForm);
+////        form.setTabId(currentTab);
+//        populateEnrolStudentForm(model,form);
+//
+//    }
 
-        List<StudentRegistrationInfo> studentRegistrationList = studentRegistrationService.findStudentRegistrationList();
-        model.addAttribute("genders", Gender.all());
-        EnrolStudentForm form= new EnrolStudentForm();
-        form.setStudentRegistrationForm(studentRegistrationForm);
-//        form.setTabId(currentTab);
-        populateEnrolStudentForm(model,form);
-
-    }
 
 //    private void populateEnrolStudent(Model model, EnrolStudentForm enrolStudentForm) {
 //

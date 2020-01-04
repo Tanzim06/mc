@@ -50,9 +50,10 @@
 
                 <div class="col-6">
                     <div class="form-group row">
-                        <label class="col-md-4 control-label" for="id">Student ID</label>
+                        <label class="col-md-4 control-label" for="studentRegistrationId">Student ID</label>
                         <div class="col-md-8">
-                            <input type="text" id="id" class="form-control" placeholder="Student ID" th:field="*{id}" readonly="readonly">
+                            <input type="text" id="studentRegistrationId" class="form-control" placeholder="Student ID" th:field="*{studentRegistrationId}" readonly="readonly">
+<!--                            th:field="*{studentRegistrationId}"-->
                         </div>
                     </div>
                 </div>
@@ -62,6 +63,7 @@
                         <label class="col-md-4 control-label" for="sessionId">Session</label>
                         <div class="col-md-8">
                             <select id="sessionId" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{sessionId}">
+<!--                                th:field="*{sessionId}"-->
                                 <option value="">Select</option>
                                 <option th:each="sList:${sessionList}"
                                         th:value="${sList.id}"
@@ -92,7 +94,8 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="sessionId">Program Segment</label>
                         <div class="col-md-8">
-                            <select id="" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{sessionId}">
+                            <select id="" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false"  th:field="*{sessionId}" >
+<!--                                th:field="*{sessionId}"-->
                                 <option value="">Select</option>
                                 <option th:each="sList:${sessionList}"
                                         th:value="${sList.id}"
@@ -110,7 +113,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="studentName">Student Name<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Student Name"  id="studentName"/>
+                            <input type="text" class="form-control" placeholder="Student Name"  id="studentName" th:field="*{studentName}"  />
 <!--                     th:field="*{studentName}"              th:class="${#fields.hasErrors('studentName')} ? 'form-control is-invalid' : 'form-control'"-->
                             <!--                        <span th:class="err" th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" style="color: red">Please Enter your name</span>-->
 <!--                            <div th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" class="invalid-feedback"></div>-->
@@ -131,7 +134,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 control-label" for="registrationDate">Registration Date<span style="color: red">*</span></label>
                         <div class="col-md-8">
-                            <input type="date" id="registrationDate" class="form-control" placeholder="YYYY-MM-DD-"/>
+                            <input type="date" id="registrationDate" class="form-control" placeholder="YYYY-MM-DD-"  />
 <!--                         th:field="*{registrationDate}"           th:class="${#fields.hasErrors('registrationDate')} ? 'form-control is-invalid' : 'form-control'"-->
 
 <!--                            <div th:if="${#fields.hasErrors('registrationDate')}" th:errors="*{registrationDate}" class="invalid-feedback"></div>-->
