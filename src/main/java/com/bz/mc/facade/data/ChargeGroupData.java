@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class ChargeGroupData {
 
@@ -23,6 +24,9 @@ public class ChargeGroupData {
     private int chargeCycle;
     private int paymentCycle;
     private int activeStatus;
+    private LocalDate effectiveFrom;
+    private LocalDate effectiveTo;
+    private int origin;
     private Long chargeGroupId;
     private Long itemId;
     private Double itemRate;
@@ -34,18 +38,24 @@ public class ChargeGroupData {
     private String segmentName;
 //    @DateTimeFormat(pattern="yyyy-MM-dd")
 //    private  LocalDate billDate;
-
     //private String currencyName;
 
-    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName) {
+
+    public ChargeGroupData(Long id, String chargeGroupName, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String itemName) {
         this.id = id;
         this.chargeGroupName = chargeGroupName;
-        this.shortCode = shortCode;
-        this.sessionId = sessionId;
-        this.programId = programId;
-        this.programSegmentId = programSegmentId;
-        this.chargeCycle = chargeCycle;
-        this.paymentCycle = paymentCycle;
+        this.activeStatus = activeStatus;
+        this.chargeGroupId = chargeGroupId;
+        this.itemId = itemId;
+        this.itemRate = itemRate;
+        this.currencyId = currencyId;
+        this.itemName = itemName;
+
+    }
+
+    public ChargeGroupData(Long id, String chargeGroupName, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName) {
+        this.id = id;
+        this.chargeGroupName = chargeGroupName;
         this.activeStatus = activeStatus;
         this.chargeGroupId = chargeGroupId;
         this.itemId = itemId;
@@ -53,31 +63,6 @@ public class ChargeGroupData {
         this.currencyId = currencyId;
         this.remarks = remarks;
         this.itemName = itemName;
-        this.sessionName = sessionName;
-
-
-
     }
 
-    public ChargeGroupData(Long id, String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName, String sessionName, String programName, String segmentName) {
-        this.id = id;
-        this.chargeGroupName = chargeGroupName;
-        this.shortCode = shortCode;
-        this.sessionId = sessionId;
-        this.programId = programId;
-        this.programSegmentId = programSegmentId;
-        this.chargeCycle = chargeCycle;
-        this.paymentCycle = paymentCycle;
-        this.activeStatus = activeStatus;
-        this.chargeGroupId = chargeGroupId;
-        this.itemId = itemId;
-        this.itemRate = itemRate;
-        this.currencyId = currencyId;
-        this.remarks = remarks;
-        this.itemName = itemName;
-        this.sessionName = sessionName;
-        this.programName = programName;
-        this.segmentName = segmentName;
-//        this.billDate =billDate;
-    }
 }

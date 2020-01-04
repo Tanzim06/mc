@@ -108,39 +108,21 @@ public class ChargeGroupController {
                 return "/web/pages/charge/create";
             } else {
 
-//                if(chargeItemFrom.isIndividual()== true){
-//                    System.out.println("individual");
-//                    if(chargeItemFrom.getChargeGroupId()==null) {
-//
-//                        //chargeItemFrom  = new ChargeItemFrom();
-//                        ChargeItem chargeItem = prepareChargeItem(chargeItemFrom);
-//                        //System.out.print("chargeItemId="+ chargeItem.getId());
-//                        chargeItem = chargeItemService.saveChargeItem(chargeItem);
-//                       // System.out.print("chargeItemId="+ chargeItem.getId());
-//
-//                        model.addAttribute("chargeItemList", chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
-//                        //model.addAttribute("chargeItemList", chargeItemService.getChargeitemList(chargeItem.getId()));
-//
-//                          // System.out.print("size"+chargeItemService.getChargeitemList(chargeItem.getId()).size());
-//                        redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
-//                        //System.out.print("chargeItemId="+ chargeItem.getId());
-////                        return REDIRECT + webLinkFactory.updateChargeItemUrl(chargeItem.getId());
-//                        return REDIRECT + webLinkFactory.updateChargeUrl(chargeGroupId);
-//
-//                    }
-//                }
-
                 System.out.println("out");
                 ChargeItem chargeItem = prepareChargeItem(chargeItemFrom);
                 // itemPrice = itemPriceService.saveItemPrice(itemPrice);
                 chargeItem = chargeItemService.saveChargeItem(chargeItem);
 
-                model.addAttribute("chargeItemList", chargeItemService.getChargeGroupList(chargeItem.getChargeGroupId()));
+              //model.addAttribute("chargeItemList", chargeItemService.getChargeitemList(chargeItem.getChargeGroupId()));
+                List<ChargeGroupData> chargeItemList =chargeItemService.getChargeitemList(chargeItem.getChargeGroupId());
+                System.out.println("chargeItemList Size = " +chargeItemList.size() );
+                model.addAttribute("chargeItemList",chargeItemList );
+
                 System.out.println("chargeGroupId = " + chargeItem.getChargeGroupId());
                 redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.saved");
                 //return REDIRECT + webLinkFactory.updateChargeUrl(chargeItem.getChargeGroupId());
                 return REDIRECT + webLinkFactory.updateChargeUrl(chargeGroupId);
-                // }
+
             }
         }
         redirectAttributes.addFlashAttribute("message", "charge.chargeItem.info.empty");
@@ -186,18 +168,19 @@ public class ChargeGroupController {
 
     private void populateOtherFormData(Model model,ChargeGroup chargeGroup,ChargeItemFrom chargeItemFrom){
 
-        List<ChargeGroupData> chargeList =chargeItemService.getChargeGroupList(chargeGroupId);
-        ChargeGroupForm chargeGroupForm= new ChargeGroupForm(chargeGroup,chargeList);
+        List<ChargeGroupData> chargeItemList =chargeItemService.getChargeitemList(chargeGroupId);
+        System.out.println("chargeItemList = "+chargeItemList.size());
+        ChargeGroupForm chargeGroupForm= new ChargeGroupForm(chargeGroup,chargeItemList);
 
         //form.setRemarks(itemInfo.getRemarks());
         chargeGroupForm.setChargeItemFrom(chargeItemFrom);
-//
-//        if (chargeGroup.getActiveStatus()== 1 ) {
-//            chargeGroupForm.setActive(true);
-//        }
-//        else{
-//            chargeGroupForm.setActive(false);
-//        }
+
+        if (chargeGroup.getActiveStatus()== 1 ) {
+            chargeGroupForm.setActive(true);
+        }
+        else{
+            chargeGroupForm.setActive(false);
+        }
 
         if(chargeGroup.getId()!=null || chargeGroupId !=null){
             ChargeGroup c = chargeGroupService.getChargeGroup(chargeGroupId);
@@ -218,40 +201,47 @@ public class ChargeGroupController {
     @PostMapping(value = ROUTE_SEARCH_RESULT)
     public String getChargeList(Model model, @RequestParam("chargeGroupName") String chargeGroupName, @RequestParam("remarks") String remarks,ChargeGroupForm chargeGroupForm,ChargeItemFrom chargeItemFrom) {
 
-        if (chargeItemFrom.isIndividual() == true){
+        List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
 
+        model.addAttribute("allchargeGroupList", allchargeGroupList);
+        System.out.print("size"+allchargeGroupList.size());
+
+        if (allchargeGroupList.size() != 0) {
+
+            return "/web/pages/charge/list";
         }
-        else if (chargeGroupForm.isGroup() == true){
 
-            System.out.print("group");
-
+//         if (chargeGroupForm.isGroup() == true){
+//
+//            System.out.print("group");
+//
 //            List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
-
+//
 //            model.addAttribute("allchargeGroupList", allchargeGroupList);
 //            System.out.print("size"+allchargeGroupList.size());
-
-            List<ChargeGroupData> allGroup = chargeItemService.getChargeGroupSearchResult(chargeGroupName,remarks,chargeGroupId);
-            model.addAttribute("allchargeGroupList", allGroup);
-            System.out.print("size"+allGroup.size());
-
-            if (allGroup.size() != 0) {
-
-                return "/web/pages/charge/list";
-            }
-        }
-        else{
-
-            List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
-
-            model.addAttribute("allchargeGroupList", allchargeGroupList);
-            System.out.print("size"+allchargeGroupList.size());
-
-
-            if (allchargeGroupList.size() != 0) {
-
-                return "/web/pages/charge/list";
-            }
-        }
+//
+//            List<ChargeGroupData> allGroup = chargeItemService.getChargeGroupSearchResult(chargeGroupName,remarks,chargeGroupId);
+//            model.addAttribute("allchargeGroupList", allGroup);
+//            System.out.print("size"+allGroup.size());
+//
+//            if (allGroup.size() != 0) {
+//
+//                return "/web/pages/charge/list";
+//            }
+//        }
+//        else{
+//
+//            List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
+//
+//            model.addAttribute("allchargeGroupList", allchargeGroupList);
+//            System.out.print("size"+allchargeGroupList.size());
+//
+//
+//            if (allchargeGroupList.size() != 0) {
+//
+//                return "/web/pages/charge/list";
+//            }
+//        }
 
 
         return REDIRECT + ROUTE_SEARCH;
@@ -261,6 +251,7 @@ public class ChargeGroupController {
         model.addAttribute("chargeGroupForm", chargeGroupForm);
         model.addAttribute("ChargeItemForm", chargeGroupForm.getChargeItemFrom());
         model.addAttribute("chargeItemList",chargeGroupForm.getChargeFormList());
+        System.out.println("chargeItemListForm="+chargeGroupForm.getChargeFormList().size());
         model.addAttribute("programs", programService.findPrograms());
         model.addAttribute("sessionList", sessionService.findSessionList());
         model.addAttribute("segmentList", segmentInfoService.findSegmentList());
@@ -300,9 +291,19 @@ public class ChargeGroupController {
         chargeGroup.setRemarks(chargeGroupForm.getRemarks());
         System.out.println("12");
         chargeGroup.setActiveStatus(1);
+        System.out.println("13");
+        DateTimeFormatter formatterFrom = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate effectiveFrom = LocalDate.parse(chargeGroupForm.getEffectiveFrom(), formatterFrom);
+        chargeGroup.setEffectiveFrom(effectiveFrom);
+        System.out.println("14");
+        DateTimeFormatter formatterTo = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate effectiveTo= LocalDate.parse(chargeGroupForm.getEffectiveTo(), formatterTo);
+        chargeGroup.setEffectiveTo(effectiveTo);
+        System.out.println("15");
+        chargeGroup.setOrigin(chargeGroupForm.getOrigin());
+        System.out.println("16");
 
         return chargeGroup;
-
     }
 
 
@@ -335,13 +336,14 @@ public class ChargeGroupController {
         System.out.println("10");
         chargeItem.setProgramSegmentId(chargeItemFrom.getProgramSegmentId());
         System.out.println("11");
+        chargeItem.setActiveStatus(1);
 
-        if (chargeItemFrom.isActive()==true ) {
-            chargeItem.setActiveStatus(1);
-        }
-        else{
-            chargeItem.setActiveStatus(0);
-        }
+//        if (chargeItemFrom.isActive()==true ) {
+//            chargeItem.setActiveStatus(1);
+//        }
+//        else{
+//            chargeItem.setActiveStatus(0);
+//        }
 
         //itemPrice.setActiveStatus(1);
         chargeItem.setModifiedBy(sessionManagementService.getAuthenticatedUser().getId());

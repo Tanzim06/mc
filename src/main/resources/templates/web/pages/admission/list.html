@@ -22,18 +22,11 @@
             <div class="card-body" ><h3>Booking list</h3></div>
         </div>
     </div>
-
     <!-- customized code -->
-
-
-
     <div class="card">
-
         <div class="card-body">
-
-
             <div class="row">
-                <form class="needs-validation" th:action="@{/admissionController/search}" novalidate>
+                <form class="needs-validation" th:action="@{/admission/search}" novalidate>
 
                  <div class="row">
 
@@ -70,18 +63,14 @@
                                     <option value="">select</option>
 
                                     <option th:each="slist:${sessionList}"
-                                            th:value="${slist.sessionId}"
+                                            th:value="${slist.id}"
                                             th:utext="${slist.sessionName}" />
-
-
 
                                 </select>
                             </div>
                         </div>
 
                     </div>
-
-
 
                     <div class="col-2">
                         <div class="form-group">
@@ -92,8 +81,6 @@
                         </div>
 
                     </div>
-
-
 
                     <div class="col-1">
                         <div class="form-group">
@@ -107,21 +94,22 @@
 
                         </div>
                     </div>
-
-
-
-
                     <div class="col-sm-3 text-right">
 
                         <input type="submit" value="Search" id="searchBtn"
                                class="btn btn-primary btn-md" style="margin-top: 24px;">
                         <a style="margin-top: 24px;" class="btn btn-success"
                            th:href="@{/admission/list}">Refresh</a>
+                    </div>
+
+                 </div>
+
+                    <div class="row">
 
 
                     </div>
 
-                 </div>
+
                 </form>
             </div>
 

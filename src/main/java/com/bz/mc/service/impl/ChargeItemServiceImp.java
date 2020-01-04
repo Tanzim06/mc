@@ -45,10 +45,12 @@ public class ChargeItemServiceImp implements ChargeItemService {
         return chargeItemRepository.findAllGroup(chargeGroupName,remarks,chargeGroupId) ;
     }
 
-//    @Override
-//    public List<ChargeGroupData> getChargeitemList(Long id) {
-//        return chargeItemRepository.findChargeItemListById(id);
-//    }
+    @Override
+    public List<ChargeGroupData> getChargeitemList(Long chargeGroupId) {
+        return chargeItemRepository.findChargeItemList(chargeGroupId);
+    }
+
+
 
     @Override
     public ChargeItem getChagreItem(Long id) {
@@ -60,10 +62,7 @@ public class ChargeItemServiceImp implements ChargeItemService {
         return chargeItemRepository.findAllChargeList(chargeGroupName,remarks);
     }
 
-//    @Override
-//    public List<ChargeGroupData> getScheduleSearchResult(Long sessionId, Long programId) {
-//        return chargeItemRepository.findAllScheduleGroupData(sessionId,programId);
-//    }
+
 
     @Override
     public List<ChargeGroupData> getScheduleSearchResult(Long sessionId, Long programId, Long programSegmentId) {

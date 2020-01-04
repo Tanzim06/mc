@@ -31,6 +31,10 @@ public class QChargeGroup extends EntityPathBase<ChargeGroup> {
 
     public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
 
+    public final DatePath<java.time.LocalDate> effectiveFrom = createDate("effectiveFrom", java.time.LocalDate.class);
+
+    public final DatePath<java.time.LocalDate> effectiveTo = createDate("effectiveTo", java.time.LocalDate.class);
+
     public final StringPath flexField1 = createString("flexField1");
 
     public final StringPath flexField2 = createString("flexField2");
@@ -43,6 +47,8 @@ public class QChargeGroup extends EntityPathBase<ChargeGroup> {
     public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
 
     public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
+
+    public final NumberPath<Integer> origin = createNumber("origin", Integer.class);
 
     public final NumberPath<Integer> paymentCycle = createNumber("paymentCycle", Integer.class);
 

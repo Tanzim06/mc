@@ -546,3 +546,53 @@
 [McApplication] 2020-01-02 18:22:19 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-02 18:24:15 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-02 18:36:23 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 09:55:51 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 13:08:36 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 13:10:05 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple; nested exception is java.lang.IllegalArgumentException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple
+[McApplication] 2020-01-04 13:25:02 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 13:54:25 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 13:58:22 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 14:11:11 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 14:23:19 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 14:26:14 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 14:26:15 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 14:32:03 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:14:31 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:22:51 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:28:14 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:34:04 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:38:45 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 15:40:45 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple; nested exception is java.lang.IllegalArgumentException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple
+[McApplication] 2020-01-04 16:05:39 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:05:45 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple; nested exception is java.lang.IllegalArgumentException: org.hibernate.QueryException: could not instantiate class [com.bz.mc.facade.data.ChargeGroupData] from tuple
+[McApplication] 2020-01-04 16:20:20 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:20:43 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:20:44 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:21:08 [http-nio-8081-exec-4] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2020-01-04 16:24:25 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:25:02 [http-nio-8081-exec-6] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin
+[McApplication] 2020-01-04 16:31:17 [http-nio-8081-exec-1] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin
+[McApplication] 2020-01-04 16:32:57 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:32:57 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:33:51 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:34:11 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.bz.mc.model.charge.ChargeGroup.origin] of primitive type setter of com.bz.mc.model.charge.ChargeGroup.origin
+[McApplication] 2020-01-04 16:34:32 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:34:32 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:35:41 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:35:42 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:46:49 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 16:48:19 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:16:48 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:21:55 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:29:02 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:35:48 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:39:11 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:42:44 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:45:48 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:48:18 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:50:48 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:57:33 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 17:59:51 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 19:25:46 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 19:28:28 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-04 19:33:17 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed

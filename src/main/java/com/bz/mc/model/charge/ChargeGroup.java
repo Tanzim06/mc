@@ -6,6 +6,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -65,9 +66,17 @@ public class ChargeGroup extends BaseEntity implements Auditable {
     private String flexField2;
     @Column(name="FLEX_FIELD3")
     private String flexField3;
+    @DateTimeFormat(pattern ="yyyy-MM-dd" )
+    @Column(name="EFFECTIVE_FROM")
+    private LocalDate effectiveFrom;
+    @DateTimeFormat(pattern ="yyyy-MM-dd" )
+    @Column(name="EFFECTIVE_TO")
+    private LocalDate effectiveTo;
+    @Column(name="origin")
+    private int origin;
 
     @Builder
-    public ChargeGroup(String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, boolean active, boolean group, String sActive, String remarks, Long createdBy, LocalDateTime createdAt, Long modifiedBy, LocalDateTime modifiedAt, String flexField1, String flexField2, String flexField3) {
+    public ChargeGroup(String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, boolean active, boolean group, String sActive, String remarks, Long createdBy, LocalDateTime createdAt, Long modifiedBy, LocalDateTime modifiedAt, String flexField1, String flexField2, String flexField3, LocalDate effectiveFrom, LocalDate effectiveTo, int origin) {
         this.chargeGroupName = chargeGroupName;
         this.shortCode = shortCode;
         this.sessionId = sessionId;
@@ -87,5 +96,8 @@ public class ChargeGroup extends BaseEntity implements Auditable {
         this.flexField1 = flexField1;
         this.flexField2 = flexField2;
         this.flexField3 = flexField3;
+        this.effectiveFrom = effectiveFrom;
+        this.effectiveTo = effectiveTo;
+        this.origin = origin;
     }
 }

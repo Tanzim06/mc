@@ -10,6 +10,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Transient;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class ChargeGroupForm {
-
     private Long id;
     private String chargeGroupName;
     private String shortCode;
@@ -31,6 +32,9 @@ public class ChargeGroupForm {
     private boolean group;
     private String sActive;
     private String remarks;
+    private String effectiveFrom;
+    private String effectiveTo;
+    private int origin;
 
     private ChargeItemFrom chargeItemFrom = new ChargeItemFrom();
     private List<ChargeGroupData> ChargeFormList = new ArrayList<>();
@@ -49,6 +53,11 @@ public class ChargeGroupForm {
         this.group = chargeGroup.isGroup();
         this.sActive =chargeGroup.getSActive();
         this.remarks = chargeGroup.getRemarks();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.effectiveFrom = formatter.format(chargeGroup.getEffectiveFrom());
+        DateTimeFormatter formatterTo = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.effectiveTo = formatterTo.format(chargeGroup.getEffectiveTo());
+        this.origin = chargeGroup.getOrigin();
     }
 
 
@@ -73,6 +82,13 @@ public class ChargeGroupForm {
         this. group=chargeGroup.isGroup();
         this. sActive=chargeGroup.getSActive();
         this. remarks= chargeGroup.getRemarks();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.effectiveFrom = formatter.format(chargeGroup.getEffectiveFrom());
+        DateTimeFormatter formatterTo = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.effectiveTo = formatterTo.format(chargeGroup.getEffectiveTo());
+        this.origin = chargeGroup.getOrigin();
+
+
     }
 
 

@@ -104,7 +104,7 @@ public class ItemController {
                 ItemPrice itemPrice=prepareItemPrice(itemPriceForm);
                 itemPrice = itemPriceService.saveItemPrice(itemPrice);
 
-                model.addAttribute("itemPriceList",itemPriceService.getItemPriceListByItemId(itemPrice.getItemId()));
+                //model.addAttribute("itemPriceList",itemPriceService.getItemPriceListByItemId(itemPrice.getItemId()));
 
                 redirectAttributes.addFlashAttribute("message", "item.price.info.saved");
                 return REDIRECT + webLinkFactory.updatePriceUrl(itemId);

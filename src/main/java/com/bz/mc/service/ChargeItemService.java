@@ -15,7 +15,7 @@ public interface ChargeItemService {
     ChargeItem saveChargeItem(ChargeItem chargeItem);
     Optional<ChargeItem> findChargeItemById(Long id);
     List<ChargeGroupData> getChargeGroupList(Long chargeGroupId);
-//    List<ChargeGroupData> getChargeitemList(Long id);
+    List<ChargeGroupData> getChargeitemList(Long chargeGroupId);
 
   public List<ChargeGroupData>  getChargeGroupSearchResult(String chargeGroupName,String remarks,Long chargeGroupId);
 
@@ -23,6 +23,6 @@ public interface ChargeItemService {
     public List<ChargeGroupData>  getChargeSearchResult(String chargeGroupName,String remarks);
 
     public List<ChargeGroupData>  getScheduleSearchResult( Long sessionId,Long programId,Long programSegmentId);
-//public List<ChargeGroupData>  getScheduleSearchResult( Long sessionId,Long programId);
+
 
 }

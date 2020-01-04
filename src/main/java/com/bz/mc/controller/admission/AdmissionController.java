@@ -49,7 +49,8 @@ public class AdmissionController {
     private static final String BASE_ROUTE = "/admission";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
-    public static final String ROUTE_SEARCH = BASE_ROUTE + "/list";
+    public static final String ROUTE_SEARCH = BASE_ROUTE + "/search";
+    public static final String ROUTE_SEARCH_RESULT= BASE_ROUTE + "/list";
     public static final String ROUTE_SHOW = BASE_ROUTE + "/show/{id}";
     public static final String ROUTE_UPDATE = BASE_ROUTE + "/create/{id}";
     private static final String REDIRECT = "redirect:";
@@ -97,6 +98,8 @@ public class AdmissionController {
 
         return "/web/pages/admission/list";
     }
+
+
 
     private void populateFormData(Model model, AdmissionBooking admissionBooking, AdmissionForm admissionForm){
 
