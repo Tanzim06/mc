@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -68,7 +69,7 @@ public class SessionController {
     }
 
     @PostMapping(ROUTE_SAVE)
-    public String saveOrUpdatesSession(Model model, @ModelAttribute SessionForm sessionForm, BindingResult result) {
+    public String saveOrUpdatesSession(Model model, @ModelAttribute SessionForm sessionForm, BindingResult result, RedirectAttributes redirectAttributes) {
         sessionFormValidator.validate(sessionForm, result);
         if (result.hasErrors()) {
             populateModel(model, sessionForm);
@@ -76,7 +77,7 @@ public class SessionController {
         }
         SessionInfo sessionInfo = getSessionInfo(sessionForm);
         sessionInfo = sessionService.saveSession(sessionInfo);
-
+        redirectAttributes.addFlashAttribute("message", "session.info.saved");
         return REDIRECT + webLinkFactory.updateSessionUrl(sessionInfo);
 }
 

@@ -3,9 +3,7 @@ package com.bz.mc.controller.studentRegistration;
 import com.bz.mc.facade.data.StudentEducationPastData;
 import com.bz.mc.model.studentRegistration.Gender;
 import com.bz.mc.model.studentRegistration.StudentRegistrationInfo;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -15,6 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder(builderClassName = "Builder")
 public class StudentRegistrationForm {
 
     private Long id;
