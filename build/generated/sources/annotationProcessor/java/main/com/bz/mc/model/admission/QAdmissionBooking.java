@@ -27,19 +27,23 @@ public class QAdmissionBooking extends EntityPathBase<AdmissionBooking> {
 
     public final NumberPath<Double> amountToBePaid = createNumber("amountToBePaid", Double.class);
 
-    public final DateTimePath<java.time.LocalDateTime> bookingDate = createDateTime("bookingDate", java.time.LocalDateTime.class);
+    public final DatePath<java.time.LocalDate> bookingDate = createDate("bookingDate", java.time.LocalDate.class);
+
+    public final DatePath<java.time.LocalDate> confirmDate = createDate("confirmDate", java.time.LocalDate.class);
+
+    public final NumberPath<Integer> confirmFlag = createNumber("confirmFlag", Integer.class);
 
     public final StringPath contactNo = createString("contactNo");
 
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
+
     public final NumberPath<Long> currencyId = createNumber("currencyId", Long.class);
 
-    public final DateTimePath<java.time.LocalDateTime> dateToBePaid = createDateTime("dateToBePaid", java.time.LocalDateTime.class);
+    public final DatePath<java.time.LocalDate> dateToBePaid = createDate("dateToBePaid", java.time.LocalDate.class);
 
-    public final DateTimePath<java.time.LocalDateTime> DOB = createDateTime("DOB", java.time.LocalDateTime.class);
-
-    public final NumberPath<Long> enteredBy = createNumber("enteredBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> EntryTimestamp = createDateTime("EntryTimestamp", java.time.LocalDateTime.class);
+    public final DatePath<java.time.LocalDate> DOB = createDate("DOB", java.time.LocalDate.class);
 
     public final StringPath fatherName = createString("fatherName");
 
@@ -51,6 +55,10 @@ public class QAdmissionBooking extends EntityPathBase<AdmissionBooking> {
 
     //inherited
     public final NumberPath<Long> id = _super.id;
+
+    public final DateTimePath<java.time.LocalDateTime> modifiedAt = createDateTime("modifiedAt", java.time.LocalDateTime.class);
+
+    public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
 
     public final StringPath motherName = createString("motherName");
 
@@ -67,10 +75,6 @@ public class QAdmissionBooking extends EntityPathBase<AdmissionBooking> {
     public final StringPath spouseName = createString("spouseName");
 
     public final StringPath studentName = createString("studentName");
-
-    public final NumberPath<Long> updatedBy = createNumber("updatedBy", Long.class);
-
-    public final DateTimePath<java.time.LocalDateTime> updateTimestamp = createDateTime("updateTimestamp", java.time.LocalDateTime.class);
 
     public QAdmissionBooking(String variable) {
         super(AdmissionBooking.class, forVariable(variable));

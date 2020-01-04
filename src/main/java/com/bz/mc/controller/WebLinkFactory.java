@@ -56,8 +56,8 @@ public class WebLinkFactory {
 //    }
 
 
-    public String updateAdmissionUrl(AdmissionBooking admissionBooking) {
-        return AdmissionController.ROUTE_UPDATE.replace(PATH_VAR_ID,String.valueOf(admissionBooking.getId()));
+    public String updateAdmissionUrl(Long id) {
+        return AdmissionController.ROUTE_UPDATE.replace(PATH_VAR_ID,String.valueOf(id));
     }
 
     public String updateSessionUrl(SessionInfo sessionInfo) {

@@ -50,15 +50,11 @@ public class ChargeGroupController {
     private static final String ROUTE_SAVE_CHARGE_ITEM = BASE_ROUTE + "/chargeItem/save";
     public static final String ROUTE_EDIT = BASE_ROUTE + "/edit/{id}";
     public static final String ROUTE_EDIT_ITEM = BASE_ROUTE + "/item/edit/{id}";
-
     public static final String ROUTE_UPDATE = BASE_ROUTE + "/update/{id}";
     private static final String REDIRECT = "redirect:";
 
-
     private Long chargeGroupId;
     //private Long id;
-
-
 
     @GetMapping(ROUTE_CREATE )
     public String charge(Model model) {
@@ -159,7 +155,6 @@ public class ChargeGroupController {
         populateOtherFormData(model,chargeGroup, chargeItemFrom);
         return "/web/pages/charge/create";
     }
-
 //
 //    @GetMapping(ROUTE_EDIT_ITEM)
 //    public String editItem(Model model, @PathVariable Long id) {

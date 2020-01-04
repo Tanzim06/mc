@@ -35,8 +35,6 @@ public class ChargeGroupForm {
     private ChargeItemFrom chargeItemFrom = new ChargeItemFrom();
     private List<ChargeGroupData> ChargeFormList = new ArrayList<>();
 
-
-
     public ChargeGroupForm(ChargeGroup chargeGroup) {
         this.id = chargeGroup.getId();
         this.chargeGroupName = chargeGroup.getChargeGroupName();

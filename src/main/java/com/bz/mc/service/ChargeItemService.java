@@ -23,6 +23,6 @@ public interface ChargeItemService {
     public List<ChargeGroupData>  getChargeSearchResult(String chargeGroupName,String remarks);
 
     public List<ChargeGroupData>  getScheduleSearchResult( Long sessionId,Long programId,Long programSegmentId);
-
+//public List<ChargeGroupData>  getScheduleSearchResult( Long sessionId,Long programId);
 
 }
