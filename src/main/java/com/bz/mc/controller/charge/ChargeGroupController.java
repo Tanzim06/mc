@@ -206,44 +206,13 @@ public class ChargeGroupController {
         List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
 
         model.addAttribute("allchargeGroupList", allchargeGroupList);
+        populateChargeGroupForm(model,chargeGroupForm);
         System.out.print("size"+allchargeGroupList.size());
 
         if (allchargeGroupList.size() != 0) {
 
             return "/web/pages/charge/list";
         }
-
-//         if (chargeGroupForm.isGroup() == true){
-//
-//            System.out.print("group");
-//
-//            List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
-//
-//            model.addAttribute("allchargeGroupList", allchargeGroupList);
-//            System.out.print("size"+allchargeGroupList.size());
-//
-//            List<ChargeGroupData> allGroup = chargeItemService.getChargeGroupSearchResult(chargeGroupName,remarks,chargeGroupId);
-//            model.addAttribute("allchargeGroupList", allGroup);
-//            System.out.print("size"+allGroup.size());
-//
-//            if (allGroup.size() != 0) {
-//
-//                return "/web/pages/charge/list";
-//            }
-//        }
-//        else{
-//
-//            List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
-//
-//            model.addAttribute("allchargeGroupList", allchargeGroupList);
-//            System.out.print("size"+allchargeGroupList.size());
-//
-//
-//            if (allchargeGroupList.size() != 0) {
-//
-//                return "/web/pages/charge/list";
-//            }
-//        }
 
         return REDIRECT + ROUTE_SEARCH;
     }

@@ -16,161 +16,108 @@
     <!-- PAGE TITLE -->
     <div class="page-title">
         <div class="card bg-info text-white">
-            <div class="card-body" ><h3>charge shedule</h3></div>
+            <div class="card-body" ><h3>Student Group charge</h3></div>
         </div>
     </div>
     <!-- customized code -->
-    <div class="card">
-        <div class="card-body">
-
+    <div id="search">
+        <form class="needs-validation"  th:action="@{/schedule/list}"  method="post" novalidate>
             <div class="row">
-                <form class="needs-validation"  th:action="@{/schedule/list}"  method="post" novalidate>
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="form-group">
-                                <div class="col-md-3">
-                                    <label class="control-label mb-1">session</label>
-                                    <select id="sessionId" name="sessionId"
-                                            style="height: 37px; width: 130px" class="form-control"
-                                            aria-required="true" aria-invalid="false" required>
+                <div class="col-md-3">
+                    <label class="control-label mb-1">session</label>
+                    <select id="sessionId" name="sessionId" class="form-control"
+                            aria-required="true" aria-invalid="false" required>
+                        <option value="">Select</option>
+                        <option th:each="slist:${sessionList}"
+                                th:value="${slist.id}"
+                                th:utext="${slist.sessionName}" />
+                    </select>
+                </div>
 
-                                        <option value="">select</option>
-
-                                        <option th:each="slist:${sessionList}"
-                                                th:value="${slist.id}"
-                                                th:utext="${slist.sessionName}" />
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <label class="control-label mb-1">program</label>
-                                    <select id="programId" name="programId"
-                                            style="height: 37px; width: 130px" class="form-control"
-                                            aria-required="true" aria-invalid="false" required>
-
-                                        <option value="">select</option>
-
-                                        <option th:each="slist:${programs}"
-                                                th:value="${slist.id}"
-                                                th:utext="${slist.programName}" />
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <div class="col-md-6">
-                                            <label class="control-label mb-1">segment</label>
-                                            <select id="programSegmentId" name="programSegmentId"
-                                                    style="height: 37px; width: 130px" class="form-control"
-                                                    aria-required="true" aria-invalid="false" required>
-                                                <option value="">select</option>
-                                                <option th:each="slist:${segmentList}"
-                                                        th:value="${slist.id}"
-                                                        th:utext="${slist.segmentName}" />
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-1" >
-                                    <div class="form-group" hidden>
-                                        <label class="control-label mb-1">individual</label>
-                                        <!-- Default checked -->
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input"
-                                                   id="defaultChecked2" name="active" checked="checked">
-                                            <label class="custom-control-label" for="defaultChecked2"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 text-right">
-                                    <input type="submit" value="Search" id="searchBtn"
-                                           class="btn btn-primary btn-md" style="margin-top: 24px;">
-                                    <a style="margin-top: 24px;" class="btn btn-success"
-                                       th:href="@{/schedule/search}">Refresh</a>
-                                </div>
-                            </div>
-
-                       <div class="row">
-                        <div class="col-11 text-right">
-                            <a style="margin-top: 24px;" class="btn btn-success"
-                               th:href="@{/schedule/create}">bill date</a>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-            <div class="row">
-                <div class="card table-container"
-                     style="width: 1070px; overflow-x: scroll">
-                    <div class="card-header">
-                        <strong class="card-title"></strong>
-                    </div>
-                    <div class="card-body">
-                        <table id="myTable"
-                               class="table table-striped table-bordered display nowrap"
-                               style="width: 100%">
-                            <thead>
-                            <tr>
-                                <th>GROUP</th>
-                                <th>charge cycle</th>
-                                <th>session</th>
-                                <th>program</th>
-                                <th>segment</th>
-                                <th>last bill date</th>
-                                <th>details</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="ad:${groupdataList}">
-                                <!-- <td><span th:text="${ad.admissionBookingId}"></span></td>-->
-                                <td><span th:text="${ad.chargeGroupName}"></span></td>
-                                <td><span th:text="${ad.chargeCycle}"></span></td>
-                                <td><span th:text="${ad.sessionName}"></span></td>
-                                <td><span th:text="${ad.programName}"></span></td>
-                                <td><span th:text="${ad.segmentName}"></span></td>
-                                <td></td>
-<!--                                <td><span th:text="${ad.billDate}"></span></td>-->
-                                <td><a class="btn btn-info btn-md" href="@{/schedule/create}" >details</a></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-<!--                        <table id="myTableItem"-->
-<!--                               class="table table-striped table-bordered display nowrap"-->
-<!--                               style="width: 100%">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th>item</th>-->
-<!--                                <th>rate</th>-->
-<!--                                <th>currency</th>-->
-<!--                                <th>bill date</th>-->
-<!--                                <th>charge cycle</th>-->
-<!--                                <th>action</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <tr th:each="ad:${admission}">-->
-<!--                                &lt;!&ndash; <td><span th:text="${ad.admissionBookingId}"></span></td>&ndash;&gt;-->
-<!--                                <td><span th:text="${ad.studentName}"></span></td>-->
-<!--                                <td><span th:text="${ad.DOB}"></span></td>-->
-<!--                                <td><span th:text="${ad.DOB}"></span></td>-->
-<!--                                <td><span th:text="${ad.NID}"></span></td>-->
-<!--                                <td><span th:text="${ad.sessionId}"></span></td>-->
-<!--                                <td><a class="btn btn-info btn-md" th:href="@{'/admissionController/update/'+${ad.admissionBookingId}}" >Edit</a></td>-->
-<!--                            </tr>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-                    </div>
+                <div class="col-md-3">
+                    <label class="control-label mb-1">program</label>
+                    <select id="programId" name="programId" class="form-control"
+                            aria-required="true" aria-invalid="false" required>
+                        <option value="">Select</option>
+                        <option th:each="slist:${programs}"
+                                th:value="${slist.id}"
+                                th:utext="${slist.programName}" />
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label mb-1">segment</label>
+                    <select id="programSegmentId" name="programSegmentId" class="form-control"
+                            aria-required="true" aria-invalid="false" required>
+                        <option value="">select</option>
+                        <option th:each="slist:${segmentList}"
+                                th:value="${slist.id}"
+                                th:utext="${slist.segmentName}" />
+                    </select>
+                </div>
+                <div class="col-md-3 ">
+                    <input type="submit" value="Search" id="searchBtn"
+                           class="btn btn-primary btn-md" style="margin-top: 24px;">
+                    <a style="margin-top: 24px;" class="btn btn-success"
+                       th:href="@{/schedule/search}">Refresh</a>
                 </div>
             </div>
-            <!-- <div class="card-body">  -->
-        </div>
-        <!-- <div class="card">  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <a style="margin-top: 24px;" class="btn btn-success"
+                       th:href="@{/schedule/create}">bill date</a>
+                </div>
+
+            </div>
+        </form>
     </div>
+    <br/>
+
+    <!--            <div class="col-md-12">-->
+    <!--                    <table class="table table-responsive table-responsive-large">-->
+    <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
+        <div class="card bg-info text-white" >
+            <div class="card-title"><h5>Search Result</h5></div>
+        </div>
+        <div class=" pt-0 pb-5">
+
+            <table id="myTable"
+                   class="table table-striped table-bordered display nowrap" style="width:100%" >
+                <thead  class="thead-light">
+                <tr>
+                    <th>GROUP</th>
+                    <th>charge cycle</th>
+                    <th>session</th>
+                    <th>program</th>
+                    <th>segment</th>
+                    <th>last bill date</th>
+                    <th>details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ad:${groupdataList}">
+                    <!-- <td><span th:text="${ad.admissionBookingId}"></span></td>-->
+                    <td><span th:text="${ad.chargeGroupName}"></span></td>
+                    <td><span th:text="${ad.chargeCycle}"></span></td>
+                    <td><span th:text="${ad.sessionName}"></span></td>
+                    <td><span th:text="${ad.programName}"></span></td>
+                    <td><span th:text="${ad.segmentName}"></span></td>
+                    <td></td>
+                    <!--                                <td><span th:text="${ad.billDate}"></span></td>-->
+                    <td><a class="btn btn-info btn-md" href="@{/schedule/create}" >details</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="card-body">  -->
+</div>
+<!-- <div class="card">  -->
+<!--    </div>-->
+
 </div>
 
 </body>

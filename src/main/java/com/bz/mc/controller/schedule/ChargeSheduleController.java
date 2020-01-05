@@ -6,6 +6,7 @@ import com.bz.mc.controller.charge.ChargeItemFrom;
 import com.bz.mc.facade.data.ChargeGroupData;
 import com.bz.mc.model.charge.ChargeGroup;
 import com.bz.mc.model.charge.ChargeItem;
+import com.bz.mc.model.charge.Origin;
 import com.bz.mc.model.shedule.ChargeShedule;
 import com.bz.mc.service.*;
 import lombok.NonNull;
@@ -33,6 +34,7 @@ public class ChargeSheduleController {
     private static final String BASE_ROUTE = "/schedule";
     private static final String ROUTE_SEARCH = BASE_ROUTE + "/search";
     private static final String ROUTE_SEARCH_RESULT = BASE_ROUTE + "/list";
+    private static final String ROUTE_SEARCH_RESULT_GROUP = BASE_ROUTE + "/group";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
     //public static final String ROUTE_DETAILS = BASE_ROUTE + "/details";
@@ -66,6 +68,12 @@ public class ChargeSheduleController {
                 return "web/pages/schedule/search";
         }
         return REDIRECT + ROUTE_SEARCH;
+    }
+
+    @GetMapping(ROUTE_SEARCH_RESULT_GROUP)
+    public String searchGroup(Model model) {
+        populateBillDateForm (model, new BillDateForm());
+        return "web/pages/schedule/studentGroupCharge";
     }
 
     @GetMapping(ROUTE_UPDATE)
@@ -120,6 +128,8 @@ public class ChargeSheduleController {
         model.addAttribute("sessionList", sessionService.findSessionList());
         model.addAttribute("segmentList", segmentInfoService.findSegmentList());
         model.addAttribute("itemList", itemService.getAllActiveItem());
+        model.addAttribute("origins", Origin.all());
+
 
 
     }
