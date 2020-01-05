@@ -18,7 +18,8 @@ public interface EnrolStudentService {
     Optional <EnrolStudentInfo> getEnrolStudentInfo(Long id);
     EnrolStudentInfo getEnrolStudent(Long id);
 ////    List<StudentRegistrationInfo> getStudentRegistrationSearch( String studentName, String fatherName, String motherName, String contactNo, Long sessionId );
-    List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId);
+    List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId);
+    List<EnrolStudentData> getEnrolStudentDataFromRegistration(Long studentRegistrationId);
 
 
 

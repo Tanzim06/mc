@@ -25,6 +25,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -44,6 +45,7 @@ public class EnrolStudentController {
     @NonNull private final StudentRegistrationService studentRegistrationService;
     @NonNull private final SessionService sessionService;
     @NonNull private final ProgramService programService;
+    @NonNull private final SegmentInfoService segmentInfoService;
     @NonNull private final BatchInfoService batchInfoService;
     @NonNull private final WebLinkFactory webLinkFactory;
 
@@ -70,25 +72,41 @@ public class EnrolStudentController {
 
 
     @PostMapping(value =ROUTE_SEARCH_RESULT)
-    public String getEnrolStudentList(Model model,
+    public String getEnrolStudentList(Model model,EnrolStudentForm enrolStudentForm,
                                       @RequestParam(name = "studentRegistrationId", required = false) Long studentRegistrationId,
                                       @RequestParam(name = "studentName", required = false) String studentName,
                                       @RequestParam(name = "sessionId", required = false) Long sessionId,
-                                      @RequestParam(name = "programId", required = false) Long programId
+                                      @RequestParam(name = "programId", required = false) Long programId,
+                                      @RequestParam(name = "programSegmentId", required = false) Long programSegmentId
 //                                      @RequestParam(name = "batchId", required = false) Long batchId
                                              ){
 
-        System.out.println("student registration Id : is " + studentRegistrationId);
-        List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName,sessionId,programId);
+        if(enrolStudentForm.isNewss() == true){
+            List<EnrolStudentData> enrolStudentDataListWithRegistration = enrolStudentService.getEnrolStudentDataFromRegistration(studentRegistrationId);
+            model.addAttribute("enrolStudentDataListWithRegistration", enrolStudentDataListWithRegistration);
+        }else {
 
-        model.addAttribute("enrolStudentDataList", enrolStudentDataList);
-        System.out.println("enrol List " + enrolStudentDataList.size());
-        model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
-        System.out.println("stu reg List " + studentRegistrationService.findStudentRegistrationList().size());
-        model.addAttribute("sessionList", sessionService.findSessionList());
-        System.out.println("session List " + sessionService.findSessionList().size());
-        model.addAttribute("programList", programService.findPrograms());
+            System.out.println("student registration Id : is " + studentRegistrationId);
+            List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName,sessionId,programId,programSegmentId);
+
+
+            model.addAttribute("enrolStudentDataList", enrolStudentDataList);
+
+            System.out.println("enrol List " + enrolStudentDataList.size());
+            model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
+            System.out.println("stu reg List " + studentRegistrationService.findStudentRegistrationList().size());
+            model.addAttribute("sessionList", sessionService.findSessionList());
+            System.out.println("session List " + sessionService.findSessionList().size());
+            model.addAttribute("programList", programService.findPrograms());
+            System.out.println("program List " + programService.findPrograms().size());
+            model.addAttribute("segmentList", segmentInfoService.findSegmentList());
+            System.out.println("segment List " + segmentInfoService.findSegmentList().size());
 //        model.addAttribute("batchInfoList", batchInfoService.getAllActiveBatch());
+
+
+        }
+        List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName,sessionId,programId,programSegmentId);
+        model.addAttribute("enrolStudentDataList", enrolStudentDataList);
         if (enrolStudentDataList.size() != 0) {
 
             return "/web/pages/enrol-student/search";
@@ -124,8 +142,13 @@ public class EnrolStudentController {
         model.addAttribute("sessionList", sessionService.findSessionList());
 //        model.addAttribute("programList", programService.findPrograms());
         System.out.println("session List size" + sessionService.findSessionList().size());
-        model.addAttribute("genders", Gender.all());
-        System.out.println("gender" + Gender.all());
+        model.addAttribute("programList", programService.findPrograms());
+        System.out.println("program List " + programService.findPrograms().size());
+        model.addAttribute("segmentList", segmentInfoService.findSegmentList());
+        System.out.println("segment List " + segmentInfoService.findSegmentList().size());
+//        model.addAttribute("batchInfoList", batchInfoService.getAllActiveBatch());
+//        model.addAttribute("genders", Gender.all());
+//        System.out.println("gender" + Gender.all());
     }
 
 

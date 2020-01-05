@@ -76,30 +76,29 @@
             </div>
 
             <div class="row">
-<!--                <div class="col-6">-->
-<!--                    <div class="form-group row">-->
-<!--                        <label class="col-md-4 control-label" for="programId">Program</label>-->
-<!--                        <div class="col-md-8">-->
-<!--&lt;!&ndash;                            <select id="programId" name="programId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{programId}">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                            <option value="">Select</option>&ndash;&gt;-->
-<!--&lt;!&ndash;                                                            <option th:each="sList:${programList}"&ndash;&gt;-->
-<!--&lt;!&ndash;                                                                    th:value="${sList.id}"&ndash;&gt;-->
-<!--&lt;!&ndash;                                                                    th:utext="${sList.programName}" />&ndash;&gt;-->
-<!--&lt;!&ndash;                            </select>&ndash;&gt;-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="col-6">
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label" for="programId">Program</label>
+                        <div class="col-md-8">
+                            <select id="programId" name="programId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{studentRegistrationForm.programId}">
+                                                            <option value="">Select</option>
+                                                            <option th:each="pList:${programList}"
+                                                                    th:value="${pList.id}"
+                                                                    th:utext="${pList.programName}" />
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-6">
                     <div class="form-group row">
-                        <label class="col-md-4 control-label" for="sessionId">Program Segment</label>
+                        <label class="col-md-4 control-label" for="programSegmentId">Program Segment</label>
                         <div class="col-md-8">
-                            <select id="" name="sessionId" style="height: 37px" class="form-control" aria-required="true" aria-invalid="false"  th:field="*{sessionId}" >
-<!--                                th:field="*{sessionId}"-->
+                            <select id="programSegmentId"  name="programSegmentId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false" th:field="*{studentRegistrationForm.programSegmentId}" >
                                 <option value="">Select</option>
-                                <option th:each="sList:${sessionList}"
-                                        th:value="${sList.id}"
-                                        th:utext="${sList.sessionName}" />
+                                <option th:each="seList:${segmentList}"
+                                        th:value="${seList.id}"
+                                        th:utext="${seList.segmentName}"/>
                             </select>
                         </div>
                     </div>
@@ -363,7 +362,7 @@
 
             <div class="modal-footer">
                 <input type="submit" value="Save" class="btn btn-success" style="margin-top: 24px;">
-                <a style="margin-top: 24px;" class="btn btn-primary" th:href="@{/enrol-student/create}" id="refreshBtn">Refresh</a>
+                <a style="margin-top: 24px;" class="btn btn-secondary" th:href="@{/enrol-student/create}" id="refreshBtn">Refresh</a>
             </div>
             <br> <br>
         </form>
