@@ -73,10 +73,10 @@ public class ChargeGroup extends BaseEntity implements Auditable {
     @Column(name="EFFECTIVE_TO")
     private LocalDate effectiveTo;
     @Column(name="origin")
-    private int origin;
+    private Origin origin;
 
     @Builder
-    public ChargeGroup(String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, boolean active, boolean group, String sActive, String remarks, Long createdBy, LocalDateTime createdAt, Long modifiedBy, LocalDateTime modifiedAt, String flexField1, String flexField2, String flexField3, LocalDate effectiveFrom, LocalDate effectiveTo, int origin) {
+    public ChargeGroup(String chargeGroupName, String shortCode, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, int paymentCycle, int activeStatus, boolean active, boolean group, String sActive, String remarks, Long createdBy, LocalDateTime createdAt, Long modifiedBy, LocalDateTime modifiedAt, String flexField1, String flexField2, String flexField3, LocalDate effectiveFrom, LocalDate effectiveTo, Origin origin) {
         this.chargeGroupName = chargeGroupName;
         this.shortCode = shortCode;
         this.sessionId = sessionId;
