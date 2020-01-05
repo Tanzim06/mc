@@ -1,5 +1,6 @@
 package com.bz.mc.facade.data;
 
+import com.bz.mc.model.charge.Origin;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +27,7 @@ public class ChargeGroupData {
     private int activeStatus;
     private LocalDate effectiveFrom;
     private LocalDate effectiveTo;
-    private int origin;
+    private Origin origin;
     private Long chargeGroupId;
     private Long itemId;
     private Double itemRate;

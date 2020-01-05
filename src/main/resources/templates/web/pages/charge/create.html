@@ -75,17 +75,13 @@
 
                                             <input type="text" id="chargeGroupName" class="form-control"
                                                      name="chargeGroupName" th:field="*{chargeGroupName}" />
-
                                 </div>
-
-
-
                                 <div class="col-md-6">
 
                                         <label for="shortCode">short code</label>
 
                                             <input type="text"
-                                                   class="form-control" name="shortCode"
+                                                   class="form-control" name="shortCode" id="shortCode"
                                                    th:field="*{shortCode}" />
                                 </div>
                             </div>
@@ -133,10 +129,10 @@
                                 <div class="col-md-6">
                                         <label for="chargeCycle">Charge Cycle</label>
                                             <select id="chargeCycle" th:field="*{chargeCycle}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">daily</option>
+                                                <option value="0">Select</option>
+                                                <option value="1">Daily</option>
                                                 <option value="2">Monthly</option>
-                                                <option value="3">quaterly</option>
+                                                <option value="3">Quaterly</option>
                                             </select>
                                 </div>
 
@@ -146,20 +142,26 @@
                                 <div class="col-md-6">
                                         <label for="paymentCycle">Payment Cycle</label>
                                             <select id="paymentCycle" th:field="*{paymentCycle}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">daily</option>
+                                                <option value="0">Select</option>
+                                                <option value="1">Daily</option>
                                                 <option value="2">Monthly</option>
-                                                <option value="3">quaterly</option>
+                                                <option value="3">Quaterly</option>
                                             </select>
                                 </div>
 
                                 <div class="col-md-6">
                                         <label for="origin">Origin</label>
                                             <select id="origin"  th:field="*{origin}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">local</option>
-                                                <option value="2">foregin</option>
-                                                <option value="3">both</option>
+
+                                                <option value="">Select</option>
+                                                <option th:each="thisOrigin : ${origins}"
+                                                        th:value="${thisOrigin.name()}"
+                                                        th:text="${thisOrigin.getName()}"
+                                                        th:selected="${thisOrigin} == ${origin}">
+<!--                                                <option value="0">Select</option>-->
+<!--                                                <option value="1">Local</option>-->
+<!--                                                <option value="2">Foregin</option>-->
+<!--                                                <option value="3">Both</option>-->
                                             </select>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@ package com.bz.mc.controller.charge;
 import com.bz.mc.facade.data.ChargeGroupData;
 import com.bz.mc.facade.data.ItemPriceData;
 import com.bz.mc.model.charge.ChargeGroup;
+import com.bz.mc.model.charge.Origin;
 import com.bz.mc.model.item.ItemInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,7 +35,7 @@ public class ChargeGroupForm {
     private String remarks;
     private String effectiveFrom;
     private String effectiveTo;
-    private int origin;
+    private Origin origin;
 
     private ChargeItemFrom chargeItemFrom = new ChargeItemFrom();
     private List<ChargeGroupData> ChargeFormList = new ArrayList<>();
@@ -87,17 +88,13 @@ public class ChargeGroupForm {
         DateTimeFormatter formatterTo = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.effectiveTo = formatterTo.format(chargeGroup.getEffectiveTo());
         this.origin = chargeGroup.getOrigin();
-
-
     }
-
 
     public void populateChargeItem(List<ChargeGroupData> chargeItemList){
         for(ChargeGroupData c : chargeItemList){
             ChargeFormList.add(c);
         }
     }
-
 
     public boolean isPersisted() {
         return id != null;

@@ -9,8 +9,10 @@ import com.bz.mc.facade.data.ItemPriceData;
 import com.bz.mc.model.admission.AdmissionBooking;
 import com.bz.mc.model.charge.ChargeGroup;
 import com.bz.mc.model.charge.ChargeItem;
+import com.bz.mc.model.charge.Origin;
 import com.bz.mc.model.item.ItemInfo;
 import com.bz.mc.model.item.ItemPrice;
+import com.bz.mc.model.studentRegistration.Gender;
 import com.bz.mc.service.*;
 import com.bz.mc.util.Constants;
 import lombok.NonNull;
@@ -243,7 +245,6 @@ public class ChargeGroupController {
 //            }
 //        }
 
-
         return REDIRECT + ROUTE_SEARCH;
     }
 
@@ -256,11 +257,12 @@ public class ChargeGroupController {
         model.addAttribute("sessionList", sessionService.findSessionList());
         model.addAttribute("segmentList", segmentInfoService.findSegmentList());
         model.addAttribute("itemList", itemService.getAllActiveItem());
+        model.addAttribute("origins", Origin.all());
+        System.out.println("origins"+Origin.all());
 
     }
 
     private ChargeGroup prepareChargeGroup(ChargeGroupForm chargeGroupForm ) {
-
         ChargeGroup chargeGroup ;
         if (chargeGroupForm.isPersisted()) {
             System.out.println("0");
