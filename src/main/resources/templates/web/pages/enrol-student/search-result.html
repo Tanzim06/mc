@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
 
-                            <tr th:each="mesl:${enrolStudentDataList}">
+                            <tr th:each="mesl:${enrolStudentDataListWithRegistration}">
                                 <td hidden> <span th:text="${mesl.id}"></span></td>
                                 <td> <span th:text="${mesl.studentRegistrationId}"></span></td>
                                 <td> <span th:text="${mesl.studentName}"></span></td>

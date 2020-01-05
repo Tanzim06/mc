@@ -48,9 +48,16 @@ public class EnrolStudentServiceImp implements EnrolStudentService {
 	}
 
 	@Override
-	public List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId) {
-		return enrolStudentRepository.findEnrolStudentDataSearch(studentRegistrationId,studentName,sessionId,programId);
+	public List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId) {
+		return enrolStudentRepository.findEnrolStudentDataSearch(studentRegistrationId,studentName,sessionId,programId,programSegmentId);
 	}
+
+	@Override
+	public List<EnrolStudentData> getEnrolStudentDataFromRegistration(Long studentRegistrationId) {
+		return enrolStudentRepository.findStudentRegisDataAll(studentRegistrationId);
+	}
+
+
 
 
 }

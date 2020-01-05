@@ -2,7 +2,7 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{web/fragments/layout}">
 <head>
-    <title>Student Registration</title>
+    <title>Enrol Student</title>
 </head>
 <body>
 
@@ -46,28 +46,38 @@
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Program</label>
+                 <label class="control-label mb-1" for="programId">Program</label>
                  <select id="programId"  name="programId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
                      <option value="">Select</option>
-                     <option th:each="sList:${programList}"
-                             th:value="${sList.id}"
-                             th:utext="${sList.programName}"/>
+                     <option th:each="pList:${programList}"
+                             th:value="${pList.id}"
+                             th:utext="${pList.programName}"/>
                  </select>
              </div>
          </div>
 
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Segment</label>
-                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="" placeholder="Segment" >
+                 <label class="control-label mb-1" for="programSegmentId">Segment</label>
+                 <select id="programSegmentId"  name="programSegmentId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
+                     <option value="">Select</option>
+                     <option th:each="seList:${segmentList}"
+                             th:value="${seList.id}"
+                             th:utext="${seList.segmentName}"/>
+                 </select>
              </div>
          </div>
          </div>
 <div class="row">
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1">Batch</label>
-                 <input  type="text" class="form-control" aria-required="true" aria-invalid="false" name ="" placeholder="Batch" >
+                 <label class="control-label mb-1" >Batch</label>
+<!--                 <select id="batchId"  name="batchId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
+<!--                     <option value="">Select</option>-->
+<!--                     <option th:each="bList:${batchInfoList}"-->
+<!--                    for="batchId"         th:value="${bList.id}"-->
+<!--                             th:utext="${bList.batchName}"/>-->
+<!--                 </select>-->
              </div>
          </div>
 
@@ -105,7 +115,7 @@
             <!-- Default checked -->
             <div class="custom-control custom-checkbox">
                 <label class="control-label mb-1">New</label>
-                <input type="checkbox" class="checkbox" name="new">
+                <input type="checkbox" class="checkbox" name="new" id="showList">
 
             </div>
             <!--<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
@@ -182,6 +192,70 @@
  </div>
     <br/>
     <div th:replace="web/pages/enrol-student/search-result :: search-result"></div>
+
+
+    <script th:inline="javascript">
+        // $(document).ready(function () {
+        //     const upzillaId = /*[[${loanApplicationForm.upzillaId}]]*/ "";
+        //     loadUpzilla(upzillaId);
+        //     const samityMemberId = /*[[${loanApplicationForm.samityMemberId}]]*/ "";
+        //     loadSamityMemberAndGroup(samityMemberId);
+        //     const bankBranchId = /*[[${loanApplicationForm.bankBranchId}]]*/ "";
+        //     loadBankBranch(bankBranchId);
+        //
+        //     /*this part added by sohel rana on 23/12/19 at 10.29 AM */
+        //     const bankId = /*[[${loanApplicationForm.bankId}]]*/ "";
+        //     loadBank(bankId);
+        //
+        //     const branchId=[[${loanApplicationForm.bankBranchId}]];
+        //     const bId=[[${loanApplicationForm.bankId}]];
+        //     loadBankBranchSelect(bId,branchId);
+        //
+        //
+        //     /*the part is end here */
+        // });
+        //
+        // function addLoanHistory() {
+        //     event.preventDefault();
+        //     const orgName = $('#previousLoanOrgName').val();
+        //     const loanAmount = parseFloat($('#previousLoanAmount').val());
+        //     var row = parseInt($('#historyCount').val());
+        //     if (orgName != null && orgName !== "" && !isNaN(loanAmount)) {
+        //         $('#loanHistoryGrid > tbody:last-child').append('<tr>' +
+        //             '<td>NEW</td>\n' +
+        //             '<td><input type="hidden" name=loanHistoryForms[' + row + '].id" value="null">' +
+        //             '<input type="text" class="form-control-plaintext" name="loanHistoryForms[' + row + '].orgName" value="' + orgName + '">' +
+        //             '</td>' +
+        //             '<td><input type="text" class="form-control-plaintext" name="loanHistoryForms[' + row + '].loanAmount" value="' + loanAmount + '"></td>' +
+        //             '</tr>');
+        //         row++;
+        //         $('#historyCount').val(row);
+        //     }
+        //     $('#previousLoanOrgName').val('');
+        //     $('#previousLoanAmount').val('');
+        // };
+        // $(document).ready(function () {
+        //     $('.select2').select2({
+        //         width: "100%"
+        //     });
+        // });
+
+        $(document).ready(function() {
+            //set initial state.
+            $('#showList').change(function() {
+                if ($(this).is(':checked')) {
+                    $('#myTable').attr("disabled", false)
+                }
+                else
+                {
+                    $('#myTable').attr("disabled", true)
+                }
+            });
+        });
+        /*the part is end here */
+
+
+    </script>
 
 </div>
 </body>
