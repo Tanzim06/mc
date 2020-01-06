@@ -37,9 +37,24 @@ public class ChargeGroupData {
     private String sessionName;
     private String programName;
     private String segmentName;
-//    @DateTimeFormat(pattern="yyyy-MM-dd")
-//    private  LocalDate billDate;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private  LocalDate billDate;
+
     //private String currencyName;
+
+
+    public ChargeGroupData(Long id, String chargeGroupName, int activeStatus,Origin origin, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String itemName, LocalDate billDate) {
+        this.id = id;
+        this.chargeGroupName = chargeGroupName;
+        this.activeStatus = activeStatus;
+        this.origin = origin;
+        this.chargeGroupId = chargeGroupId;
+        this.itemId = itemId;
+        this.itemRate = itemRate;
+        this.currencyId = currencyId;
+        this.itemName = itemName;
+        this.billDate = billDate;
+    }
 
 
     public ChargeGroupData(Long id, String chargeGroupName, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String itemName) {
@@ -54,16 +69,32 @@ public class ChargeGroupData {
 
     }
 
-    public ChargeGroupData(Long id, String chargeGroupName, int activeStatus, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName) {
+
+    public ChargeGroupData(Long id, String chargeGroupName, int activeStatus,Origin origin, Long chargeGroupId, Long itemId, Double itemRate, Long currencyId, String remarks, String itemName) {
         this.id = id;
         this.chargeGroupName = chargeGroupName;
         this.activeStatus = activeStatus;
+        this.origin  = origin;
         this.chargeGroupId = chargeGroupId;
         this.itemId = itemId;
         this.itemRate = itemRate;
         this.currencyId = currencyId;
         this.remarks = remarks;
         this.itemName = itemName;
+    }
+
+    public ChargeGroupData(Long id, String chargeGroupName, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, Origin origin, Long chargeGroupId, String sessionName, String programName, String segmentName) {
+        this.id = id;
+        this.chargeGroupName = chargeGroupName;
+        this.sessionId = sessionId;
+        this.programId = programId;
+        this.programSegmentId = programSegmentId;
+        this.chargeCycle = chargeCycle;
+        this.origin = origin;
+        this.chargeGroupId = chargeGroupId;
+        this.sessionName = sessionName;
+        this.programName = programName;
+        this.segmentName = segmentName;
     }
 
 }

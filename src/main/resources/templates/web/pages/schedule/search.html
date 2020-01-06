@@ -16,7 +16,7 @@
     <!-- PAGE TITLE -->
     <div class="page-title">
         <div class="card bg-info text-white">
-            <div class="card-body" ><h3>Student Group charge</h3></div>
+            <div class="card-body" ><h3> Charge Schedule</h3></div>
         </div>
     </div>
     <!-- customized code -->
@@ -89,20 +89,20 @@
                     <th>session</th>
                     <th>program</th>
                     <th>segment</th>
+                    <th>Origin</th>
                     <th>last bill date</th>
                     <th>details</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="ad:${groupdataList}">
-                    <!-- <td><span th:text="${ad.admissionBookingId}"></span></td>-->
                     <td><span th:text="${ad.chargeGroupName}"></span></td>
                     <td><span th:text="${ad.chargeCycle}"></span></td>
                     <td><span th:text="${ad.sessionName}"></span></td>
                     <td><span th:text="${ad.programName}"></span></td>
                     <td><span th:text="${ad.segmentName}"></span></td>
-                    <td></td>
-                    <!--                                <td><span th:text="${ad.billDate}"></span></td>-->
+                    <td><span th:text="${ad.origin}"></span></td>
+                    <td><span th:text="${ad.billDate}"></span></td>
                     <td><a class="btn btn-info btn-md" href="@{/schedule/create}" >details</a></td>
                 </tr>
 

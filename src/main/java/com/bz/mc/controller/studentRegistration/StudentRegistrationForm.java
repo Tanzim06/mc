@@ -81,7 +81,6 @@ public class StudentRegistrationForm {
 
     }
 
-
     public StudentRegistrationForm(StudentRegistrationInfo studentRegistrationInfo, List<StudentEducationPastData> educationPastDataList) {
         this.id=studentRegistrationInfo.getId();
         populateSudentRegistratioinInfo(studentRegistrationInfo);

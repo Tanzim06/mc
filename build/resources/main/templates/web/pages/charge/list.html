@@ -9,174 +9,109 @@
             $('#userRefId').select2();
         });
     </script>
-
-
-    <title>Charge</title>
+    <title>charge shedule</title>
 </head>
 <body>
-
 <div layout:fragment="content" class="content">
     <!-- PAGE TITLE -->
     <div class="page-title">
         <div class="card bg-info text-white">
-            <div class="card-body" ><h3>Charge list</h3></div>
+            <div class="card-body" ><h3> Group List</h3></div>
         </div>
     </div>
-
     <!-- customized code -->
-
-    <div class="card">
-
-        <div class="card-body">
-
+    <div id="search">
+        <form class="needs-validation"  th:action="@{/charge/list}"  method="post" novalidate>
             <div class="row">
-                <form class="needs-validation" th:action="@{/charge/list}"
-                      method="post"   novalidate>
-
-                    <div class="row">
-
-                        <div class="col-3" hidden>
-                            <div class="form-group">
-                                <label class=" mb-1">charge Group Id</label> <input
-                                    id="chargeGroupId" type="text" class="form-control"
-                                    name="chargeGroupId" placeholder="group Name">
-                            </div>
-
-                        </div>
-
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label class=" mb-1">Charge Group</label> <input
-                                    id="chargeGroupName" type="text" class="form-control"
-                                    name="chargeGroupName" placeholder="group Name">
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label class=" mb-1">Remarks</label> <input id="remarks"
-                                                                            type="text" class="form-control" name="remarks"
-                                                                            placeholder="Remarks">
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-4 text-right">
-
-                            <input type="submit" value="Search" id="searchBtn"
-                                   class="btn btn-primary btn-md" style="margin-top: 24px;">
-                            <a style="margin-top: 24px;" class="btn btn-success"
-                               th:href="@{/charge/search}">Refresh</a>
-
-
-                        </div>
-
-<!--                        <div class="col-6" style="height: 100px; width: 25px; float: left;">-->
-
-<!--                            <div  class="form-group">-->
-<!--                                <label >individual</label>-->
-<!--                                <input type="checkbox"  name="individual" />-->
-<!--                                <label >Group</label>-->
-<!--                                <input type="checkbox"  name="group" />-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-                    </div>
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-sm-11 text-right">-->
-
-<!--                            <input type="submit" value="Search" id="searchBtn"-->
-<!--                                   class="btn btn-primary btn-md" style="margin-top: 24px;">-->
-<!--                            <a style="margin-top: 24px;" class="btn btn-success"-->
-<!--                               th:href="@{/charge/search}">Refresh</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </form>
-            </div>
-
-            <div class="row">
-                <div class="card table-container"
-                     style="width: 1070px; overflow-x: scroll">
-                    <div class="card bg-info text-white">
-                        <strong class="card-title"><h5>search result</h5></strong>
-                    </div>
-
-                    <div class="card-body">
-
-                        <table id="myTable"
-                               class="table table-striped table-bordered display nowrap"
-                               style="width: 100%">
-                            <thead>
-
-                            <tr>
-<!--                                <th>Charge group id</th>-->
-<!--                                <th>item charge id</th>-->
-<!--                                <th>item id</th>-->
-
-                                <th>Charge group Name</th>
-                                <th>item name</th>
-                                <th>Rate</th>
-                                <th>Currency</th>
-                                <th>remarks</th>
-                                <th>Active</th>
-                                <th>Action</th>
-
-
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <tr th:each="cList:${allchargeGroupList}">
-
-                                <td><span th:text="${cList.chargeGroupName}"></span></td>
-                                <td><span th:value="${cList.itemName}"  /></span></td>
-
-                                <td><span th:text="${cList.itemRate}"></span></td>
-
-                                <td><span th:text="${cList.currencyId}"></span></td>
-                                <td><span th:text="${cList.remarks}"></span></td>
-
-                                <td class="text-center"><input type="checkbox"
-                                                               id="defaultChecked9"
-                                                               name="activeStatus" th:checked="${cList.activeStatus}==1"
-                                                               onclick="return failer"></td>
-
-                                <td><a class="btn btn-info btn-md"
-                                       th:href="@{/charge/update/{id}(id=${cList.id})}">Edit</a></td>
-
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-
-
-
-
-                    </div>
-
-
-
-
-
-
+                <div class="col-md-3">
+                    <label class=" mb-1">Charge
+                        Group</label> <input
+                        id="chargeGroupName" type="text" class="form-control"
+                        name="chargeGroupName" placeholder="group Name">
 
                 </div>
+                <div class="col-md-3">
+                        <label class=" mb-1">Remarks</label> <input id="remarks"
+                                                                    type="text" class="form-control" name="remarks" placeholder="Remarks">
 
-
+                </div>
+                <div class="col-md-3">
+                    <label for="origin">Origin</label>
+                    <select id="origin"  name="origin"  class="form-control">
+                        <option value="">Select</option>
+                        <option th:each="thisOrigin : ${origins}"
+                                th:value="${thisOrigin.name()}"
+                                th:text="${thisOrigin.getName()}"
+                                th:selected="${thisOrigin} == ${origin}">
+                    </select>
+                </div>
+                <div class="col-md-3 ">
+                    <input type="submit" value="Search" id="searchBtn"
+                           class="btn btn-primary btn-md" style="margin-top: 24px;">
+                    <a style="margin-top: 24px;" class="btn btn-success"
+                       th:href="@{/charge/search}">Refresh</a>
+                </div>
             </div>
-            <!-- <div class="card-body">  -->
 
+            <!--                                                                                                                                                             -->
+        </form>
+    </div>
+    <br/>
 
+    <!--            <div class="col-md-12">-->
+    <!--                    <table class="table table-responsive table-responsive-large">-->
+    <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
+        <div class="card bg-info text-white" >
+            <div class="card-title"><h5>Search Result</h5></div>
+        </div>
+        <div class=" pt-0 pb-5">
+
+            <table id="myTable"
+                   class="table table-striped table-bordered display nowrap" style="width:100%" >
+                <thead  class="thead-light">
+                <tr>
+                    <th>Charge group Name</th>
+                    <th>Origin</th>
+                    <th>Rate</th>
+                    <th>Currency</th>
+                    <th>remarks</th>
+                    <th>Active</th>
+                    <th>Action</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="cList:${allchargeGroupList}">
+
+                    <td><span th:text="${cList.chargeGroupName}"></span></td>
+                    <td><span th:text="${cList.origin}"></span></td>
+
+                    <td><span th:text="${cList.itemRate}"></span></td>
+
+                    <td><span th:text="${cList.currencyId}"></span></td>
+                    <td><span th:text="${cList.remarks}"></span></td>
+
+                    <td class="text-center"><input type="checkbox"
+                                                   id="defaultChecked9"
+                                                   name="activeStatus" th:checked="${cList.activeStatus}==1"
+                                                   onclick="return failer"></td>
+                    <td><a class="btn btn-info btn-md"
+                           th:href="@{/charge/update/{id}(id=${cList.id})}">Edit</a></td>
+
+                </tr>
+
+                </tbody>
+            </table>
 
         </div>
-        <!-- <div class="card">  -->
-
-
     </div>
+</div>
+
+<!-- <div class="card-body">  -->
+</div>
+<!-- <div class="card">  -->
+<!--    </div>-->
 
 </div>
 

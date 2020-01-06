@@ -21,7 +21,7 @@
     </div>
     <!-- customized code -->
             <div id="search">
-                <form class="needs-validation"  th:action="@{/schedule/group}"  method="post" novalidate>
+                <form class="needs-validation"  th:action="@{/studentChargeGroup/list}"  method="post" novalidate>
                     <div class="row">
                         <div class="col-md-3">
                                     <label class="control-label mb-1">session</label>
@@ -63,8 +63,6 @@
             </div>
     <br/>
 
-<!--            <div class="col-md-12">-->
-                <!--                    <table class="table table-responsive table-responsive-large">-->
        <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
           <div class="card bg-info text-white" >
               <div class="card-title"><h5>Search Result</h5></div>
@@ -80,21 +78,19 @@
                                         <th>session</th>
                                         <th>program</th>
                                         <th>segment</th>
-                                        <th>last bill date</th>
+                                        <th>Origin</th>
                                         <th>details</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="ad:${groupdataList}">
-                                        <!-- <td><span th:text="${ad.admissionBookingId}"></span></td>-->
+                                    <tr th:each="ad:${studentChargeDataList}">
                                         <td><span th:text="${ad.chargeGroupName}"></span></td>
                                         <td><span th:text="${ad.chargeCycle}"></span></td>
                                         <td><span th:text="${ad.sessionName}"></span></td>
                                         <td><span th:text="${ad.programName}"></span></td>
                                         <td><span th:text="${ad.segmentName}"></span></td>
-                                        <td></td>
-                                        <!--                                <td><span th:text="${ad.billDate}"></span></td>-->
-                                        <td><a class="btn btn-info btn-md" href="@{/schedule/create}" >details</a></td>
+                                        <td><span th:text="${ad.origin}"></span></td>
+                                        <td><a class="btn btn-info btn-md"  th:href="@{/studentChargeGroup/details/{id}(id=${ad.id})}">details</a></td>
                                     </tr>
 
                                     </tbody>

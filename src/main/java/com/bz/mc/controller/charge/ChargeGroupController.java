@@ -192,20 +192,19 @@ public class ChargeGroupController {
 
     }
 
-
     @GetMapping(ROUTE_SEARCH)
     public String search(Model model) {
         populateChargeGroupForm( model,new ChargeGroupForm());
         return "/web/pages/charge/list";
     }
 
-
     @PostMapping(value = ROUTE_SEARCH_RESULT)
-    public String getChargeList(Model model, @RequestParam("chargeGroupName") String chargeGroupName, @RequestParam("remarks") String remarks,ChargeGroupForm chargeGroupForm,ChargeItemFrom chargeItemFrom) {
+    public String getChargeList(Model model, @RequestParam("chargeGroupName") String chargeGroupName, @RequestParam("remarks") String remarks,@RequestParam("origin") Origin origin,ChargeGroupForm chargeGroupForm,ChargeItemFrom chargeItemFrom) {
 
-        List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks);
+        List<ChargeGroupData> allchargeGroupList = chargeItemService.getChargeSearchResult(chargeGroupName,remarks,origin);
 
         model.addAttribute("allchargeGroupList", allchargeGroupList);
+//        System.out.println("Origin = "+allchargeGroupList.get(3));
         populateChargeGroupForm(model,chargeGroupForm);
         System.out.print("size"+allchargeGroupList.size());
 

@@ -16,9 +16,9 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public enum Origin {
-    LOCAL(1, "Local", "origin.type.Local"),
-    FOREIGN(2, "Foreign", "origin.type.Foreign"),
-    BOTH(3, "Both", "origin.type.Both");
+    LOCAL(1, "Local", "origin.type.local"),
+    FOREIGN(2, "Foreign", "origin.type.foreign"),
+    BOTH(3, "Both", "origin.type.both");
 
     private int id;
     private String name;

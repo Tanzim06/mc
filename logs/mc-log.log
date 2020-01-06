@@ -642,3 +642,29 @@
 [McApplication] 2020-01-05 17:25:32 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-05 17:29:10 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
 [McApplication] 2020-01-05 17:37:59 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 10:09:20 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 10:36:06 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 11:33:54 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 11:33:55 [http-nio-8081-exec-4] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 11:38:25 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 11:44:22 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 11:45:06 [http-nio-8081-exec-8] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3
+[McApplication] 2020-01-06 11:46:05 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 12:07:37 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 12:58:49 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 12:58:58 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+[McApplication] 2020-01-06 13:02:32 [http-nio-8081-exec-2] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 13:45:47 [http-nio-8081-exec-9] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 14:14:25 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 15:18:59 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 15:18:59 [http-nio-8081-exec-8] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 16:56:59 [http-nio-8081-exec-7] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 16:58:47 [http-nio-8081-exec-6] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 17:28:42 [http-nio-8081-exec-5] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 17:51:54 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 17:51:54 [http-nio-8081-exec-10] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 18:43:21 [http-nio-8081-exec-3] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 18:43:30 [http-nio-8081-exec-5] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2020-01-06 18:56:57 [http-nio-8081-exec-1] ERROR com.bz.mc.controller.HomeController - Login Completed
+[McApplication] 2020-01-06 18:57:12 [http-nio-8081-exec-3] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present
+[McApplication] 2020-01-06 18:57:26 [http-nio-8081-exec-9] ERROR com.bz.mc.exception.ApiControllerExceptionHandler - java.util.NoSuchElementException: No value present

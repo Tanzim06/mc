@@ -61,31 +61,27 @@
                     <div class="card-body">
                         <form class="needs-validation" th:object="${chargeGroupForm}"   th:action="@{/charge/save}" method="POST">
                             <div class="form-row">
-<!--                                <div class="col-md-2" hidden>-->
-<!--                                    <div class="form-group row">-->
-<!--                                        <label class="col-md-2 "> id</label>-->
-<!--                                        <div class="col-md-2">-->
-<!--                                            <input type="text" class="form-control" name="chargeGroupIdMst"-->
-<!--                                                   th:field="*{id}" readonly />-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                <div class="col-md-2" hidden>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 "> id</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control" name="chargeGroupIdMst"
+                                                   th:field="*{id}" readonly />
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                         <label for="chargeGroupName"> charge group name</label>
 
                                             <input type="text" id="chargeGroupName" class="form-control"
                                                      name="chargeGroupName" th:field="*{chargeGroupName}" />
-
                                 </div>
-
-
-
                                 <div class="col-md-6">
 
                                         <label for="shortCode">short code</label>
 
                                             <input type="text"
-                                                   class="form-control" name="shortCode"
+                                                   class="form-control" name="shortCode" id="shortCode"
                                                    th:field="*{shortCode}" />
                                 </div>
                             </div>
@@ -133,10 +129,10 @@
                                 <div class="col-md-6">
                                         <label for="chargeCycle">Charge Cycle</label>
                                             <select id="chargeCycle" th:field="*{chargeCycle}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">daily</option>
+                                                <option value="0">Select</option>
+                                                <option value="1">Daily</option>
                                                 <option value="2">Monthly</option>
-                                                <option value="3">quaterly</option>
+                                                <option value="3">Quaterly</option>
                                             </select>
                                 </div>
 
@@ -146,20 +142,22 @@
                                 <div class="col-md-6">
                                         <label for="paymentCycle">Payment Cycle</label>
                                             <select id="paymentCycle" th:field="*{paymentCycle}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">daily</option>
+                                                <option value="0">Select</option>
+                                                <option value="1">Daily</option>
                                                 <option value="2">Monthly</option>
-                                                <option value="3">quaterly</option>
+                                                <option value="3">Quaterly</option>
                                             </select>
                                 </div>
 
                                 <div class="col-md-6">
                                         <label for="origin">Origin</label>
                                             <select id="origin"  th:field="*{origin}" class="form-control">
-                                                <option value="0">select</option>
-                                                <option value="1">local</option>
-                                                <option value="2">foregin</option>
-                                                <option value="3">both</option>
+
+                                                <option value="">Select</option>
+                                                <option th:each="thisOrigin : ${origins}"
+                                                        th:value="${thisOrigin.name()}"
+                                                        th:text="${thisOrigin.getName()}"
+                                                        th:selected="${thisOrigin} == ${origin}">
                                             </select>
                                 </div>
                             </div>
@@ -413,7 +411,7 @@
             </div><!--class row -->
                     </div>
                 </div>
-            </div>
+            </div> <!--end card -->
         </div>
     </div>
 

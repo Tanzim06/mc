@@ -70,11 +70,11 @@ public class ChargeSheduleController {
         return REDIRECT + ROUTE_SEARCH;
     }
 
-    @GetMapping(ROUTE_SEARCH_RESULT_GROUP)
-    public String searchGroup(Model model) {
-        populateBillDateForm (model, new BillDateForm());
-        return "web/pages/schedule/studentGroupCharge";
-    }
+//    @GetMapping(ROUTE_SEARCH_RESULT_GROUP)
+//    public String searchGroup(Model model) {
+//        populateBillDateForm (model, new BillDateForm());
+//        return "web/pages/schedule/studentGroupCharge";
+//    }
 
     @GetMapping(ROUTE_UPDATE)
     public String updateChargeItem(Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {

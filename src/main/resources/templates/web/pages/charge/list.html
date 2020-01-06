@@ -71,7 +71,7 @@
                 <thead  class="thead-light">
                 <tr>
                     <th>Charge group Name</th>
-                    <th>item name</th>
+                    <th>Origin</th>
                     <th>Rate</th>
                     <th>Currency</th>
                     <th>remarks</th>
@@ -85,7 +85,7 @@
                 <tr th:each="cList:${allchargeGroupList}">
 
                     <td><span th:text="${cList.chargeGroupName}"></span></td>
-                    <td><span th:value="${cList.itemName}"  /></span></td>
+                    <td><span th:text="${cList.origin}"></span></td>
 
                     <td><span th:text="${cList.itemRate}"></span></td>
 
@@ -96,10 +96,8 @@
                                                    id="defaultChecked9"
                                                    name="activeStatus" th:checked="${cList.activeStatus}==1"
                                                    onclick="return failer"></td>
-
                     <td><a class="btn btn-info btn-md"
                            th:href="@{/charge/update/{id}(id=${cList.id})}">Edit</a></td>
-
 
                 </tr>
 

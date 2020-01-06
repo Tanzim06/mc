@@ -4,6 +4,7 @@ import com.bz.mc.facade.data.ChargeGroupData;
 import com.bz.mc.facade.data.ItemPriceData;
 import com.bz.mc.model.charge.ChargeGroup;
 import com.bz.mc.model.charge.ChargeItem;
+import com.bz.mc.model.charge.Origin;
 import com.bz.mc.model.item.ItemPrice;
 import com.bz.mc.repository.ChargeGroupRepository;
 import com.bz.mc.repository.ChargeItemRepository;
@@ -40,10 +41,10 @@ public class ChargeItemServiceImp implements ChargeItemService {
         return chargeItemRepository.findChargeItemList(chargeGroupId);
     }
 
-    @Override
-    public List<ChargeGroupData> getChargeGroupSearchResult(String chargeGroupName, String remarks, Long chargeGroupId) {
-        return chargeItemRepository.findAllGroup(chargeGroupName,remarks,chargeGroupId) ;
-    }
+//    @Override
+//    public List<ChargeGroupData> getChargeGroupSearchResult(String chargeGroupName, String remarks, Long chargeGroupId) {
+//        return chargeItemRepository.findAllGroup(chargeGroupName,remarks,chargeGroupId) ;
+//    }
 
     @Override
     public List<ChargeGroupData> getChargeitemList(Long chargeGroupId) {
@@ -58,8 +59,8 @@ public class ChargeItemServiceImp implements ChargeItemService {
     }
 
     @Override
-    public List<ChargeGroupData> getChargeSearchResult(String chargeGroupName, String remarks) {
-        return chargeItemRepository.findAllChargeList(chargeGroupName,remarks);
+    public List<ChargeGroupData> getChargeSearchResult(String chargeGroupName, String remarks, Origin origin) {
+        return chargeItemRepository.findAllChargeList(chargeGroupName,remarks,origin);
     }
 
 
@@ -67,6 +68,11 @@ public class ChargeItemServiceImp implements ChargeItemService {
     @Override
     public List<ChargeGroupData> getScheduleSearchResult(Long sessionId, Long programId, Long programSegmentId) {
         return chargeItemRepository.findAllScheduleGroupData(sessionId,programId,programSegmentId);
+    }
+
+    @Override
+    public List<ChargeGroupData> getStudentChargeSearchResult(Long sessionId, String chargeGroupName, Origin origin) {
+        return chargeItemRepository.findStudentGroupChargeList(sessionId,chargeGroupName,origin);
     }
 
 

@@ -48,7 +48,7 @@ public class QChargeGroup extends EntityPathBase<ChargeGroup> {
 
     public final NumberPath<Long> modifiedBy = createNumber("modifiedBy", Long.class);
 
-    public final NumberPath<Integer> origin = createNumber("origin", Integer.class);
+    public final EnumPath<Origin> origin = createEnum("origin", Origin.class);
 
     public final NumberPath<Integer> paymentCycle = createNumber("paymentCycle", Integer.class);
 
