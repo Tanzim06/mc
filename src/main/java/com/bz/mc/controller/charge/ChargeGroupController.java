@@ -209,10 +209,8 @@ public class ChargeGroupController {
         System.out.print("size"+allchargeGroupList.size());
 
         if (allchargeGroupList.size() != 0) {
-
             return "/web/pages/charge/list";
         }
-
         return REDIRECT + ROUTE_SEARCH;
     }
 

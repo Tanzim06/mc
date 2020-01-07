@@ -16,51 +16,57 @@
     <!-- PAGE TITLE -->
     <div class="page-title">
         <div class="card bg-info text-white">
-            <div class="card-body" ><h3>Bill Date</h3></div>
+            <div class="card-body" ><h3>Group Details</h3></div>
         </div>
     </div>
     <!-- customized code -->
     <div id="search">
-        <form class="needs-validation"  method="post" novalidate>
+        <form class="needs-validation"  th:object="${chargeGroupForm}"   method="post" novalidate>
             <div class="form-row">
                 <div class="col-md-6">
                     <label for="chargeGroupName"> charge group name</label>
                     <input type="text" id="chargeGroupName" class="form-control"
-                           name="chargeGroupName" />
+                           th:field="*{chargeGroupName}"  name="chargeGroupName"  />
                 </div>
                 <div class="col-md-6">
                     <label for="chargeCycle">Charge Cycle</label>
-                    <select id="chargeCycle" class="form-control">
-                        <option value="0">Select</option>
-                        <option value="1">Daily</option>
-                        <option value="2">Monthly</option>
-                        <option value="3">Quaterly</option>
-                    </select>
+                    <input type="text" id="chargeCycle" th:field="*{chargeCycle}" class="form-control"
+                           name="chargeCycle" />
+<!--                    <select id="chargeCycle" class="form-control">-->
+<!--                        <option value="0">Select</option>-->
+<!--                        <option value="1">Daily</option>-->
+<!--                        <option value="2">Monthly</option>-->
+<!--                        <option value="3">Quaterly</option>-->
+<!--                    </select>-->
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6">
                     <label for="sessionId">Session</label>
-                    <select id="sessionId"
-                            class="form-control"
-                            aria-required="true" aria-invalid="false" required>
-                        <option value="">select</option>
-                        <option th:each="slist:${sessionList}"
-                                th:value="${slist.id}"
-                                th:utext="${slist.sessionName}" />
-                    </select>
+                    <input type="text" id="sessionId" th:field="*{sessionId}" class="form-control"
+                           name="sessionId" />
+<!--                    <select id="sessionId"-->
+<!--                            class="form-control"-->
+<!--                            aria-required="true" aria-invalid="false" required>-->
+<!--                        <option value="">select</option>-->
+<!--                        <option th:each="slist:${sessionList}"-->
+<!--                                th:value="${slist.id}"-->
+<!--                                th:utext="${slist.sessionName}" />-->
+<!--                    </select>-->
 
                 </div>
                 <div class="col-md-6">
                     <label for="programId">Program</label>
-                    <select id="programId"
-                            class="form-control"
-                            aria-required="true" aria-invalid="false" required>
-                        <option value="">select</option>
-                        <option th:each="plist:${programs}"
-                                th:value="${plist.id}"
-                                th:utext="${plist.programName}" />
-                    </select>
+                    <input type="text" id="programId" class="form-control"
+                           th:field="*{programId}" name="programId" />
+<!--                    <select id="programId"-->
+<!--                            class="form-control"-->
+<!--                            aria-required="true" aria-invalid="false" required>-->
+<!--                        <option value="">select</option>-->
+<!--                        <option th:each="plist:${programs}"-->
+<!--                                th:value="${plist.id}"-->
+<!--                                th:utext="${plist.programName}" />-->
+<!--                    </select>-->
 
                 </div>
 
@@ -69,23 +75,20 @@
             <div class="form-row">
                 <div class="col-md-6">
                     <label for="programSegmentId">Program Segment</label>
-                    <select id="programSegmentId"
-                            class="form-control"                                                aria-required="true" aria-invalid="false" required>
-                        <option value="">select</option>
-                        <option th:each="pslist:${segmentList}"
-                                th:value="${pslist.id}"
-                                th:utext="${pslist.segmentName}" />
-                    </select>
+                    <input type="text" id="programSegmentId" th:field="*{programSegmentId}" class="form-control"
+                           name="programSegmentId" />
+<!--                    <select id="programSegmentId"-->
+<!--                            class="form-control"                                                aria-required="true" aria-invalid="false" required>-->
+<!--                        <option value="">select</option>-->
+<!--                        <option th:each="pslist:${segmentList}"-->
+<!--                                th:value="${pslist.id}"-->
+<!--                                th:utext="${pslist.segmentName}" />-->
+<!--                    </select>-->
                 </div>
                 <div class="col-md-6">
                     <label for="origin">Origin</label>
-                    <select id="origin"  class="form-control">
-                        <option value="">Select</option>
-                        <option th:each="thisOrigin : ${origins}"
-                                th:value="${thisOrigin.name()}"
-                                th:text="${thisOrigin.getName()}"
-                                th:selected="${thisOrigin} == ${origin}">
-                    </select>
+                    <input type="text" id="origin" class="form-control"
+                           th:field="*{origin}"  name="origin" />
                 </div>
 
             </div>
@@ -110,12 +113,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr th:each="cItemList:${chargeItemList}">
+                    <td><span th:text="${cItemList.itemName}"></span></td>
+                    <td><span th:text="${cItemList.itemRate}"></span></td>
+                    <td><span th:text="${cItemList.currencyId}"></span></td>
                 </tr>
-
                 </tbody>
             </table>
 
@@ -128,14 +130,12 @@
             </div>
         </div>
     </div>
-
     <br>
     <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
         <div class="card bg-info text-white" >
             <div class="card-title"><h5>Bill</h5></div>
         </div>
         <div class=" pt-0 pb-5">
-
             <table id="billTable"
                    class="table table-striped table-bordered display nowrap" style="width:100%" >
                 <thead  class="thead-light">
@@ -161,11 +161,9 @@
 
                 </tbody>
             </table>
-
         </div>
         <!-- <div class="card-body">  -->
     </div>
-
     <div>
         <div class="row">
             <div class="col-md-6">
@@ -173,8 +171,6 @@
             </div>
         </div>
     </div>
-
 </div>
-
 </body>
 </html>
