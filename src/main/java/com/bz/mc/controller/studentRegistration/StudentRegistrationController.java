@@ -75,7 +75,7 @@ public class StudentRegistrationController {
 
 
     @GetMapping(ROUTE_EDIT)
-    public String updateStudentRegistration(Model model, @PathVariable Long id, StudentRegistrationForm studentRegistrationForm ,@RequestParam(required = false, defaultValue = "1") int currentTab) {
+    public String updateStudentRegistration(Model model, @PathVariable Long id,@RequestParam(required = false, defaultValue = "1") int currentTab) {
         this.studentRegistrationId = id;
         StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(id);
         StudentEducationPastForm studentEducationPastForm=new StudentEducationPastForm();
@@ -116,9 +116,10 @@ public class StudentRegistrationController {
         } else {
             studentRegistrationInfo = StudentRegistrationInfo.builder()
                     .activeStatus(Constants.ACTIVE_STATUS)
+                    .registrationDate(LocalDate.now())
                     .build();
         }
-        studentRegistrationInfo.setStudentName(studentRegistrationForm.getStudentName());
+        studentRegistrationInfo.setStudentName(studentRegistrationForm.getStudentName());          //data set afer save to student registration
         studentRegistrationInfo.setFatherName(studentRegistrationForm.getFatherName());
         studentRegistrationInfo.setMotherName(studentRegistrationForm.getMotherName());
         studentRegistrationInfo.setContactNo(studentRegistrationForm.getContactNo());
@@ -145,6 +146,7 @@ public class StudentRegistrationController {
         studentRegistrationInfo.setVisualId(studentRegistrationForm.getVisualId());
         studentRegistrationInfo.setSessionId(studentRegistrationForm.getSessionId());
         studentRegistrationInfo.setProgramId(studentRegistrationForm.getProgramId());
+        studentRegistrationInfo.setProgramSegmentId(studentRegistrationForm.getProgramSegmentId());
 
         return studentRegistrationInfo;
     }

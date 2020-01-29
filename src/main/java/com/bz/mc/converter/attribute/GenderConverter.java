@@ -12,7 +12,7 @@ import javax.persistence.Converter;
  * Time: 12:31 PM
  */
 @Converter(autoApply = true)
-public class GenderConverter implements AttributeConverter<Gender,Integer> {
+public class  GenderConverter implements AttributeConverter<Gender,Integer> {
     @Override
     public Integer convertToDatabaseColumn(Gender gender) {
         return gender == null ? null : gender.getId();

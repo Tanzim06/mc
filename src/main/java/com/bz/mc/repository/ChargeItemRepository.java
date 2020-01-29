@@ -43,9 +43,13 @@ public interface ChargeItemRepository extends JpaRepository<ChargeItem,Long> {
 
 //    (Long id, String chargeGroupName, Long sessionId, Long programId, Long programSegmentId, int chargeCycle, Origin origin, Long chargeGroupId, String sessionName, String programName, String segmentName;
 
-    @Query("SELECT new com.bz.mc.facade.data.ChargeGroupData(b.id,a.chargeGroupName,a.sessionId,a.programId, a.programSegmentId,a.chargeCycle,a.origin,b.chargeGroupId,s.sessionName,p.programName,ps.segmentName)" +
+    @Query("SELECT new com.bz.mc.facade.data.ChargeGroupData(a.id,a.chargeGroupName,a.sessionId,a.programId, a.programSegmentId,a.chargeCycle,a.origin,b.chargeGroupId,s.sessionName,p.programName,ps.segmentName)" +
             " FROM ChargeGroup a inner join ChargeItem b on a.id = b.chargeGroupId inner join ItemInfo i on b.itemId = i.id inner join SessionInfo s on   a.sessionId = s.id inner join Program p on a.programId = p.id inner join ProgramSegment ps on a.programSegmentId = ps.id " +
             " where  a.sessionId = coalesce(:sessionId,a.sessionId ) and a.chargeGroupName LIKE CONCAT('%',:chargeGroupName, '%') and   a.origin = coalesce(:origin,a.origin) ")
     List<ChargeGroupData> findStudentGroupChargeList(@Param("sessionId") Long sessionId,@Param("chargeGroupName") String chargeGroupName, @Param("origin") Origin origin);
+
+    List<ChargeItem> findChargeItemById(@Param("id") Long id);
+    @Query("SELECT a FROM ChargeItem a WHERE a.chargeGroupId=:id")
+    ChargeItem findChagreItemByGroupId(@Param("id") Long id);
 
 }

@@ -5,6 +5,7 @@ import com.bz.mc.model.setup.SessionInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface SegmentInfoService {
@@ -13,4 +14,6 @@ public interface SegmentInfoService {
 
 	List<ProgramSegment> findSegmentList();
 
+	ProgramSegment getSegment(Long id);
+	Optional<ProgramSegment> getProgramSegment(Long id);
 }

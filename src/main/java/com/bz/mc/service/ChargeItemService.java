@@ -19,7 +19,7 @@ public interface ChargeItemService {
     List<ChargeGroupData> getChargeitemList(Long chargeGroupId);
 
 //  public List<ChargeGroupData>  getChargeGroupSearchResult(String chargeGroupName,String remarks,Long chargeGroupId);
-
+    ChargeItem getChagreItemByGroupId(Long id);
     ChargeItem getChagreItem(Long id);
     public List<ChargeGroupData>  getChargeSearchResult(String chargeGroupName, String remarks, Origin origin);
 

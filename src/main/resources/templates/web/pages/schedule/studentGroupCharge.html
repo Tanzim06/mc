@@ -21,7 +21,7 @@
     </div>
     <!-- customized code -->
             <div id="search">
-                <form class="needs-validation"  th:action="@{/studentChargeGroup/list}"  method="post" novalidate>
+                <form class="needs-validation"  th:action="@{/student-charge-group/list}"  method="post" novalidate>
                     <div class="row">
                         <div class="col-md-3">
                                     <label class="control-label mb-1">session</label>
@@ -79,7 +79,7 @@
                                         <th>program</th>
                                         <th>segment</th>
                                         <th>Origin</th>
-                                        <th>details</th>
+                                        <th>Details</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -90,7 +90,7 @@
                                         <td><span th:text="${ad.programName}"></span></td>
                                         <td><span th:text="${ad.segmentName}"></span></td>
                                         <td><span th:text="${ad.origin}"></span></td>
-                                        <td><a class="btn btn-info btn-md"  th:href="@{/studentChargeGroup/details/{id}(id=${ad.id})}">details</a></td>
+                                        <td><a class="btn btn-info btn-md"  th:href="@{/student-charge-group/details/{id}(id=${ad.id})}">Details</a></td>
                                     </tr>
 
                                     </tbody>

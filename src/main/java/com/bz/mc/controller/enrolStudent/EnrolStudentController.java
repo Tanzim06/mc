@@ -1,16 +1,10 @@
 package com.bz.mc.controller.enrolStudent;
 
 import com.bz.mc.controller.WebLinkFactory;
-import com.bz.mc.controller.session.SessionForm;
-import com.bz.mc.controller.studentRegistration.StudentEducationPastForm;
 import com.bz.mc.controller.studentRegistration.StudentRegistrationForm;
 import com.bz.mc.facade.data.EnrolStudentData;
-import com.bz.mc.facade.data.StudentEducationPastData;
-import com.bz.mc.facade.data.StudentRegistrationData;
 import com.bz.mc.model.enrol.EnrolStudentInfo;
-import com.bz.mc.model.setup.SessionInfo;
 import com.bz.mc.model.studentRegistration.Gender;
-import com.bz.mc.model.studentRegistration.StudentEducationPastInfo;
 import com.bz.mc.model.studentRegistration.StudentRegistrationInfo;
 import com.bz.mc.service.*;
 import com.bz.mc.util.Constants;
@@ -18,17 +12,15 @@ import com.bz.mc.validator.SessionFormValidator;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,147 +32,155 @@ import java.util.List;
 @Controller
 public class EnrolStudentController {
 
-    @NonNull private final SessionFormValidator sessionFormValidator;
-    @NonNull private final EnrolStudentService enrolStudentService;
-    @NonNull private final StudentRegistrationService studentRegistrationService;
-    @NonNull private final SessionService sessionService;
-    @NonNull private final ProgramService programService;
-    @NonNull private final SegmentInfoService segmentInfoService;
-    @NonNull private final BatchInfoService batchInfoService;
-    @NonNull private final WebLinkFactory webLinkFactory;
+    @NonNull
+    private final SessionFormValidator sessionFormValidator;
+    @NonNull
+    private final EnrolStudentService enrolStudentService;
+    @NonNull
+    private final StudentRegistrationService studentRegistrationService;
+    @NonNull
+    private final SessionService sessionService;
+    @NonNull
+    private final ProgramService programService;
+    @NonNull
+    private final SegmentInfoService segmentInfoService;
+    @NonNull
+    private final BatchInfoService batchInfoService;
+    @NonNull
+    private final WebLinkFactory webLinkFactory;
 
     private static final String BASE_ROUTE = "/enrol-student";
     private static final String ROUTE_CREATE = BASE_ROUTE + "/create";
     private static final String ROUTE_LIST = BASE_ROUTE + "/list";
     private static final String ROUTE_SAVE = BASE_ROUTE + "/save";
     public static final String ROUTE_UPDATE = BASE_ROUTE + "/update/{id}";
+    public static final String ROUTE_NEW_ENROL = BASE_ROUTE + "/createNew/{id}";
     private static final String ROUTE_SEARCH = BASE_ROUTE + "/search";
+    private static final String ROUTE_SELECT = BASE_ROUTE + "/select{id}";
     private static final String ROUTE_SEARCH_RESULT = BASE_ROUTE + "/list";
+
     private static final String REDIRECT = "redirect:";
 
     private Long studentRegistrationId;
-//    private Long studentRegistrationId;
+    private Long enrolId;
 
     @GetMapping(ROUTE_SEARCH)
-    public String searchEnrolStudent(Model model) {
-        populateEnrolStudentForm(model, new EnrolStudentForm());
-//        model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
-//        model.addAttribute("sessionList", sessionService.findSessionList());
-//        model.addAttribute("programList", programService.findPrograms());
+    public String searchEnrolStudentInit(Model model) {
+        List<EnrolStudentData> studentSearchList = new ArrayList<EnrolStudentData>();
+        populateSearchResult(model, studentSearchList);
         return "/web/pages/enrol-student/search";
     }
 
 
-    @PostMapping(value =ROUTE_SEARCH_RESULT)
-    public String getEnrolStudentList(Model model,EnrolStudentForm enrolStudentForm,
-                                      @RequestParam(name = "studentRegistrationId", required = false) Long studentRegistrationId,
-                                      @RequestParam(name = "studentName", required = false) String studentName,
-                                      @RequestParam(name = "sessionId", required = false) Long sessionId,
-                                      @RequestParam(name = "programId", required = false) Long programId,
-                                      @RequestParam(name = "programSegmentId", required = false) Long programSegmentId
-//                                      @RequestParam(name = "batchId", required = false) Long batchId
-                                             ){
-
-        if(enrolStudentForm.isNewss() == true){
-            List<EnrolStudentData> enrolStudentDataListWithRegistration = enrolStudentService.getEnrolStudentDataFromRegistration(studentRegistrationId);
-            model.addAttribute("enrolStudentDataListWithRegistration", enrolStudentDataListWithRegistration);
-        }else {
-
-            System.out.println("student registration Id : is " + studentRegistrationId);
-            List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName,sessionId,programId,programSegmentId);
+    @PostMapping(ROUTE_SEARCH)
+    public String searchEnrolStudentCustom(Model model, EnrolStudentForm enrolStudentForm,
+                                           @RequestParam(name = "studentRegistrationId", required = false) Long studentRegistrationId,
+                                           @RequestParam(name = "studentName", required = false) String studentName,
+                                           @RequestParam(name = "sessionId", required = false) Long sessionId,
+                                           @RequestParam(name = "programId", required = false) Long programId,
+                                           @RequestParam(name = "programSegmentId", required = false) Long programSegmentId,
+                                           @RequestParam(name = "batchId", required = false) Long batchId,
+                                           @RequestParam(name = "isNewChk", required = false) boolean isNewChk,
+                                           @RequestParam(name = "isEnrolChk", required = false) boolean isEnrolChk) {
 
 
-            model.addAttribute("enrolStudentDataList", enrolStudentDataList);
+        if (isNewChk == true && isEnrolChk == false) {
+            List<EnrolStudentData> enrolStudentDataListNew = enrolStudentService.getStudentListForNewEnrol(studentRegistrationId, studentName, sessionId, programId, programSegmentId, batchId);
+            populateSearchResult(model, enrolStudentDataListNew);
 
-            System.out.println("enrol List " + enrolStudentDataList.size());
-            model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
-            System.out.println("stu reg List " + studentRegistrationService.findStudentRegistrationList().size());
-            model.addAttribute("sessionList", sessionService.findSessionList());
-            System.out.println("session List " + sessionService.findSessionList().size());
-            model.addAttribute("programList", programService.findPrograms());
-            System.out.println("program List " + programService.findPrograms().size());
-            model.addAttribute("segmentList", segmentInfoService.findSegmentList());
-            System.out.println("segment List " + segmentInfoService.findSegmentList().size());
-//        model.addAttribute("batchInfoList", batchInfoService.getAllActiveBatch());
-
+        } else if (isNewChk == false && isEnrolChk == true) {
+            System.out.println("enrol ");
+            List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName, sessionId, programId, programSegmentId, batchId);
+            populateSearchResult(model, enrolStudentDataList);
+//            model.addAttribute("studentRegistrationId", studentRegistrationId);
+//            model.addAttribute("studentName", studentName);
+//            model.addAttribute("sessionId", sessionId);
+//            model.addAttribute("programId", programId);
+//            model.addAttribute("programSegmentId", programSegmentId);
+//            model.addAttribute("batchId", batchId);
+//            model.addAttribute("isNewChk", isNewChk);
+//            model.addAttribute("isEnrolChk", isEnrolChk);
+        } else {
+            List<EnrolStudentData> studentSearchList = new ArrayList<EnrolStudentData>();
+            populateSearchResult(model, studentSearchList);
 
         }
-        List<EnrolStudentData> enrolStudentDataList = enrolStudentService.getEnrolStudentSearch(studentRegistrationId, studentName,sessionId,programId,programSegmentId);
-        model.addAttribute("enrolStudentDataList", enrolStudentDataList);
-        if (enrolStudentDataList.size() != 0) {
 
-            return "/web/pages/enrol-student/search";
-        }
-        return REDIRECT + ROUTE_SEARCH;
+        return "/web/pages/enrol-student/search";
     }
 
 
     @GetMapping(ROUTE_CREATE)
     public String createStudentRegistration(Model model) {
-        this.studentRegistrationId=null;
+        this.studentRegistrationId = null;
         populateEnrolStudentForm(model, new EnrolStudentForm());
-        System.out.println("enrol ++++ " );
+        System.out.println("enrol ++++ ");
         return "/web/pages/enrol-student/create";
     }
 
+    /*
+    created by: ashraf
+    date: 8/1/20
+    time: 1:07 PM
 
+     */
+    private void populateSearchResult(Model model, List<EnrolStudentData> enrolStudentDataList) {
+        model.addAttribute("studentSearchList", enrolStudentDataList);
+        populateEnrolStudentForm(model, new EnrolStudentForm());
+    }
 
-
-    private void populateEnrolStudentForm(Model model,EnrolStudentForm enrolStudentForm) {
+    private void populateEnrolStudentForm(Model model, EnrolStudentForm enrolStudentForm) {
 
         model.addAttribute("enrolStudentForm", enrolStudentForm);
         model.addAttribute("studentRegistrationList", enrolStudentForm.getStudentRegistrationForm());
         System.out.println("enrol stu Id " + enrolStudentForm.getId());
         System.out.println("stu regi Id " + enrolStudentForm.getStudentRegistrationId());
-        System.out.println("stu name " + enrolStudentForm.getStudentRegistrationForm().getStudentName());
         model.addAttribute("studentRegistrationInfoList", studentRegistrationService.findStudentRegistrationList());
         System.out.println("stu list" + studentRegistrationService.findStudentRegistrationList().size());
-//        model.addAttribute("studentEducationPastForm",studentRegistrationForm.getStudentEducationPastForm());
-//        model.addAttribute("educationPastDataList",studentRegistrationForm.getEducationPastForm());
-//        model.addAttribute("tabId",studentRegistrationForm.getTabId());
-
         model.addAttribute("sessionList", sessionService.findSessionList());
-//        model.addAttribute("programList", programService.findPrograms());
         System.out.println("session List size" + sessionService.findSessionList().size());
         model.addAttribute("programList", programService.findPrograms());
         System.out.println("program List " + programService.findPrograms().size());
         model.addAttribute("segmentList", segmentInfoService.findSegmentList());
         System.out.println("segment List " + segmentInfoService.findSegmentList().size());
-//        model.addAttribute("batchInfoList", batchInfoService.getAllActiveBatch());
-//        model.addAttribute("genders", Gender.all());
-//        System.out.println("gender" + Gender.all());
+        model.addAttribute("batchInfoList", batchInfoService.getBatchAllList());
+        System.out.println("bacth List " + batchInfoService.getBatchAllList().size());
+        model.addAttribute("genders", Gender.all());
+        System.out.println("gender" + Gender.all());
     }
-
 
     @PostMapping(ROUTE_SAVE)
     public String saveOrUpdateEnrolStudent(Model model, @ModelAttribute EnrolStudentForm enrolStudentForm, BindingResult result, RedirectAttributes redirectAttributes) {
 //        studentRegistrationFormValidator.validate(studentRegistrationForm, result);
         if (result.hasErrors()) {
+            enrolStudentForm = enrolStudentInfomation(enrolStudentForm, null);
             populateEnrolStudentForm(model, enrolStudentForm);
-            System.out.println("enrol Id " + enrolStudentForm.getId());
+            System.out.println("enrol Id 66666" + enrolStudentForm.getId());
             return "/web/pages/enrol-student/create";
         }
-        EnrolStudentInfo enrolStudentInfo = prepareEnrolStudentInfo(enrolStudentForm);  // stopped by ashraf
-//        EnrolStudentInfo enrolStudentInfo = new EnrolStudentInfo();    // coded by ashraf for temp
+
+        System.out.println("student reg id before save form " +enrolStudentForm.getStudentRegistrationId() );
+        EnrolStudentInfo enrolStudentInfo = prepareEnrolStudentInfo(enrolStudentForm);
+        System.out.println("student reg id before save modal " +enrolStudentInfo.getStudentRegistrationId() );
         enrolStudentInfo = enrolStudentService.saveEnrolStudent(enrolStudentInfo);
         System.out.println("enrol info Id " + enrolStudentInfo.getId());
-        redirectAttributes.addFlashAttribute("message", "student.registration.info.saved");
+        redirectAttributes.addFlashAttribute("message", "enrol.student.info.saved");
         return REDIRECT + webLinkFactory.updateEnrolStudentUrl(enrolStudentInfo);
     }
 
     private EnrolStudentInfo prepareEnrolStudentInfo(EnrolStudentForm enrolStudentForm) {
         EnrolStudentInfo enrolStudentInfo;
         if (enrolStudentForm.isPersisted()) {
+            System.out.println("persisted prepare student info");
             enrolStudentInfo = enrolStudentService.getEnrolStudentInfo(enrolStudentForm.getId()).get();
         } else {
             enrolStudentInfo = EnrolStudentInfo.builder()
                     .activeStatus(Constants.ACTIVE_STATUS)
+                    .enrolDate(LocalDate.now())
                     .build();
         }
-        enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
-        enrolStudentInfo.setEnrolDate(enrolDate);
+        enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());                           //data set afer save to enroll
+        System.out.println("enrol student info set reg id " + enrolStudentForm.getStudentRegistrationId());
         enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
         enrolStudentInfo.setSessionId(enrolStudentForm.getSessionId());
         enrolStudentInfo.setSectionId(enrolStudentForm.getSectionId());
@@ -188,44 +188,111 @@ public class EnrolStudentController {
         enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
         enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
         enrolStudentInfo.setRollNo(enrolStudentForm.getRollNo());
-        enrolStudentInfo.setStudentRegistrationId(studentRegistrationId);
-
+        enrolStudentInfo.setRemarks(enrolStudentForm.getRemarks());
         return enrolStudentInfo;
     }
 
     @GetMapping(ROUTE_UPDATE)
-    public String updateEnrolStudent(Model model, @PathVariable Long id,StudentRegistrationForm studentRegistrationForm , RedirectAttributes redirectAttributes) {
-        this.studentRegistrationId = id;
+    public String updateEnrolStudent(Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
+        this.enrolId = id;
+        System.out.println("enrol id update  " + id);
+
+        if (id != null) {
+            System.out.println("Enroll Id 1111");
+        } else {
+            System.out.println("Enroll Id 2222");
+        }
+
         EnrolStudentInfo enrolStudentInfo = enrolStudentService.getEnrolStudent(id);
-//        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
-//        StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId());
-//        StudentRegistrationInfo studentRegistrationInfoAll = studentRegistrationService.getStudentRegistration(studentRegistrationId);
-//        StudentRegistrationForm form=new StudentRegistrationForm(enrolStudentInfo,studentRegistrationInfo,studentRegistrationInfoAll);
-//        List<StudentRegistrationInfo> studentRegistrationDataList = studentRegistrationService.findStudentRegistrationList();
-        List<StudentRegistrationInfo> registrationList = studentRegistrationService.findStudentRegistrationList();
-        StudentRegistrationInfo studentRegistrationInfo=studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId());
-        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo, studentRegistrationInfo,registrationList);
-        System.out.println("stu info" + studentRegistrationForm.getStudentName());
-        form.setStudentRegistrationForm(studentRegistrationForm);
-        form=studentInfomation(form,studentRegistrationForm);
-//        form.setTabId(currentTab);
-        populateEnrolStudentForm(model,form);
-//       populateStudentRegistrationFormandEnrolStudent(model,enrolStudentInfo,studentRegistrationForm);
+        System.out.println("Enroll Id 1111");
+        EnrolStudentForm form = new EnrolStudentForm(enrolStudentInfo);
+        form = enrolStudentInfomation(form, form.getStudentRegistrationId());
+        System.out.println("Enroll Student");
+        populateEnrolStudentForm(model, form);
+
         return "/web/pages/enrol-student/create";
 
     }
 
 
-    private EnrolStudentForm studentInfomation(EnrolStudentForm enrolStudentForm, StudentRegistrationForm studentRegistrationForm){
+    @GetMapping(ROUTE_NEW_ENROL)
+    public String newEnrolStudent(Model model, @PathVariable("id")  Long id, RedirectAttributes redirectAttributes) {
+        EnrolStudentInfo enrolStudentInfo = new EnrolStudentInfo();
+        // new enrol
+        System.out.println("new enrol or registration Id " + id);
+        EnrolStudentForm form = new EnrolStudentForm(enrolStudentInfo);
+        form = enrolStudentInfomation(form, id);
+        populateEnrolStudentForm(model, form);
+        System.out.println("populate 11 " + id);
 
-        if(enrolStudentForm.isPersisted()){
+        return "/web/pages/enrol-student/create";
 
-            EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
+    }
+
+    public EnrolStudentForm enrolStudentInfomation(EnrolStudentForm enrolStudentForm, Long studentRegistrationId) {
+
+        if (!enrolStudentForm.isPersisted()) {
+
+            System.out.println("enrol Id 111  ");
+            //for new enrol
+            StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
+            enrolStudentForm.setStudentRegistrationId(studentRegistrationId);
+            System.out.println("stu Id " + studentRegistrationInfo.getId());
+            enrolStudentForm.setStudentName(studentRegistrationInfo.getStudentName());
+            System.out.println("stu name " + studentRegistrationInfo.getStudentName());
+            enrolStudentForm.setFatherName(studentRegistrationInfo.getFatherName());
+            System.out.println("father name " + studentRegistrationInfo.getFatherName());
+            enrolStudentForm.setMotherName(studentRegistrationInfo.getMotherName());
+            System.out.println("mother name " + studentRegistrationInfo.getMotherName());
+            enrolStudentForm.setContactNo(studentRegistrationInfo.getContactNo());
+            enrolStudentForm.setPresentAdd(studentRegistrationInfo.getPresentAdd());
+            enrolStudentForm.setPresentAddPostcode(studentRegistrationInfo.getPresentAddPostcode());
+            enrolStudentForm.setPermanentAdd(studentRegistrationInfo.getPermanentAdd());
+            enrolStudentForm.setPermanentAddPostCode(studentRegistrationInfo.getPermanentAddPostCode());
+            enrolStudentForm.setBloodGroup(studentRegistrationInfo.getBloodGroup());
+            enrolStudentForm.setGender(studentRegistrationInfo.getGender());
+            enrolStudentForm.setDoB(studentRegistrationInfo.getDoB());
+            enrolStudentForm.setRegistrationDate(studentRegistrationInfo.getRegistrationDate());
+            enrolStudentForm.setRegRemarks(studentRegistrationInfo.getRemarks());
+            enrolStudentForm.setSessionId(studentRegistrationInfo.getSessionId());
+            enrolStudentForm.setProgramId(studentRegistrationInfo.getProgramId());
+            enrolStudentForm.setProgramSegmentId(studentRegistrationInfo.getProgramSegmentId());
+
+
+
+
+
+        } else{ // for enrol                 //data set afer save to student registration
+            System.out.println("enrol Id 222 " + enrolStudentForm.getId() + " reg id " + enrolStudentForm.getStudentRegistrationId());
+//            EnrolStudentInfo enrolStudentInfo = enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
+            StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(enrolStudentForm.getStudentRegistrationId());
+            enrolStudentForm.setStudentRegistrationId(studentRegistrationInfo.getId());
+            System.out.println("stu Id " + studentRegistrationInfo.getId());
+            enrolStudentForm.setStudentName(studentRegistrationInfo.getStudentName());
+            System.out.println("stu name " + studentRegistrationInfo.getStudentName());
+            enrolStudentForm.setFatherName(studentRegistrationInfo.getFatherName());
+            System.out.println("father name " + studentRegistrationInfo.getFatherName());
+            enrolStudentForm.setMotherName(studentRegistrationInfo.getMotherName());
+            System.out.println("mother name " + studentRegistrationInfo.getMotherName());
+            enrolStudentForm.setContactNo(studentRegistrationInfo.getContactNo());
+            enrolStudentForm.setPresentAdd(studentRegistrationInfo.getPresentAdd());
+            enrolStudentForm.setPresentAddPostcode(studentRegistrationInfo.getPresentAddPostcode());
+            enrolStudentForm.setPermanentAdd(studentRegistrationInfo.getPermanentAdd());
+            enrolStudentForm.setPermanentAddPostCode(studentRegistrationInfo.getPermanentAddPostCode());
+            enrolStudentForm.setBloodGroup(studentRegistrationInfo.getBloodGroup());
+            enrolStudentForm.setGender(studentRegistrationInfo.getGender());
+            enrolStudentForm.setDoB(studentRegistrationInfo.getDoB());
+            enrolStudentForm.setRegistrationDate(studentRegistrationInfo.getRegistrationDate());
+            enrolStudentForm.setRegRemarks(studentRegistrationInfo.getRemarks());
+            enrolStudentForm.setSessionId(studentRegistrationInfo.getSessionId());
+            enrolStudentForm.setProgramId(studentRegistrationInfo.getProgramId());
+            enrolStudentForm.setProgramSegmentId(studentRegistrationInfo.getProgramSegmentId());
+
+             // endrol Information
+            EnrolStudentInfo enrolStudentInfo = enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
             enrolStudentInfo.setEnrolType(enrolStudentForm.getEnrolType());
             System.out.println("enrol id " + enrolStudentForm.getEnrolType());
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            LocalDate enrolDate = LocalDate.parse(enrolStudentForm.getEnrolDate(), formatter);
-            enrolStudentInfo.setEnrolDate(enrolDate);
+            enrolStudentInfo.setEnrolDate(enrolStudentForm.getEnrolDate());
             System.out.println("enrol date " + enrolStudentForm.getEnrolDate());
             enrolStudentInfo.setStudentRegistrationId(enrolStudentForm.getStudentRegistrationId());
             System.out.println("stu Id " + enrolStudentForm.getStudentRegistrationId());
@@ -237,142 +304,37 @@ public class EnrolStudentController {
             enrolStudentInfo.setBatchId(enrolStudentForm.getBatchId());
             enrolStudentInfo.setGroupId(enrolStudentForm.getGroupId());
             enrolStudentInfo.setRollNo(enrolStudentForm.getRollNo());
-//                    enrolStudentInfo.setStudentRegistrationId(enrolStudentId);
-            //StudentRegistrationInfo studentRegistrationInfo = studentRegistrationService.getStudentRegistration(studentRegistrationId);
+            enrolStudentInfo.setRemarks(enrolStudentForm.getRemarks());
+            }
+           return enrolStudentForm;
         }
 
 
-        else{
+//    @GetMapping(ROUTE_SELECT)
+//    public String getSelectingStudentRegistration(Model model, @PathVariable Long id) {
+//        EnrolStudentInfo enrolStudentInfo = enrolStudentService.getEnrolStudent(id);
+//        populateForm(model, enrolStudentInfo, new EnrolStudentForm(enrolStudentInfo.getId()));
+//        return "/web/pages/select-loan/select";
+//    }
 
-            if(enrolStudentForm.getStudentRegistrationId()!=null) {
-                StudentRegistrationInfo studentRegistrationInfo =  studentRegistrationService.getStudentRegistration(enrolStudentForm.getStudentRegistrationId());
-//                    Samity samity = samityService.getSamity(member.getSamityId());
-                studentRegistrationInfo.setStudentName(studentRegistrationForm.getStudentName());
-                System.out.println("stu name " + studentRegistrationForm.getStudentName());
-                studentRegistrationInfo.setFatherName(studentRegistrationForm.getFatherName());
-                System.out.println("father name " + studentRegistrationForm.getFatherName());
-                studentRegistrationInfo.setMotherName(studentRegistrationForm.getMotherName());
-                System.out.println("mother name " + studentRegistrationForm.getMotherName());
-                studentRegistrationInfo.setContactNo(studentRegistrationForm.getContactNo());
-                studentRegistrationInfo.setPresentAdd(studentRegistrationForm.getPresentAdd());
-                studentRegistrationInfo.setPresentAddPostcode(studentRegistrationForm.getPresentAddPostcode());
-                studentRegistrationInfo.setPermanentAdd(studentRegistrationForm.getPermanentAdd());
-                studentRegistrationInfo.setPermanentAddPostCode(studentRegistrationForm.getPermanentAddPostCode());
-                studentRegistrationInfo.setPicture(studentRegistrationForm.getPicture());
-                studentRegistrationInfo.setPicturePath(studentRegistrationForm.getPicturePath());
-                studentRegistrationInfo.setBloodGroup(studentRegistrationForm.getBloodGroup());
-                studentRegistrationInfo.setGender(studentRegistrationForm.getGender());
+//    private void populateForm(Model model, EnrolStudentInfo enrolStudentInfo) {
+//        model.addAttribute("enrolStudentInfo", enrolStudentInfo);
+////        System.out.println("enrol stu Id " + enrolStudentForm.getId());
+////        System.out.println("stu regi Id " + enrolStudentForm.getStudentRegistrationId());
+////        model.addAttribute("studentRegistrationInfoList", studentRegistrationService.getStudentRegistration(enrolStudentInfo.getStudentRegistrationId()));
+////        System.out.println("stu list" + studentRegistrationService.findStudentRegistrationList().size());
+////        model.addAttribute("sessionList", sessionService.getSession(enrolStudentInfo.getSessionId()));
+////        System.out.println("session List size" + sessionService.findSessionList().size());
+////        model.addAttribute("programList", programService.findPrograms());
+////        System.out.println("program List " + programService.findPrograms().size());
+////        model.addAttribute("segmentList", segmentInfoService.findSegmentList());
+////        System.out.println("segment List " + segmentInfoService.findSegmentList().size());
+////        model.addAttribute("batchInfoList", batchInfoService.getBatchAllList());
+////        System.out.println("bacth List " + batchInfoService.getBatchAllList().size());
+////        model.addAttribute("genders", Gender.all());
+////        System.out.println("gender" + Gender.all());
+////        model.addAttribute("enrolStudentForm", enrolStudentForm);
+//    }
 
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDate dateOfBirth = LocalDate.parse(studentRegistrationForm.getDoB(), formatter);
-                studentRegistrationInfo.setDoB(dateOfBirth);
 
-                DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDate regDate = LocalDate.parse(studentRegistrationForm.getRegistrationDate(), formatters);
-                studentRegistrationInfo.setRegistrationDate(regDate);
-
-                //       studentRegistrationInfo.setDoB(studentRegistrationForm.getDoB());
-//        studentRegistrationInfo.setRegistrationDate(studentRegistrationForm.getRegistrationDate());
-                studentRegistrationInfo.setRemarks(studentRegistrationForm.getRemarks());
-                studentRegistrationInfo.setVisualId(studentRegistrationForm.getVisualId());
-                studentRegistrationInfo.setSessionId(studentRegistrationForm.getSessionId());
-                studentRegistrationInfo.setProgramId(studentRegistrationForm.getProgramId());
-
-            }
-
-//            if(enrolStudentForm.isPersisted()){
-//                EnrolStudentInfo enrolStudentInfo=enrolStudentService.getEnrolStudent(enrolStudentForm.getId());
-
-            }
-
-       return enrolStudentForm;
     }
-
-
-//    private void populateStudentRegistrationFormandEnrolStudent(Model model,EnrolStudentInfo enrolStudentInfo,StudentRegistrationForm studentRegistrationForm){
-//
-//        List<StudentRegistrationInfo> registrationList = studentRegistrationService.findStudentRegistrationList();
-//        EnrolStudentForm form= new EnrolStudentForm(enrolStudentInfo,registrationList);
-//        form.setStudentRegistrationForm(studentRegistrationForm);
-//        form=studentInfomation(form,studentRegistrationForm);
-////        form.setTabId(currentTab);
-//        populateEnrolStudentForm(model,form);
-//
-//    }
-
-
-//    private void populateEnrolStudent(Model model, EnrolStudentForm enrolStudentForm) {
-//
-//        model.addAttribute("studentRegistrationForm", studentRegistrationForm);
-//        model.addAttribute("studentEducationPastForm",studentRegistrationForm.getStudentEducationPastForm());
-//        model.addAttribute("educationPastDataList",studentRegistrationForm.getEducationPastForm());
-//        model.addAttribute("tabId",studentRegistrationForm.getTabId());
-//        model.addAttribute("sessionList", sessionService.findSessionList());
-//        System.out.println("List size" + sessionService.findSessionList().size());
-//        model.addAttribute("genders", Gender.all());
-//        System.out.println("gender" + Gender.all());
-//    }
-
-
-
-
-
-//    @GetMapping(ROUTE_CREATE)
-//    public String createSession(Model model) {
-//        populateModel(model, new SessionForm());
-//
-//        return "/web/pages/session/create";
-//    }
-//
-//    @GetMapping(ROUTE_UPDATE)
-//    public String updateSession(Model model, @PathVariable Long id, SessionForm sessionForm) {
-//        SessionInfo sessionInfo = sessionService.getSession(id);
-//        populateModel(model, new SessionForm(sessionInfo));
-//
-//        return "/web/pages/session/create";
-//    }
-//
-//    @GetMapping(ROUTE_LIST)
-//    public String getSessionList(Model model) {
-//          List<SessionInfo> sessionlist = sessionService.findSessionList();
-//          model.addAttribute("sessionlist", sessionlist);
-//
-//          return "/web/pages/session/list";
-//    }
-//
-//    private void populateModel(Model model, SessionForm sessionForm)
-//    {
-//        model.addAttribute("sessionForm", sessionForm);
-//    }
-//
-//    @PostMapping(ROUTE_SAVE)
-//    public String saveOrUpdatesSession(Model model, @ModelAttribute SessionForm sessionForm, BindingResult result) {
-//        sessionFormValidator.validate(sessionForm, result);
-//        if (result.hasErrors()) {
-//            populateModel(model, sessionForm);
-//            return "/web/pages/session/create";
-//        }
-//        SessionInfo sessionInfo = getSessionInfo(sessionForm);
-//        sessionInfo = sessionService.saveSession(sessionInfo);
-//
-//        return REDIRECT + webLinkFactory.updateSessionUrl(sessionInfo);
-//}
-//
-//    private SessionInfo getSessionInfo(SessionForm sessionForm) {
-//        SessionInfo sessionInfo ;
-//        if (sessionForm.isPersisted()) {
-//            sessionInfo= sessionService.getSessionInfo(sessionForm.getId()).get();
-//        } else {
-//            sessionInfo = SessionInfo.builder()
-//                     .activeStatus(Constants.ACTIVE_STATUS)
-//                     .build();
-//        }
-//        sessionInfo.setSessionName(sessionForm.getSessionName());
-//        sessionInfo.setStartDate(sessionForm.getStartDate());
-//        sessionInfo.setEndDate(sessionForm.getEndDate());
-//        sessionInfo.setRemarks(sessionForm.getRemarks());
-//        return sessionInfo;
-//
-//    }
-
-}

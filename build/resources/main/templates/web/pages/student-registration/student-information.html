@@ -83,7 +83,7 @@
                         <input type="text" class="form-control" placeholder="Student Name" th:field="*{studentName}" id="studentName"
                                th:class="${#fields.hasErrors('studentName')} ? 'form-control is-invalid' : 'form-control'"/>
                         <!--                        <span th:class="err" th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" style="color: red">Please Enter your name</span>-->
-                        <div th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" class="invalid-feedback"></div>
+                        <div th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" class="invalid-feedback" ></div>
                     </div>
                 </div>
             </div>
@@ -236,7 +236,7 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label" for="presentAddPostcode">Present Address Code</label>
+                    <label class="col-md-4 control-label" for="presentAddPostcode">Post  Code (Present Address)</label>
                     <div class="col-md-8">
                         <input type="text" id="presentAddPostcode" class="form-control" placeholder="Present Address Code" th:field="*{presentAddPostcode}">
                     </div>
@@ -257,7 +257,7 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label" for="permanentAddPostCode">Permanent Address Code</label>
+                    <label class="col-md-4 control-label" for="permanentAddPostCode">Post  Code (Permanent Address)</label>
                     <div class="col-md-8">
                         <input type="text" id="permanentAddPostCode" class="form-control" placeholder="Permanent Address Code" th:field="*{permanentAddPostCode}">
                     </div>
@@ -271,7 +271,7 @@
 
             <div class="col-6">
                 <div class="form-group row">
-                    <label class="col-md-4 control-label" for="remarks">Remark </label>
+                    <label class="col-md-4 control-label" for="remarks">Remarks</label>
                     <div class="col-md-8">
                         <textarea rows="2" class="form-control" id="remarks" th:field="*{remarks}"></textarea>
                     </div>

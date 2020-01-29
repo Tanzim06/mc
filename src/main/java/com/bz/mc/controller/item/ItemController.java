@@ -1,14 +1,10 @@
 package com.bz.mc.controller.item;
 
 import com.bz.mc.controller.WebLinkFactory;
-import com.bz.mc.controller.batch.BatchInfoForm;
 import com.bz.mc.facade.SessionManagementService;
 import com.bz.mc.facade.data.ItemPriceData;
-import com.bz.mc.model.admission.AdmissionBooking;
-import com.bz.mc.model.batch.BatchInfo;
 import com.bz.mc.model.item.ItemInfo;
 import com.bz.mc.model.item.ItemPrice;
-import com.bz.mc.service.BatchInfoService;
 import com.bz.mc.service.ItemPriceService;
 import com.bz.mc.service.ItemService;
 import com.bz.mc.util.Constants;
@@ -23,9 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Controller

@@ -2,7 +2,9 @@ package com.bz.mc.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import com.bz.mc.exception.NotFoundException;
 import com.bz.mc.model.setup.ProgramSegment;
 import com.bz.mc.service.SegmentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,16 @@ public class SegmentInfoServiceImp implements SegmentInfoService {
 	@Override
 	public List<ProgramSegment> findSegmentList() {
 		return segmentInfoRepository.findAll();
+	}
+
+	@Override
+	public ProgramSegment getSegment(Long id) {
+		return getProgramSegment(id).orElseThrow(NotFoundException::new);
+	}
+
+	@Override
+	public Optional<ProgramSegment> getProgramSegment(Long id) {
+		return segmentInfoRepository.findById(id);
 	}
 
 

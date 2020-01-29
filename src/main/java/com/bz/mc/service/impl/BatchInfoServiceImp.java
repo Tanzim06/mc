@@ -57,11 +57,16 @@ public class BatchInfoServiceImp implements BatchInfoService {
         return findBatchById(id).orElseThrow(NotFoundException::new);
     }
 
-
     @Override
-    public ArrayList<BatchInfo> getAllActiveBatch() {
-        return (ArrayList<BatchInfo>) batchInfoRepository.findAll();
+    public List<BatchInfo> getBatchAllList() {
+        return batchInfoRepository.findAll();
     }
+
+
+//    @Override
+//    public ArrayList<BatchInfo> getAllActiveBatch() {
+//        return (ArrayList<BatchInfo>) batchInfoRepository.findAll();
+//    }
 
 
 }

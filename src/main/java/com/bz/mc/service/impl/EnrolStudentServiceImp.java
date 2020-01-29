@@ -47,17 +47,39 @@ public class EnrolStudentServiceImp implements EnrolStudentService {
 		return getEnrolStudentInfo(id).orElseThrow(NotFoundException::new);
 	}
 
+//	@Override
+//	public EnrolStudentInfo getEnrolStudentNew(Long registratrionId) {
+//		return enrolStudentRepository.findEnrolStudentNew(registratrionId);
+//	}
+
 	@Override
-	public List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId) {
-		return enrolStudentRepository.findEnrolStudentDataSearch(studentRegistrationId,studentName,sessionId,programId,programSegmentId);
+	public List<EnrolStudentData> getEnrolStudentSearch(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId, Long batchId) {
+		return enrolStudentRepository.findEnrolStudentDataSearch(studentRegistrationId,studentName,sessionId,programId,programSegmentId, batchId);
+	}
+
+//	@Override
+//	public List<EnrolStudentData> getStudentRegistrationByActiveStatus(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId, Long batchId) {
+//		return enrolStudentRepository.findStudentRegistrationByActiveStatus(studentRegistrationId,studentName,sessionId,programId,programSegmentId,batchId);
+//	}
+	@Override
+	public List<EnrolStudentData> getStudentListForNewEnrol(Long studentRegistrationId, String studentName, Long sessionId, Long programId, Long programSegmentId, Long batchId){
+		return enrolStudentRepository.findStudentListForNewEnrol(studentRegistrationId,studentName,sessionId,programId,programSegmentId);
 	}
 
 	@Override
-	public List<EnrolStudentData> getEnrolStudentDataFromRegistration(Long studentRegistrationId) {
-		return enrolStudentRepository.findStudentRegisDataAll(studentRegistrationId);
+	public List<EnrolStudentData> getStudentForEnrol(Long sessionId) {
+		return enrolStudentRepository.findStudentForEnrol(sessionId);
 	}
 
+	@Override
+	public List<EnrolStudentInfo> enrollList(Long Id) {
+		return enrolStudentRepository.findEnrolStudentInfoById(Id);
+	}
 
+	@Override
+	public List<EnrolStudentInfo> saveEnroll(List<EnrolStudentInfo> enrolStudentInfoList) {
+		return enrolStudentRepository.saveAll(enrolStudentInfoList);
+	}
 
 
 }

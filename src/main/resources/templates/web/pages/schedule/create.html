@@ -21,17 +21,19 @@
     </div>
     <!-- customized code -->
     <div id="search">
-        <form class="needs-validation"  th:object="${chargeGroupForm}"   method="post" novalidate>
+        <form class="needs-validation"  th:object="${chargeGroupForm}" th:action="@{/student-charge-group/populate-student-charge-list}" method="POST"  id="chargeGroupForm"  novalidate>
             <div class="form-row">
+                <input type="text" id="id" class="form-control"
+                       th:field="*{id}"     name="id"  hidden />
                 <div class="col-md-6">
                     <label for="chargeGroupName"> charge group name</label>
                     <input type="text" id="chargeGroupName" class="form-control"
-                           th:field="*{chargeGroupName}"  name="chargeGroupName"  />
+                       th:field="*{chargeGroupName}"     name="chargeGroupName"  />
                 </div>
                 <div class="col-md-6">
                     <label for="chargeCycle">Charge Cycle</label>
-                    <input type="text" id="chargeCycle" th:field="*{chargeCycle}" class="form-control"
-                           name="chargeCycle" />
+                    <input type="text" id="chargeCycle" class="form-control"
+                        th:field="*{chargeCycle}"   name="chargeCycle" />
 <!--                    <select id="chargeCycle" class="form-control">-->
 <!--                        <option value="0">Select</option>-->
 <!--                        <option value="1">Daily</option>-->
@@ -41,10 +43,12 @@
                 </div>
             </div>
             <div class="form-row">
+                <input type="text" id="sessionId"  class="form-control"
+                       th:field="*{sessionId}"   name="sessionId" hidden />
                 <div class="col-md-6">
-                    <label for="sessionId">Session</label>
-                    <input type="text" id="sessionId" th:field="*{sessionId}" class="form-control"
-                           name="sessionId" />
+                    <label for="sessionName">Session</label>
+                    <input type="text" id="sessionName"  class="form-control"
+                           th:field="*{sessionName}"   name="sessionName" />
 <!--                    <select id="sessionId"-->
 <!--                            class="form-control"-->
 <!--                            aria-required="true" aria-invalid="false" required>-->
@@ -56,9 +60,9 @@
 
                 </div>
                 <div class="col-md-6">
-                    <label for="programId">Program</label>
-                    <input type="text" id="programId" class="form-control"
-                           th:field="*{programId}" name="programId" />
+                    <label for="programName">Program</label>
+                    <input type="text" id="programName" class="form-control"
+                           th:field="*{programName}"       name="programName" />
 <!--                    <select id="programId"-->
 <!--                            class="form-control"-->
 <!--                            aria-required="true" aria-invalid="false" required>-->
@@ -74,9 +78,9 @@
 
             <div class="form-row">
                 <div class="col-md-6">
-                    <label for="programSegmentId">Program Segment</label>
-                    <input type="text" id="programSegmentId" th:field="*{programSegmentId}" class="form-control"
-                           name="programSegmentId" />
+                    <label for="segmentName">Program Segment</label>
+                    <input type="text" id="segmentName" class="form-control"
+                           th:field="*{segmentName}" name="segmentName" />
 <!--                    <select id="programSegmentId"-->
 <!--                            class="form-control"                                                aria-required="true" aria-invalid="false" required>-->
 <!--                        <option value="">select</option>-->
@@ -88,20 +92,20 @@
                 <div class="col-md-6">
                     <label for="origin">Origin</label>
                     <input type="text" id="origin" class="form-control"
-                           th:field="*{origin}"  name="origin" />
+                           th:field="*{origin}" name="origin" />
                 </div>
 
             </div>
 
-        </form>
-    </div>
+
+
     <br/>
 
-    <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
+    <div   style="width: 100%; overflow-x: scroll">
         <div class="card bg-info text-white" >
             <div class="card-title"><h5>Charge Item</h5></div>
         </div>
-        <div class=" pt-0 pb-5">
+<!--        <div class=" pt-0 pb-5">-->
 
             <table id="myTable"
                    class="table table-striped table-bordered display nowrap" style="width:100%" >
@@ -113,27 +117,32 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="cItemList:${chargeItemList}">
+                <tr th:each="cItemList:${chargeItemForms}">
                     <td><span th:text="${cItemList.itemName}"></span></td>
                     <td><span th:text="${cItemList.itemRate}"></span></td>
                     <td><span th:text="${cItemList.currencyId}"></span></td>
                 </tr>
+
+
                 </tbody>
             </table>
-
-        </div>
 </div>
+
+
     <div>
         <div class="row">
             <div class="col-md-6">
-            <a style="margin-top: 24px;" class="btn btn-success btn-md" >Populate Student</a>
+                <input type="submit" value="Populate Student" class="btn btn-primary btn-md" style="margin-top: 24px;">
+<!--            <a style="margin-top: 24px;" class="btn btn-success btn-md" >Populate Student</a>-->
             </div>
         </div>
     </div>
+
+   <!-- </div>  -->
     <br>
     <div class="card card-table-border-none"  style="width: 100%; overflow-x: scroll">
         <div class="card bg-info text-white" >
-            <div class="card-title"><h5>Bill</h5></div>
+            <div class="card-title"><h5>Student</h5></div>
         </div>
         <div class=" pt-0 pb-5">
             <table id="billTable"
@@ -141,22 +150,27 @@
                 <thead  class="thead-light">
                 <tr>
                     <th hidden>Enroll</th>
-                    <th>Session</th>
+                    <th class="text-center"><input type="checkbox" id="isAllChk"/>All</th>
+                    <th >Student Id</th>
+                    <th >Session</th>
                     <th>Student Name</th>
                     <th>DOB</th>
-                    <th>Origin</th>
-                    <th>Bill Date</th>
+<!--                    <th>Origin</th>-->
 
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td hidden></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr th:each="sCGL:${enrolStudentDataList}">
+                    <td hidden><span th:text="${sCGL.id}"></span></td>
+                    <td class="text-center">
+                        <input type="checkbox" th:checked="${isAllChk}" onclick="return;" />
+                    </td>
+                    <td><span th:text="${sCGL.studentRegistrationId}"></span></td>
+                    <td><span th:text="${sCGL.sessionName}"></span></td>
+                    <td><span th:text="${sCGL.studentName}"></span></td>
+                    <td><span th:text="${sCGL.doB}"></span></td>
+<!--                    <td><span th:text="${sCGL.origin}"></span></td>-->
+<!--                    <td></td>-->
                 </tr>
 
                 </tbody>
@@ -164,13 +178,19 @@
         </div>
         <!-- <div class="card-body">  -->
     </div>
+
+        </form>
+    </div>  <!-- div id search -->
+
+    <form class="needs-validation"  th:object="${chargeGroupForm}" th:action="@{/student-charge-group/save}" method="post" id="saveForm"  novalidate>
     <div>
         <div class="row">
             <div class="col-md-6">
-                <a style="margin-top: 24px;" class="btn btn-success btn-md" >Save</a>
+                <input type="submit" value="Save" class="btn btn-success" style="margin-top: 24px;">
             </div>
         </div>
     </div>
+    </form>
 </div>
 </body>
 </html>

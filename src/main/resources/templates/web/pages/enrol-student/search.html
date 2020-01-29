@@ -14,21 +14,15 @@
         </div>
     </div>
 <!-- END PAGE TITLE -->
- <div id="search">
 
-     <form class="needs-validation"  th:action="@{/enrol-student/list}" name="form1"  method="post" novalidate>
+
+     <form class="needs-validation" id="enrolSearchForm"  th:action="@{/enrol-student/search}" name="form1"  method="post" novalidate>
          <div class="row">
          <div class="col-3">
              <div class="form-group">
                  <label class="control-label mb-1" for="studentName">Student Name</label>
                  <input  id="studentName" type="text" class="form-control" aria-required="true" aria-invalid="false"
                          name ="studentName" th:value="${studentName}" placeholder="Student Name"/>
-<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
-<!--                     <option value="">Select</option>-->
-<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
-<!--                             th:value="${sRList.id}"-->
-<!--                             th:utext="${sRList.studentName}"/>-->
-<!--                 </select>-->
              </div>
          </div>
 
@@ -71,13 +65,13 @@
 <div class="row">
          <div class="col-3">
              <div class="form-group">
-                 <label class="control-label mb-1" >Batch</label>
-<!--                 <select id="batchId"  name="batchId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
-<!--                     <option value="">Select</option>-->
-<!--                     <option th:each="bList:${batchInfoList}"-->
-<!--                    for="batchId"         th:value="${bList.id}"-->
-<!--                             th:utext="${bList.batchName}"/>-->
-<!--                 </select>-->
+                 <label class="control-label mb-1" for="batchId">Batch</label>
+                 <select id="batchId"  name="batchId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >
+                     <option value="">Select</option>
+                     <option th:each="bList:${batchInfoList}"
+                             th:value="${bList.id}"
+                             th:utext="${bList.batchName}"/>
+                 </select>
              </div>
          </div>
 
@@ -86,12 +80,7 @@
              <div class="form-group">
                  <label class="control-label mb-1" for="contactNo">Contact Number</label>
                  <input  id="contactNo" type="text" class="form-control" aria-required="true" aria-invalid="false" name ="contactNo" th:value="${contactNo}" placeholder="Contact No" >
-<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
-<!--                     <option value="">Select</option>-->
-<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
-<!--                             th:value="${sRList.id}"-->
-<!--                             th:utext="${sRList.contactNo}"/>-->
-<!--                 </select>-->
+
              </div>
          </div>
 
@@ -100,163 +89,101 @@
              <div class="form-group">
                  <label class="control-label mb-1">Date of Birth</label>
                  <input id="doB" type="date" class="form-control" aria-required="true" aria-invalid="false"  name="doB" placeholder="doB" th:value="${doB}" >
-<!--                 <select  name="studentRegistrationId"style="height:37px" class="form-control" aria-required="true" aria-invalid="false"  >-->
-<!--                     <option value="">Select</option>-->
-<!--                     <option th:each="sRList:${studentRegistrationInfoList}"-->
-<!--                             th:value="${sRList.id}"-->
-<!--                             th:utext="${sRList.doB}"/>-->
-<!--                 </select>-->
+
              </div>
          </div>
 
     <div class="col-1">
-<!--        <div class="form-group">-->
-<!--            <label class="control-label mb-1">New</label>-->
-            <!-- Default checked -->
             <div class="custom-control custom-checkbox">
                 <label class="control-label mb-1">New</label>
-                <input type="checkbox" class="checkbox" name="new" id="showList">
+                <input type="checkbox" class="checkbox" id="isNewChk" name="isNewChk" >
 
             </div>
-            <!--<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
+            <!--<input type="checkbox"      th:field="*{newss}"      class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
 <!--        </div>-->
     </div>
 
     <div class="col-1">
-<!--        <div class="form-group">-->
-<!--            <label class="control-label mb-1">Enrol</label>-->
-            <!-- Default checked -->
             <div class="custom-control custom-checkbox">
-                <label class="control-label mb-1">Enrol</label>
-                <input type="checkbox" class="checkbox" name="promoted" onclick="showNextSegment();" >
+                <label class="control-label mb-1">Enroll</label>
+                <input type="checkbox" id="isEnrolChk" class="checkbox" name="isEnrolChk"   >
 
             </div>
-            <!--<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"-->
+            <!--<input type="checkbox"    th:field="*{enrol}"   class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}" onclick="showNextSegment();"-->
 <!--        </div>-->
     </div>
 </div>
 
        <div class="col-sm-12 text-right">
 
-             <input type="submit" value="Search" class="btn btn-primary btn-md" style="margin-top: 24px;">
+             <input type="submit" id="searchBtn" value="Search" class="btn btn-primary btn-md" onclick="myFunction()" style="margin-top: 24px;">
              <a style="margin-top: 24px;" class="btn btn-secondary" th:href="@{/enrol-student/search}" >Refresh</a>
              <!--             <a class="btn btn-primary btn-md" style="margin-top: 24px;" th:href="@{/homecontroller}">Home</a>-->
 
          </div>
 
-<!--         <div class="row">-->
-
-<!--             <div class="col-3">-->
-<!--                 <div class="form-group">-->
-<!--                     <label class="control-label mb-1">New</label>-->
-<!--                     &lt;!&ndash; Default checked &ndash;&gt;-->
-<!--                     <div class="custom-control custom-checkbox">-->
-<!--                         <input type="checkbox" class="checkbox" name="new">-->
-
-<!--                     </div>-->
-<!--                     &lt;!&ndash;<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"&ndash;&gt;-->
-<!--                 </div>-->
-<!--             </div>-->
-
-<!--         <div class="col-3">-->
-<!--             <div class="form-group">-->
-<!--                 <label class="control-label mb-1">Enrol</label>-->
-<!--                 &lt;!&ndash; Default checked &ndash;&gt;-->
-<!--                 <div class="custom-control custom-checkbox">-->
-<!--                     <input type="checkbox" class="checkbox" name="promoted" onclick="showNextSegment();" >-->
-
-<!--                 </div>-->
-<!--                 &lt;!&ndash;<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"&ndash;&gt;-->
-<!--             </div>-->
-<!--         </div>-->
-
-
-<!--         <div class="col-3">-->
-<!--             <div class="form-group">-->
-
-<!--                 <input  type="text" class="form-control"  name="nextSegment" placeholder="Next Segment" >-->
-<!--                 &lt;!&ndash; Default checked &ndash;&gt;-->
-<!--                 &lt;!&ndash; 	  	<div class="custom-control custom-checkbox">-->
-<!--                                  <input type="checkbox" class="custom-control-input" id="defaultChecked2"  checked>-->
-<!--                                 <label class="custom-control-label" for="defaultChecked2"></label>-->
-<!--                             </div> &ndash;&gt;-->
-<!--                 &lt;!&ndash;<input type="checkbox" class="form-control" aria-required="true" aria-invalid="false" th:field="*{active}"&ndash;&gt;-->
-<!--             </div>-->
-<!--         </div>-->
-
-<!--         </div>-->
-
      </form>
 
 
- </div>
+
     <br/>
     <div th:replace="web/pages/enrol-student/search-result :: search-result"></div>
 
 
-    <script th:inline="javascript">
-        // $(document).ready(function () {
-        //     const upzillaId = /*[[${loanApplicationForm.upzillaId}]]*/ "";
-        //     loadUpzilla(upzillaId);
-        //     const samityMemberId = /*[[${loanApplicationForm.samityMemberId}]]*/ "";
-        //     loadSamityMemberAndGroup(samityMemberId);
-        //     const bankBranchId = /*[[${loanApplicationForm.bankBranchId}]]*/ "";
-        //     loadBankBranch(bankBranchId);
-        //
-        //     /*this part added by sohel rana on 23/12/19 at 10.29 AM */
-        //     const bankId = /*[[${loanApplicationForm.bankId}]]*/ "";
-        //     loadBank(bankId);
-        //
-        //     const branchId=[[${loanApplicationForm.bankBranchId}]];
-        //     const bId=[[${loanApplicationForm.bankId}]];
-        //     loadBankBranchSelect(bId,branchId);
-        //
-        //
-        //     /*the part is end here */
-        // });
-        //
-        // function addLoanHistory() {
-        //     event.preventDefault();
-        //     const orgName = $('#previousLoanOrgName').val();
-        //     const loanAmount = parseFloat($('#previousLoanAmount').val());
-        //     var row = parseInt($('#historyCount').val());
-        //     if (orgName != null && orgName !== "" && !isNaN(loanAmount)) {
-        //         $('#loanHistoryGrid > tbody:last-child').append('<tr>' +
-        //             '<td>NEW</td>\n' +
-        //             '<td><input type="hidden" name=loanHistoryForms[' + row + '].id" value="null">' +
-        //             '<input type="text" class="form-control-plaintext" name="loanHistoryForms[' + row + '].orgName" value="' + orgName + '">' +
-        //             '</td>' +
-        //             '<td><input type="text" class="form-control-plaintext" name="loanHistoryForms[' + row + '].loanAmount" value="' + loanAmount + '"></td>' +
-        //             '</tr>');
-        //         row++;
-        //         $('#historyCount').val(row);
-        //     }
-        //     $('#previousLoanOrgName').val('');
-        //     $('#previousLoanAmount').val('');
-        // };
-        // $(document).ready(function () {
-        //     $('.select2').select2({
-        //         width: "100%"
-        //     });
-        // });
+    <script>
+//for tow checkedBox unchecked
+        $("#searchBtn").click(function(e) {
+             e.preventDefault();
+            var newChk=$('#isNewChk').prop("checked");
+            var enrolChk=$('#isEnrolChk').prop("checked");
 
-        $(document).ready(function() {
-            //set initial state.
-            $('#showList').change(function() {
-                if ($(this).is(':checked')) {
-                    $('#myTable').attr("disabled", false)
-                }
-                else
-                {
-                    $('#myTable').attr("disabled", true)
-                }
-            });
-        });
-        /*the part is end here */
+           if (newChk==false && enrolChk==false  ) {
+               alert("Check new or enroll checkbox");
 
+           }
+
+           else {
+               $("#enrolSearchForm").submit();
+           }
+    });
+
+
+
+// var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
+//     $checkboxes = $("#checkbox-container :checkbox");
+//
+// $checkboxes.on("change", function(){
+//     $checkboxes.each(function(){
+//         checkboxValues[this.id] = this.checked;
+//     });
+//
+//     localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+// });
+//
+// // On page load
+// $.each(checkboxValues, function(key, value) {
+//     $("#" + key).prop('checked', value);
+// });
+
+
+// !$('#isEnrolChk').is(":checked")
+// $('#searchBtn').click(function()
+// $('#enrolSearchForm').submit(function(){
+//     if($('#searchBtn').click){
+//         $('#isEnrolChk').prop("checked",true);
+//     }
+//     else{
+//         $('#isEnrolChk').prop("checked",false);
+//     }
+// });
 
     </script>
 
-</div>
+
+
+</div> <!-- end layout -->
+
+
+
 </body>
 </html>

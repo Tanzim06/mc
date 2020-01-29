@@ -20,10 +20,11 @@ public interface BatchInfoService {
 
     Optional<BatchInfo> findBatchById(Long id);
 
-   List<BatchInfo> getAllBatch( String batchName,String remarks,int activeStatus);
+   List<BatchInfo> getAllBatch(String batchName, String remarks, int activeStatus);
 
     BatchInfo getBatch(Long id);
 
-     public ArrayList<BatchInfo> getAllActiveBatch();
+//     public ArrayList<BatchInfo> getAllActiveBatch();
+public List<BatchInfo> getBatchAllList();
 
 }

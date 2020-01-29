@@ -57,6 +57,11 @@ public class ChargeItemServiceImp implements ChargeItemService {
     public ChargeItem getChagreItem(Long id) {
         return chargeItemRepository.findById(id).get();
     }
+    @Override
+    public ChargeItem getChagreItemByGroupId(Long id)
+    {
+        return chargeItemRepository.findChagreItemByGroupId(id);
+    }
 
     @Override
     public List<ChargeGroupData> getChargeSearchResult(String chargeGroupName, String remarks, Origin origin) {

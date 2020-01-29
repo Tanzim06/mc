@@ -1,9 +1,9 @@
 <div th:fragment="search-result" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
         <div class="col-12">
-<!--                    <table class="table table-responsive table-responsive-large">-->
-            <div class="card card-table-border-none" >
+<!--                    <table class="table table-responsive table-responsive-large" table table-striped table-bordered display nowrap>-->
+<!--            <div class="card card-table-border-none" >-->
 <!--                <div class="card-body pt-0 pb-5">-->
-                        <table id="myTable" class="table table-striped table-bordered display nowrap" style="width:100%">
+                        <table class="table table-striped table-bordered display nowrap" style="width:100%" >
                             <div class="card bg-info text-white" >
                                 <div class="card-title"><h5>Search Result</h5></div>
                             </div>
@@ -15,7 +15,7 @@
                                 <th>Student Name</th>
                                 <th>Father Name</th>
                                 <th>Session</th>
-                                <th>Program</th>
+                                <th>Program Segment</th>
 <!--                                <th>Segment</th>-->
                                 <th>Enroll Date</th>
                                 <th>Enroll</th>
@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
 
-                            <tr th:each="mesl:${enrolStudentDataListWithRegistration}">
+                            <tr th:each="mesl:${studentSearchList}">
                                 <td hidden> <span th:text="${mesl.id}"></span></td>
                                 <td> <span th:text="${mesl.studentRegistrationId}"></span></td>
                                 <td> <span th:text="${mesl.studentName}"></span></td>
@@ -32,11 +32,12 @@
 <!--                                <td> <span th:text="${mesl.motherName}"></span></td>-->
 <!--                                <td> <span th:text="${mesl.contactNo}"></span></td>-->
                                 <td> <span th:text="${mesl.sessionName}"></span></td>
-                                <td> <span th:text="${mesl.programName}"></span></td>
+                                <td> <span th:text="${mesl.segmentName}"></span></td>
                                 <td> <span th:text="${mesl.enrolDate}"></span>
 
                                 <td>
-                                    <a  class="btn btn-success btn-sm" th:href="@{'/enrol-student/update/'+${mesl.id}}">Enroll</a>
+                                    <a  class="btn btn-success btn-sm" th:href="@{'/enrol-student/update/'+${mesl.id}}">Edit</a>
+                                   <a  class="btn btn-success btn-sm" th:href="@{'/enrol-student/createNew/'+${mesl.studentRegistrationId}}">Enroll New</a>
 <!--                                    th:href="@{'/studentregistrationcontroller/update/'+${mSRL.studentRegistrationId}}"-->
 
                                 </td>
@@ -46,7 +47,12 @@
                             </tbody>
                         </table>
 
+
+
+
+
+
 <!--        </div>-->
-</div>
+<!--</div>-->
         </div>
 </div>
